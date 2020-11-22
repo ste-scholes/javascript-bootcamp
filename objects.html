@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2>Objects - Keys, Structure, Accessing, Commas, Square Brackets</h2>
+    <nav class="obj-nav"></nav>
+<p class="bold">Objects are collections of properties</p>
+<p class="bold">Properties are key value pair</p>
+<p class="bold">Rather than accessing data using an index, we use custom keys</p>
+<p></p>
+<p class="bold">Objects are like Arrays - you can assign them to a const and change the value.</p>
+<p>The const only contains the reference to the Objects</p>
+<p class=" note">All Keys are converted into strings!</p>
+<p>With this in mind setting a key as a number will return an error when you try to acces it</p>
+<p>Example</p>
+<p class="wrong">fitBitData.45 // Uncaught syntax error</p>
+<h2>Key Value Pairs </h2>
+<p>Example</p>
+<p class="bold">Key  ---->  Value</p>
+<p class="correct">username: 'StephenG</p>
+<p class="correct">upvotes:  7</p>
+<p class="correct">text:  'Great post'</p>
+<h2>Object structure</h2>
+<p>Example</p>
+<p class="code">const fitBitData = {<br/>
+    totalSteps: 23000,<br/>
+    totalMiles: 211.7,<br/>
+    avgCalorieBurn: 5755,<br/>
+    workoutsThisWeek: '5 of 7',<br/>
+    avgGoodSleep: '2:13'<br/>
+};
+</p>
+
+<h2>Accessing Objects using keys</h2>
+<p>You access an object by using it's key</p>
+<p class="code">fitBitData.totalMiles // 211.7</p>
+<p class="code">fitBitData.avgCalorieBurn // 5755</p>
+<p class="code">console.log(fitBitData.avgCalorieBurn)</p>
+
+<h2>Object literal</h2>
+<p>A set of curly braces is called an object literal</p>
+<p>An empty object with no key value pairs</p>
+
+<p>{</p>
+<p>  }</p>
+
+<h2>Commas</h2>
+<p>You don't need a comma if there is only one object</p>
+<p>More than one object needs a comma - a trailing comma is optional</p>
+
+<h2>Keys are converted into strings</h2>
+<p>Explanation</p>
+<p>In the following code the keys are numbers, however they are converted into strings automatically when assigned to being keys</p>
+<p class="code">const numbers = { <br/>
+  100: 'one hundered',<br/>
+  16: 'sixteen'<br/>
+}
+
+<p class="wrong">console.log(numbers.100) // this will not work as it looks for number 100 which doesn't exist (remember numbers are converted to strings)
+</p>
+<p class="correct">console.log(numbers[100]) // this looks for the string 100 and it finds it</p>
+</p>
+
+<h2>Square brackets</h2>
+<p>square brackets are used to access soemthing that is an invalid Javascript identifier</p>
+   <p>Explanation</p>
+   <p class="wrong">const my cat ='Jasper' // this is incorrect and throws an error</p>
+   <p>Javascript allows invalid identifiers within an object key, but they throw an error when you try to access them </p>
+   <p>Similar to the problem with strings above</p><p></p>
+   <p>Example</p>
+   <p class="code">
+     const pets = { <br/>
+       9 my cat: 'Jasper'<br/>
+       dog: 'Darcehole'<br/>
+     }
+   </p>
+   <p class="wrong">console.log(pets.9 my cat) // throws an error key starts with a number and contains spaces</p>
+   <p class="correct">console.log(pets['9 my cat']) // even if it an invalid identifier, the square brackets allow for the string to be used and found and Jasper is returned</p>
+  <h2>Accessing data using Square Brackets</h2>
+  <p>As above we can use square brackets to access data</p>
+  <p>We must remember to use strings when defining</p>
+  <p>Example</p>
+  <p class="code">const pallette = { <br/>
+    red: '#eb4d4b',<br/>
+    yellow: '#f9ca24',<br/>
+    blue: '#30336b'<br/>
+}
+
+</p>
+  <p class="code">console.log(pallette['red']) // returns #eb4d4b </p>
+  <p class="note">Using a variable with Square Bracket notation</p>
+  
+  <p>Say we wanted a user to select a colour from above on a web form</p>
+  <p>We could assign the colour to a variable</p>
+  
+  <p class="code">let mysteryColor = 'yellow'</p>
+  <p>We access the variable mysteryColor using bracket notation on pallette object </p>
+  <p class="code">console.log(pallete[mysteryColor] // returns #f9ca24</p>
+  
+  <p class="note">Bracket notation: Keyname is not valid, or when using a variable or dynamic data</p>
+  
+  
+  <p class="highlight">REMEMBER - Trying to access something that doesn't exist return undefined</p>
+  <script>
+    
+
+
+
+
+
+    </script>
+</div>
+  </body>
+  <script src="menu.js"></script>
+  <script src="obj-nav.js"></script>
+<script src="nav.js"></script>
+<script src="objects.js"></script>
+</html>

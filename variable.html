@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Static Template</title>
+  </head>
+  <body><div class="doc">
+    <nav class="menu"></nav>
+    <h1>Variables</h1>
+    <nav class="nav"></nav>
+    <h2>Let</h2>
+    <p>let = someName;</p>
+    <p>let age = 49</p>
+    <p>age + 1 // 50</p>
+    <P><b>This does NOT change the value of age - It is still 49!</b></P>
+    <p>To change the value of age</p>
+    <P>age = age + 1 // value changes in variable to 50</P>
+
+    <p>another way to update an age by 1 year</p>
+    <p><b>age += 1</b> // 50</p>
+
+    <p>to remove a year </p>
+    <p><b>age -= 1</b> // 50</p>
+
+    <h2>Variable const </h2>
+    <p>You can chanhe the value of const once set</p>
+    <p>const age = 49</p>
+    <p>age = age + 1 // brings back an error</p>
+    <p>Variables can change type EG let mytext = 'hello'</p>
+    <p> myText = 1234 // this wont bring back an error</p>
+    <p></p>
+    <h2>Strings</h2>
+    <p>Strings are indexed - you can access them with .length</p>
+    <p><b>To find last character without know how many are in array</b></p>
+    <p>let rubbish = 'erwrwerfghfgwrw'<br>
+    rubbish[rubbish.length-1] // returns w the last character in rubbish</p>
+    <p></p>
+    
+ 
+    <p>NULL the explicit value of nothingness - intentional we set NULL. Must be assigned</p>
+    <p>Undefined - is a value we get back if something is not set. Variables with no value are undefined</p>
+
+    <script>
+let age = 49; // assign
+age = 50; // reassign
+
+console.log(age)
+
+let score = 100;
+let bonus = 2;
+score *= bonus // score times bonus
+console.log(score)
+
+let money = 100
+let cake = 75
+
+money -= cake
+
+console.log(money)
+
+let counter = 0;
+
+counter++
+
+console.log(counter)
+
+
+
+
+    </script>
+    </div>
+  </body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+</html>

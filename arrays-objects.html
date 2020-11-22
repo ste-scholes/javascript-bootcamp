@@ -1,0 +1,197 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="style.css">
+<script src="app2.js">
+</script>
+<title>The Modern Javascript Bootcamp</title>
+</head>
+<body><div class="doc">
+  <nav class="menu"></nav>
+
+
+<h1>Arrays and Objects</h1>
+<nav class="nav"></nav>
+
+    <h2>Arrays</h2>
+    <p>Ordered collection of values starts at index 0</p>
+    <p>List of comment</p>
+    <p>Collection of levels in a game</p>
+    <p>Song in a playlist</p>
+    <p>Example</p>
+    <p class="code">let students = []; // empty array</p>
+
+    <p class="highlight">Examples</p>
+    <p class="code">let shopping = ['cheese', 'cereal', 'milk', 'ice']</p>
+    <p class="code">console.log(shopping) // call an array</p>
+    <p class="code">let bingo = [12,10,8,7,22]</p>
+    <p class="code">console.log(bingo[2]) //call array on index 2 gives 8</p>
+    <p class="code"> let collection = [12, 'dog', true, null, NaN] // javascript arrays can hold different data types, other languages won't allow this</p>
+    <p class=" highlight">Arrays are indexed starting at zero</p>
+
+  <p>Acessing arrays</p>
+  <p class="code">let colours = ['red','yellow','green', 'blue','purple']<br><br>
+
+    console.log(colours[3]) // returns blue index of 3</p>
+    <p class="highlight">To access the last item in an array</p>
+
+<p class="code">let colours = ['red','yellow','green', 'blue','purple']<br><br>
+
+  console.log(colours[colours.length-1]) // returns purple</p>
+    
+<h2>Modifying Arrays</h2>
+<p class="highlight">Changing value in array will change original value held at that index</p>
+<p class="code"> let shoppingList = ['Cheese', 'Milk']</p>
+  
+  <p class="code"> shoppingList[1] ='Whole Milk' <b>// update a value</b></p>
+  
+      <p class="bold"> // add to end of known list</p>
+  
+      <p class="code">  shoppingList[2] = 'Ice Cream'</p>
+  
+          <p class="bold"> // add to end of list - unkown item length</p>
+  
+          <p class="code"> shoppingList[shoppingList.length] = 'Tomatoes'</p>
+  
+          <p class="code">shoppingList[shoppingList.length] = 'Coffee'</p>
+  
+  
+  
+          <p class="code"> console.log(shoppingList)</p>
+ 
+<h2>Array Methods</h2>
+<p class="note">Push - add to end</p>
+<p>Example</p>
+<p class="code">let topSongs = [<br>
+  'First time I ever saw your face',<br>
+  'God only knows',<br>
+  'A day in the life',<br>
+  'Life on Mars'<br>
+];</p>
+<p class="code">topSongs.push('No son of mine')</p>
+<p class="note">Pop - remove from end</p>
+<p>topSongs.pop()</p>
+<p class="note">Shift - remove from start</p>
+<p>Example</p>
+<p class="code" >dishesToDo.shift() // removes item from array</p>
+<p>// you don't need a value</p>
+<p class="note">Unshift - add to start</p>
+<p>Example</p>
+<p class="code" >dishesToDo.unshift('spoon')</p>
+<p>// note you can chain items to add together
+
+  
+ </p>
+<p class="code">dishesToDo.unshift('knife','fork') // but they will retain their order as added - knife then fork</p>
+<p class="code"> console.log(dishesToDo)</p>
+    
+    
+<p></p> 
+  <h2>More Methods</h2>
+  <p class="note">concat - merge arrays</p>
+  <p>Example</p>
+  <p class="code">const arr1 = ['a','b','c'];</p>
+
+  <p class="code">const arr2 = ['d','e','f']</p>
+  <p class="code"> console.log(arr1.concat(arr2)) // rmember structure (arr2)</p>
+  <p>Example - conctonating multiple arrays</p>
+  <p class="code">const fruit =['apple', 'pair']</p>
+  <p class="code">const veg = ['carrot', 'onion']</p>
+  <p class="code">const meat = ['chicken','steak']</p>
+  <p class="code">let food = fruit.concat(veg, meat)</p>
+  <p class="code">console.log(food)</p>
+
+  <p class="note">includes - look for a value NOT IE</p>
+  <p>Example</p>
+  <p>Looks for a value in an array and return true if it finds it or false if not - looks for exact direct match</p>
+  <p  class="code">let ingredients = [</p>
+  <p  class="code">  'onions',</p>
+  <p  class="code">'tomatoes',</p>
+  <p  class="code"> 'chicken',</p>
+  <p  class="code"> 'peppers'</p>
+  <p  class="code" >];</p>
+  <p  class="code">console.log(ingredients.includes('onions'));</p>
+  <p>//finds onion returns true</p> 
+  <p>// also</p>
+  <p> class="code">console.log(ingredients.includes('onions', 2));</p>
+  <p>this looks for onions after the index starting at 2 do it returns false</p>
+  <p>Example using if</p>
+  <p>if (ingredients.includes('fish')) {</p>
+  <p> console.log('I dont like onions') </p>
+  <p>  }  else {</p>
+  <p>   console.log('im good to go')</p>
+  <p>   }</p>
+  <p>The above code can be used to easily check if something is in an array</p>
+
+  <p class="note">indexOf - just like str.indexOf</p>
+  <p>Returns the index of what your are searching for or -1 if it isn't there</p>
+
+<p>Example</p>
+<p>console.log(ingredients.indexOf('chicken')) // returns 2
+
+ </p>
+<p> console.log(ingredients.indexOf('chicken', 4)) // returns -1 (can't find it)</p>
+
+  <p class="note">join - creates a string from arr</p>
+  <p class="note">reverse - reverses and array</p>
+
+
+  <p class="note">slice  - copy portion of array</p>
+  <p>Makes a copy of theoriginal array, the original remains unchanged</p>
+  <p>Example</p>
+  <p class="code">let animals = ['shark', 'salmon','whale,','bear','lizard','tortoise']
+   </p>
+  <p class="code">  let swimmers = animals.slice(0,3) <br>
+    console.log(swimmers)// returns shark, salmon, whale</p>
+  <p  class="code">    let mammals = animals.slice(2,4)
+    console.log(mammals) // returns whale, bear</p>
+    <p  class="code"> let reptiles = animals.slice(4,6)<br>
+      console.log(reptiles) // returns lizard, tortoise</p>
+  <p >You can also just use the following:</p>
+  <p   class="code"> let reptiles = animals.slice(4)<br>
+    console.log(reptiles)// returns lizard, tortoise - everything after index 4</p>
+  <p  class="code">let quadruped = animals.slice(-3)<br>
+    console.log(quadruped)</p>
+    <p>The above counts back three elements to give // bear, lizard, tortoise</p>
+    <p>Note</p>
+  <p>animals.slice() // makes a copy of the entire array</p>
+
+  <p  class="note">splice  - remove/replace elements </p>
+<p></p>
+<p  class="code">animals.splice(1,0,'Octopus') </p>
+<p  class="code"> console.log(animals)</p>
+<p>The above works like this (index, to delete, to add)</p>
+<p>So it is start at index 1, delete 0, add Octopus</p>
+
+<p>Example 2</p>
+<p  class="code">animals.splice(3,2)</p>
+<p  class="code"> console.log(animals)</p>
+<p>// the above reads at index 3, remove 2 items - removes whale, bear
+</p>
+<p>To replace</p>
+<p>animals.splice(0,2,'SHARK','OCTOPUS' )</p>
+<p>console.log(animals)</p>
+<p>//The above deletes 2 items starting at index 0, then replaces them with 'SHARK','OCTOPUS'</p>
+
+
+
+  <p class="note">sort - sorts an array</p>
+
+  <p>Example</p>
+  <p  class="code">let people = ['Maggie May','Mrs Robinson', 'Angie','Jolene','Roxanne'];</p>
+  <p  class="code">console.log(people.sort())</p>
+  <p>// sorts by alphabetical order</p>
+  <p>Example 2</p>
+  <p class="code">let numbersArr = [10, 100000, 34, 67, 99]</p>
+  <p class="code">console.log(numbersArr.sort()) </p>
+  <p>// converts every value to string then compares their UTF codes</p>
+  <p class="highlight">The correct way to use this is through a function </p>
+
+
+  
+
+
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+</html>

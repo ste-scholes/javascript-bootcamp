@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Static Template</title>
+  </head>
+  <body><div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>The Modern Javascript Bootcamp</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+    <p class="impact"> Values and Variables</p>
+    <p class="bold">Primatives types - strings, boolean, numeric, null, undefined</p>
+    <p>Also Symbol and BigInt</p>
+    <p>Javascript has only one number type</p>
+    <p>console: clear() - clears console</p>
+    <p>Math operators obscure</p>
+    <p>Modulo example:  7 % 2 gives the number left over after dividing two numbers. So 2 into 7 3 times, remainder 1, so answer is 1</p>
+    <p>Exponents</p>
+    <p> 2 ** 3 gives 8 </p>
+    <p>Pedmas (BODMAS)</p>
+    <p> (3 - 9) * 2  </p>
+  
+
+    <p>NaN -  Not a number</p>
+    <p>Example divide zero by zero</p>
+    <p>1/0 Inifinity</p>
+    <P>-1/0 -Infinity  = negative infinity</P>
+    <P> -0 negative zero</P>
+    <P>NaN is not an Error</P>
+    <h2>Value Type Variables</h2>
+    <p>let fruit = 'orange'</p>
+    <p>let color = fruit</p>
+    <p>color // orange</p>
+    <p>fruit // orange</p>
+    <p>fruit ='watermelon'</p>
+    <p>fruit // watermelon</p>
+    <p>color // orange</p>
+    <p> Changing the value of fruit does not change the value of color</p>
+    <p class=" highlight">The value is stored in memory</p>
+    <p class=" note">In Arrays the variable does not hold the values - it holds a reference or pointer to where the array is in memory  </p>
+   <p class="bold">Array Example</p>
+   <p>let num = [5,6,7,8]</p>
+   <p> let otherNums = nums</p>
+   <p>// so nums = 123 -- a reference in memory</p>
+   <p>// othernums = 123 -- the same reference in memory as nums</p>
+   <p>so</p>
+   <p>nums.push(9) // changes the array to [5,6,7,8,9]</p>
+   <p>otherNums is also changed becuase it is pointing to the same reference as num</p>
+   <p>Both Arrays and Objects work as refernce types in memory rather than actually storing the information in the variable container</p>
+   <p class="highlight">The value is not stored in memory its a reference to it</p>
+   
+    <h2>Order of operations - Examples</h2>
+    <P>Q) 1.5 + 1.5 * 2</P>
+    <p>A) 1.5 * 2 = 3 + 1.5 = 4.5 // this is because multiply comes first!</p>
+    <p>Q) (10 % 6) ** 2  </p>
+    <p>A) (10 %6 ) = 4 ** 2 = 16 // brackets first then exponate power of 2</p>
+    <p>Q) 200 + 0/0</p>
+   
+    <p>A) 200 + 0/0 0/0 equals NaN so NaN + 200 = NaN // remember NaN and another number still returns NaN</p>
+    <h2>typof</h2>
+    <p>typof is an operator that returns the value type of a variable - string, number etc...</p>
+   <h2>parseInt</h2>
+<p>use these to parse strings into numbers</p>
+<p>Doesn't parse intergers so 2.25 will be 2</p>
+   <h2>parseFloat</h2>
+   <p>parses intergers so 2.25 will be 2.25</p>
+   <p>will not return numbers in strings</p>
+   <p><b>Neither of these will work if a character leads the number for example $123 - it won't like the $</b></p>
+
+   
+   
+   <p> console.log(7 % 2) </p>
+   
+  </div>
+   <script>
+    
+
+
+
+
+
+    </script>
+
+  </body>
+  <script src="menu.js"></script>
+<script src="nav.js"></script>
+</html>

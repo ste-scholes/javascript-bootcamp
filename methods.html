@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Static Template</title>
+  </head>
+  <body><div class="doc">
+    <nav class="menu"></nav>
+    <h1>String -  Methods</h1>
+    <nav class="nav"></nav>
+<p>Methods are actions that can be performed on strings - searching within a string, replacing parts of a string, changing upper/ lower case</p>
+<p>Examples in code</p>   
+<p>We call Methods as follows:</p>
+<p><b>thing.method()</b> // remember the brackets!</p>
+<p></p>
+
+
+
+<h2>Methods can take arguments</h2>
+<p class="highlight">thing.method(arg)  - We pass these in the brackets</p>
+
+<p class="highlight">String Length .length</p>
+<p>var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var sln = txt.length; // gives 26</p>
+
+
+<p class="highlight">indexOf</p>
+<p>let animal = 'catfish'</p>
+<p><b>animal.indexOf('cat') </b>// returns 0 because cat starts at zero index</p>
+<p><b>animal.indexOf('fish')</b> // returns 3 because fish starts at 3</p>
+<p>It is case sensitive so C and c are different </p>
+<p>If what you are looking for is not found it returns -1 this can be used in conditional programing</p>
+
+
+<p class="highlight">lastIndexOf() 
+  <p>// method returns the index of the last occurrence of a specified text in a string:</p>
+
+<p>var str = "Please locate where 'locate' occurs!";<br>
+var pos = str.lastIndexOf("locate");</p>
+
+
+<p class="highlight">Slice</p>
+<p>returns part of a string</p>
+<p>
+    let games = 'football'<br>
+    <b>console.log(games.slice(4))</b> // returns ball because ball starts at 4</p>
+    <p>
+      We can input 2 arguments, the first where the slice starts, the second where it ends  
+    </p>
+ <p>    let games = 'football'<br>
+    <b>console.log(games.slice(0, 3))</b> // returns foot because ball starts at 0 and ends at 4
+</p>
+ <p class="highlight"><b>Replace</b></p>   
+
+<p>
+Replaces part of a string</p>
+ </p>
+ <p>let favfood = 'I like fish'<br>
+    <b>console.log(favfood.replace('fish', 'chips'))</b> // returns 'I like chips'</p>
+ <p>It only works on the first instance - you need a regular expression to replace more or all</p> 
+
+<p class="highlight">Search()</p>
+<p>The search() method searches a string for a specified value and returns the position of the match:</p>
+<p>var str = "Please locate where 'locate' occurs!";<br>
+  var pos = str.search("locate");</p>
+  <p class="highlight">Did you notice?</p>
+  <p>The two methods, indexOf() and search(), are equal?</p>
+
+    <p> They accept the same arguments (parameters), and return the same value?</p>
+    
+    <p>The two methods are NOT equal. These are the differences:</p>
+    
+      <p> The search() method cannot take a second start position argument.</p>
+        <p>The indexOf() method cannot take powerful search values (regular expressions).</p>
+
+ <h2>String Escapes</h2>
+ <p>\n - newline</p>
+ <p>\' - single quote</p>
+ <p>\" - double quote</p>
+ <p>\\ - backslash</p>
+ <p>\t - tab</p>
+ <h2>Math methods</h2>
+ <p>Math.PI // returns pi</p>
+ <p>Math.floor // rounds decimal down to whole number</p>
+ <p>Math.round // rounds decimal to nearest whole number</p>
+ <p>Math.random() // returns a random number between zero and one</p>
+ <p><b>To generate random number between one and ten</b></p>
+ <p>Math.floor(Math.random() * 10) + 1 // the plus one is needed to reach 10 as the first result only bring back 9</p>
+
+
+
+<script>
+let msg = 'hello world'
+
+console.log(msg.toUpperCase())
+
+console.log(msg.toLocaleLowerCase())
+
+let color = ' red     '
+
+console.log(color.trim()) // removes spaces below and after
+console.log(color) // original variable unaltered
+// you can chain methods together
+
+console.log('My Fav colour ' + color.trim().toUpperCase())
+
+let animal = 'catfish'
+
+console.log(animal.indexOf('h'))
+
+let games = 'football'
+console.log(games.slice(4)) // returns ball
+
+console.log(games.slice(0,4)) // returns foot
+
+let favfood = 'I like fish'
+console.log(favfood.replace('fish', 'chips'))
+console.log(favfood) // remember original has not been changed!
+
+let faveGame = 'Elite'
+
+console.log(`My fav game is ${faveGame.toUpperCase()}`) // interpolate data in a string
+
+// indexOf
+
+</script>
+</div> </body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+</html>

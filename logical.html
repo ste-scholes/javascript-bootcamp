@@ -1,0 +1,112 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="style.css">
+<script src="app.js">
+</script>
+<title>The Modern Javascript Bootcamp</title>
+</head>
+<body><div class="doc">
+
+    <nav class="menu"></nav>
+<h1>Logical Operators - (&&) AND</h1>
+'<nav class="nav"></nav>'
+<p>Both side must be true in order for the whole thing to be true</p>
+<p>Examples</p>
+<p>1 <= 4 && 'a' === 'a' // true</p>
+<p>9 > 10 && 9 >= 9; // false</p>
+<p>'abc'.length === 3 && 1 + 1 === 4; // false</p>
+<p>Example</p>
+<p>let numNew = 11<br><br>
+
+    if(numNew >= 1 && numNew <= 10) {<br>
+        console.log('Number between one and ten')<br>
+    } else {<br>
+        console.log('Please guess number between one and ten')<br>
+    }</p>
+
+<h2>(||) OR</h2>
+<p>If either side is true then it passes as true</p>
+<p>true || true // true</p>
+<p>true || false // true</p>
+<p>false || true // true</p>
+<p>false || false // false</p>
+<p class="highlight">Code Example:</p>
+<p>10/2 === 5 || null // true</p>
+<p>0 || undefined // false</p>
+<p>Example</p>
+<p>let age = 49; <br><br>
+
+    if(age < 6 || age >= 65) {<br>
+        console.log('you get in for free!')<br>
+    } else {<br>
+        console.log('You pay full price')<br>
+    }</p>
+    <p>Another Example</p>
+<p>let color = 'purple';<br><br>
+
+    if (color === 'purple' || color === 'lilac' || color === 'orchid') {<br>
+        console.log(color + ' is  loverly color, good choice!')<br>
+    } else {<br>
+        console.log('I don\'t like the color ' + color)<br>
+    }</p>
+<h2>(!) NOT</h2>
+<p>!expression returns true if the expression is false</p>
+<p>!null // true</p>
+<p>!(0 === 0) // false</p>
+<p>!(3 <= 4) // false</p>
+<p>!0 // true</p>
+<p>!'' // true</p>
+<p>!45 // flase</p>
+<p>If something is already false then ! returns true</p>
+<p>Example</p>
+<p></p>
+<p>let flavour = 'sasparilla';<br><br>
+
+    if(flavour !== 'grape' && flavour !== 'cherry') {<br>
+        console.log(`We dont have ${flavour} knobhead`)<br>
+    }</p>
+    
+    <p class="note">// another way is to negate the entire if statement</p>
+    <p>let flavour = 'sasparilla';<br><br>
+    
+    <p>  if (!(flavour === 'grape' || flavour === 'cherry')) {<br>
+        console.log(`We dont have ${flavour} tittyboy`)<br>
+    }</p>
+
+<h2>Operator Precedence</h2>
+
+<p>let x = 7;</p>
+<p>x == 7 || x === 3 && x > 10; // true</p>
+<p>&& takes precedence over ||  </p>
+<p>so the above example is really</p>
+<p>let x = 7;</p>
+<p>x == 7 || (x === 3 && x > 10); // true</p>
+<p>--false------------true-------</p>
+<p>as only one side of || needs to be true it is all true</p>
+<p></p>
+<p>If we want it to run the way it looks use brackets ()</p><p>let x = 7;</p>
+<p>(x == 7 || x === 3) && x > 10; // false</p>
+
+<p class="note">The exact order is  !(not) && (and) || (or) - this can be changed with brackets ()</p>
+
+<h2>Ternary Operator</h2>
+<p>Use instead of if else on simple yes / no answer</p>
+<p></p>
+
+<p class="highlight">condition ? expIfTrue : expIfFalse</p>
+<p>Example</p>
+<p>let numSeven = 7</p>
+
+<p>numSeven === 8  ? console.log('Lucky number ' + numSeven ) : console.log('Unlucky');</p>
+
+<p class="highlight">Chat room online example</p>
+<p>If you are offline the colour is red or else it's green</p>
+<p>let myColor  =  status === 'offline' ? 'red' : 'green';</p>
+
+  <p>  console.log(`${status} ${myColor}`)</p>
+
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+</html>

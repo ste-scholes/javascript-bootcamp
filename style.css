@@ -1,0 +1,107 @@
+body {
+    background-color: lightblue;
+  }
+
+.doc {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 100px;
+    border-style: solid;
+    border-width: thin;
+    border-color: lightsteelblue;
+    background-color: white;
+}
+
+#nav {
+    display: flex;
+}
+
+.menu {
+    padding: 10px;
+    list-style: none;
+    border-width:  1px;
+    background-color:rgb(7, 38, 78);
+}
+
+.nav {
+    padding: 10px;
+    color: white;
+    background-color:  rgb(3, 3, 22);
+    list-style: none;
+
+}
+
+.obj-nav {
+    padding: 10px 75px 10px 10px;
+    color: white;
+    background-color:  rgb(179, 80, 0);
+    border-style: solid ;
+    border-width: thin;
+    border-color:  rgb(179, 80, 0)  rgb(179, 80, 0) #ffffff  rgb(179, 80, 0);
+    list-style: none;
+
+}
+a:link,  a:visited {
+
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    
+    color: lightblue;
+    text-decoration: none;
+    
+}
+
+
+h1 {
+   font-size: xxx-large;
+    color: rgb(3, 3, 22);
+    padding: 15px;
+  }
+
+
+  h2 {
+    background-color: rgb(3, 3, 22);
+    color: white;
+    padding: 15px;
+  }
+
+p {
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+.correct {
+    color: rgb(0, 138, 7);
+ 
+}
+
+.wrong {
+    color: red;
+
+}
+
+.note {
+    background-color: rgb(7, 38, 78);
+    color: white;
+    padding: 15px
+}
+
+.impact {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.highlight {
+    font-weight: bold;
+    font-size: large;
+}
+.bold {
+    font-weight: bold;
+}
+
+.code{
+    color: rgb(19, 83, 165);
+    font-weight: light;
+}

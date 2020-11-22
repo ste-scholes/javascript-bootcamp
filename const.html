@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body><div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Const and Arrays</h1>
+    <nav class="nav"></nav>
+    <p class="impact">Important information about this topic can be seen on the Home page > Value Type Variables</p>
+
+<h2>Const</h2>
+    <p>The value of const cannot be reassigned</p>
+<p>const city = 'London';</p>
+<p>const city = 'Liverpool'</p>
+<p>console.log(city); // can't reassign const</p>
+<p class="note">Array values can be changed as long as the refernce remains the same</p>
+
+<p>Example</p>
+<p class="code">const myEggs = ['brown','brown']</p>
+<p class="code">myEggs.push('purple')</p>
+<p class="code">myEggs[0] = 'green'</p>
+<p>returns // ['green','brown','purple']</p>
+<p class="bold">However if you try to reassign</p>
+<p class="wrong">myEggs = ['blue','pink']</p>
+<p class="wrong">this will return a Uncaught TypeError: Assignment to constant variable</p>
+<p class="note">const are used all the time with Arrays</p>
+<p></p>
+
+
+<h2>Nested Array</h2>
+<p>Example</p>
+<p class="code">const colors = [<br/>
+  ['red','crimson'],<br/>
+  ['blue','navy blue'],<br/>
+  ['green','emerald'],<br/>
+  ['purple','orchid'],<br/>
+  ['orange','dark orange']<br/>
+]</p>
+<p>Example 2</p>
+<p class="code">const animalpairs = [<br/>
+  ['doe','buck'],<br/>
+  ['ewe','ram'],<br/>
+  ['peahen','peacock']<br/>
+];</p>
+<p>To access items in an nested array</p>
+<p class="code">console.log(animalpairs[0][0]) // returns doe</p>
+<p class="code">console.log(animalpairs[2][1]) // returns peacock</p>
+<p></p>
+<p>Example 3</p>
+<p class="code">const animalpairs = [<br/>
+  ['doe',['buck','stag']],<br/>
+  ['ewe','ram'],<br/>
+  ['peahen',['peacock','chick']]<br/>
+];</p>
+<p>To access items in an nested array - this gets tricky</p>
+<p class="code">console.log(animalpairs2[0][1][0]) // returns returns buck</p>
+<p class="code">console.log(animalpairs2[2][1][1]) // returns chick</p>
+
+<p class="note">To update a nested array</p>
+   <p class="code">animalpairs[0][1] = 'stag' // changes buck to stag</p>
+   <p class="code">console.log(animalpairs[0][1] = 'stag') // using console.log</p>
+   
+   
+   
+   
+   <script>
+    
+
+
+
+
+
+    </script>
+</div>
+  </body>
+  <script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="const-arrays.js"></script>
+</html>
