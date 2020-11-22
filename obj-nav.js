@@ -1,7 +1,7 @@
 let navObj ={
-    'Objects': 'objects.html',
+    'Objects Home': 'objects.html',
     'Adding Updating Objects': 'updateobj.html',
-    Methods:'objects.html',
+   'Arrays and Objects':'objects-nested-arrays.html',
    
 };
 

@@ -16,14 +16,37 @@
    
 <h2>Objects  - Adding and Updating</h2>
 <nav class="obj-nav"></nav>
-<p>Adding values to an empty object</p>
+<h2>Create an empty object</h2>
 <p>Example</p>
 <p> // start with empyt object - no reviews yet</p>
 <p class="code">const userReview = {};</p>
+<h2>Adding values to an empty object</h2>
 <p> // add first review user is <strong>key</strong> queenBee49 with a score of <strong>value</strong> 4.0</p>
 <p class="code">userReview['queenBee49'] = 4.0;</p>
 <p> // uses dot notation to add user <strong>key</strong> mrSmith78 with a score of  <strong>value</strong> 3.5</p>
 <p class="code">userReview.mrSmith78 = 3.5</p>
+<p> // uses dot notation to add user <strong>key</strong> colt with a score of  <strong>value </strong>5</p>
+<p class="code">userReview.colt = 5</p>
+
+
+<h2>Updating an Object</h2>
+<p>Example</p>
+<p>// to update we simply do the following bracket notation (branket notation is used in variable or changing value from number to string)</p>
+<p class="code">userReview['colt'] = 4.7</p>
+<p>// or using dot notation</p>
+<p class="code">userReview.colt = 4.9</p>
+<h2>Updating Object using operators</h2>
+<p>Example</p>
+<p class="code">userReview.queenBee49 += 1</p>
+<p>// This adds 1 to the total score of queenBee49 bringing her up to 5</p>
+<p>We can also use bracket notation</p>
+<p class="code">userReview['mrSmith78'] += .5</p>
+<p>This adds .5 to mrSmith78 total score bringing him up to 4</p>
+<p>We could also us ++</p>
+<p class="code">userReview['mrSmith78']++</p>
+<p>also using dot</p>
+<p class="code">userReview.mrSmith78 ++</p>
+<p class="wrong">remember the = is not reuired</p>
 
     </script>
   </div>
