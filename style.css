@@ -30,7 +30,7 @@ body {
 
 }
 
-.obj-nav {
+.obj-nav, .loop-nav {
     padding: 10px 75px 10px 10px;
     color: white;
     background-color:  rgb(179, 80, 0);

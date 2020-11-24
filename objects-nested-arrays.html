@@ -14,9 +14,82 @@
 
     <nav class="nav"></nav>
    
-<h2>Objects  - Adding and Updating</h2>
+<h2>Objects  - Nested Arrays</h2>
+<nav class="obj-nav"></nav>
+<h2>Student Object</h2>
+<p>An object for student that has an array and another object nested within</p>
+<p>Example</p>
+<p class="code">const student = { <br/>
+  firstname: 'David',<br/>
+  surname: 'Jones',<br/>
+  strengths: ['music', 'art'],    // array<br/>
+  exams: {      // object<br/>
+      midterm: 92,<br/>
+      final: 88<br/>
+  }<br/>
+};</p>
+<h2>Access Object within object</h2>
+<p>// say you wanted to find the average between the midterm and final exam results<br/>
+ You would add the midterm and final together then divide by 2<br/>
+ Then you would ensure midterm was added to final first by putting them in brackets</p>
+<p class="code">const avg = (student.exams.midterm + student.exams.final) /2;<br/>
+  console.log(avg)
+</p>
+<h2>Access Array within Object</h2>
+<p>To access art from strengths Array via variable</p>
+<p class="code">const strength = student.strengths[1];</p>
+<p class="code">console.log(strength)</p>
+<h2>Access Objects within Array</h2>
+<p>Shopping cart example</p>
+<p class="code">const shoppingCart = [ <br/>
+  {<br/>
+      product: 'Jenga Classic',<br/>
+      price: 6.88,<br/>
+      quantity: 1<br/>
+  },<br/>
+  {<br/>
+      product: 'Echo Dot',<br/>
+      price: 29.99,<br/>
+      quantity: 3<br/>
+  },<br/>
+  {<br/>
+      product: 'Fire Stick',<br/>
+      price: 39.99,<br/>
+      quantity: 2,<br/>
+  }<br/>
+  
+  ];</p>
+<p>Say you want to check out how much your order would cost for the 3 Echo Dots</p>
+<p>You would need to access the array for Echo dot which is [1]</p>
+<p>Then you would need to times the <strong>price</strong> of the item by the <strong>quantity</strong> of the item</p>
+<p class="code">const costItem = shoppingCart[1].price * shoppingCart[1].quantity</p>
+<p class="code">console.log(costItem)</p>
+<p></p>
+<p>Another Example </p>
+<p>Find cost of Fire Stick order</p>
+<p class="code">const fireCost = shoppingCart[2].price * shoppingCart[2].quantity</p>
+<p class="code">console.log('The cost of your Firestick order is ' + fireCost)</p>
+<h2>Tic Tac Toe Example</h2>
+<p>How you might use objects to structure a game of Tic Tac Toe</p>
+<p>We use objects to create the players and an array for the playing board</p>
+<p>Example</p>
+<p class="code">const game = { <br/>
+  player1: { <br/>
+      username: 'Jasper',<br/>
+      playingAs: 'X'<br/>
+  },<br/>
+  player2: {<br/>
+      username:'Sooty',<br/>
+      playingAs: 'O'<br/>
+  },<br/>
+  board: [<br/>
+  ['O', null, 'X'],<br/>
+  ['X', 'O', 'X'],<br/>
+  [null,'O', 'X'],<br/>
+]<br/>
+}</p>
 
-
+<p class="note">Remember Objects are reference types just like Arrays. Variables hold a reference to the data location, not the data itself</p>
     </script>
   </div>
   </body>

@@ -66,3 +66,110 @@ userReview.mrSmith78 ++;
 
 console.log(userReview)
 
+// Nested Arrays
+
+const student = {
+    firstname: 'David',
+    surname: 'Jones',
+    strengths: ['music', 'art'],
+    exams: {
+        midterm: 92,
+        final: 88
+    }
+};
+
+// say you wanted to find the average between the midterm and final exam results
+// you would add the midterm and final together then devide by 2
+// you would ensure midterm was added to final first by putting them in brackets
+const avg = (student.exams.midterm + student.exams.final) /2;
+
+console.log(avg)
+
+// access art via variable
+const strength = student.strengths[1];
+
+console.log(strength)
+
+// shopping cart example Array with Objects within
+const shoppingCart = [
+{
+    product: 'Jenga Classic',
+    price: 6.88,
+    quantity: 1
+},
+{
+    product: 'Echo Dot',
+    price: 29.99,
+    quantity: 3
+},
+{
+    product: 'Fire Stick',
+    price: 39.99,
+    quantity: 2,
+}
+
+];
+
+const costItem = shoppingCart[1].price * shoppingCart[1].quantity
+
+console.log(costItem)
+
+const fireCost = shoppingCart[2].price * shoppingCart[2].quantity
+
+console.log('The cost of your Firestick order is ' + fireCost)
+
+// Tic Tac Toe example
+const game = {
+    player1: {
+        username: 'Jasper',
+        playingAs: 'X'
+    },
+    player2: {
+        username:'Sooty',
+        playingAs: 'O'
+    },
+    board: [
+    ['O', null, 'X'],
+    ['X', 'O', 'X'],
+    [null,'O', 'X'],
+]
+}
+
+// Equality
+
+let myNum = [1,2,3];
+let mystery = [1,2,3];
+let moreNums = myNum
+
+moreNums.push(4)
+
+console.log(myNum === moreNums)
+
+console.log(myNum === mystery) // brings back false
+
+console.log(myNum)
+
+// even though the content of these two arrays is exactly the same JavaScript sees them as two completely differnt objects
+//Why?
+//Remember that the variable point to a reference point only!  The actual data is not considered
+
+// Arrays could be huge, we are comparing the addresses held the variable, not the data held within 
+
+const newUser = {
+    username: 'CherryGarcia8',
+    email: 'garcia@gmail.com',
+    notifications: []
+};
+
+this does not work
+if(user.notifications === []) {
+    console.log('No new notifcations');
+}
+
+// this will work - .length will return true because the array is empty then ! switches that to false
+
+if(!newUser.notifications.length) {
+    console.log('No new notifications')
+}
+
+// check if array has exact equality

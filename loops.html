@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body><div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Loops</h1>
+
+    <nav class="nav"></nav>
+   
+<h2>Objects  - Equality</h2>
+<nav class="loop-nav"></nav>
+<h2>For Loops</h2>
+<p>There are 3 seperate pieces</p>
+<p class="bold">Initial value</p>
+<p class="bold">When to run the loop</p>
+<p class="bold">How to change the value each time</p>
+<p>Example</p>
+<p class="code">for(let i = 1; i <=10; i++)</p>
+<p class="bold">The above code reads- let variable i equal 1; if i is 10 or less then add 1 until 10 is reached</p>
+<p>Example that logs hello and variable i 10 times</p>
+<p class="code">for(let i = 1; i <=10; i++) {<br/>
+    console.log('hello',i)<br/>
+}</p>
+<p>Example</p>
+<p class="bold">Perfect squares - numbers times by themselves</p>
+<p class="code">for(let num = 1; num <= 20; num++) {<br/>
+    console.log(`${num}x${num} = ${num * num}`);<br/>
+    
+ }
+ </p>
+ <p>In the above example num is used instead of i</p>
+ <p class="note">Subtracting using for loop</p>
+ <p>Example - count from 50 to zero by multiples of 10</p>
+ <p class="code">for( i = 50; i >= 0; i -=10) { <br/>
+    console.log(i)
+}</p>
+<p>Example </p>
+<p class="bold">Count down from 200 to zero in multiples of 25</p>
+<p class="code">for(i = 200; i >= 0; i -=25){<br/>
+    console.log(i)<br/>
+    console.log('The loop has ended')<br/>
+}</p>
+<h2>Infinite Loop</h2>
+<p>Is a loop that will run forever as its condition will never be met</p>
+<p>Example</p>
+<p class="wrong">for(let i = 20; i >= 0; i++ {<br/>
+    console.log(i)<br/>
+}<br/>
+</p>
+<p>How to avoid</p>
+<p>Make sure your condition is appropriate for what you are trying to do</p>
+<p class="bold">Counting backwards</p>
+<p class="correct">for(let i =100; i >= 0; i --) {<br/>
+    console.log(i)<br/>
+}
+</p>
+<p class="note">Avoid using equality opperators in loops - stick with greater or less than</p>
+
+  </div>
+  </body>
+  <script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="loop-nav.js"></script>
+<script src="loop-example.js"></script>
+</html>
