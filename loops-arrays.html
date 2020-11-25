@@ -14,12 +14,98 @@
 
     <nav class="nav"></nav>
    
-<h2>Objects  - Equality</h2>
-<nav class="loop-nav"></nav>
 <h2>For Loops and Arrays</h2>
-<p class="bold">To loop over an array, start at 0 and continue to the last index (.length-1)</p>
+<nav class="loop-nav"></nav>
+<h2>For loop - Accessing Array</h2>
 
-  </div>
+<p class="bold">To loop over an array, start at 0 and continue to the last index (.length-1)</p>
+<p>Example</p>
+<p class="code">const examScore = [98,77,84,91,57,66]</p>
+<p class="bold">You access the array using [] brackets</p>
+<p class="code">for(i = 0; i < examScore.length; i++) { <br/>
+  &nbsp;  console.log(i, examScore[i]);<br/>
+}</p>
+
+<h2>For loops - Accessing Arrays and Objects</h2>
+<p>Example - Accessing student grades</p>
+<p class="bold">An Array holding objects containing student name and grade </p>
+<p class="code">const myStudents = [<br/>
+  { <br/>
+    &nbsp;  firstname: 'John',<br/>
+    &nbsp; grade: 86<br/>
+  },<br/>
+  {<br/>
+    &nbsp;   firstname: 'Derek',<br/>
+    &nbsp;   grade: 97<br/>
+  },<br/>
+  {<br/>
+    &nbsp;   firstname: 'Evette',<br/>
+    &nbsp;  grade: 72<br/>
+  },<br/>
+  {<br/>
+    &nbsp; firstname: 'Stuart',<br/>
+    &nbsp;  grade: 98<br/>
+  },<br/>
+  {<br/>
+    &nbsp;  firstname: 'Karl',<br/>
+    &nbsp;  grade: 89<br/>
+    &nbsp;}<br/>
+];<br/>
+</p>
+<p class="note">Accessing using variable</p>
+<p class="code">for(let i = 0; i < myStudents.length; i++) {<br/>
+  &nbsp; let student = myStudents[i]<br/>
+  &nbsp; console.log(`${student.firstname} scrored ${student.grade}`)<br/>
+}
+</p>
+<p>Above we create a variable called student to hold the results from the loop</p>
+ <p class="code">let student = myStudent[i]</p>
+ <p>We then access this using the template literal and the variable student along with the keys firstname and grade from the object</p>
+
+<p class="note">Accessing using console.log</p>
+<p class="code">for( let i = 0; i < myStudents.length; i++) {<br/>
+  &nbsp; console.log(myStudents[i].grade  + ' ' + myStudents[i].firstname)<br/>
+}<br/>
+</p>
+<p class="note">Accessing using template literal</p>
+<p class="code">for( let i = 0; i < myStudents.length; i++) {<br/>
+  &nbsp; console.log(`${myStudents[i].grade}  ${myStudents[i].firstname}`)<br/>
+}<br/>
+</p>
+<h2>Finding Total of all grades</h2>
+<p> Note: Putting total variable within the loop would cause the total to be reset eveytime the loop ran</p>
+<p class="code">let total = 0;</p>
+<p class="code">for(let i = 0; i < myStudents.length; i++) {<br/>
+  &nbsp;  let student = myStudents[i];<br/>
+  &nbsp;  total += student.grade;<br/>
+}</p>
+<p class="code">console.log('Total Grades: ' + total)</p>
+<h2>Finding Average of student grades</h2>
+<p>Code doesn't need to be complicated - study this example</p>
+<p class="code">let total = 0;</p>
+<p class="code">for(let i = 0; i < myStudents.length; i++) {<br/>
+  &nbsp;  let student = myStudents[i];<br/>
+  &nbsp;  total += student.grade;<br/>
+}</p>
+<p class="code">console.log('Avg Grades: '  + total / myStudents.length)</p>
+
+<h2>Looping through a string</h2>
+<p>To loop through a string</p>
+<p class="code">const myName = 'Stephen';</p>
+<p class="code">&nbsp; for (let i = 0; i < myName.length; i++) {<br/>
+  &nbsp; console.log(myName)<br/>
+}</p>
+<h2>Looping backwards through a string</h2>
+<p>Example</p>
+<p class="code">const newWord = 'stressed';</p>
+<p class="code">let myword = ' '</p>
+<p class="code">for(i = newWord.length -1; i >= 0; i--) {<br/>
+  &nbsp; myword += newWord[i];</p>
+  <p>The above line adds the letters into newWord in reverse order</p>
+<p class="code">console.log(myword)</p>
+<p>Output // dessert</p>
+
+</div>
   </body>
   <script src="menu.js"></script>
 <script src="nav.js"></script>
