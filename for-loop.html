@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body><div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>While Loop</h1>
+
+    <nav class="nav"></nav>
+   
+<h2>For...Of</h2>
+<nav class="loop-nav"></nav>
+<h2>Example</h2> 
+
+<h2>For Of - not supported on IE!</h2>
+<p>Loop over elemenst in array without using index or indices</p>
+<p>Loop over string or anything else in Javascript</p>
+<p>Easier to read and use</p>
+<p>Example</p>
+<p class="code">for (varibale of iterables) {<br/>
+  stetment<br/>
+}
+</p>
+<p>Example</p>
+<p>The variable categories stores the values from the array subreddits</p>
+<p class="code">let subreddits = ['soccer', 'popheads','cringe','books'];</p>
+<p class="code">for(let categories of subreddits) {<br/>
+  &nbsp; console.log('Subreddits ' + categories)
+}</p>
+<p >Example - String</p>
+<p>Loop over characters in string</p>
+<p class="code">for(let char of 'cockadoodledoo') {<br/>
+  console.log(char)
+}</p>
+<p class="note">for of - Nested example</p>
+<p>Example</p>
+<p class="code">let magicSquare = [<br/>
+  &nbsp;  [2,7,6],<br/>
+  &nbsp;  [9,5,1],<br/>
+  &nbsp;  [4,3,8]<br/>
+];<br/>
+</p>
+<p class="code">for ( let row of magicSquare) {<br/>
+  &nbsp;  let sum =0;<br/>
+  &nbsp; for(let num of row) {<br/>
+    &nbsp;      sum += num;<br/>
+    &nbsp;  }<br/>
+  console.log(`${row} summed to ${sum}`)<br/>
+}</p>
+<p >The for of loops through the array and assigns the <b>magicSquare</b> to <b>row</b> variable </p>
+<p>The next <b>for loops</b> takes the numbers of the array row [2,7,6] and adds them together, so 2 + 7 + 6 = 15, then loop onto the next row, as so on.</p>
+ <h2>When not to use for...loop</h2>
+ <p>In the below example, we use a for loop to combine the values from array words1 and array words2</p>
+
+ <p class="code">const words1 = ['mail','milk','bath','black'];<br/>
+  const words2 = ['box','shake','tub','berry'];<br/>
+  </p>
+ <p class="code">for (let i =0; i < words1.length; i++) {<br/>
+  &nbsp; console.log(`${words1[i]}${words2[i]}`);<br/>
+}
+</p>
+ <p >// you don't have to do anything with words2 array apart from call it</p>
+  <p>Using this example and trying to do it with for loop would mean you have to try to find the index of each array in words1 and then match up the values of the words2. It is overly difficult when a for loop is a much better option</p>
+<h2>For...Of Objects</h2>
+<p>Objects will not work properly with for of, as there is no index</p>
+<P>However you can access either <b>keys</b> or <b>values</b> using the following</P>
+<p class="code">console.log(Object.keys(movieReview))</p>
+<p class="code">console.log(Object.values(movieReview))</p>
+<p>Remember that these use <b>Object.</b> keyword to access</p>
+<p>Example</p>
+<p class="code">const movieReview = {<br />
+    &nbsp; Arrival: 9.5,<br />
+    &nbsp; Alien: 9,<br />
+    &nbsp;'Kill Bill': 8.5,<br />
+    &nbsp;'Star Wars': 9.7,<br />
+    &nbsp; Vacation: 8.5,<br />
+    &nbsp;'Sleepy Hollow': 9.5,<br />
+    }</p>
+<p class="code">for (let movie of Object.keys(movieReview)) {<br />
+    &nbsp; console.log(movie, movieReview[movie]) // access values - see note below<br />
+    }
+</p>
+<p>movie is a variable so we need to use movieReview[movie] </p>
+<p class="note">If we need to access part of an Object and the key is a variable we need square brackets</p>
+
+<p>Example</p>
+<p>Find average rating from movieReview Object</p>
+<p class="code">const rating = Object.values(movieReview)<br />
+    &nbsp; let revAvg = 0;<br />
+    &nbsp; for(let r of rating) {<br />
+    &nbsp; revAvg += r<br />
+    &nbsp; }<br />
+    total /= rating.length; // total divided by ratings length<br />
+    console.log(revAvg)</p>
+<h2>For...In</h2>
+<p>Loop over keys in an Object</p>
+<p>Example</p>
+<p class="code">for (variable in object){<br />
+    &nbsp;statement<br />
+    }
+</p>
+
+<p>Example of getting keys and values from Object</p>
+<p class="code">const jeopardyWinnings = {<br />
+    &nbsp;   regularPlay: 2522700,<br />
+    &nbsp;  watsonChalenge: 300000,<br />
+    &nbsp;  tournamenOfChamps: 500000,<br />
+    &nbsp;  battleOfTheDecade: 100000,<br />
+};
+</p>
+<p class="code">for(let win in jeopardyWinnings) {<br />
+    &nbsp;   console.log(win)<br />
+    &nbsp;  console.log(jeopardyWinnings[win])<br />
+   }</p>
+
+   <p class="bold">variable win represents key</p>
+   <p class="bold">jeopardyWinnings[win] represents values</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="loop-nav.js"></script>
+<script src="loop-examples2.js"></script>
+</html>

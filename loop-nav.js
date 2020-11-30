@@ -1,8 +1,9 @@
 let loopNav ={
     'Loop Home - For Loops': 'loops.html',
     'For Loops & Arrays': 'loops-arrays.html',
-   'Arrays and Objects':'objects-nested-arrays.html',
-   'Arrays Equality': 'equality.html',
+   'Nested Loop':'nested-loop.html',
+   'While Loop': 'while-loop.html',
+   'For of - For in': 'for-loop.html'
    
 };
 
