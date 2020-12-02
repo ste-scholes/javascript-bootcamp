@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <title>The Modern Javascript Bootcamp</title>
   </head>
-  <body><div class="doc">
+  <body>
+    <div class="doc">
     <nav class="menu"></nav>
    
     <h1>While Loop</h1>
@@ -121,6 +122,18 @@
 
    <p class="bold">variable win represents key</p>
    <p class="bold">jeopardyWinnings[win] represents values</p>
+   <p>Example</p>
+   <p>Adding up winnings</p>
+   <p class="code">for(let prop in jeopardyWinnings) {<br />
+    &nbsp;  console.log('prop key' + prop);<br />
+    &nbsp;  console.log('prop value ' + jeopardyWinnings[prop])
+}</p>
+   <p class="code">let total = 0;</p>
+   <p class="code">for (let prop in jeopardyWinnings) {<br />
+    &nbsp;  total += jeopardyWinnings[prop];<br />
+}
+
+console.log('Ken Jennings Total Winnings: ' + '$' +total)</p>
 
 
 

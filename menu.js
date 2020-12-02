@@ -6,7 +6,8 @@ let menuItem ={
     'If Else': 'code.html',
     'Data Arrays': 'const.html',
     'Objects Keys': 'objects.html',
-    Loops: 'loops.html'
+    Loops: 'loops.html',
+    Functions: 'functions.html'
 };
 
 var menuIt = function() {

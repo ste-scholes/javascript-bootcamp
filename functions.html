@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+  <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Functions</h1>
+
+    <nav class="nav"></nav>
+   
+<h2>Functions</h2>
+<nav class="loop-nav"></nav>
+<h2>Introduction</h2> 
+<p class="bold">Functions are a two step process</p>
+<p>Define > Run</p>
+<h2>Define</h2>
+<p class="code">function funcName() {<br/>
+    &nbsp;// do something   <br/> 
+    &nbsp;}</p>
+    <p>The above is called a function declaration or function statement </p>
+<h2>Run a function</h2>
+<p>To run a function you need the function name folllowed by ()</p>
+<p class="code">funcName();</p>
+<p class="bold">Without the () you are referencing the function NOT calling it</p>
+<p>Example</p>
+<p class="code">function grumpus() {<br/>
+    &nbsp; console.log('Urgh .. you again?');<br/>
+    &nbsp; console.log('Go away');<br/>
+    &nbsp; console.log('Leave me alone');<br/>
+}
+</p>
+<p>Calling the function</p>
+<p class="code">console.log(grumpus())</p>
+
+<h2>Arguments</h2>
+<p>Arguments are values that are passed into a function</p>
+<p>We have seen this before!</p>
+<p class="bold">No Inputs</p>
+<p class="code">'hello'.toUpperCase</p>
+<p class="bold">Arguments!</p>
+<p class="code">'hello'.indexOf('h') // returns 0</p>
+<p class="code">'hello'.indexOf('o') // returns 4</p>
+<p class="bold">Example</p>
+<p>The below code returns the greeting Hi along with the name defined in person</p>
+<p class="code">function greet(person) {<br/>
+    &nbsp; console.log(`Hi, ${person}`);<br/>
+}
+</p>
+
+<h2>Argument - Parameter</h2>
+<p>To pass a paramter into the above code</p>
+<p class="code">greeting('Stephen')</p>
+<p>// returns Hi!, Stephen</p>
+
+<h2>You can use the function in a for loop</h2>
+<p class="code">for(let i = 0; i < 5; i++) {<br/>
+    &nbsp; grumpus()<br/>
+ }</p>
+ <p>The loop would run the function 5 times</p>
+ <h2>Calling a Function within another function</h2>
+<p>This code replicates rolling a six sided dice throw</p>
+<p>Example</p>
+<p class="code">function rollDie() {<br/>
+    &nbsp;  let roll = Math.floor(Math.random() * 6) + 1;<br/>
+    &nbsp;  console.log(`Rolled: ${roll}`)<br/>
+}</p>
+<p>What if you needed to replicate 5 more dice like a game of Yahtzee?</p>
+<p>We can use a loop to call the first function and loop it 5 more times</p>
+<p class="code">function sixDice() {<br/>
+    &nbsp; for (let i = 0; i < 5; i++) {<br/>
+        &nbsp;     rollDie()<br/>
+        &nbsp;   }<br/>
+}
+<p>To call the function</p>
+<p class="code">sixDice()</p>
+</p>
+
+
+
+<h2>Methods are functions</h2>
+<p>Here is an example of a Method</p>
+
+<p class="code">'hello'.toUpperCase</p>
+<p>Methods are built in functions</p>
+</div>
+  
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="function-nav.js"></script>
+<script src="functions.js"></script>
+</html>
