@@ -58,6 +58,20 @@
 <p>To pass a paramter into the above code</p>
 <p class="code">greeting('Stephen')</p>
 <p>// returns Hi!, Stephen</p>
+<p class="bold">Dice game</p>
+<p>Generates a six sided dice throw</p>
+<p class="code">function rollDie() {<br/>
+    &nbsp; let roll = Math.floor(Math.random() * 6) + 1;<br/>
+    &nbsp;  console.log(`Rolled: ${roll}`)<br/>
+}</p>
+<p>A function that take a paramter <b>numRoll</b> and loops through the value of numRoll</p>
+<p class="code">function numDice(numRoll) {<br/>
+    &nbsp;  for (let i = 0; i < numRoll; i++) {<br/>
+        &nbsp;     rollDie();<br/>
+        &nbsp;  }<br/>
+}</p>
+<p>The numDice function is called and the parameter is passed within the () </p>
+<p class="code">numDice(2)</p>
 
 <h2>You can use the function in a for loop</h2>
 <p class="code">for(let i = 0; i < 5; i++) {<br/>
