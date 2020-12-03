@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+  <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Functions Multiple Arguments</h1>
+
+    <nav class="nav"></nav>
+   
+<h2>Multiple Arguments</h2>
+<nav class="loop-nav"></nav>
+<p class="bold">Teminology</p>
+<p>A parameter is what is put in the brackets () of a function</p>
+<p class="bold">The value we pass into a parameter is an Argument</p>
+
+<h2>Multiple Arguments</h2>
+<p>Example</p>
+<p class="code">function sum (x, y) { <br/>
+    &nbsp;  console.log(x + y)<br/>
+}<br/><br/>
+
+sum(5,5) // output 10</p>
+
+<p class="note">The order of inputting arguments is important</p>
+<p>Example using divide</p>
+<p class="code">function divide(a,b) {<br/>
+    &nbsp;  console.log(a / b)<br/>
+}<br/><br/>
+
+divide(8,2) // returns 4</p>
+<p>However</p>
+<p class="code">divide(2,8) // retutns 0.25</p>
+<p>So care is needed in the order they are submitted</p>
+
+<p class="bold">If an arguemnt is missing or of the wrong type an undefined error will occur</p>
+<h2>Return statement</h2>
+<p>Built in method return values when we call them</p>
+<p>We can use returned values in other functions</p>
+<p>Console.log prints a value but it does not return anything, you could not save a value from a console.log into another variable.</p>
+
+<p>Example</p>
+<p class="code">function addUp(x, y) {<br/>
+    &nbsp;  return x + y<br/>
+}<br/><br/>
+
+let total = addUp(6,6)<br/>
+console.log(total)</p>
+
+<p>In the above code the return value is saved into the variable total</p>
+<p>total can be console.log to print value</p>
+<p class="note">Rules about return</p>
+<p>You can only return one thing - this doesn't mean you can't have multiple return statements, but you can only return one value</p>
+<p>A return will end function execution, if you have code after your return it will not execute</p>
+<p>Example</p>
+<p class="code">function square(x) {<br/>
+    &nbsp;  return x * x;<br/>
+    &nbsp;   console.log('All done')<br/>
+}
+</p>
+<p>The console.log in the above code will not run, becasue it is after the return</p>
+<p class="bold">Note in if statements there could be more than one return, however only one of them will execute so this isn't an issue</p>
+
+<p>Example</p>
+<p class="code">function isPurple(color) {<br/>
+    &nbsp;  if (color === 'purple') {<br/>
+        &nbsp;     return true;<br/>
+        &nbsp; &nbsp;   } else {<br/>
+            &nbsp;       return false;<br/>
+            &nbsp;   }<br/>
+}</p>
+<p class="code">console.log(isPurple('purple'))</p>
+
+<p class="bold">As this is a boolean and will either be yes or no it can be written as below</p>
+<p class="code">function isRed(color) {<br/>
+    return color === 'red'<br/>
+}</p>
+<p class="code">console.log(isRed('red')) // true</p>
+<p>The above is either red or false</p>
+<p>This only works on simple yes or no </p>
+<p class="note">Placement of return is important</p>
+<p>A misplaced return in a loop can cause it to end on it's first iteration</p>
+<p>Example</p>
+<p class="code">function containsYellow(arr) {
+    &nbsp; for(let color of arr){<br/>
+        &nbsp;     if(color === 'yellow' || color === 'green'){<br/>
+            &nbsp;         return true<br/>
+            &nbsp;    }<br/>
+            &nbsp;   <span class="wrong">  // return false - this placed here would exit on the first loop iteration</span><br/>
+            &nbsp;   }<br/>
+            &nbsp;  return false<br/>
+}</p>
+<p class="code">console.log(containsYellow(['blue', 'red', 'yellow']))</p>
+<p>The above inputs an array as an argument - yellow is found so true is returned</p>
+
+
+
+
+
+</div>
+  
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="function-nav.js"></script>
+<script src="functions.js"></script>
+</html>

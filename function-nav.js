@@ -1,6 +1,6 @@
 let loopNav ={
     'Functions ': 'functions.html',
-    'For Loops & Arrays': 'loops-arrays.html',
+    'Function Arguments': 'function-args.html',
    'Nested Loop':'nested-loop.html',
    'While Loop': 'while-loop.html',
    'For of - For in': 'for-loop.html'

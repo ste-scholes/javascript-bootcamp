@@ -58,3 +58,84 @@ function numDice(numRoll) {
 }
 
 numDice(2)
+
+// multiple arguments
+
+function sum (x, y) {
+    console.log(x + y)
+}
+
+sum(5,5)
+
+function divide(a,b) {
+    console.log(a / b)
+}
+
+divide(2,8)
+
+// return
+
+function addUp(x, y) {
+     return x + y
+}
+
+let total = addUp(6,6)
+console.log(total)
+
+// return if
+
+function isPurple(color) {
+    if (color.toLowerCase() === 'purple') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(isPurple('purple'))
+
+
+// improvement
+
+function isGreen(color) {
+    if (color === 'green') {
+        return true;
+    } 
+        return false;
+}
+console.log(isGreen('green'))
+
+// shorter version 
+
+function isRed(color) {
+    return color === 'red'
+}
+
+console.log(isRed('red'))
+
+// example using array
+
+function containsYellow(arr) {
+    for(let color of arr){
+        if(color === 'yellow' || color === 'green'){
+            return true
+        }
+        // return false - this would exit on the first loop iteration
+    }
+    return false
+}
+
+console.log(containsYellow(['blue', 'red', 'yellow']))
+
+
+// code challenge
+
+function isValidPassword(password, username){
+    if(password.length > 8 && !password === username ) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log('test' + isValidPassword(16453578,3453453453))
