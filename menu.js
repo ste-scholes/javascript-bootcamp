@@ -3,7 +3,7 @@ let menuItem ={
     Variables: 'variable.html',
     Methods: 'methods.html',
     Boolean: 'booleanlogic.html',
-    'If Else': 'code.html',
+    'If Else': 'if-else.html',
     'Data Arrays': 'const.html',
     'Objects Keys': 'objects.html',
     Loops: 'loops.html',

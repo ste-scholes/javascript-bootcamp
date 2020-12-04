@@ -12,69 +12,125 @@
   <body><div class="doc">
    
     <nav class="menu"></nav>
-    <h1>If Else</h1>
+    <h1>Code Challenge</h1>
     <nav class="nav"></nav>
     <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
-<h2>If - either true or false</h2>
-<p>Example</p>
-<p>if (5 === 5) {</p>
-<p>console.log('yes the number is 5') // console logs yes the number is 5</p>
-<p>}</p>
-<p><b>This example checks if a number is Odd</b></p>
-<p>
+<h2>Writing Reusable Code with Functions</h2>
+<nav class="loop-nav"></nav>
+<h2>Function Challenge 1 passwordValidator</h2>
+<p>Challenge is to create a function that takes a user name and password as an argument</p>
+<p class="bold">It checks the password for the following</p>
+<p>Must be more than 8 characters</p>
+<p>Cannot contain spaces</p>
+<p>Cannot contain the users name</p>
+<p>Return true or false</p>
+<h2>My attempt - fail</h2>
+<p>Overcomplicated</p>
+<p>Does not return just a boolean</p>
+<p>Sort of works but very inefficient</p>
 
-    let num = 37<br>
+<p class="code">
+    function passWrd(password, username) {<br/>
+    &nbsp; if (password.length >= 8) {<br/>
+    &nbsp; console.log("Yes more than 8 characters: " + password);<br/>
+    &nbsp; &nbsp;  } else {<br/>
+    &nbsp; console.log("No less than 8 characters " + password);<br/>
+    &nbsp; }<br/>
+    &nbsp; if (password.includes(username)) {<br/>
+    &nbsp; console.log("Yes " + username + " is in password");<br/>
+    &nbsp;  &nbsp; } else {<br/>
+    &nbsp; console.log("No " + username + " is not in password");<br/>
+    &nbsp; }<br/>
+    &nbsp;if (password.indexOf(" ") == -1) {<br/>
+    &nbsp; console.log("No space detected");<br/>
+    &nbsp; &nbsp;  } else {<br/>
+    &nbsp; console.log("Space detected");<br/>
+    &nbsp; }<br/>
+    }<br/><br/>
 
-    if (num % 2 !==0) {<br>
-    console.log('Odd Number!')<br>
-    }</p>
+    console.log(passWrd("456789999", "ste"));</p>
 
-<h2>If else if </h2>
-<p>As amany else if's as needed</p>
-<p>Example</p>
-<p>let myRating = 3<br><br>
+    <h2>Model Answer</h2>
+    <p>The answer reveres logic</p>
+    <p>It checks for less than 8 and returns false</p>
+    <p>It checks for a space if it finds one the !== -1 sets it to false</p>
+    <p>It checks for the username within the string, if it finds it the !== -1 sets it to false</p>
 
-    if (myRating === 3) {<br>
-        console.log('Your a star')<br>
-    } else if (myRating === 2) {<br>
-        console.log('Your okay')<br>
-    } else if (myRating === 1) {<br>
-        console.log('You need to improve')</p>
- <h2> else </h2>
- <p><b>If nothing else was true, do this ...</b></p>
- <p>Example</p>
- <p>let myRating = 3<br><br>
-
-    if (myRating === 3) {<br>
-        console.log('Your a star')<br>
-    } else if (myRating === 2) {<br>
-        console.log('Your okay')<br>
-    } else if (myRating === 1) {<br>
-        console.log('You need to improve')<br>
-    } else {<br>
-     console.log('Error!')<br>
-    }
+    <p class="code">function isValidPassword(password, username) {<br/>
+        &nbsp;   if (password.length < 8) {<br/>
+            &nbsp;      return false;<br/>
+        }<br/>
+        &nbsp;   if (password.indexOf(' ') !== -1) {<br/>
+            &nbsp;      return false;<br/>
+        }<br/>
+        &nbsp;   if (password.indexOf(username) !== -1) {<br/>
+            &nbsp;       return false;<br/>
+        }<br/>
+    }<br/><br/>
+    
+    console.log(isValidPassword('45678stephen','stephen'))
     </p>
 
-    <h2>Nested Conditionals </h2>
-    <p>We can nest conditionals inside conditionals</p>
-    <p>Example</p>
-    <p>let password = 'kitty';<br><br>
+    <p class="note">Tips to remember .indexOf</p>
+<p class="bold">indexOf can be used to find specifics within a string</p>
+<p>Example</p>
+<p>This code is used to find a space in a string, if it finds a space it returns it's index location otherwise it returns -1</p>
+<p class="code">(password.indexOf(' ') !== -1)</p>
 
-        if (password.length >= 6) {<br><br>
-            if(password.indexOf(' ') === -1) {<br>
-                console.log('Valid Password')<br><br>
-            } else {<br>
-                console.log('Passord is long enough but cant have spaces')<br>
-            }<br>
-        } else {<br><br>
-             console.log('Password must be longer!')<br>
-        }
-        </p>
-<p></p>
-<p><a href="https://www.youtube.com/watch?v=E9PB-RunyJI&list=PLxLxC53pX0mJ7mfJJO6tFSyCEyV6ve68j&index=35">Link to video</a></p>
+<h2>Answer Refactored</h2>
+<p>Less code more efficient</p>
+<p>This example chains if statement together using || or</p>
+<p class="code">function validPass(password,username) {<br/>
+    &nbsp;   if (password.length < 8 || password.indexOf(' ') !== -1 || password.indexOf(username) !== -1) {<br/>
+        &nbsp;      return false<br/>
+        &nbsp;    }<br/>
+        &nbsp;    return true<br/>
+}<br/><br/>
+
+console.log(`test ${validPass('12345678', 'Stephen')}`)</p>
+
+<h2>Answer using variables</h2>
+<p>This answer assigns variables to each of the statements</p>
+<p>The it uses the variables in an if statement</p>
+<p class="code">
+    function varPass(password, username) {<br/>
+        &nbsp;  const tooshort = password.length < 8;<br/>
+        &nbsp;  const spacer = password.indexOf(' ') !== -1;<br/>
+        &nbsp;  const hasnameIn = password.indexOf(username) !== -1;<br/>
+        &nbsp;  if (tooshort || spacer || hasnameIn) return false;<br/>
+        &nbsp;   return true;<br/>
+    }<br/><br/>
+    console.log(varPass("456789999", "ste"));</p>
+
+    <h2>Answer - Reversing the logic on the above code</h2>
+    <p>Note the use of and && instead of OR || </p>
+<p class="code">    
+    function varPass(password, username) {<br/>
+    &nbsp;  const tooshort = password.length < 8;<br/>
+    &nbsp;  const spacer = password.indexOf(' ') !== -1;<br/>
+    &nbsp;  const hasnameIn = password.indexOf(username) !== -1;<br/>
+    &nbsp;  if (!tooshort && !spacer && !hasnameIn) return true;<br/>
+    &nbsp;   return false;<br/>
+}<br/><br/>
+console.log(varPass("456789999", "ste"));
+</p>
+<h2>Refactored again</h2>
+<p>In this version the if statement is removed because they are not actually required seeing as the code at return, returns a boolean</p>
+<p class="code">    function varPass(password, username) {<br/>
+    &nbsp;  const tooshort = password.length < 8;<br/>
+    &nbsp;  const spacer = password.indexOf(' ') !== -1;<br/>
+    &nbsp;  const hasnameIn = password.indexOf(username) !== -1;<br/>
+    &nbsp;  return !tooshort && !spacer && !hasnameIn<br/>
+    
+}<br/><br/>
+console.log(varPass("456789999", "ste"));</p>
+
+
+
 </div>
 </body>
 <script src="menu.js"></script>
 <script src="nav.js"></script>
+<script src="code-nav.js"></script>
+<script src="functions.js"></script>
 </html>
