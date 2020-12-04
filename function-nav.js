@@ -1,10 +1,8 @@
-let loopNav ={
-    'Functions ': 'functions.html',
-    'Function Arguments': 'function-args.html',
-   'Nested Loop':'nested-loop.html',
-   'While Loop': 'while-loop.html',
-   'For of - For in': 'for-loop.html'
-   
+let loopNav = {
+  "Functions ": "functions.html",
+  "Function Arguments": "function-args.html",
+  "Functions - more detail": "function-detail.html",
+
 };
 
 var loopNa = function() {

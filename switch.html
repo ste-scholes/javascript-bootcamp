@@ -1,0 +1,76 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="style.css">
+<script src="app.js">
+</script>
+<title>Switch Statement</title>
+</head>
+<body><div class="doc">
+
+    <nav class="menu"></nav>
+<h1>The Modern Javascript Bootcamp</h1>
+<nav class="nav"></nav>
+<h2>Switch Statement</h2>
+
+<p>A switch statement can be used to loop through conditions, similar to a for if</p>
+<p>The syntax is easier to understand than a for loop</p>
+<p>The <b>break</b> 'breaks' out of the loop when the condition is met</p>
+<p class="code">let day = 7;<br><br>
+
+switch(day) {<br>
+    case 1:<br>
+    &nbsp;   console.log('Monday');<br>
+    &nbsp;   break;<br>
+    case 2:<br>
+    &nbsp;   console.log('Tuesday')<br>
+    &nbsp;   break;<br>
+    case 3:<br>
+    &nbsp;    console.log('Wednesday')<br>
+    &nbsp;    break;<br>
+    case 4:<br>
+    &nbsp;    console.log('Thursday')<br>
+    &nbsp;    break;<br>
+    case 5:<br>
+    &nbsp;    console.log('Friday')<br>
+    &nbsp;    break;<br>
+    case 6:<br>
+    &nbsp;    console.log('Saturday')<br>
+    &nbsp;    break;<br>
+    case 7:<br>
+    &nbsp;    console.log('Sunday')<br>
+    &nbsp;    break;<br>
+    default:<br>
+    &nbsp;   console.log('Invalid Day')<br>
+} </p>
+
+<p>The above code looks for case 7 returns 'Sunday'</p>
+<p class="highlight">If some cases have the same output value you can chain them together</p>
+<p class="note">Notice the difference in the code in this one -  case 'happy face':</p>
+
+<p class="code">
+let emoji = 'egg plant'<br><br>
+
+switch(emoji) {<br>
+    &nbsp;   case 'happy face':<br>
+    &nbsp;  case  'sad face':<br>
+    console.log('yellow');<br>
+    &nbsp; break;<br>
+    &nbsp;   case  'egg plant':<br>
+    console.log('purple');<br>
+    &nbsp; break;<br>
+    &nbsp; case  'heart':<br>
+    &nbsp; case  'lips':<br>
+    console.log('red');<br>
+    &nbsp; break;<br>
+    default:<br>
+        console.log('Invalid')<br>
+}</p>
+<p>The above code looks for case:'egg plant' and returns 'Purple'</p>
+
+
+
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+</html>

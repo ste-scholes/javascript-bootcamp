@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+  
+    </script>
+    <title>If Else</title>
+  </head>
+  <body><div class="doc">
+   
+    <nav class="menu"></nav>
+    <h1>Code Challenge</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Writing Reusable Code with Functions</h2>
+<nav class="loop-nav"></nav>
+<h2>Function Challenge 2 Average</h2>
+<!-- add content here -->
+<p>Come up with a solution that takes any amount of numbers from an array, and then finds the average of them.</p>
+<p class="bold">The solution requires the following steps</p>
+<ol>
+    <li>Loop over each number</li>
+    <li>Add them together</li>
+    <li>Divide by the number of nums </li>
+</ol>
+<h2>My Attempt</h2>
+<p>I reseached this solution through Google</p>
+<p>In the solution we need the following</p>
+<p>A place to sum all the numbers // variable total = 0 </p>
+<p class="code">function avg(numbers) {
+    &nbsp; total=0;<br />
+    &nbsp; for(i = 0; i < numbers.length; i++) {<br />
+    &nbsp; total += numbers[i]<br />
+    &nbsp; }<br />
+    &nbsp; return avg = total /numbers.length<br />
+    }<br /><br />
+
+console.log('Average is: ' + avg([75,99,29,49,53]));</p>
+
+<h2>Model Answer</h2>
+<p>This answer uses a for of loop</p>
+<p class="code">function average(arr) {
+    &nbsp;   let total = 0;<br />
+    &nbsp;    for (let num of arr) {<br />
+        &nbsp; &nbsp;       total += num;<br />
+        &nbsp;  }<br />
+        &nbsp;   return total / arr.length;<br />
+}<br /><br />
+
+console.log(average([75,76,80,95,100]))</p>
+<h2>Model Answer - Break down</h2>
+<p class="code">function average(arr) { <br /> <br />
+    &nbsp;  <b>// variable to sum all nums from arr</b> <br />
+    &nbsp;   let total = 0;<br /> <br />
+    &nbsp;  <b>// loop over each num</b>  <br /> 
+    &nbsp;    for (let num of arr) {<br /><br />
+        &nbsp; <b> // add them together</b>   <br />
+        &nbsp; &nbsp;       total += num;<br /> <br />
+        &nbsp;  }<br />
+        &nbsp;  <b>// divide by number of nums</b>  <br /> <br />
+        &nbsp;   return total / arr.length;<br />
+}<br /><br />
+
+console.log(average([75,76,80,95,100]))</p>
+
+
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="code-nav.js"></script>
+
+<script src="average-eg.js"></script>
+</html>

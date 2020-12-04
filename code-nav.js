@@ -1,9 +1,8 @@
 let loopNav ={
     'Code': 'code.html',
-    'For Loops & Arrays': 'loops-arrays.html',
-   'Nested Loop':'nested-loop.html',
-   'While Loop': 'while-loop.html',
-   'For of - For in': 'for-loop.html'
+    'Average': 'code-avg.html',
+    'Pangram': 'code-pangram.html',
+    'Get Card': 'code-cards.html'
    
 };
 

@@ -3,7 +3,9 @@ let navItem ={
     Logical: 'logical.html',
     'Arrays Methods': 'arrays-objects.html',
     Boolean: 'code.html',
-    Code: 'code.html'
+    Switch: 'switch.html',
+    Code: 'code.html',
+    Tips: 'tips.html'
 };
 
 var navIt = function() {

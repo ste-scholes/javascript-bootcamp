@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    
+    </script>
+    <title>Tips</title>
+  </head>
+  <body><div class="doc">
+   
+    <nav class="menu"></nav>
+    <h1> Function Scope</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Functions in detail</h2>
+<nav class="loop-nav"></nav>
+<h2>Scope</h2>
+<!-- add content here -->
+
+<p>Variable visiability</p>
+<p>The location where a variable is defined dicatets where we have access to that variable.</p>
+<p class="note">Function Scope</p>
+<p>Variable defined within a variable, it is not acessable outside the scope of the variable</p>
+
+<h2>Block Scope</h2>
+<p>Variable created within a block are scoped to that block and are not avaiable outside</p>
+<p>Example</p>
+<p class="code">if(true){<br />
+    &nbsp; let animal = 'eel'<br />
+}<br /><br />
+console.log(animal) <span class="error">// brings back error animal not defined - it is out of scope</span></p>
+
+
+<h2>Scope Example</h2>
+<p class="code">function doubleArr(arr) {<br />
+    &nbsp; const result=[]; <span class="correct">// outside block scope</span> <br />
+    &nbsp;   for (let num of arr) {<br />
+        &nbsp;  let double = num * 2; <span class="correct">// within block scope</span><br />
+        &nbsp;   result.push(double)<br />
+    }<br />
+    &nbsp;return result  <span class="correct">// outside block scope</span> <br />
+}<br /><br />
+
+console.log(doubleArr([1,2,3]))</p>
+
+<h2>Var</h2>
+<p>Let and Const have different scoping rules to VAR</p>
+<p>Var defies block scoping, a variable defined by var is available both inside and outside of a block scope</p>
+<p>This is different to other programming languages</p>
+<p>This is why let and const were introduced</p>
+<p>var can cause problems especially in loops where i could be accessed outside, there are other reason that var is a problem, you could overwrite one var with another or the same name and so on </p>
+
+<h2>Lexical Scope</h2>
+
+
+
+
+<!-- Content ends here -->
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="function-nav.js"></script>
+
+<script src="code/function-detail.js"></script>
+</html>
+

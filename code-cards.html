@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+
+    </script>
+    <title>Get Cards</title>
+</head>
+
+<body>
+    <div class="doc">
+
+        <nav class="menu"></nav>
+        <h1>Code Challenge</h1>
+        <nav class="nav"></nav>
+        <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+        <h2>Writing Reusable Code with Functions</h2>
+        <nav class="loop-nav"></nav>
+        <h2>Function Challenge 4 Get Playing Cards</h2>
+        <!-- add content here -->
+        <p>Function that gets a random playing card</p>
+        <p>Example</p>
+        <p>Value: 'K' suit: 'Clubs'</p>
+
+        <h2>My Attempt</h2>
+        <p class="bold">Epic fail</p>
+        <p>I got stuck quickly, went to the answer</p>
+        <p>Not included code here as it serves no purpose </p>
+
+        <h2>Model Answer</h2>
+        <p></p>
+        <p class="code">function playingCards() {<br />
+            &nbsp; let select = 0;<br />
+            &nbsp; const card = ['Ace', '2', '3' ,'4', '5', '6', '7', '8' ,'9', '10', 'Jack', 'Queen', 'King'];<br />
+            &nbsp; const suit = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];<br />
+            &nbsp; const valIdx = Math.floor(Math.random() * card.length)<br />
+            &nbsp; select = card[valIdx]<br />
+            &nbsp; const suits = Math.floor(Math.random() * suit.length) <br />
+            &nbsp; const cardSuit = suit[suits]<br />
+            &nbsp; //console.log(select + ' of ' + cardSuit)<br />
+            &nbsp; return {value: select, suit: cardSuit }<br />
+            } <br /><br />
+
+
+            console.log(playingCards())</p>
+
+
+        <h2>Refactored to use seperate Math.random function</h2>
+        <p>The top function randomly picks an index from the array</p>
+        <p class="code">function pick(arr) {<br />
+            const ind = Math.floor(Math.random() * arr.length);<br />
+            return arr[ind];<br />
+            }<br /></p>
+
+        <p class="code">
+            function myCards() {<br />
+            &nbsp; const card = ['Ace', '2', '3' ,'4', '5', '6', '7', '8' ,'9', '10', 'Jack', 'Queen', 'King'];<br />
+            &nbsp; const suit = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];<br />
+            &nbsp; const value = pick(card) <span class="correct"> // uses pick function - random result from card
+                array</span><br />
+            &nbsp; const suites = pick(suit)<span class="correct"> // uses pick function - random from suit
+                array</span><br />
+            &nbsp; return {card: value, suit: suites }<br />
+            }<br /><br />
+
+            console.log(myCards())<span class="correct"> // output {card: "7"; suit: "spades"}</span></p>
+
+        <h2>Further refactoring</h2>
+        <p>The variables have been removed</p>
+        <p class="code">function pick(arr) {<br />
+            const ind = Math.floor(Math.random() * arr.length);<br />
+            return arr[ind];<br />
+            }<br /></p>
+        <p class="code">
+            function myCard() {<br />
+            &nbsp; const card = ['Ace', '2', '3' ,'4', '5', '6', '7', '8' ,'9', '10', 'Jack', 'Queen', 'King'];<br />
+            &nbsp; const suit = ['Clubs', 'Spades', 'Hearts', 'Diamonds'];<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; <span class="correct"> // variables removed as they are not
+                essential</span><br />
+            &nbsp; return {card: pick(card), suit: pick(suit) }<br />
+            &nbsp; &nbsp; &nbsp; &nbsp; <span class="correct">// They have been called above with pick(card) and
+                pick(suit)</span><br />
+            }<br /><br />
+
+            console.log(myCard())<span class="correct"> // output {card: "7"; suit: "spades"}</span></p>
+
+    </div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="code-nav.js"></script>
+
+<script src="cards-eg.js"></script>
+
+</html>
