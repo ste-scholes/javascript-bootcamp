@@ -1,7 +1,8 @@
 let loopNav = {
   "Functions ": "functions.html",
   "Function Arguments": "function-args.html",
-  "Functions - more detail": "function-detail.html",
+  "Functions - Scope": "function-detail.html",
+  "Function Expressions": "function-expressions.html",
 
 };
 

@@ -24,3 +24,30 @@ function doubleArr(arr) {
 }
 
 console.log(doubleArr([1,2,3]))
+
+// lexicon scope
+
+function outer(){
+    let movie = 'Star Wars';
+
+    function inner() {
+        console.log(movie.toUpperCase())
+    }
+    inner()
+}
+
+console.log(outer())
+
+// another example using variables declared outside and inside
+
+function out() {
+    let movie = 'Ghostbusters'
+
+    function inside() {
+        let movie = 'Balzing Saddles'
+        console.log(movie.toUpperCase())
+
+    }
+    inside()
+}
+console.log(out())

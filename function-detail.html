@@ -54,10 +54,43 @@ console.log(doubleArr([1,2,3]))</p>
 <p>var can cause problems especially in loops where i could be accessed outside, there are other reason that var is a problem, you could overwrite one var with another or the same name and so on </p>
 
 <h2>Lexical Scope</h2>
+<p>Nested Functions are lexically bound to the scope of their parent/outer function</p>
+<p>If you have a function wihin a function</p>
 
+<p>Without calling the inner function you will not get access to it</p>
+<p>It is a way way relstionshsip, you can access the child via the parent but not the other way round</p>
 
+<p>Example</p>
 
+<p>In the below example movie is not called by the inner function but is available via the outer function</p>
+<p class="code">
+  function outer(){<br />
+    &nbsp; let movie = 'Star Wars';<br />
 
+    &nbsp; function inner() {<br />
+      &nbsp;     console.log(movie.toUpperCase())<br />
+  }<br />
+  &nbsp;  inner()<span class="correct"> //calls inner function</span><br />
+}<br /><br />
+
+console.log(outer())</p>
+<p>If you try to log inner, it will bring back an erros, because it is out of scope and never declared</p>
+
+<p>Example 2</p>
+<p>In this example a differnt film is declared inside the inner function</p>
+<p></p>
+<p class="code">function out() {<br />
+  let movie = 'Ghostbusters'<br /><br />
+
+  function inside() {<br />
+      let movie = 'Blazing Saddles' <span class="correct"> //Another film is declared here</span> <br />
+      console.log(movie.toUpperCase())<br /><br />
+
+  }<br />
+  inside()<br />
+}<br /><br />
+console.log(out()) <span class="correct"> // Returns 'Blazing Saddles'</span></p>
+<p class="note">It the above example the movie Blazing Saddles is returned, if no movie was found Ghostbusters would be returned.  This would carry on no matter how many inner functions there are.  They start within and work their way out until they find what is required </p>
 <!-- Content ends here -->
 </div>
 </body>
