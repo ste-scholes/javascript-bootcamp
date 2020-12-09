@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    
+    </script>
+    <title>Functions</title>
+  </head>
+  <body><div class="doc">
+   
+    <nav class="menu"></nav>
+    <h1> Higher Order Functions</h1>
+    <nav class="nav"></nav>
+    <div class="video">
+</div> <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Callback Functions</h2>
+<nav class="loop-nav"></nav>
+
+
+<!-- add content here -->
+
+
+<h2>Callback Functions</h2>
+<p>A callback function is a function that is passed into another function as an argument, which is then invoked inside the outer function</p>
+<p>Callback function sare exteremly common in JavaScript</p>
+<p>Normally an anonymous functions is used to call them</p>
+<p>Example</p>
+
+<p>The following code sends out an alert after 5 seconds</p> <br />
+<p class="code">function grumpus (name, time) { <br />
+    alert('Boo!') <br />
+    } <br /> <br />
+    setTimeout(grumpus, 5000);
+</p>
+<p class="note">setTimeout - built in function that calls a function or evaluates an expression after a specified number
+    of milliseconds. </p>
+
+
+<p class="bold">alertMe function</p>
+<p>This function waits tree seconds then send an alert to say welcome to the user</p>
+<p>The username is inputted with the function call</p>
+<p class="code">function alertMe(name) { <br />
+    &nbsp; setTimeout(function() {<br />
+
+        &nbsp;alert('Welcome ' + name)<br />
+        &nbsp;},3000);<br />
+}<br /><br />
+
+
+alertMe('Ste') <span class="correct">// calls function alertMe with the argument ('Ste') returns Welcome Ste in alert box</span>
+</p>
+<h2>Function - Working example</h2>
+
+<p>The code is linked to this</p>
+
+<p><button>Don't Click Me</button></p>
+
+<p class="bold">How does it work?</p>
+<p class="code">const btn = document.querySelector('button');<br />
+    btn.addEventListener('click', function() {<br />
+        alert('Why did you click me?')<br />
+    })</p>
+<p>You can also call a function</p>
+
+<p class="code">
+    const cta = document.querySelector('button.grumpus');<br />
+    cta.addEventListener('click', grump)</p>
+<p class="correct">// To target a class example: button.grumpus</p>
+    <p>The above calls the function grump</p>
+    <p class="code">function grump(){<br />
+        alert('Stop clicking my button')
+    }</p>
+ <p><button class="grumpus">Grumpus</button></p>
+
+ 
+
+<!-- &nbsp;  <br /> -->
+<!-- Content ends here -->
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="function-nav.js"></script>
+
+<script src="code/callback.js"></script>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    
+    </script>
+    <title>Functions</title>
+  </head>
+  <body><div class="doc">
+   
+    <nav class="menu"></nav>
+    <h1> Hoisting</h1>
+    <nav class="nav"></nav>
+    <div class="video">
+</div> <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Hoisting</h2>
+<nav class="loop-nav"></nav>
+<h2>Hoisting Var</h2>
+<!-- add content here -->
+
+<p>Variables without a value are set to undefined</p>
+<p class="bold">Example</p>
+<p class="code">var animal = 'Tapier';<br />
+    console.log(animal); <span class="correct">// Returns Tapier</span>
+</p>
+<p class="bold">However</p>
+<p class="code">console.log(animal);<br />
+    var animal = "Tapir"; <span class="wrong">// Returns undefined</span>
+</p>
+<p>This happens because of <b>Hoisting</b> </p>
+<p>JavaScript hoists the declaration part: <b>var animal</b> </p>
+<p class="bold">Explanation</p>
+<p>JavaScript runs the code in this order</p>
+<ol>
+<li><p class="code">var animal</p></li>
+<li><p class="code">console.log(animal)</p></li>
+<li><p class="code">animal = 'Tapir'</p></li>
+</ol>
+<p>JavaScript hoists the var animal declaration, it then console.log(animal), finally it assigns the value Tapir</p>
+
+<p class="note">To avoid Hoisting always delare and initialize values before you use them</p>
+<h2>Hoisting Let</h2>
+<p>Variable declaration made with let are not hoisted</p>
+<p>Example</p>
+<p class="code">console.log(shrimp)<br />
+    let shrimp = 'Harelquin Shrimp';</p>
+    <p>The above code brings back following error:</p>
+ <p class="wrong"> Uncaught ReferenceError: Cannot access 'shrimp' before initialization</p>
+<p class="note">This is one reason to use let instead of var</p>
+
+<h2>Hoisting Const</h2>
+<p>Just like let, const is not hoisted and will return an error if you try to use it before it has been delcared and initialized</p>
+<h2>Hoisting - Function Declrations</h2>
+<p>Function declarations can be called before the function</p>
+<p>Example</p>
+<p class="code">howl(); <span class="correct">// calling the function first</span></p>
+<p class="code">function howl() {<br />
+    &nbsp;  console.log('Awwwooooooo!')<br />
+}</p>
+<p>In the above case you can think of them as being put at the top of your file</p>
+<h2>Hoisting - Function Expression</h2>
+<p>Setting the function to a variable will not hoist the declaration</p>
+<p>The function hoot exisits but it is set to <b> undefined</b></p>
+<p class="code">hoot() <br /> <br />
+
+    var hoot = function(){ <br />
+        console.log('Wit Woooo') <br />
+    }</p>
+
+    <p>The above code does not hoist the function expression it returns the following error</p>
+    <p class="wrong">Uncaught TypeError: hoot is not a function</p>
+<p >Using<b> let</b> will return the same error as before</p>
+<p class="wrong"> Uncaught ReferenceError: Cannot access 'hoot' before initialization</p>
+<p><b>const</b> will return the same error as var</p>
+<p class="wrong">Uncaught TypeError: hoot is not a function</p>
+<!-- &nbsp;  <br /> -->
+<!-- Content ends here -->
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="function-nav.js"></script>
+
+<script src="code/hoisting.js"></script>
+</html>
+

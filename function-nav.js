@@ -3,6 +3,9 @@ let loopNav = {
   "Function Arguments": "function-args.html",
   "Functions - Scope": "function-detail.html",
   "Function Expressions": "function-expressions.html",
+  "Higher Order Functions": "higher-order.html",
+  "Callback Functions": "callback.html",
+  Hoisting: "hoisting.html"
 
 };
 

@@ -107,3 +107,24 @@ p {
     color: rgb(19, 83, 165);
     font-weight: light;
 }
+.video {
+    padding: 1em;
+    margin: auto;
+    width: 50%;
+}
+
+.textarea {
+    height:2em;
+    width: 150px;
+    resize: none;
+    box-sizing: border-box;
+  border: 2px solid #ccc;
+}
+
+.pagelink {
+    height:2em;
+    width: 400px;
+    resize: none;
+    box-sizing: border-box;
+  border: 2px solid #ccc;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    
+    </script>
+    <title>Functions</title>
+  </head>
+  <body><div class="doc">
+   
+    <nav class="menu"></nav>
+    <h1> Higher Order Functions</h1>
+    <nav class="nav"></nav>
+    <div class="video">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/35hWndttYVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Higher Order Functions</h2>
+<nav class="loop-nav"></nav>
+<h2> Functions: Functions as Arguments</h2>
+
+<!-- add content here -->
+
+
+<h2>Higher Order Functions</h2>
+<p>Functions that operate on/with other functions.</p>
+<p>They can :</p>
+<p>Accept other functions as arguments</p>
+<p>Return a function</p>
+
+<p>Example</p>
+<p>This function callThreeTimes takes an arguemts and calls it tree times</p>
+<p class="code">
+
+    function callThreeTimes(f) {<br />
+        &nbsp;   f();<br />
+        &nbsp;   f();<br />
+        &nbsp;   f();<br />
+
+}</p>
+<p>This prints out a message</p>
+<p class="code"><br />
+function cry() {<br />
+    &nbsp;   console.log('Boo Hoo I am so sad');<br />
+}<br /><br />
+
+cry(); <span class="correct">// Returns'Boo Hoo I am so sad' </span> <br /><br />
+
+callThreeTimes(cry)  <span class="correct">// Returns </span><br /> 
+
+<span class="correct">// 'Boo Hoo I am so sad' </span><br /><span class="correct">// 'Boo Hoo I am so sad' </span><br />
+<span class="correct">// 'Boo Hoo I am so sad' </span><br />
+</p>
+
+<h2>Function - two parameters</h2>
+<p>Example</p>
+<p>Function rage</p>
+<p class="code">function rage(){<br />
+    &nbsp; console.log("I hate everything")<br />
+    }</p>
+<p>This function takes an action and runs it the specified time set by the second variable input</p>
+<p class="code">
+    function repeatNtimes(action, num) {<br />
+    &nbsp; for( let i=0; i
+    < num; i++) {<br />
+    &nbsp; action();<br />
+
+    &nbsp; }<br />
+    }</p>
+<p class="code">repeatNtimes(rage, 3) // returns maessage from rage the amount of times specified by the number. So int
+    his case three times</p>
+
+<h2>Function that chooses between two inputs</h2>
+<p class="code">function pickOne(f1, f2) {<br />
+    &nbsp;let rand = Math.random();<br />
+    &nbsp; console.log(rand);<br />
+    &nbsp; if (rand < 0.5) {<br />
+        &nbsp;&nbsp;      f1();<br />
+          } else {<br />
+            &nbsp;&nbsp;      f2();<br />
+            &nbsp;   }<br />
+}<br /><br />
+
+pickOne(cry, rage)</p>
+<p>The above code inputs rage and cry - the function pickOne picks one at random</p>
+
+
+<h2>Functions as Return Values</h2>
+<p>Function Factories</p>
+<p>The below code is like a factory where you can pass in variable</p>
+<p>The function has two stages: </p>
+<p>The first accepts a number into (num)</p>
+<p>The second part accepts a number that will be multiplied by (num) in this function is called x</p>
+<P class="code">function multiplyBy(num){<br />
+    &nbsp;  return function(x) {<br />
+        &nbsp;     return x * num;<br />
+
+        &nbsp;   }<br />
+}</P>
+<p>The below variables are used in conjunction with the function call</p>
+<p>They pass in the values as arguments</p>
+<p class="code">const triple = multiplyBy(3);<br />
+    const double = multiplyBy(2);<br />
+    const halve = multiplyBy(0.5)<br /></p>
+    <p>The below function call, calls variable double which doubles the value of the number inputed</p>
+    <p class="code">console.log(double(10)) <span class="correct"> // Returns 10</span></p>
+    <p class="note">Remeber to half something mulitply it by 0.5</p>
+<h2>Function Return Values between 2 numbers</h2>
+<p></p>
+<p class="code">function makeBetweenFunc(x,y) {<br />
+    &nbsp; return function(num) {<br />
+    &nbsp; if( num >= x && num
+    <= y) {<br />
+    &nbsp; return true;<br />
+    &nbsp; } else {<br />
+    &nbsp; console.log('False');<br />
+    &nbsp; &nbsp; }<br />
+    &nbsp;} <br />
+    }<br /><br />
+
+    const isChild = makeBetweenFunc(0,18)<br /> <span class="correct">// variable isChild calls functions and passes
+        arguments (0,18) which sets number range between 0 and 19</span> <br />
+    console.log('is child ' + isChild(19))<br /><span class="correct">// 19 would return false asit's outside 0 to 18
+        range</span> <br />
+    <p class="note">Remeber undefined is the same as false when it comes to boolean</p>
+</p>
+<p class="bold">Example 2</p>
+<p>The above code refactored</p>
+<p class="code">function makeBetween(x,y) {<br />
+    &nbsp; return function(num) {<br />
+    &nbsp; return num >= x && num
+    <= y; // returns true or false<br />
+    &nbsp; }<br />
+    }</p>
+    <p class="code">const isChildToo = makeBetween(0,10)<br /><span class="correct">// variable isChildToo calls
+            functions and passes
+            arguments (0,10) which sets number range between 0 and 10</span>
+        <br />
+        console.log(isChildToo(23));</p>
+    <p><span class="correct">// 23 would return false as it's outside 0 to 10
+            range</span></p>
+
+
+    <h2>Reusable code</h2>
+    <p>We can use the above code to find if any number is within the range</p>
+    <p>Example using previous code</p>
+    <p class="code">function makeBetween(x,y) {<br />
+        &nbsp; return function(num) {<br />
+        &nbsp; return num >= x && num
+        <= y; // returns true or false<br />
+        &nbsp; }<br />
+        }</p>
+    <p>This time we are going to use the above code to find out if a year was in the nineties or not</p>
+    <p>We create a new variable called <b>isNineties</b> call the function <b>makeBetween</b> and pass the arguments <b>(1990, 1999)</b></p>
+    <p class="code">const isNineties = makeBetween(1990, 1999) <br />
+        console.log(isNineties(1989))</p>
+    <p><span class="correct">// the above would return false as 1989 is not in this range</span></p>
+
+<!-- Content ends here -->
+</div>
+</body>
+<script src="menu.js"></script>
+<script src="nav.js"></script>
+<script src="function-nav.js"></script>
+
+<script src="code/higher-order.js"></script>
+</html>
+
