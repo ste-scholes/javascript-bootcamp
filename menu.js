@@ -4,10 +4,11 @@ let menuItem ={
     Methods: 'methods.html',
     Boolean: 'booleanlogic.html',
     'If Else': 'if-else.html',
-    'Data Arrays': 'const.html',
+    'Arrays': 'const.html',
     'Objects Keys': 'objects.html',
     Loops: 'loops.html',
-    Functions: 'functions.html'
+    Functions: 'functions.html',
+    
 };
 
 var menuIt = function() {

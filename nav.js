@@ -1,7 +1,6 @@
 let navItem ={
     Truthy: 'code1.html',
     Logical: 'logical.html',
-    'Arrays Methods': 'arrays-objects.html',
     Boolean: 'code.html',
     Switch: 'switch.html',
     Code: 'code.html',
