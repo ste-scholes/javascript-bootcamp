@@ -126,5 +126,11 @@ p {
     width: 400px;
     resize: none;
     box-sizing: border-box;
-  border: 2px solid #ccc;
+    border: 2px solid #ccc;
+}
+
+.lists {
+    display: flex;
+    flex-direction: row;;
+    flex-wrap: wrap;
 }

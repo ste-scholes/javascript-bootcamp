@@ -21,3 +21,13 @@ var navigate = function() {
 }(navi);
 
 
+// map
+// double values
+const numb = [20,21,22,23,24,25,26,27];
+const words = ['asap','byob','rsvp','diy'];
+
+const double = numb.map(function(num){
+    console.log(num * 2);
+})
+
+console.log(double);
