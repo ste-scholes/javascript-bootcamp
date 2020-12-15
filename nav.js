@@ -1,10 +1,10 @@
 let navItem ={
-    Truthy: 'code1.html',
-    Logical: 'logical.html',
-    Boolean: 'code.html',
-    Switch: 'switch.html',
-    Code: 'code.html',
-    Tips: 'tips.html'
+    Truthy: '/code1.html',
+    Logical: '/logical.html',
+    Boolean: '/code.html',
+    Switch: '/switch.html',
+    Code: '/code.html',
+    Tips: '/tips.html'
 };
 
 var navIt = function() {

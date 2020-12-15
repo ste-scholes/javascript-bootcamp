@@ -1,13 +1,13 @@
 let menuItem ={
-    Home: 'index.html',
-    Variables: 'variable.html',
-    Methods: 'methods.html',
-    Boolean: 'booleanlogic.html',
-    'If Else': 'if-else.html',
-    'Arrays': 'const.html',
-    'Objects Keys': 'objects.html',
-    Loops: 'loops.html',
-    Functions: 'functions.html',
+    Home: '/index.html',
+    Variables: '/variable.html',
+    Methods: '/methods.html',
+    Boolean: '/booleanlogic.html',
+    'If Else': '/if-else.html',
+    'Arrays': '/const.html',
+    'Objects Keys': '/objects.html',
+    Loops: '/loops.html',
+    Functions: '/functions.html',
     
 };
 

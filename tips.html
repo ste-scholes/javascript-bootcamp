@@ -48,6 +48,27 @@ console.log(pick(['1','2','a','z']))</p>
   
   console.log(myPet(myArray))</p>
 
+  <h2>Array select first instance of an item in array</h2>
+<p>In this case we are picking the word Mrs that is at the fron of the title </p>
+<p class="code">let movies = [<br />
+  &nbsp; 'The Fantastic Mr Fox',<br />
+  &nbsp;  'Mr. and Mrs. Smith',<br />
+  &nbsp;  'Mrs. Doubtfire',<br />
+  &nbsp;  'Mr. Deeds'<br />
+];</p>
+
+<p class="code">const movie2 = movies.find(m => {<br />
+  &nbsp;return  m.indexOf('Mrs') === 1<br />
+})</p>
+<p class="code">console.log(movie2)</p>
+
+
+
+
+
+
+
+<!-- &nbsp;  <br /> -->
 <!-- Content ends here -->
 </div>
 </body>

@@ -1,8 +1,8 @@
 let navObj ={
-    'Objects Home': 'objects.html',
-    'Adding Updating Objects': 'updateobj.html',
-   'Arrays and Objects':'objects-nested-arrays.html',
-   'Arrays Equality': 'equality.html',
+    'Objects Home': '/objects.html',
+    'Adding Updating Objects': '/updateobj.html',
+   'Arrays and Objects':'/objects-nested-arrays.html',
+   'Arrays Equality': '/equality.html',
    
 };
 

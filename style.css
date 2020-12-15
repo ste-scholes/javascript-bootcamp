@@ -11,8 +11,20 @@ body {
     background-color: white;
 }
 
+
+
 #nav {
     display: flex;
+}
+
+.call-nav {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 30px ;
+    color: white;
+    background-color:  rgb(5, 40, 73);
+    list-style: none;
 }
 
 .menu {
@@ -40,14 +52,24 @@ body {
     list-style: none;
 
 }
-a:link,  a:visited {
 
+.section {
+    width:100%;
+
+    background-color:rgb(5, 40, 73);
+}
+
+
+
+
+
+
+a:link,  a:visited {
     color: white;
     text-decoration: none;
 }
 
 a:hover, a:active {
-    
     color: lightblue;
     text-decoration: none;
     
@@ -129,8 +151,3 @@ p {
     border: 2px solid #ccc;
 }
 
-.lists {
-    display: flex;
-    flex-direction: row;;
-    flex-wrap: wrap;
-}

@@ -1,7 +1,7 @@
 let navi ={
-    'Tips': 'tips.html',
-    'Average': 'code-avg.html',
-    'Pangram': 'code-pangram.html'
+    'Tips': '/tips.html',
+    'Average': '/code-avg.html',
+    'Pangram': '/code-pangram.html'
 
    
 };

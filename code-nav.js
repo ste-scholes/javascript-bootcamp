@@ -1,8 +1,8 @@
 let loopNav ={
-    'Code': 'code.html',
-    'Average': 'code-avg.html',
-    'Pangram': 'code-pangram.html',
-    'Get Card': 'code-cards.html'
+    'Code': '/code.html',
+    'Average': '/code-avg.html',
+    'Pangram': '/code-pangram.html',
+    'Get Card': '/code-cards.html'
    
 };
 

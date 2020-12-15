@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Array</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Array Callback Methods</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Array Methods</h2>
+<nav class="inner-nav"></nav>
+<h2>Callback Methods - Filter</h2>
+
+
+<p>Arrays come with many built-in methods that accept call back functions.</p>
+
+<div class="section">
+
+    <nav class="call-nav"></nav>
+    <!-- add content here -->
+</div>
+<h2 id="for">Filter</h2>
+<p>Creates a new array with all elements that pass the test implemented by the provided function</p>
+<p>So for an example if you had an array of numbers and wanted to filter the even numbers out then a new array with only even numbers would be returned</p>
+<p>It does not update, alter or mutate the original array</p>
+
+<p class="bold">Example</p>
+
+<p class="code">const nums = [34,35,67,54,109,102,32,9];</p>
+
+<p class="bold">Filter odd numbers from nums</p>
+<p class="code">const odds = nums.filter(n => n % 2 === 1)</p>
+<p class="code">console.log('Odd Numbers: ' + odds)</p>
+<p class="bold">Filter even numbers from nums</p>
+<p class="code">const even = nums.filter(n => n % 2 === 0)</p>
+<p class="code">console.log('Even Numbers: ' + even)</p>
+<p class="bold">Filter numbers over 50 from nums</p>
+<p class="code">const bigNums = nums.filter(n => n > 50)</p>
+<p class="code">console.log('Numbers Over 50: ' + bigNums)</p>
+
+<h2>Book Object examples</h2>
+
+<p class="code">const books =[<br />
+  {    <br />
+    &nbsp;   title: 'Good Omens',<br />
+      &nbsp;   authors: ['Terry Pratchett','Neil Gaiman'],<br />
+      &nbsp;   rating: 4.25,<br />
+      &nbsp;   genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'Change My Mind',<br />
+      &nbsp;   authors: ['Zadie Smith'],<br />
+      &nbsp;   rating: 3.83,<br />
+      &nbsp;  genres: ['nonfiction','essays']<br />
+  },<br />
+  {<br />
+    &nbsp;   title: 'Bone: The complete Edition',<br />
+      &nbsp;   authors: ['Jeff Smith'],<br />
+      &nbsp;   rating: 4.42,<br />
+      &nbsp;  genres: ['fiction','graphic novel','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'American Gods',<br />
+      &nbsp;  authors: ['Neil Gaiman'],<br />
+      &nbsp;   rating: 4.11,<br />
+      &nbsp;  genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'A Gentleman in Moscow',<br />
+      &nbsp;  authors: ['Amor Towles'],<br />
+      &nbsp;   rating: 4.36,<br />
+      &nbsp;   genres: ['fiction','historic fiction']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Name of the Wind',<br />
+      &nbsp;   authors: ['Patrick Rothfuss'],<br />
+      &nbsp;   rating: 4.54,<br />
+      &nbsp;  genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Overstory',<br />
+      &nbsp;  authors: ['Richard Powers'],<br />
+      &nbsp;  rating: 4.19,<br />
+      &nbsp;  genres: ['fiction','short stories']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Way of Kings',<br />
+      &nbsp;  authors: ['Brandon Sanderson'],<br />
+      &nbsp; rating: 4.65,<br />
+      &nbsp;  genres: ['fantasy','epic']<br />
+  },<br />
+  {<br />
+    &nbsp; title: 'Lord of the flies',<br />
+      &nbsp;  authors: ['William Golding'],<br />
+      &nbsp;  rating: 3.67,<br />
+      &nbsp; genres: ['fiction']<br />
+  },<br />
+  
+  ]</p>
+
+  <p class="bold">Find books with rating over 4.3</p>
+  <p class="code">const ratings = books.filter(b => b.rating > 4.3)
+  </p>
+  <p class="code">console.log(ratings)</p>
+
+  <p class="bold">Find books with fantasy as the genres</p>
+  <p class="code">const fantasy = books.filter(b => b.genres.includes('fantasy'))
+  </p>
+  <p class="code">console.log(fantasy)
+  </p>
+
+  <p class="bold">Find short form books,such as short stories or essays</p>
+<p class="code">const shortForm = books.filter(b => ( <span class="correct">// remember implicit returns use ( ) and not { }</span> <br />
+  b.genres.includes('short stories') || b.genres.includes('essays')<br />
+))</p>
+<p class="code">console.log(shortForm)</p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- Content ends here -->
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/array-nav.js"></script>
+<script src="/callback-nav.js"></script>
+
+<script src="/code/filter.js"></script>
+</html>
+

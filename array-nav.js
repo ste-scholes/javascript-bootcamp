@@ -1,7 +1,7 @@
 let navi ={
-    'Arrays': 'const.html',
-    'Objects & Methods': 'arrays-objects.html',
-    'Array Callback Methods': 'array-callback.html',
+    'Arrays': '/const.html',
+    'Objects & Methods': '/arrays-objects.html',
+    'Array Callback Methods': '/array-callback.html',
 
    
 };
@@ -21,13 +21,3 @@ var navigate = function() {
 }(navi);
 
 
-// map
-// double values
-const numb = [20,21,22,23,24,25,26,27];
-const words = ['asap','byob','rsvp','diy'];
-
-const double = numb.map(function(num){
-    console.log(num * 2);
-})
-
-console.log(double);

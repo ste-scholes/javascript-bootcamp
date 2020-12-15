@@ -28,7 +28,7 @@ const books =[{
 {
     title: 'Bone: The complete Edition',
     authors: ['Jeff Smith'],
-    reting: 4.42,
+    rating: 4.42,
 },
 {
     title: 'American Gods',
@@ -89,3 +89,40 @@ const wordy = mywrd.map(function(w){
 })
 
 console.log(wordy)
+
+
+//
+
+const abbreve = mywrd.map(function(w) {
+    return w.toUpperCase().split('').join('.');
+})
+
+console.log(abbreve)
+
+// find authors
+
+const authors = books.map(function(auth) {
+    return auth.authors;
+})
+
+console.log(authors)
+
+const title = books.map(function(title) {
+    return title.title;
+})
+
+console.log(title)
+
+
+
+
+// map
+// double values
+const numb = [20,21,22,23,24,25,26,27];
+const words = ['asap','byob','rsvp','diy'];
+
+const double = numb.map(function(num){
+    console.log(num * 2);
+})
+
+console.log(double);
