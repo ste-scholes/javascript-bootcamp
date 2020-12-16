@@ -62,9 +62,14 @@ console.log(pick(['1','2','a','z']))</p>
 })</p>
 <p class="code">console.log(movie2)</p>
 
-
-
-
+<h2>Array - To find last letter in word</h2>
+<p class="code">const words = ['dog', 'dig', 'log', 'bag', 'bag','wag'];</p>
+<p class="code">const endG = words.every(word => {<br />
+  &nbsp;const last = word.length -1; <span class="correct">// -1 returns last character</span> <br />
+  &nbsp;return word[last] === 'g'<span class="correct">// evaluates the character to g</span><br />
+})
+</p>
+<p class="code">console.log(`All end in letter g: ${endG}`)</p>
 
 
 

@@ -85,3 +85,12 @@ const shortForm = books.filter(b => (
 ))
 
 console.log(shortForm)
+
+// example of query on book website
+
+const query = 'The';
+const results = books.filter(book => (
+    book.title.toLowerCase().includes(query.toLowerCase())
+))
+
+console.log(results)

@@ -5,8 +5,8 @@ let callNav = {
     "filter": "/callback/filter.html",
     "find": "/callback/find.html",
     "reduce": "/callback.html",
-    some: "/hoisting.html",
-    every: "/arrow-functions.html"
+    some: "/callback/some.html#some",
+    every: "/callback/some.html"
   
   };
   

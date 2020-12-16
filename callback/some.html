@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Some</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Array Callback Methods</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Array Methods</h2>
+<nav class="inner-nav"></nav>
+<h2>Callback Methods - Every and Some</h2>
+
+
+<p>Arrays come with many built-in methods that accept call back functions.</p>
+
+<div class="section">
+
+    <nav class="call-nav"></nav>
+    <!-- add content here -->
+</div>
+<h2>Every</h2>
+<p>Tests whether all elements in the array pass the provided function. It returns a boolean value.</p>
+<p class="bold">Example</p>
+<p class="code">const words = ['dog', 'dig', 'log', 'bag', 'bag','wag'];
+</p>
+<p class="bold">To check if all the above words have 3 characters</p>
+<p class="code">const threeLets = words.every(word => word.length === 3)
+</p>
+<p class="code">console.log(threeLets) <span class="correct">// Returns true. ALL words have 3 characters </span> </p>
+<p>To return true <b>Every</b> word must have 3 characters, else it would be false </p>
+<p class="bold">Example 2</p>
+<p>To check every word ends with the character g</p>
+<p class="code">const words = ['dog', 'dig', 'log', 'bag', 'bag','wag'];</p>
+<p class="code">const endG = words.every(word => {<br />
+  &nbsp;const last = word.length -1; <span class="correct">// -1 returns last character</span> <br />
+  &nbsp;return word[last] === 'g' <span class="correct">// evaluates the character to g</span><br />
+})
+</p>
+<p class="code">console.log(`All end in letter g: ${endG}`)</p>
+
+<h2>Books Array Example</h2>
+<p class="impact">Example on Object</p>
+<p>Books array containing book objects</p>
+<p class="code">const books =[{<br />
+    &nbsp;   title: 'Good Omens',<br />
+    &nbsp;  authors: ['Terry Pratchett','Neil Gaiman'],<br />
+    &nbsp;  rating: 4.25<br />
+},<br />
+{<br />
+    &nbsp;    title: 'Bone: The complete Edition',<br />
+    &nbsp;   authors: ['Jeff Smith'],<br />
+    &nbsp;    rating: 4.42,<br />
+},<br />
+{<br />
+    &nbsp;    title: 'American Gods',<br />
+    &nbsp;   authors: ['Neil Gaiman'],<br />
+    &nbsp;   rating: 4.11<br />
+},<br />
+{<br />
+    &nbsp;   title: 'A Gentleman in Moscow',<br />
+    &nbsp;   authors: ['Amor Towles']<br /><br />
+    &nbsp;   rating: 4.36<br />
+}<br />
+]})
+<p class="bold">Check if ratings are 3.5 or above</p>
+<p class="code">const bookScore = books.every(book => book.rating >= 3.5)
+
+</p>
+<p class="code"> console.log(bookScore)</p>
+
+<p class="bold">Example using some</p>
+<p>This checks in some books have two authors</p>
+<p class="code">const twoAuthors = books.some(book => book.authors.length === 2)
+    <br /><br />  console.log(`More than one author: ${twoAuthors}`)</p>
+
+<h2 id="some">Some</h2>
+<p>Similar to every, but returns true if ANY of the array elements pass the test function</p>
+<p>Returns boolean - yes or no</p>
+<p class="bold">Some words start with d</p>
+<p class="code">const words = ['dog', 'dig', 'log', 'bag', 'bag','wag'];
+</p>
+
+<p class="code">const startsD = words.some(word => word[0] === 'd')
+</p>
+<p class="code">console.log(startsD)</p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- Content ends here -->
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/array-nav.js"></script>
+
+<script src="/callback-nav.js"></script>
+<script src="/code/some.js"></script>
+</html>
