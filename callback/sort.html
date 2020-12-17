@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Some</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Array Callback Methods</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Array Methods</h2>
+<nav class="inner-nav"></nav>
+<h2>Callback Methods - Sort</h2>
+
+
+<p>Arrays come with many built-in methods that accept call back functions.</p>
+
+<div class="section">
+
+    <nav class="call-nav"></nav>
+    <!-- add content here -->
+</div>
+<h2>Sort</h2>
+
+<p>We use sort via a compare function, which takes 2 parameters</p>
+<p>If compareFunc(a,b) returns less than 0 (negative number)</p>
+<p>Sort a before b</p>
+<p>If compareFunc(a,b) returns 0</p>
+<p>Leave a and b unchanged with respect to each other</p>
+<p>If compareFunc(a,b) returns greater than 0</p>
+<p>Sort b before a</p>
+
+<p class="bold">Ascending sort example</p>
+<p class="code">const prices = [400.50, 3000, 99.99, 35.99, 12.00, 9500];</p>
+
+<p class="code">const ascSort = prices.sort((a,b) => a-b)</p>
+<p class="code">console.log(ascSort) <span class="correct">// returns [12, 35.99, 99.99, 400.5, 3000, 9500]</span>   </p>
+
+<p class="bold">How it works</p>
+<p>The above code takes <b>a</b> minus <b>b</b>: so <b>400.50</b> minus <b>3000</b> returns a <b>negative number</b></p>
+<p class=" bold correct">What does it do with a negative number?  It sorts a before b - it sorts 400.50 before 3000</p>
+<p>What about 35.99 and 12.00? So <b>a</b> would be <b>35.99</b> and <b>b</b> would be <b>12.00</b></p>
+<p class="correct bold">35.99 minus 12 gives a positive number so we sort b before a </p>
+<p>What if there are 2 equal numbers?</p>
+<p  class="correct bold">It leaves a and b unchanged</p>
+
+<p class="imp">Important! - Sort mutates the original Array!</p>
+<p class="bold">It changes the original with each sort, it does not refernce or make a copy of the original, it actually changes it.</p>
+
+<p class="note">Get round this by using .slice()</p>
+<p>Use .slice() to kae a copy of the array before you sort it</p>
+<p class="bold">Example</p>
+<p class="code">const prices = [400.50,3000,99.99,35.99,12.00,9500];</p>
+<p>Sort prices in ascending order</p>
+<p class="code">const ascSort = prices.slice().sort((a,b) => a - b)</p>
+<p class="code">console.log(ascSort)<span class="correct">// returns [12, 35.99, 99.99, 400.5, 3000, 9500]</span> </p>
+<p>Sort prices in descending order</p>
+<p class="code">const descSort = prices.slice().sort((a,b) => b - a)</p>
+<p class="code">console.log(descSort)<span class="correct">// returns [9500, 3000, 400.5, 99.99, 35.99, 12]
+</span></p>
+<h2>Using just .sort()</h2>
+<p>Using .sort() will convert numbers to strings then try to sort them</p>
+<p>You will get some strange results using this method</p>
+<p class="bold">Example</p>
+<p class="code">const badSort = prices.slice().sort()</p>
+<p class="code">console.log(badSort)<span class="correct">// returns [12, 3000, 35.99, 400.5, 9500, 99.99]</span></p>
+<p class="wrong">As you can see the above result is not much use</p>
+
+<h2>Book Object examples</h2>
+
+<p class="code">const books =[<br />
+  {    <br />
+    &nbsp;   title: 'Good Omens',<br />
+      &nbsp;   authors: ['Terry Pratchett','Neil Gaiman'],<br />
+      &nbsp;   rating: 4.25,<br />
+      &nbsp;   genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'Change My Mind',<br />
+      &nbsp;   authors: ['Zadie Smith'],<br />
+      &nbsp;   rating: 3.83,<br />
+      &nbsp;  genres: ['nonfiction','essays']<br />
+  },<br />
+  {<br />
+    &nbsp;   title: 'Bone: The complete Edition',<br />
+      &nbsp;   authors: ['Jeff Smith'],<br />
+      &nbsp;   rating: 4.42,<br />
+      &nbsp;  genres: ['fiction','graphic novel','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'American Gods',<br />
+      &nbsp;  authors: ['Neil Gaiman'],<br />
+      &nbsp;   rating: 4.11,<br />
+      &nbsp;  genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'A Gentleman in Moscow',<br />
+      &nbsp;  authors: ['Amor Towles'],<br />
+      &nbsp;   rating: 4.36,<br />
+      &nbsp;   genres: ['fiction','historic fiction']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Name of the Wind',<br />
+      &nbsp;   authors: ['Patrick Rothfuss'],<br />
+      &nbsp;   rating: 4.54,<br />
+      &nbsp;  genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Overstory',<br />
+      &nbsp;  authors: ['Richard Powers'],<br />
+      &nbsp;  rating: 4.19,<br />
+      &nbsp;  genres: ['fiction','short stories']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Way of Kings',<br />
+      &nbsp;  authors: ['Brandon Sanderson'],<br />
+      &nbsp; rating: 4.65,<br />
+      &nbsp;  genres: ['fantasy','epic']<br />
+  },<br />
+  {<br />
+    &nbsp; title: 'Lord of the flies',<br />
+      &nbsp;  authors: ['William Golding'],<br />
+      &nbsp;  rating: 3.67,<br />
+      &nbsp; genres: ['fiction']<br />
+  },<br />
+  
+  ]</p>
+
+  <p class="bold">Sort a book by Rating Descending - using .slice()</p>
+  <p>Remember <b>.slice()</b> is used to make a copy of an array</p>
+  <p class="code">const descRating = books.slice().sort((a,b)=> b.rating - a.rating)</p>
+  <p class="code">console.log(descRating)</p>
+  <p class="bold">Sort a book by Acending</p>
+  <p class="code">const ascRatings = books.sort((a,b)=> a.rating - b.rating);</p>
+  <p class="code">console.log(ascRatings)</p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- Content ends here -->
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/array-nav.js"></script>
+
+<script src="/callback-nav.js"></script>
+<script src="/code/sort.js"></script>
+</html>

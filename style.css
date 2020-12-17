@@ -104,7 +104,11 @@ p {
 
 }
 
-
+.imp {
+    background-color: rgb(78, 0, 0);
+    color: white;
+    padding: 15px
+}
 
 .note {
     background-color: rgb(7, 38, 78);

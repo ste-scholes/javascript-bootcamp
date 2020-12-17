@@ -4,9 +4,10 @@ let callNav = {
     "map": "/callback/map.html",
     "filter": "/callback/filter.html",
     "find": "/callback/find.html",
-    "reduce": "/callback.html",
+    "reduce": "/callback/reduce.html",
     some: "/callback/some.html#some",
-    every: "/callback/some.html"
+    every: "/callback/some.html",
+    sort: "/callback/sort.html"
   
   };
   
