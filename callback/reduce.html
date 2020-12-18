@@ -30,6 +30,91 @@
 </div>
 <h2>Reduce</h2>
 
+<p>Executes a reducer function on each element of the array, resulting in a single value</p>
+<p>For example summing every element in an array</p>
+<p class="bold">The Basics</p>
+
+<p class="code">[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => { <br />
+  &nbsp;return accumulator + currentValue; <br />
+}); <span class="correct">// returns 35</span></p>
+<table>
+  <tr>
+    <th>Callback</th>
+    <th>accumulator</th>
+    <th>currentValue</th>
+    <th>return value</th>
+  </tr>
+  <tr>
+    <td>First call</td>
+    <td>3</td>
+    <td>5</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>Second call</td>
+    <td>8</td>
+    <td>7</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>Third call</td>
+    <td>15</td>
+    <td>9</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td>Fourth call</td>
+    <td>24</td>
+    <td>11</td>
+    <td>35</td>
+  </tr>
+</table>
+
+<p class="bold">Example - Sum all numbers</p>
+<p class="code">const nums = [3,4,5,6,7];</p>
+<p class="code">const product = nums.reduce((total, currentVal) => {<br />
+  &nbsp; return total * currentVal;
+});
+</p>
+<p class="code">console.log(product); <span class="correct">// returns 2520</span></p>
+<p class="correct">So 3*4*5*6*7 = 2520</p>
+
+
+<p class="bold">Example Student Grades</p>
+<p class="code">const grades = [87,64,96,92,88,99,73,70,64];</p>
+<p>To find the highest (max) student grade</p>
+<p class="code">const maxGrade = grades.reduce((max, currVal) => { <br />
+  &nbsp; if(currVal > max) return currVal; <br />
+  &nbsp;return max; <br />
+})</p>
+<p class="code">console.log(maxGrade) <span class="correct">// Returns 99 the highest grade</span> </p>
+<p class="bold">Example refactored</p>
+<p>We can shorten the above code by using the <b>Math.max()</b> method.</p>
+<p class="code">const maxGrade2 = grades.reduce((max, currVal) => { <br />
+  &nbsp; return Math.max(max, currVal)
+})</p>
+<p class="code">console.log(maxGrade2)   <span class="correct">// Returns 99 the highest grade</span></p>
+
+<p class="bold">Explanation of Math.max()</p>
+<p class="code">console.log(Math.max(98,45)) <span class="correct">// returns 98 - the highest number</span> </p>
+<p>Math.max() simply evaluates the numbers and returns the largest one</p>
+
+<p class="bold">Example using Math.min() and implicit return</p>
+<p class="code">const minGrade = grades.reduce((min, current) => ( <br />
+  Math.min(min, current) <br />
+));</p>
+<p class="code">console.log(minGrade) <span class="correct">// Returns 64 the lowest grade</span> </p>
+
+<p class="bold">Math.min() is simply the reverse of Math.max</p>
+<p>It returns the lowest value</p>
+<h2>Initial Value</h2>
+<p>A starting value</p>
+<p>We can choose a number that will initialise the count</p>
+<p class="code">const addUp = [10,20,30,40,50];</p>
+<p class="code">const addArray = addUp.reduce((sum, currVal) => {<br />
+  return sum + currVal;<br />
+},1000) <span class="correct"> // initialise at this number 1000</span></p>
+<p class="code">console.log(addArray) <span class="correct">// returns 1150 - starts at 1000 then add total from array 150</span> </p>
 
 
 <!-- &nbsp;  <br /> -->
