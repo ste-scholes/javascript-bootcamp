@@ -116,6 +116,78 @@
 },1000) <span class="correct"> // initialise at this number 1000</span></p>
 <p class="code">console.log(addArray) <span class="correct">// returns 1150 - starts at 1000 then add total from array 150</span> </p>
 
+<h2>Tallying with Reduce </h2>
+
+<p>The following code takes the values from an array and tallys them by type</p>
+<p>The code is quite complicated at first so I will break it down to help understand it</p>
+
+<p class="bold">Votes array</p>
+<p class="code">const votes = ['y','y','n','y','n','y','n','y','n','n','a','n','y','y'];</p>
+
+<p class="code">const result = votes.reduce((tally, vote) => {<br />
+  &nbsp;   if(tally[vote]) {<br />
+    &nbsp;      tally[vote]++ <br />
+    &nbsp;  &nbsp;   } else {   <br />
+      &nbsp;      tally[vote] = 1;<br />
+      &nbsp;  }<br />
+  &nbsp;  return tally;<br />
+}, {})<br /><br />
+
+console.log(result) <span class="correct">// returns  {y: 7, n: 6, a: 1}<br />
+Yes votes 7 // no votes 6 // abstain 1</span> </p>
+
+
+<p class="note"> Code Breakdown - First Pass</p>
+<p>The way the code works is as follows:</p>
+<p>The initial value is set to an empty Object so nothing exisits in there</p>
+<p>On the first pass it asks is there a y in this Object?</p>
+<p>As this is the first time the answer is no. There is no y</p>
+<p>The if statement is ignored</p>
+<p>The else statement assigns <b>1 </b>to the<b> y</b></p>
+<p>The result is stored in the empty object</p>
+
+<p class="code">const result = votes.reduce((tally, vote) => {<br /><br />
+  &nbsp;   if(tally[vote]) { <span class="wrong">// This code doesn't run on the first pass</span>                    <br />
+    &nbsp;      tally[vote]++     <span class="wrong">// There is no value for it to evalute</span>            <br />
+    &nbsp;  &nbsp;   } else {   <br />
+      &nbsp;      tally[vote] = 1;<span class="correct"> // On the first pass this assigns the value y a number 1</span><br /> 
+      &nbsp;  }<br />
+  &nbsp;  return tally;<br />
+  &nbsp;}, {})    <span class="correct">// initial value is an Empty object</span>           <br /><br />
+
+<p class="note">Code Breakdown - Second pass</p>
+<p>On the second and subsequent passes the following happens</p>
+<p>Does a y exisit?</p>
+<p class="correct">Yes // run if statement that increments y so now y = 2</p>
+<p class="wrong">No // value is<b> n</b> or<b> a</b> ignore the if statement while the Else assigns a value of 1 so result could be y = 1, n = 1 </p>
+
+<p class="code">const result = votes.reduce((tally, vote) => {<br /><br />
+  &nbsp;   if(tally[vote]) { <span class="correct">// On the next pass it will increment a y value </span>                    <br />
+    &nbsp;      tally[vote]++     <span class="wrong">// Or not run if it encounters an<b> n </b>or <b>a </b>value</span>            <br />
+    &nbsp;  &nbsp;   } else {   <br />
+      &nbsp;      tally[vote] = 1;<span class="correct"> // if it encounters a <b>n</b> or <b>a</b> it will add a value of one</span><br /> 
+      &nbsp;  }<span class="correct"> // On the first pass this assigns the value y a number 1</span><br /> 
+  &nbsp;  return tally;<br />
+}, {})    <span class="correct"> // initial value is an Empty object</span>    
+
+<p class="note">Array values</p>
+<p>Remember in the above code anything added to the array will be tallied automatically</p>
+<p class="code">const votes = ['y','y','n','y','n','y','n','y','n','n','a','n','y','y','Absent'];
+</p>
+<p>running the code against this array for instance would return </p>
+<p class="code">console.log(result) <span class="correct"> returns // {y: 7, n: 6, a: 1, Absent: 1}</span></p>
+
+
+<h2>Refactored code</h2>
+<p class="code">const votes = ['y','y','n','y','n','y','n','y','n','n','a','n','y','y','Absent'];
+</p>
+<p class="code">const results = votes.reduce((tally, vote) => {<br />
+  &nbsp; tally[vote] = (tally[vote] || 0) + 1;<br />
+  &nbsp; return tally;<br />
+}, {})</p>
+<p class="code">console.log(result)</p>
+
+<h2>Books Example</h2>
 
 <!-- &nbsp;  <br /> -->
 <!-- Content ends here -->

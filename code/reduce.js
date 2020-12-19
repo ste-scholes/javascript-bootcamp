@@ -54,3 +54,29 @@ const addArray = addUp.reduce((sum, currVal) => {
 // so the above starts at 1000 and then adds 150 to it's total
 
 console.log(addArray)
+
+// Tally 
+
+// uses empty object
+
+const votes = ['y','y','n','y','n','y','n','y','n','n','a','n','y','y','Absent'];
+
+const result = votes.reduce((tally, vote) => {
+    if(tally[vote]) {
+        tally[vote]++ 
+    } else {   
+        tally[vote] = 1;
+    }
+    return tally;
+}, {})
+
+console.log(result)
+
+// refectored 
+
+const results = votes.reduce((tally, vote) => {
+    tally[vote] = (tally[vote] || 0) + 1;
+    return tally;
+}, {})
+
+console.log(results)
