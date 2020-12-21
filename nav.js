@@ -4,7 +4,8 @@ let navItem ={
     Boolean: '/code.html',
     Switch: '/switch.html',
     Code: '/code.html',
-    Tips: '/tips.html'
+    Tips: '/tips.html',
+    Misc: '/misc/default-params.html'
 };
 
 var navIt = function() {

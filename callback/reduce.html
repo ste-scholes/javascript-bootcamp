@@ -189,6 +189,82 @@ Yes votes 7 // no votes 6 // abstain 1</span> </p>
 
 <h2>Books Example</h2>
 
+<h2>Book Object examples</h2>
+
+<p class="code">const books =[<br />
+  {    <br />
+    &nbsp;   title: 'Good Omens',<br />
+      &nbsp;   authors: ['Terry Pratchett','Neil Gaiman'],<br />
+      &nbsp;   rating: 4.25,<br />
+      &nbsp;   genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'Change My Mind',<br />
+      &nbsp;   authors: ['Zadie Smith'],<br />
+      &nbsp;   rating: 3.83,<br />
+      &nbsp;  genres: ['nonfiction','essays']<br />
+  },<br />
+  {<br />
+    &nbsp;   title: 'Bone: The complete Edition',<br />
+      &nbsp;   authors: ['Jeff Smith'],<br />
+      &nbsp;   rating: 4.42,<br />
+      &nbsp;  genres: ['fiction','graphic novel','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'American Gods',<br />
+      &nbsp;  authors: ['Neil Gaiman'],<br />
+      &nbsp;   rating: 4.11,<br />
+      &nbsp;  genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'A Gentleman in Moscow',<br />
+      &nbsp;  authors: ['Amor Towles'],<br />
+      &nbsp;   rating: 4.36,<br />
+      &nbsp;   genres: ['fiction','historic fiction']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Name of the Wind',<br />
+      &nbsp;   authors: ['Patrick Rothfuss'],<br />
+      &nbsp;   rating: 4.54,<br />
+      &nbsp;  genres: ['fiction','fantasy']<br />
+  },<br />
+  {<br />
+    &nbsp;  title: 'The Overstory',<br />
+      &nbsp;  authors: ['Richard Powers'],<br />
+      &nbsp;  rating: 4.19,<br />
+      &nbsp;  genres: ['fiction','short stories']<br />
+  },<br />
+  {<br />
+    &nbsp; title: 'A Truely Horrible Book',<br />
+    &nbsp;authors: ['Xavier Time'],<br />
+    &nbsp; rating: 2.18,<br />
+    &nbsp;genres: ['fiction','garbage']<br />
+},<br />
+  {<br />
+    &nbsp;  title: 'The Way of Kings',<br />
+      &nbsp;  authors: ['Brandon Sanderson'],<br />
+      &nbsp; rating: 4.65,<br />
+      &nbsp;  genres: ['fantasy','epic']<br />
+  },<br />
+  {<br />
+    &nbsp; title: 'Lord of the flies',<br />
+      &nbsp;  authors: ['William Golding'],<br />
+      &nbsp;  rating: 3.67,<br />
+      &nbsp; genres: ['fiction']<br />
+  },<br />
+  
+  ]</p>
+  <p class="bold">The following code groups the above books by their rating</p>
+  <p class="code">    const rateBook = books.reduce((groupedBooks, book) => {<br />
+    &nbsp; const key = Math.floor(book.rating)<br />
+    &nbsp; if(!groupedBooks[key]) groupedBooks[key] = [];<br />
+    &nbsp; groupedBooks[key].push(book)<br />
+    &nbsp; return groupedBooks;<br />
+
+ },{})</p>
+  <p class="code"> console.log(rateBook);</p>
+  <p class="code"></p>
+
 <!-- &nbsp;  <br /> -->
 <!-- Content ends here -->
 </div>

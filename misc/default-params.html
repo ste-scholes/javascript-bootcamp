@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Reduce</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Destructuring Function Params</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>A Few Miscellaneous JS Features</h2>
+<nav class="inner-nav"></nav>
+<h2>Destructuring Function Params</h2>
+
+
+<p>In the following code example we have a function that accepts two parameters and multiplies them</p>
+<p class="code">function multi(x,y) { <br />
+    return x * y; <br />
+} <br /> <br />
+
+
+
+
+    console.log(multi(2,5)) <span class="correct">// returns 10</span></p>
+    <p class="bold">But what happens if we only input one parameter?</p>
+    <p class="code">console.log(multi(2,)) <span class="wrong">// returns NaN</span></p>
+    <p>y is set to undefined as there was no paramter inputted</p>
+    <!-- add content here -->
+
+<h2>Default - old way</h2>
+<p>You could set a default paramter in case one was not inputted</p>
+<p class="code">function mult(x,y){<br />
+    &nbsp;if(typeof y ==='undefined') {  <span class="correct">//This checked for a value</span>     <br />
+        &nbsp;  y = 1;   <span class="correct">//If no value detected y is set to 1</span>  <br />
+        &nbsp; }<br />
+        &nbsp; return x * y;<br />
+}<br /><br />
+
+console.log(mult(5,2))</p>
+<p>If a value is detected then the sum ignores the if statement and carries on</p>
+<p>This uses <b>typeof</b> which returns what type of primative 'string', number etc. </p>
+<p class="note">Ternary example</p>
+<p>The same as above but as a ternary operator</p>
+<p class="code">function multip(x,y) { <br />
+    &nbsp;y = typeof y === 'undefined' ? 1 : y <br />
+    &nbsp; return x * y; <br />
+}</p>
+<p class="code">console.log(multip(2,6))</p>
+<h2>Default Params - The New Way</h2>
+<p>The new way to set a default parameter is to set the value within the parameters</p>
+<p class="code">function multiply(x, y = 1) { <span class="correct">//Here we can see y default set to 1</span> <br />
+    &nbsp; return x * y <br />
+}</p>
+<p class="code">console.log(multiply(4,9))</p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- Content ends here -->
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/misc-nav.js"></script>
+
+
+
+
+<script src="/code/default.js"></script>
+</html>
