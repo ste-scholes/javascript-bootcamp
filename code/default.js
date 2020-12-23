@@ -43,3 +43,25 @@ function multiply(x, y = 1) {
 }
 
 console.log(multiply(4,9))
+
+// greet
+
+const greet = (person, greeting = 'Hi') => {
+    console.log(`${greeting}, ${person}!`)
+};
+
+greet('Ste', );
+
+// array as default
+
+const blah = (x,y = [1,2,3] ) => (
+    console.log(x,y)
+)
+
+blah(1,2)
+
+const greeting = (person, greeting = 'Hi', punctuation = '!') => (
+    console.log(`${greeting}, ${person}${punctuation}`)
+);
+
+greeting('Ste','Hello','?')

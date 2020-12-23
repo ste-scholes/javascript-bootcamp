@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Spread</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Spread</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>A Few Miscellaneous JS Features</h2>
+<nav class="inner-nav"></nav>
+<h2>Spread Function Calls</h2>
+    <!-- add content here -->
+<p>Spread syntax allows an iterable such as an array to be <b>expanded</b> in places where zero or more arguments (for function calls) or elements (for array literanls) are expected,
+or an object expression to be expanded in paces where zero or more key-value pairs (for object literals) are expected.</p>
+
+<p class="bold">Example</p>
+<p class="code">console.log(Math.max(1,2,3,4,5,6,7,99)) <span class="correct">//Returns 99 the highest number</span></p>
+<p class="bold">Math.min will not work on arrays as it expects a number, not a sequence of numbers</p>
+<p class="code">const num = [1,2,3,4,5,6,7,8,99];</p>
+<p class="code">console.log(Math.min(num)) <span class="wrong">// Retuns NaN</span></p>
+<p class="bold">Spread ...</p>
+<p>Use spread which is three dots to acees the numbers in an array - it basically splits each item of an array into it's own part</p>
+<p class="code">const num = [1,2,3,4,5,6,7,8,99];</p>
+<p class="code">console.log(Math.max(... num)) <span class="correct">// Returns 99</span></p>
+<p class="code">console.log(...num) <span class="correct">// Returns all numbers from array  1 2 3 4 5 6 7 8 99 </span></p>
+
+<p class="bold">Example using functions</p>
+<p class="code">function giveMe4(a,b,c,d) { <br />
+    &nbsp;  console.log('a',a) <br />
+    &nbsp;  console.log('b',b) <br />
+    &nbsp;  console.log('c',c) <br />
+    &nbsp;  console.log('d',d) <br />
+}</p>
+
+<p class="code">const colours = ['red','blue','green','yellow']</p>
+<p>This code uses the function and the above array.  spread ... allows the sarray to be split out and applied to the parameters within the function</p>
+<p class="code">giveMe4(...colours)</p>
+<p class="correct">Returns//<br />a red<br /> b blue<br />c green<br /> d yellow</p>
+<p class="imp">The array is not changed by spread</p>
+
+<!-- &nbsp;  <br /> -->
+
+<!-- content ends here --></div
+
+>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/misc-nav.js"></script>
+
+
+
+
+<script src="/code/spread.js"></script>
+</html>

@@ -60,6 +60,38 @@ console.log(mult(5,2))</p>
     &nbsp; return x * y <br />
 }</p>
 <p class="code">console.log(multiply(4,9))</p>
+<p class="bold">Default Arrow function example</p>
+<p class="code">const greet = (person, greeting = 'Hi') => {<br />
+    &nbsp; console.log(`${greeting}, ${person}!`)<br />
+};</p>
+<p class="code">greet('Ste', ) <span class="correct">// Returns 'Ste' and default 'Hi' as no second paramtere is passed</span> </p>
+<p class="imp">The order of default parameters is important</p>
+<p>You cannot have the first parameter as a default and the others not</p>
+<p class="bold">Example</p>
+<p class="code">function multiply(x = 1, y) {
+    return x * y
+}</p>
+<p class="code">multiply(5) <span class="wrong">// Returns NaN</span> </p>
+<p>This is because 5 is asigned to x and this leaves y as undefined</p>
+
+
+
+
+<p>The order of which the default parameters are passed in must be the same as they are called.</p>
+<p class="code">const greeting = (person, greeting = 'Hi', punctuation = '!') => (<br />
+    &nbsp;  console.log(`${greeting}, ${person}${punctuation}`)<br />
+);</p>
+<p class="code">
+    greeting('Hello','Ste','?') <span class="wrong">// returns undefined - not in correct sequence</span> </p>
+<p class="code">
+    greeting('Ste','Hello','?') <span class="correct">// Returns Hello, Ste?</span></p>
+
+
+
+
+
+
+
 
 
 <!-- &nbsp;  <br /> -->

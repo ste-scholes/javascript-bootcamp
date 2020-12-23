@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Spread</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Spread</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>A Few Miscellaneous JS Features</h2>
+<nav class="inner-nav"></nav>
+<h2>Spread Array Literals</h2>
+    <!-- add content here -->
+<p>It takes a iterable and spreads it out. It copies them over from the first array to a new array</p>
+
+<p class="bold">Example</p>
+<p>Using three seperate arrays</p>
+<p class="code">const cephlopods = ['dumbo octopus','humboldt squid','flamboyant cuttlefish'];</p>
+<p class="code">const gastorpods = ['giant african snail','banana slug' ,'variable neon slug'];</p>
+<p class="code">const cnidaria = ['fire coral', 'moon jelly'];</p>
+
+<p>We create a new array using spread to combine cephlopods and gastorpods arrays</p>
+<p class="code">const mollusca = [... cephlopods, ...gastorpods ];</p>
+<p class="code">console.log(mollusca) <span class="correct">// Returns ["dumbo octopus", "humboldt squid", "flamboyant cuttlefish", "giant african snail", "banana slug", "variable neon slug"</span> </p>
+<p>This is a new array, the originals remain unaltered</p>
+<p class="imp">The order you call the arrays using spread is the order they will appear in the new array</p>
+<p class="bold">You can add in other elements - here we add Garden slug to gastorpods </p>
+<p class="code">console.log('Garden slug',...gastorpods) <span class="correct">// Returns Garden slug giant african snail banana slug variable neon slug
+</span></p>
+<p class="bold">Call all the arrays elements into a new array called inverts</p>
+<p class="code"> const inverts = [...gastorpods,...cephlopods,...cnidaria]</p>
+<p class="correct">// Returns ["giant african snail", "banana slug", "variable neon slug", "dumbo octopus", "humboldt squid", "flamboyant cuttlefish", "fire coral", "moon jelly"]</p>
+
+<p class="note">Spread does not work on mulitple layers with Arrays</p>
+<p class="bold">You can also spread into an array or object - not that there is much reason to.</p>
+<p class="code">const name = 'Stephen'</p>
+<p class="code">console.log([...name])</p>
+<p class="correct">Returns Array (7) ["S", "t", "e", "p", "h", "e", "n"]</p>
+<p class="code">console.log({...name})</p>
+<p class="correct">Returns Object spread-array.js:20 {0: "S", 1: "t", 2: "e", 3: "p", 4: "h", 5: "e", 6: "n"}</p>
+
+
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here --></div
+
+>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/misc-nav.js"></script>
+
+
+
+
+<script src="/code/spread-array.js"></script>
+</html>
