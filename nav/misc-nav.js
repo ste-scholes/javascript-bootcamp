@@ -1,8 +1,9 @@
 let navi ={
-    "Default Params": "/misc/default-params",
-    'Rest': '/rest.html',
+    "Default Params": "/misc/default-params.html",
+    'Rest':'/misc/rest.html',
     'Spread Function Calls': '/misc/spread.html',
     'Spread Array Literal': '/misc/spread-array.html',
+    'Spread Object Literals': '/misc/spread-object.html',
     'Destructuring': '/destructuring.html'
 
    

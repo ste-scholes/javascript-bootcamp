@@ -18,3 +18,19 @@ const name = 'Stephen'
 
 console.log([...name])
 console.log({...name})
+
+// you can do the aabove the old way using concat
+
+const oldWay = cephlopods.concat(gastorpods);
+
+console.log(oldWay)
+
+
+const newGastropods = [...gastorpods];
+
+console.log(newGastropods)
+
+// using split
+const abcSplit = 'abcdef'
+
+console.log(abcSplit.split(''))

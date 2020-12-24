@@ -47,6 +47,15 @@
 <p class="correct">Returns Array (7) ["S", "t", "e", "p", "h", "e", "n"]</p>
 <p class="code">console.log({...name})</p>
 <p class="correct">Returns Object spread-array.js:20 {0: "S", 1: "t", 2: "e", 3: "p", 4: "h", 5: "e", 6: "n"}</p>
+<h2>Array copy with spread</h2>
+<p>Spread can be used and often is just to make a copy of an array, this array can be manipulated without effecting the origninal as it is just a reference. </p>
+<p class="bold">Example</p>
+
+<p class="code">const gastorpods = ['giant african snail','banana slug' ,'variable neon slug'];</p>
+<p class="code">const newGastropods = [...gastorpods]; <span class="correct">// Creates an exact copy of the above array and saves it to the variable newGastropods</span></p>
+<p class="code">console.log(newGastropods)</p>
+
+
 
 
 

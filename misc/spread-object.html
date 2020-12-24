@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Spread</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Spread</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>A Few Miscellaneous JS Features</h2>
+<nav class="inner-nav"></nav>
+<h2>Spread Object Literals</h2>
+    <!-- add content here -->
+    <p>Make copies of objects</p>
+    <p class="bold">Example</p>
+<p>Dog and cat objects</p>
+<p class="code">const feline = { <br />
+    &nbsp;legs: 4, <br />
+    &nbsp; family: 'Felidae' <br />
+};
+</p>
+<p class="code">const canine = {
+    &nbsp; family: 'Canine',<br />
+    &nbsp; furry: true<br />
+};</p>
+
+<p>Combining dog object whilst updating with new values</p>
+<p class="code">const dog = {<br />
+    &nbsp;   ...canine,<br />
+    &nbsp;  isPet: true,<br />
+    &nbsp;   isAdorable: true,<br />
+}</p>
+
+<p class="code">console.log(dog) <span class="correct"> // Returns "Canine", furry: true, isPet: true, isAdorable: true</span></p>
+<p>dog has been combined with canine</p>
+<p class="code">const houseCat = {<br />
+    &nbsp;   ...feline,<br />
+    &nbsp;  isGrumpy: true,<br />
+    &nbsp;   isUnpredictable: true,<br />
+    &nbsp;  isFuckingHorrible: true,<br />
+}</p>
+
+
+
+    <p class='imp'>The order matters, if you update one of the key values later it will take on that value</p>
+    <p>If the same key value exisits in two combined objects, it will become one value, not two seperate ones</p>
+    <p class="bold">Example</p>
+    <p class="code">const canine = {<br />
+        &nbsp;family: 'Canine',<br />
+        &nbsp;furry: true,<br />
+        &nbsp; legs: 4<br />
+    };</p>
+    <p>Canine has 4 legs, this is updated below in tripod</p>
+    <p class="code">const tripod = { <br />
+        &nbsp;  ...canine, <br />
+        &nbsp;  legs: 3, <br />
+    }</p>
+    <p class="code">console.log(tripod) <span class="correct">// Returns  "Canine", furry: true, legs: 3 </span></p>
+    <p>The above code overwritten the original value</p>
+    <p class="bold wrong">HOWEVER!</p>
+    <p>If the change comes before the spread it won't take effect!</p>
+    <p class="code">const tripod = { <br />
+        &nbsp;  legs: 3, <br />
+        &nbsp;  ...canine, <br />
+    }</p>
+    <p class="code">console.log(tripod) <span class="correct">// Returns  "Canine", furry: true, legs: 4 </span></p>
+    <p>In the above code, legs was set to 3 first, then overwritten by the value brought in by spread</p>
+    <p class="note">REMEBER Order is important if you have conflicting key values</p>
+
+    <p>You can use spread to ake copies of objects like you can with arrays</p>
+    <p class="bold wrong">HOWEVER just like arrays the copy is only one level deep, you cannot clone nested objects</p>
+    <p class="imp">You can only spread an Object in another Object</p>
+    <p class="code">const doggo = [...canine] <span class="wrong">// Return Error: spread-object.js:45 Uncaught TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))</span></p>
+    <p>HOWEVER</p>
+    <p class="code">const kitty = {...[feline]} <span class="correct">// returns legs: 4, family: "Canine", furry: true</span> </p>
+    <p>Having an object with an array inside works as expected</p>
+
+    <h2>Nesting Objects within Arrays also works like this</h2>
+    <p class="code">const random =[...'hello', {<br />
+        &nbsp;  ...catDog,<br />
+    }];
+    </p>
+    <p class="code">console.log(random) <span class="correct">// returns ["h", "e", "l", "l", "o",]{legs: 4, family: "Canine", furry: true}</span></p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here --></div
+
+>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/misc-nav.js"></script>
+
+
+
+
+<script src="/code/spread-object.js"></script>
+</html>
