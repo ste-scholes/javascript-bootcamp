@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color:blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Information</h2>
+    <main>
+<p>All HTML objects consist little boxes, all these have padding, margin, border</p>
+<p>Padding is space round the text</p>
+<p>Border is the border around the object</p>
+<p>Margin is the space outside the border, that surrounds the padding</p>
+
+<h2>Cascading</h2>
+<p>Styles work by cascading the attributes down through the document</p>
+<p>A style in the body tag will be overwritten by a style that is more specific</p>
+<p>Think of this as a style closer to the object has presidence over one further up the chain</p>
+<h2>Overriding styles</h2>
+<p>Which style overides the other depends on </p>
+<p class="tip">The order they appear within the in page style is not important</p>
+<p>The folowing h1 has two style attributes assigned, pink text and blue text </p>
+<p> h1 class="pink blue"</p>
+<p>What does matter is the order that the styles are set within the style sheet - If pink is after blue then it will override it no matter what</p>
+
+<h2>Overriding Styles with ID</h2>
+<p>IDs are more specific than other selectors</p>
+<p>If orange was written at the top of the style sheet, and pink and blue came after you would assume they would take presidence, this is NOT true</p>
+<p> h1 class="pink blue" id="orange"</p>
+<p class="tip">IDs are more specific as there is only supposed to be one per attribute, classes appear on many</p>
+
+<h2>Inline styles</h2>
+<p>Inline styles are more specific than ID as they appear actually on the element </p>
+
+<h2>Important</h2>
+<p>!important</p>
+<p>This means the style is the most important, this when applied will not be overwritten further down the chain, it will ignore ID and inline styles </p>
+
+<h2>Padding</h2>
+<p>You can set padding to top, right, bottom and left sides individually.</p>
+<p class="tip">Think of padding going in a clock-wise direction</p>
+<p>Clockwise notation - set all attributes in one statement</p>
+<p> padding: 40px 20px 20px 40px;</p>
+
+<h2>Margin</h2>
+<p>You can set padding to top, right, bottom and left sides individually.</p>
+<p class="tip">Think of padding going in a clock-wise direction</p>
+<p>Clockwise notation - set all attributes in one statement</p>
+<p>margin: 40px 20px 20px 40px;</p>
+<p>You can set negative values to margin</p>
+        <h2>Class</h2>
+        <p class="bold">Style sheet example</p>
+ <p>.blue-text {color: blue};</p>
+ <p class="bold">In page example</p>
+<p class="bold"></p>
+
+<h2>ID</h2>
+ <p>Only one ID per element</p>
+ <p class="bold">Style sheet example</p>
+ <p>#form-style {color: red;}</p>
+ <p class="bold">In page example</p>
+ <p><form id="form-style"></form></p>
+
+<h2>Attribute Selectors</h2>
+<p>Are used to style an element based on its attributes</p>
+<p>Example to select rdio button in a form and add padding to the margin</p>
+<p>  [type='radio'] {
+    margin: 20px
+}</p>
+
+<h2>Sizes</h2>
+<p></p>
+<p>Em is based on the size of an elements font</p>
+
+<h2>Hex code abbreviation</h2>
+<p>You can shorten hex codes that contain the same doubled up characters</p>
+<p>Example</p>
+<p>#FF0000</p>
+<p>Can be shortened to</p>
+<p>#F00</p>
+
+<h2>RGB</h2>
+<p>RGB can be used as follows</p>
+<p>background-style: rgb(255, 255, 255) this is white</p>
+<p>You can make as many colours with RGB as Hex</p>
+
+<h2>CSS variables</h2>
+<p>You can assign things like colour to variables, then when you change them in the variable they will be picked up throughout the document</p>
+<p>Example</p>
+<p>  within the brackets of a selector .penguin {} the colours are declared as variables</p> 
+<p>--penguin-skin: black;</p>
+<p>--penguin-belly: gray;</p>
+<p>--penguin-beak: yellow;</p>
+<p>They are then called by the variable name throughout the document</p>
+<p>background: var(--penguin-skin, gray); // the gray is the default backup</p>
+
+<h2>Declaring variables in Root</h2>
+<p>This is the same as making a variable with global scope, it will be avaiable througout the entire document</p>
+<p>Example</p>
+<p>:root{ }</p>
+
+<p class="tip">These can be overwritten by the target being more specific</p>
+
+<h2>Media Queries</h2>
+<p>These take effect depending on the browser window.</p>
+
+
+
+
+    </main>
+</body>
+</html>

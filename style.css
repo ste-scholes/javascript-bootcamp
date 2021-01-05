@@ -81,6 +81,16 @@ table {
 
 
 
+ a.pagevisit:link, a.pagevisit:visited {
+    color: navy;
+    text-decoration: none;;
+}
+
+a.pagevisit:hover, a.pagevisit:active {
+    color: rgb(40, 86, 160);
+    text-decoration: none;
+    
+}
 
 a:link,  a:visited {
     color: white;

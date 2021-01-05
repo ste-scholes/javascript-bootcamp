@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+    <style>
+    body {
+    background-color: lightgrey;
+    }
+
+    [type='radio'] {
+    margin: 20px;
+    }
+
+    [type='checkbox'] {
+    margin: 10px 20px 15px 0;
+    }
+
+    #cat-photo-form {
+        background-color: lightgreen;
+    }
+
+        .silver-background {
+            background-color: silver;
+        }
+
+    .thick-green-border {
+    border-color: green;
+    border-width: 5px;
+    border-style: solid;
+    /* border-radius: 10px; */
+    border-radius: 50%; /* makes circlular */
+    }
+
+    .smaller-image {
+    width: 500px;
+    }
+    p {
+    font-size: 16px;
+    font-family: monospace;
+    }
+
+    .red-text {
+    color: red;
+
+    }
+
+    h2 {
+    font-family: Lobster, monospace;
+    
+    }
+
+    </style>
+</head>
+<body>
+    <h2 class="red-text">CatphotoApp</h2>
+    <main>
+        <p>Click Here to view more <a href="#">Cat photos</a></p>
+        <img src="https://www.vets4pets.com/siteassets/species/cat/close-up-of-cat-looking-up.jpg?width=1040" alt="Cute kitty" class="smaller-image thick-green-border">
+        <div class="silver-background">
+            <p>Cats love:</p>
+            <ul>
+                <li>cat nip</li>
+                <li>laser pointers</li>
+                <li>scratching people</li>
+                
+            </ul>
+            <p>Three things cats hate:</p>
+            <ol>
+                <li>fle treatment</li>
+                <li>thunder</li>
+                <li>other cats</li>
+            </ol>
+        </div>
+
+        <form id="cat-photo-form" action="/submit-cat-photo">
+        <label><input type="radio" name="indoor-outdoor" checked>Indoor</label>
+        <label><input type="radio" name="indoor-outdoor" >Outdoor</label>
+        <label><input type="checkbox" name="personality" checked>Loving</label>
+        <label><input type="checkbox" name="personality" checked>Horrible</label>
+        </form>
+
+    </main>
+</body>
+</html>

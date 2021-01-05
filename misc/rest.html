@@ -20,11 +20,85 @@
 <nav class="inner-nav"></nav>
 <h2>Rest</h2>
     <!-- add content here -->
+    <p class="bold">Before rest there was the Arguments Object</p>
+    <p>Available inside every function</p>
+    <p>It's an array like object that:</p>
+ <p class="bold">Has a length property</p>
+ <p class="bold">Does not have an array method like push/pop</p>
+ <p>Contains all arguments passed into a function</p>
+ <p>Not available inside arrow functions!</p>
 
+ <p class="bold">Example</p>
+ <p class="code">function sumAll() {<br />
+  let total = 0;<br />
+  &nbsp; for(let i=0; i < arguments.length; i++)<br />
+  {<br />
+    &nbsp;    total += arguments[i];<br />
+  }<br />
+  &nbsp; return total;<br />
+}<br /><br />
+console.log(sumAll(5,5,5,5)) <span class="correct"> // returns 20</span></p>
+<p>You could pass any number of arguments and the function would sum them all </p>
 
+<p>arguments is a function that prints all arguments passed into it</p>
+<p class="imp">Remember arguements is not an array so you can't use reduce, pop, push etc.</p>
 
+<h2>Arguments used with spread ...</h2>
+<p>You can use arguments and spread to put the results into an array, this will allow you to manipulate the results as you would any array</p>
+<p class="bold">Example</p>
+<p class="code">
+  function sum() {<br />
+    &nbsp; const argsArray = [...arguments]<br />
+      &nbsp; return argsArray.reduce((total, currVal) => {<br />
+        &nbsp;  return total + currVal<br />
+        &nbsp;})<br />
+  }<br /><br />
+  
+  console.log(sum(2,2,2,2,2))</p>
+  <h2>Rest</h2>
+   <p>Rest is used to put any passed parameter passed as arguments into an array</p> 
+   <p>Rest is passed in the brackets along with a variable name that is used to store the array (...nums)</p>
+   <p class="bold">Example</p>
+   <p class="code">function sum(...nums) {<br />
+    &nbsp;  console.log(nums)<br />
+}<br /><br />
 
-    
+console.log(sum(1,2,3,4,5)) <span class="correct">// returns 1,2,3,4,5 in an actual array</span> </p>
+<p class="bold">Example</p>
+<p class="code">function sum(...nums) {<br />
+  &nbsp; return nums.reduce((total, currVal) => {<br />
+    &nbsp;    return total + currVal<br />
+    &nbsp; })<br />
+}<br /><br />
+
+console.log(sum(1,1,1,3,3)) <span class="correct">// returns 9</span></p>
+<p class="note">Remember rest returns all the remainaing arguments so that can be returned</p>
+<p class="bold">Example</p>
+<p class="code">
+  function fullName(first, last, ...titles) {<br />
+      console.log('first', first)<br />
+      console.log('last', last)<br />
+      console.log('titles', titles)<br />
+  }<br /><br />
+  
+  console.log(fullName('Tom','Jones','III','Order of the Pheonix')) <span class="correct"> // returns<br />
+    first Tom<br />
+    last Jones<br />
+    titles 'III','Order of the Pheonix'<br />
+  </span> </p>
+  <p>The other elements from the array are collected and passed in titles</p>
+  <p>Basically rest returns everything that has been saved as a paramter and also the items not saved, these can be retured if required</p>
+
+<p class="imp">Order is important ...titles must come last in the list of parameters</p>
+<h2>Arrow function using rest with implicit return</h2>
+<p class="code">const multiply = (...nums) => ( <br />
+  &nbsp;  nums.reduce((total, currVal) => total * currVal) <br />
+) <br /> <br />
+
+console.log(multiply(5,5)) <span class="correct">// returns 25</span> </p>
+
+<p>Reduce is useful in this topic <a href="/callback/reduce.html" class="pagevisit">View here</a></p>
+
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here --></div
@@ -38,5 +112,5 @@
 
 
 
-<script src="/code/spread-object.js"></script>
+<script src="/code/rest.js"></script>
 </html>
