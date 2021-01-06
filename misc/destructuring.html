@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Spread</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Destructuring</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>A Few Miscellaneous JS Features</h2>
+<nav class="inner-nav"></nav>
+<h2>Destructuring</h2>
+
+    <!-- add content here -->
+<p>A short clean syntax to unpack:</p>
+<p>Values from Arrays</p>
+<p>Properties from Objects</p>
+<p>Into distinct variables</p>
+
+<p>In the past the only way to get items from an array would be to save them individually to a variable</p>
+<p>In the example below, the runners are in place order of winning</p>
+
+<p class="bold">Example</p>
+<p class="code">const raceResults = [<br />
+    &nbsp; 'Eluid Kipchoge',<br />
+    &nbsp; 'Feyisa Lelisa',<br />
+    &nbsp; 'Galen Rupp',<br />
+    &nbsp; 'Ghirmay Ghebreslassie',<br />
+    &nbsp; 'Alphonce Simbu',<br />
+    &nbsp; 'Jared Ward'<br />
+];</p>
+<p class="bold">The old way!</p>
+<p>Useing variables to assign gold,silver, bronze</p>
+<p class="code">const gold = raceResults[0]; <br />
+    const silver = raceResults[1]; <br />
+    const bronse = raceResults[2]; <br /> <br />
+    console.log(`1st ${gold} 2nd ${silver} 3rd ${bronse}`)</p>
+
+<h2>Destructuring Array</h2>
+<p>Assign gold, silver, bronze</p>
+<p class="code">const [gold, silver, bronze] = raceResults
+    <br />console.log(gold, silver, bronze)</p>
+<p>Assign first and fourth position - use empty commas </p>
+<p class="code">const [first, , , fourth] = raceResults <br />
+    console.log(first, fourth)
+</p>
+<p class="bold">We use </p>
+<p>Winner and the rest of the runners up using ... rest operator</p>
+<p class="code">const [ winner, ...runnerUp] = raceResults <br />
+    console.log(winner, runnerUp)</p>
+<p class="note">Destructuring Array is based on position of the property</p>
+
+<h2>Destructuring Object</h2>
+<p>Destructuring object is based off the name of the property</p>
+<p>Objects are targeted by keyword, not index</p>
+<p class="bold">Example Runner</p>
+<p class="code">const runner = {<br />
+    &nbsp;  first: 'Eluid',<br />
+    &nbsp; last: 'Kipchoge',<br />
+    &nbsp; country: 'Kenya',<br />
+    &nbsp; title: 'Elder of the Order of the Golden Heart of Kenya',
+}</p>
+<p>First last name and country - seperate values with comma</p>
+<p class="code">const {first, last, country} = runner;<br />
+
+    console.log(first, last, country)</p>
+    <p>To change country and title keywords to another name - nation and honorific</p>
+<p class="code">const {country: nation, title: honorific} = runner;<br />
+    console.log(nation, honorific)  <span class="correct">// returns Kenya Elder of the Order of the Golden Heart of Kenya</span> </p>
+<p>Return first and last name and everything else using ... rest</p>
+<p class="code">
+    const {first, last, ...details} = runner<br />
+    
+    console.log(first, last, details)  <span class="correct">// returns Eluid Kipchoge {country: "Kenya", title: "Elder of the Order of the Golden Heart of Kenya"</span></p>
+
+
+<p class="imp">Remember in objects the order does not matter, keywords do!</p>
+<h2>Nested Array Objects</h2>
+<p>Here is a list of winners from 2016 Olympic Marathon</p>
+<p>They are set as an array with the runners as objects within</p>
+<p class="code">const results = [{ <br />
+    &nbsp; first: 'Eluid', <br />
+    &nbsp; last: 'Kipchoge', <br />
+    &nbsp;  country: 'Kenya', <br />
+}, <br />
+{ <br />
+    &nbsp; first: 'Feyisa', <br />
+    &nbsp;  last: 'Lilesa', <br />
+    &nbsp;  country: 'Ethiopia', <br />
+}, <br />
+{ <br />
+    &nbsp;  first: 'Galen', <br />
+    &nbsp;  last: 'Rupp', <br />
+    &nbsp;  country: 'United States',   <br />
+} <br />
+] <br />
+</p>
+
+<p>To extract the country from the second object we use the following code </p>
+<p class="code">const [,{country}] = results <br />
+
+    console.log(country) <span class="correct">// Ethiopia</span></p>
+    <p>How does this work?</p>
+    <p>After <b>const</b>  there is an array <b> [</b>  then a comma <b> ,</b>  this moves it onto the next object <b> {country}</b>  is the keyword selected close array<b>  ]</b> </p>
+<p class="bold">Example 2
+
+</p>
+<p>This code brings bakc the first name of the winner and assigns it to goldMedal and the first name of the runner up and assigns it to silverMedal</p>
+<p class="code">const [{first: goldMedal}, {first: silverMedal}] = results <br />
+
+    console.log(goldMedal, silverMedal) <span class="correct">// returns Eluid Feyisa</span>
+    </p>
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/misc-nav.js"></script>
+
+
+
+
+<script src="/code/destructuring.js"></script>
+</html>

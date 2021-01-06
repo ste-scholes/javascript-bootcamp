@@ -4,7 +4,7 @@ let navi ={
     'Spread Function Calls': '/misc/spread.html',
     'Spread Array Literal': '/misc/spread-array.html',
     'Spread Object Literals': '/misc/spread-object.html',
-    'Destructuring': '/destructuring.html'
+    'Destructuring': '/misc/destructuring.html'
 
    
 };
