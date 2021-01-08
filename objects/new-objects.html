@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>New Objects</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>New Objects</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>A Few Miscellaneous JS Features</h2>
+<nav class="inner-nav"></nav>
+<h2>New Syntax Enhancements</h2>
+<!-- add content here -->
+<p>Create a keyname and corresponding value using shorthand code</p>
+<p>This array takes review scores then passes the max, min, sum and avg</p>
+<p>The below uses ... spread <a class="pagevisit" href="/misc/spread.html"> >> Read More</a> </p>
+<p class="code">
+<b>  // takes numbers from reviews and performs mathamatical functions on them</b><br /><br />
+    
+    const getStats = (arr) => {<br />
+        &nbsp;   const max = Math.max(...arr);<br />
+        &nbsp;   const min = Math.min(...arr);<br />
+        &nbsp;   const sum = arr.reduce((sum, r) => sum + r);<br />
+        &nbsp;   const avg = sum / arr.length;<br />
+        return {<br />
+            &nbsp;      max, <br />
+            &nbsp;      min,<br />
+            &nbsp;    sum,<br />
+            &nbsp;     avg<br />
+            &nbsp;   }<br />
+    }<br /><br />
+    
+<b>// reviews array</b><br />
+    const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];<br /><br />
+    
+<b>// variable stats calls getStats function and passes reviews into it</b><br />
+    const stats = getStats(reviews);<br /><br />
+    
+<b>// prints out results stored in stats</b><br />
+    console.log(stats)</p>
+
+<p class="imp">This doesn't work in IE</p>
+<h2>Computed Properties</h2>
+<p>An improvement for the object syntax where can can use a dynamic key</p>
+<p class="bold">Example</p>
+<p class="code">const role = 'host';<br />
+    const person = 'Jools Holland';<br />
+    const role2 = 'director';<br />
+    const person2 = 'James Cameron';</p>
+
+    <p class="bold">Old way to get the key and properties from the above</p>
+<p class="code">
+    const team = {} <span class="correct">// first you initialise an empty object</span> <br />
+    team[role] = person;<br />
+    team[role2] = person2;</p>
+<p class="bold">The NEW way</p>
+<p class="correct">// computed can use a variable name as a key name in an object literal property<br />
+    // note variable name has to be in square brackets</p>
+<p class="code">const team ={<br />
+    &nbsp; [role]: person,<br />
+    &nbsp;[role2]: person2,<br />
+}<br /><br />
+console.log(team)
+</p>
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/obj-nav.js"></script>
+
+
+
+
+<script src="/obj-code/new-objects.js"></script>
+</html>

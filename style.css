@@ -32,7 +32,8 @@ table {
     }
 
 #nav {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .call-nav {
@@ -46,6 +47,7 @@ table {
 }
 
 .menu {
+    
     padding: 10px;
     list-style: none;
     border-width:  1px;

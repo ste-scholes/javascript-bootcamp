@@ -119,10 +119,26 @@
 
     console.log(goldMedal, silverMedal) <span class="correct">// returns Eluid Feyisa</span>
     </p>
+
+<h2>Param Destructuring</h2>
+<p>Here we can see a function being used with destructuring></p>
+<p class="code">
+    const athlete = {<br />
+        &nbsp;   first: 'Eluid',<br />
+        &nbsp;    last: 'Kipchoge',<br />
+        &nbsp;   country: 'Kenya',<br />
+        &nbsp;   title: 'Elder of the Order of the Golden Heart of Kenya',<br />
+    }<br /><br />
+    
+    function print(person) {<br />
+        &nbsp;    const {first, last, title} = person<br />
+        &nbsp;   console.log(`${first} ${last}, ${title}`)<br />
+    }<br /><br />
+    
+    print(athlete)</p>
+
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
-
-
 
 </div>
 </body>

@@ -5,7 +5,8 @@ let menuItem ={
     Boolean: '/booleanlogic.html',
     'If Else': '/if-else.html',
     'Arrays': '/const.html',
-    'Objects Keys': '/objects.html',
+    'Objects': '/objects.html',
+    'New Objects': '/objects/new-objects.html',
     Loops: '/loops.html',
     Functions: '/functions.html',
     

@@ -81,3 +81,32 @@ console.log(nation, honorific)
 const {first, last, ...details} = runner
 
 console.log(first, last, details)
+
+const athlete = {
+    first: 'Eluid',
+    last: 'Kipchoge',
+    country: 'Kenya',
+    title: 'Elder of the Order of the Golden Heart of Kenya',
+}
+
+function print(person) {
+    const {first, last, title} = person
+    console.log(`${first} ${last}, ${title}`)
+}
+
+print(athlete)
+
+// array with function
+
+const response = [
+    'http/1.1',
+    '200 OK',
+    'application/json',
+
+]
+
+function parseResponse([protocol, statusCode, cont]) {
+    console.log(`Status: ${statusCode}`)
+}
+
+parseResponse(response)
