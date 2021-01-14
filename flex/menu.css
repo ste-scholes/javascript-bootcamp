@@ -1,0 +1,55 @@
+*{
+    font-family: Verdana;
+    margin: 0px;
+}
+
+body {
+    background: #ccc;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* menu styles */
+
+nav {
+    background: #333;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    display: block;
+    padding: 10px;
+}
+
+nav a:hover{
+    background-color: #555;
+}
+
+
+
+
+
+/* flex styles */
+
+@media screen and (min-width: 768px){
+   nav ul{
+display: flex;
+justify-content:flex-start;
+    }
+    nav li {
+        flex: 1 1 0;
+    }
+
+}

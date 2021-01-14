@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+    <title>Flex</title>
+</head>
+<body>
+        <div class="wrapper">
+            <nav>
+                
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="flex-menu.html">Menu</a></li>
+                        <li><a href="nested-menu.html">Nested Menu</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+              
+    
+            </nav>
+
+
+            <h1>Flex</h1>
+            <div class="flex-container">
+                <div class="box one">1</div>
+                <div class="box two">2</div>
+                <div class="box three">3</div>
+            </div>
+
+<h2>Grow</h2>
+<p>display: flex is added to the container</p>
+<p>Add flex-grow and it's value on the inner div items</p>
+<p>In bootstrap, the 12 column layout can be replicated by assigning flex grow to boxes as in the below </p>
+            
+            <div class="flex-grow">
+                <div class="box-grow a">a flex-grow: 2</div>
+                <div class="box-grow b">b flex-grow: 3</div>
+                <div class="box-grow c">c flex-grow: 1</div>
+            </div>
+
+<h2>Shrink</h2>
+<p>display: flex is added to the container</p>
+<p>Once again flex-shrink is added to the actual elemtents</p>
+<p>Note: the bigger the number the more it shrinks when resized</p>
+<p>Resize browser to see</p>
+            <div class="flex-shrink">
+                <div class="box-shrink a1">a flex-shrink: 1</div>
+                <div class="box-shrink b1">b flex-shrink: 2</div>
+                <div class="box-shrink c1">c flex-shrink: 3 <p>higher number-shrinks most</p>
+                </div>
+            </div>
+
+<h2>Flex wrap</h2>
+<p>Outer container add: display: flex; and flex-wrap: wrap</p>
+<p>The inner items will wrap onto the next line when the min-width is reached</p>
+<p>You can use wrap-reverse to revers the order in which the items wrap</p>
+<p>Below uses wrap-reverse so the box c end up on top</p>
+<p>box c also fills all the space because it's parent container has flex-grow: 1 applied</p>
+<div class="flex-wrap">
+    <div class="box-wrap a2">a flex-wrap</div>
+    <div class="box-wrap b2">b flex-wrap</div>
+    <div class="box-wrap c2">c flex-wrap</div>
+</div>
+
+<h2>Flex Basis</h2>
+<p>Flex basis is similar to minumum width</p>
+<p>You can apply flex growth to the parent div to fill available space.</p>
+<p>The differece between min-width and flex-basis is when you get too small min-width will add scroll bar</p>
+<p>On the other hand flex-basis will shrink the content to fit as best as possible</p>
+<p>It is better to use flex-basis</p>
+
+<div class="flex-basis">
+    <div class="box-basis a3">a flex-basis: 100px</div>
+    <div class="box-basis b3">b flex-basis: 200px</div>
+    <div class="box-basis c3">c flex-basis: 300px</div>
+</div>
+
+<h2>Flex - combining all properties</h2>
+<p>flex: 1 0 200px</p>
+<p>This is set up on the class for the box</p>
+<p>it interprits to grow: 1 shrink: 1 minimum width: 200px</p>
+
+<div class="flex-comb">
+    <div class="box-comb a3">a flex</div>
+    <div class="box-comb b3">b flex</div>
+    <div class="box-comb c3">c flex</div>
+</div>
+
+
+        </div>
+    
+</body>
+</html>

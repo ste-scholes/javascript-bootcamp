@@ -1,0 +1,214 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;;
+}
+body{
+    background: #eee;
+    
+}
+
+.wrapper{
+width: 100%;
+max-width: 960px;
+margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+    background-color: white;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* display boxes */
+
+.box{
+    height: 100px;
+    min-width: 100px;
+    color: white;
+
+}
+
+
+
+.one {
+    background: red;
+
+}
+
+.two{
+    background: blue;
+}
+
+.three{
+    background: green;
+}
+
+/* grow */
+
+.flex-grow{
+    display:flex;
+    background-color: white;
+    
+}
+
+.box-grow{
+    height: 100px;
+    min-width: 100px;
+    color: white;
+}
+
+.a {
+    background: red;
+    flex-grow: 2;
+
+}
+
+.b{
+    background: blue;
+    flex-grow: 3;
+}
+
+.c{
+    background: green;
+    flex-grow: 1;
+}
+
+
+/* shrink */
+
+.flex-shrink{
+    display:flex;
+    background-color: white;
+    
+}
+
+.box-shrink{
+    height: 100px;
+    width:320px;
+    color: white;
+}
+
+.a1 {
+    background: red;
+    flex-shrink: 1;
+
+}
+
+.b1{
+    background: blue;
+    flex-shrink: 2;
+}
+
+.c1{
+    background: green;
+    flex-shrink: 3;
+}
+
+/* wrap */
+
+.flex-wrap{
+    display:flex;
+    background-color: white;
+    flex-wrap: wrap-reverse;
+    
+}
+
+.box-wrap{
+    height: 100px;
+    min-width:200px;
+    color: white;
+    flex-grow: 1;
+}
+
+.a2 {
+    background: red;
+    
+
+}
+
+.b2{
+    background: blue;
+    
+}
+
+.c2{
+    background: green;
+    
+}
+
+/* basis */
+
+.flex-basis{
+    display:flex;
+    background-color: white;
+    flex-wrap: wrap-reverse;
+    
+}
+
+.box-basis{
+    height: 100px;
+    flex-grow: 1;
+    color: white;
+    
+}
+
+.a3 {
+    background: red;
+    flex-basis: 100px;
+
+}
+
+.b3{
+    background: blue;
+    flex-basis: 200px;
+}
+
+.c3{
+    background: green;
+    flex-basis: 300px;
+}
+
+/* flex - combining all properties */
+
+.flex-comb{
+    display:flex;
+    background-color: white;
+    flex-wrap: wrap;
+    
+}
+
+.box-comb{
+    height: 100px;
+    flex: 1 0 200px;
+    color: white;
+
+    
+}
+
+.a4 {
+    background: red;
+    flex-basis: 100px;
+
+}
+
+.b4{
+    background: blue;
+    flex-basis: 200px;
+}
+
+.c4{
+    background: green;
+    flex-basis: 300px;
+}
