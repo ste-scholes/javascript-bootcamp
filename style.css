@@ -146,6 +146,14 @@ p {
     padding: 15px
 }
 
+.tip {
+    
+    border-left:8px solid crimson;
+    padding: 15px;
+    background: lightgrey
+
+}
+
 .impact {
     font-weight: bold;
     font-size: x-large;

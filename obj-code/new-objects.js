@@ -37,9 +37,39 @@ team[role2] = person2;
 
 // computed can use a variable name as a key name in an object literal property
 // note variable name has to be in square brackets
-const team ={
+const team2 ={
     [role]: person,
     [role2]: person2,
+    [1 + 6 + 9]: 'sixteen'
 }
 
-console.log(team)
+console.log(team2)
+
+// add new property old way
+
+function addProp(obj,k,v) {
+    const copy = {...obj};
+    copy[k] = v
+    return copy
+}
+
+
+
+const res = addProp(team2, 'happy', ':)')
+console.log(res)
+// new way
+const addProp2 = (obj, x, y) => {
+    return {
+        ...obj,
+        [x]: y
+    }
+}
+
+const addNew = addProp2(team2, 'happy face', ':)')
+console.log(addNew)
+
+// new way implicit return
+
+const propNew =(obj, x, y) => ({...obj,[x]: y})
+const addSmile = propNew(team2, 'Happy', ':)');
+console.log(addSmile)

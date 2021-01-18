@@ -71,6 +71,39 @@
 }<br /><br />
 console.log(team)
 </p>
+<h2>Add New Property</h2>
+<p  class="bold">Old way</p>
+<p class="code">function addProp(obj,k,v) {<br />
+    &nbsp;   const copy = {...obj};<br />
+    &nbsp;   copy[k] = v<br />
+    &nbsp;    return copy<br />
+}<br /><br />
+
+
+
+const res = addProp(team2, 'happy', ':)')<br />
+console.log(res) <span class="correct">// returns "sixteen", host: "Jools Holland", director: "James Cameron", happy: ":)"</span> </p>
+
+
+<p class="bold">New Way</p>
+<p>Once again it uses ... spread to copy the items into a new array</p>
+<p class="code">const addProp2 = (obj, x, y) => {<br />
+    &nbsp; return {<br />
+        &nbsp;     ...obj,<br />
+        &nbsp;      [x]: y<br />
+        &nbsp;  }<br />
+}<br /><br />
+
+const addNew = addProp2(team2, 'happy face', ':)')<br />
+console.log(addNew)</p>
+
+<p class="bold">New - using implicit return</p>
+<p class="tip">Remember when using implicit return you need to enclose the {} within () or else Javascript will get confused</p>
+<p class="code">const propNew =(obj, x, y) => ({...obj,[x]: y})<br />
+    const addSmile = propNew(team2, 'Happy', ':)');<br />
+    console.log(addSmile)</p>
+
+
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
