@@ -27,8 +27,44 @@
 
 <p class="tip">Remember we have already used built in methods such as:<br />
 'hello.toUperCase()'</p>
+<p>Here is an example of a method</p>
+<p>In the below const math is a variable with a number of assigned functions or methods</p>
+<p>These functions reside within the body of the const</p>
+<p>They have a name assigned to them in this format add: function(x,y)
+   this is for the addition function
+</p>
+
+<p class="code">const math = { <br />
+  add: function(x,y){ <br />
+    &nbsp;    return x + y; <br />
+    &nbsp;  }, <br />
+  multiply: function(x,y){ <br />
+    &nbsp;     return x * y; <br />
+    &nbsp;  }, <br />
+  subtract: function(x,y){ <br />
+    &nbsp;     return x - y; <br />
+    &nbsp;  } <br />
+} <br /> <br />
 
 
+console.log(math.subtract(5,10))</p>
+<p>To call the function you need to call the variable followed by the key name</p>
+<p>So it would be math.subtract then pass the parameters - math.subtract(5,10)</p>
+<h2>Shorhand version without key: value</h2>
+<p>This version does not require us to set up key:value pairs</p>
+<p class="code">const auth = { <br />
+  &nbsp; username: 'Stephen', <br />
+  login() { <br />
+    &nbsp;   console.log('You Logged in!') <br />
+      &nbsp; }, <br />
+ logout() { <br />
+  &nbsp;    console.log('Goodbye') <br />
+     &nbsp;} <br />
+}</p>
+
+<p class="code">console.log(auth.logout())<span class="correct">// returns Goodbye!</span> </p>
+
+<p>The above console.log calls the logout method on auth</p>
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->

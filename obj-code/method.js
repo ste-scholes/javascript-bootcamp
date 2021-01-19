@@ -29,3 +29,16 @@ const math = {
 console.log(math.subtract(5,10))
 
 
+// method without key: vlaue
+
+const auth = {
+    username: 'Stephen',
+    login() {
+        console.log('You Logged in!')
+    },
+   logout() {
+       console.log('Goodbye')
+   }
+}
+
+console.log(auth.logout())

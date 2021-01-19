@@ -19,10 +19,67 @@
 <h2>New Objects</h2>
 <nav class="inner-nav"></nav>
 <h2>This</h2>
+<!-- add content here -->
+<p>This gives you an object back, depending on the rules and scope, this object changes</p>
+<p>In the following code, sayHi is added on the glodal scope of the browser, in this instance it refers to the window </p>
+<p class="code">function sayHi() {<br />
+  &nbsp; console.log('Hi')<br />
+  &nbsp; console.log(this);<br />
+}<br /><br />
 
-    <!-- add content here -->
+console.log(sayHi())</p>
+<p>The window contains all different sorts or methods and properties, such as alert(), it's a property on the window that can be called like window.alert()</p>
+<p>Another important thing to remember about the window, is that if we add the following color</p>
+<p class="code">var color='teal'</p>
+<p>This is also added to the window (global scope)</p>
+<p class="bold">This does not work with let and const - they are not added to global scope</p>
+
+<p class="tip">Functions work in the same way as var</p>
+<p class="bold">Example</p>
+<p class="code">const greet = function() { <br />
+  &nbsp;  console.log(this); <br />
+} <br /> <br />
+
+console.log(greet())</p>
+<p></p>
+
+<p class="imp">Remember: 'this' changes depending on the scope and rules</p>
+<h2>Objects and this</h2>
+<p>In the following code this is set to the scope of the object in which it resides</p>
+<p>You might think of it has having local scope</p>
+<p class="bold">Example</p>
+<p class="code">const person = {<br />
+  &nbsp; first: 'Cherilyn',<br />
+  &nbsp; last: 'Sarkisian',<br />
+  &nbsp; nickName: 'Cher',<br />
+  &nbsp; fullName() {<br />
+    &nbsp;    console.log(this);<br />
+    &nbsp;  }<br />
+}<br /><br />
+
+console.log(person.fullName())</p>
+<p class="correct">// Returns first: "Cherilyn", last: "Sarkisian", nickName: "Cher", fullName: ƒ </p>
 
 
+<p class="bold">Example</p>
+<p class="code">const itsMe ={<br />
+  first: 'Stephen',<br />
+  last: 'Scholes',<br />
+  nickName: 'Scully',<br />
+  fullName() {<br />
+    &nbsp; const {first, last, nickName} = this;<br />
+    &nbsp;  return(`${first} ${last} aka ${nickName}`)<br />
+  },<br />
+  printBio() {<br />
+    &nbsp; const fullName = this.fullName();<br />
+    &nbsp;  console.log(`${fullName} is a very tired person`)<br />
+    &nbsp; }<br />
+}</p>
+<p class="code">itsMe.first = 'Ste' <span class="correct">// this will update the value <b>'first'</b>  in the object to 'Ste'</span></p>
+
+<p class="code">console.log(itsMe.printBio()) <span class="correct"> // this.js:43 Ste Scholes aka Scully is a very tired person </span></p>
+
+<p class="imp">Remember: the scope of 'this' changes so the above may not always be the case</p>
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
 
@@ -35,5 +92,5 @@
 
 
 
-<script src="/obj-code/new-objects.js"></script>
+<script src="/obj-code/this.js"></script>
 </html>
