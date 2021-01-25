@@ -80,6 +80,89 @@ console.log(person.fullName())</p>
 <p class="code">console.log(itsMe.printBio()) <span class="correct"> // this.js:43 Ste Scholes aka Scully is a very tired person </span></p>
 
 <p class="imp">Remember: the scope of 'this' changes so the above may not always be the case</p>
+
+<p class="tip">Another important thing to remember is the scope of this also depends on how you call the function. The above function calls the bio by itsMe.printBio this is the correct way to get this information, but calling it another way does not guarantee the correct info will be returned</p>
+
+<p>Example that returns error</p>
+
+<p class="code">const printBio = person.printBio <span class="error">// don't call by making a reference, it will return an error</span> </p>
+<p>The above code will return an error, because it would refernce the window, not the object </p>
+<p>Why?</p>
+<p>
+In order for you to reference an object using 'this' you need to have something valid to the left, a fullstop and then something to the right. </p>
+<p>E.g. object.method-name or itsMe.printBio</p>
+<p>It might be worth looking up invocation context for a better understanding</p>
+<h2>Arrow Functions - don't use in methods in objects</h2>
+<p>Arrow functions will always point to the window or use global scope</p>
+<p>This means you can't use them in methods</p>
+
+<p>Example</p>
+<p class="code">const itsMe ={<br />
+  first: 'Stephen',<br />
+  last: 'Scholes',<br />
+  nickName: 'Scully',<br />
+  fullName() {<br />
+     const {first, last, nickName} = this;<br />
+     return(`${first} ${last} aka ${nickName}`)<br />
+  },<br />
+  printBio() {<br />
+     const fullName = this.fullName();<br />
+     console.log(`${fullName} is a very tired person`)<br />
+  },<br />
+  laugh: () => { <span class="error">// arrow function laugh:</span>   <br />
+      console.log(this);<br />
+      console.log(`${this.nickName} says hahahah!`)<br />
+  }<br />
+}<br />
+itsMe.first = 'Ste'<br /><br />
+console.log(itsMe.printBio())<br /><br />
+
+console.log(itsMe.laugh()) <span class="error">// this.js:47 undefined says hahahah! -arrow function has targeted the window (global scope) not the object so returns undefined </span>
+
+</p>
+<p class="bold">Example 2</p>
+
+<p class="code">const annoyer = {<br />
+  &nbsp;phrases:  ['literally','cray cray', 'I cant even', 'totes', 'YOLO', 'Cant stop, wont stop'],<br />
+  pickPhrase(){<br />
+    &nbsp;  const {phrases} = this;<br />
+    &nbsp;  const index = Math.floor(Math.random() * phrases.length);<br />
+    &nbsp;  return phrases[index]<br />
+  },<br />
+  start(){ <br />
+  &nbsp;   setInterval(function () { <span class="error">// this part of the function calls the function annoyer via reference</span> <br />
+    &nbsp;      console.log(this.pickPhrase)<br />
+    &nbsp;&nbsp;    }, 3000)<br />
+    &nbsp; }<br />
+}<br /><br />
+
+console.log(annoyer.stat())
+  </p>
+<p>Just like before, this won't work because it is called via reference, it will return undefined as it accesses the window and not the object</p>
+
+<h2>Arrow function can fix the above!</h2>
+<p>Just as you can't refernce a seperate this in an arrow function you can use the one assigned earlier and use that</p>
+
+<p class="code">
+  const annoyed = {<br />
+    &nbsp;  phrases:  ['literally','cray cray', 'I cant even', 'totes', 'YOLO', 'Cant stop, wont stop'],<br />
+    pickPhrase(){<br />
+      &nbsp;       const {phrases} = this;<br />
+      &nbsp;       const index = Math.floor(Math.random() * phrases.length);<br />
+      &nbsp;       return phrases[index]<br />
+      &nbsp;   },<br />
+    start() {<br />
+      &nbsp;          setInterval(() => { <span class="correct">The arrow function can access this from the above function start()</span> <br />
+        &nbsp;          console.log(this.pickPhrase())<br />
+        &nbsp; &nbsp;      }, 3000)<br />
+        &nbsp;  }<br />
+}<br /><br />
+
+console.log(annoyed.start())
+</p>
+
+<p class="imp">Arrow functions don't get their own specific 'this' they inherit the one from their parent i.e. start()</p>
+
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
 

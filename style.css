@@ -1,6 +1,6 @@
 body {
     background-color: lightblue;
-  }
+}
 
 .doc {
     font-family: Arial, Helvetica, sans-serif;
@@ -14,22 +14,26 @@ body {
 table {
     width: 80%;
     margin: 20px;
-    
-    
-    }
-    th, td {
-        
-        border: 1px solid gray
-    }
-    th {
-        background: rgb(3, 26, 63);
-        color: white;
-        padding: 10px;
-        text-align: left;
-    }
-    td {
-        text-align: center;
-    }
+
+
+}
+
+th,
+td {
+
+    border: 1px solid gray
+}
+
+th {
+    background: rgb(3, 26, 63);
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    text-align: center;
+}
 
 #nav {
     display: flex;
@@ -40,84 +44,91 @@ table {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 10px 30px ;
+    padding: 10px 30px;
     color: white;
-    background-color:  rgb(5, 40, 73);
+    background-color: rgb(5, 40, 73);
     list-style: none;
 }
 
 .menu {
-    
+
     padding: 10px;
     list-style: none;
-    border-width:  1px;
-    background-color:rgb(7, 38, 78);
+    border-width: 1px;
+    background-color: rgb(7, 38, 78);
 }
 
 .nav {
     padding: 10px;
     color: white;
-    background-color:  rgb(3, 3, 22);
+    background-color: rgb(3, 3, 22);
     list-style: none;
 
 }
 
-.obj-nav, .loop-nav, .inner-nav {
+.obj-nav,
+.loop-nav,
+.inner-nav {
     padding: 10px 75px 10px 10px;
     color: white;
-    background-color:  rgb(179, 80, 0);
-    border-style: solid ;
+    background-color: rgb(179, 80, 0);
+    border-style: solid;
     border-width: thin;
-    border-color:  rgb(179, 80, 0)  rgb(179, 80, 0) #ffffff  rgb(179, 80, 0);
+    border-color: rgb(179, 80, 0) rgb(179, 80, 0) #ffffff rgb(179, 80, 0);
     list-style: none;
 
 }
 
 .section {
-    width:100%;
+    width: 100%;
 
-    background-color:rgb(5, 40, 73);
+    background-color: rgb(5, 40, 73);
 }
 
 
 
 
 
- a.pagevisit:link, a.pagevisit:visited {
+a.pagevisit:link,
+a.pagevisit:visited {
     color: navy;
-    text-decoration: none;;
+    text-decoration: none;
+    ;
 }
 
-a.pagevisit:hover, a.pagevisit:active {
+a.pagevisit:hover,
+a.pagevisit:active {
     color: rgb(40, 86, 160);
     text-decoration: none;
-    
+
 }
 
-a:link,  a:visited {
+a:link,
+a:visited {
     color: white;
     text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
     color: lightblue;
     text-decoration: none;
-    
+
 }
 
 
 h1 {
-   font-size: xxx-large;
+    font-size: xxx-large;
     color: rgb(3, 3, 22);
     padding: 15px;
-  }
+}
 
 
-  h2 {
+h2 {
     background-color: rgb(3, 3, 22);
     color: white;
     padding: 15px;
-  }
+}
 
 p {
     margin-left: 2em;
@@ -126,10 +137,11 @@ p {
 
 .correct {
     color: rgb(0, 138, 7);
- 
+
 }
 
-.wrong, .error {
+.wrong,
+.error {
     color: red;
 
 }
@@ -147,11 +159,10 @@ p {
 }
 
 .tip {
-    
-    border-left:8px solid crimson;
+
+    border-left: 8px solid crimson;
     padding: 15px;
     background: lightgrey
-
 }
 
 .impact {
@@ -163,14 +174,16 @@ p {
     font-weight: bold;
     font-size: large;
 }
+
 .bold {
     font-weight: bold;
 }
 
-.code{
+.code {
     color: rgb(19, 83, 165);
     font-weight: light;
 }
+
 .video {
     padding: 1em;
     margin: auto;
@@ -178,18 +191,22 @@ p {
 }
 
 .textarea {
-    height:2em;
+    height: 2em;
     width: 150px;
     resize: none;
     box-sizing: border-box;
-  border: 2px solid #ccc;
+    border: 2px solid #ccc;
 }
 
 .pagelink {
-    height:2em;
+    height: 2em;
     width: 400px;
     resize: none;
     box-sizing: border-box;
     border: 2px solid #ccc;
 }
 
+
+.tips {
+    color: crimson back
+}

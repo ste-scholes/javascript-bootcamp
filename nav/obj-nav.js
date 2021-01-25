@@ -5,7 +5,8 @@ let navi ={
     'Spread Array Literal': '/objects/spread-array.html',
     'Spread Object Literals': '/objects/spread-object.html',
     'This': '/objects/this.html',
-    'Methods - Functions as properties on objects': '/objects/methods.html'
+    'Methods - Functions as properties on objects': '/objects/methods.html',
+    Review: '/objects/review.html '
 
    
 };
