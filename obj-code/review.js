@@ -7,12 +7,12 @@ function makeDeck() {
 
 const myDeck = {
   deck: [],
-  drawCards:[],
+  drawCards: [],
   suits: ["hearts", "diamonds", "spades", "clubs"],
   values: "2,3,4,5,6,7,8,9,10,J,K,Q,A",
   initializeDeck() {
     const { suits, values, deck } = this;
-    for (let value of values.split(',')) {
+    for (let value of values.split(",")) {
       for (let suit of suits) {
         deck.push({
           value,
@@ -20,19 +20,27 @@ const myDeck = {
         });
       }
     }
-    // return deck;
   },
   drawCard() {
-     const card = this.deck.pop()
-     this.drawCards.push(card)
-     return card;
+    const card = this.deck.pop();
+    this.drawCards.push(card);
+    return card;
   },
-  drawMulti(numCards) {
-      const cards = [];
-      for(let i=0; i < numCards; i++) {
+  multi(numCards) {
+    const cards = [];
+    for (let i = 0; i < numCards; i++) {
       cards.push[this.drawCard()];
     }
     return cards;
+  },
+  shuffle() {
+    const {
+      deck
+    } = this;
+    for (let i = deck.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
   }
 };
 
@@ -41,10 +49,15 @@ const myDeck = {
 
 // initialise the card dec
 console.log(myDeck.initializeDeck())
+
+
+console.log(myDeck.shuffle())
 console.log(myDeck.drawCard())
 console.log(myDeck.drawCard())
-console.log(myDeck.drawMulti(3))
+console.log(myDeck.multi(2))
+console.log(myDeck.drawCards)
 console.log(myDeck.deck)
+
 
 
 // this calls drawCard to draw a card remove it from array and add it to variable card1
@@ -69,5 +82,5 @@ function shuffle(arr) {
 }
 
 
-// shuffle(['a','b','c','d','e','f'])
-shuffle(['0','1','2','3','4','5'])
+// // shuffle(['a','b','c','d','e','f'])
+// shuffle(['0','1','2','3','4','5'])
