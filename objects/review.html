@@ -25,6 +25,55 @@
 
 
 
+<p class="code">
+const myDeck = {<br />
+deck: [],<br />
+drawCards: [],<br />
+suits: ["hearts", "diamonds", "spades", "clubs"],<br />
+values: "2,3,4,5,6,7,8,9,10,J,K,Q,A",<br />
+initializeDeck() {<br />
+  &nbsp; const { suits, values, deck } = this;<br />
+  &nbsp;  for (let value of values.split(",")) {<br />
+    &nbsp;    for (let suit of suits) {<br />
+      &nbsp;     deck.push({<br />
+        &nbsp;        value,<br />
+        &nbsp;        suit,<br />
+        &nbsp;   });<br />
+        &nbsp;   }<br />
+        &nbsp; }<br />
+        &nbsp;},<br />
+drawCard() {<br />
+  &nbsp; const card = this.deck.pop();<br />
+  &nbsp; this.drawCards.push(card);<br />
+  &nbsp; return card;<br />
+},<br />
+multi(numCards) {<br />
+  &nbsp; const cards = [];<br />
+  &nbsp; for (let i = 0; i < numCards; i++) {<br />
+    &nbsp;   cards.push[this.drawCard()];<br />
+    &nbsp;  }<br />
+    &nbsp; return cards;<br />
+    &nbsp;},<br />
+    &nbsp;shuffle() {<br />
+      &nbsp; const {<br />
+        &nbsp;   deck<br />
+        &nbsp;  } = this;<br />
+        &nbsp; for (let i = deck.length - 1; i > 0; i--) {<br />
+          &nbsp;    let j = Math.floor(Math.random() * (i + 1));<br />
+          &nbsp;   [deck[i], deck[j]] = [deck[j], deck[i]];<br />
+          &nbsp;  }<br />
+          &nbsp;}<br />
+};
+</p>
+<p>For this to work you first have to intialize the deck</p>
+<p class="code">console.log(myDeck.initializeDeck())</p>
+<p>Draw card - draws a single card that is removed from the deck and added to drawCards </p>
+
+<p class="code">console.log(myDeck.drawCard())</p>
+<p>Multi take a number and draws the number of cards passed - cards are removed from the deck and added to drawCards </p>
+<p class="code">console.log(myDeck.multi(2))</p>
+<p>Shuffle, - randomly shuffles all the deck using the <strong> Fisher Yates</strong> shuffle</p>
+<p class="code">console.log(myDeck.shuffle())</p>
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
 
