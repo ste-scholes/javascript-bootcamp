@@ -19,7 +19,21 @@
 <h2>Manipulating the DOM</h2>
 <nav class="inner-nav"></nav>
 <h2>DOM</h2>
-<p>Using CSS to target</p>
+<!-- add content here -->
+<p class="bold">Document Object Model</p>
+<p>The document object is our entry point into the world of the DOM. It contains representations of all the content on a page, plus lots of useful methods and propeties</p>
+<p>It is an hierarchy or elements and their children</p>
+<p class="bold">document</p>
+<p>Everything is nested within the document</p>
+<p>We access the DOM through the document for example:</p>
+<p class="code">document.getElementById</p>
+
+<p class="bold">To see Everything on the screen</p>
+<p class="code">document.all</p>
+<p class="note">document is the root of the tree</p>
+<p class="code">console.dir(document)</p>
+<p>Prints a representation of the document to the console</p>
+<p class="bold">Using CSS to target</p>
 <p>Attribute Selector</p>
 <p class="code">input[type="password"]{ <br />
     
@@ -29,7 +43,7 @@
 <p>ID selector id="menu"</p>
 <p class="code">
 #menu {<br />
-    clor: blue;<br />
+    color: blue;<br />
 }<br />
 
 </p>
@@ -40,11 +54,42 @@
     }<br />
 </p>
 
+<h2>getElementById</h2>
+<p class="code">document.getElementById</p>
+<p>Will only get the first ID that matches back</p>
+<p>There should only be one match, but if there is more, it will return the first one it encounters</p>
+
+<p class="code">const img = document.getElementById('winter')</p>
+<p class="code">console.dir(img)</p>
+<p>This returns what at first looks like HTML but it is in fact an object that contains all the information about the attribute </p>
+<p class="note">The above is classed as an HTMLImageElement</p>
+<p>There are different types of HTML elements</p>
+
+<h2>getElementsbyTagName</h2>
+<p class="code">getElementsByTagName('li')</p>
+<p>Returns a collection containing all elements of that type on the page, even if there is only one</p>
+<p>You can get all the images, li, h2, etc on a page.</p>
+<p>The results looks like an array, but it is not an array, although you can manipulate it like an array to an extent</p>
+<p>Think of the arguments object, inside a function there is an array like object that is not an array, this is similar</p>
+
+<p class="code">const elements = document.getElementsByTagName('input');<br />
+
+    console.dir(elements);<br />
+    
+    console.log(elements[1]) <span class="correct">// returns: input type="password" placeholder="password" </span>
+    <p>The second item of the inputs</p>
+    <br /></p>
+
+
+<p class=""></p>
 
 
 
 
-<!-- add content here -->
+
+
+
+
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
