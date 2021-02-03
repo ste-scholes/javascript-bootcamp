@@ -81,15 +81,53 @@
     <br /></p>
 
 
-<p class=""></p>
+<h2>getElementsByClassName</h2>
+<p class="code">document.getElementsByClassName()</p>
+<p>This like the above tries to bring back more than one element and adds to a collection</p>
+<p>Once again the results look like an array without being able to use most array methods</p>
+<p class="bold">Examples</p>
+<p class="code">const header = document.getElementsByClassName('header'); <br /> <br />
 
+    console.log(header)</p>
+    <p class="correct">Returns HTMLCollection [h1.header]</p>
 
+<p class="code">const list = document.getElementsByClassName('special')<br /><br />
 
+    console.log(list)</p>
+    <p class="correct">Returns HTMLCollection(2) [li.special, li.special]</p>
 
+<p class="bold">Seach for items embedded within other items</p>
+<p>In the below the class special has been used on p tags as well as within an ul</p>
+<p>How do we choose just the li tag that has a class of special?</p>
+<p class="correct">// below returns all with class special</p>
+<p class="code">const special = document.getElementsByClassName('special'); <br /> <br />
 
+    console.log(special)</p>
 
+<p class="correct">// if I want to isolate the li tag - the below means [array] index 0 or the first element</p>
+<p class="code">const ul = document.getElementsByTagName('ul')[0] <br /> <br />
+    console.log(ul)</p>
 
+<p class="correct">// ul brings back the ul that now has it's own version of getElementsByClassName that can be searched for 'special'</p>
+<p class="code">const specialLi = ul.getElementsByClassName('special') <br /> <br />
+    console.log(specialLi)
+</p>
 
+<h2>querySelector</h2>
+<p>A newer, all-in-one method to select a <b>single element</b></p>
+<p>Pass in a css selector</p>
+<p>Remeber querySelector only returns a single instance</p>
+<p>Example</p>
+<p class="correct">Finds fist h1 element:</p>
+<p class="code">document.querySelector('h1')</p>
+
+<p class="correct">Finds first element with ID of red:</p>
+<p class="code">document.querySelector('#red')</p>
+
+<p class="correct">Finds first element with class of:</p>
+<p class="code">document.querySelector('.big')</p>
+
+<p class="imp">Remember you need to be specific! .class #main etc</p>
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
