@@ -63,3 +63,34 @@ console.log(para)
 const main = document.querySelector('#main');
 
 console.log(main)
+
+// target li with class of special embedded in a section ul
+
+const peas = document.querySelector('section ul li.special')
+
+console.log(peas)
+
+// taregt password field on page 1
+
+const psw = document.querySelector('input[type="password"]')
+
+console.log(psw)
+
+
+// querySelectorAll
+
+const form = document.querySelectorAll('input')
+
+console.log(form)
+
+const specialAttr = document.querySelectorAll('.special');
+
+console.log(specialAttr)
+
+const arr2 = [...specialAttr]
+
+console.log(arr2)
+
+console.log(arr2.length)
+
+console.log(arr2[1])

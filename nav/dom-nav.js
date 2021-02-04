@@ -1,6 +1,7 @@
 let navi ={
     "DOM": "/dom/dom.html",
     'Example-1':'/dom/page1.html',
+    'Properties & Methods': '/dom/properties.html'
 
  
 

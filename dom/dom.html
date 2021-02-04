@@ -127,7 +127,43 @@
 <p class="correct">Finds first element with class of:</p>
 <p class="code">document.querySelector('.big')</p>
 
-<p class="imp">Remember you need to be specific! .class #main etc</p>
+<p class="imp">Remember you need to be specific! .class #main element (h1) etc</p>
+
+<p class="bold">Example</p>
+<p>Select a password field on page1 form</p>
+<p class="code">const psw = document.querySelector('input[type="password"]')<br /><br />
+
+    console.log(psw)</p>
+    <p class="note">This is the same selector that is used in CSS - input[type="password"]</p>
+
+<h2>querySelectorAll</h2>
+<p>Uses the exact same syntax but returns a collection (all instances)</p>
+<p class="bold">Examples</p>
+<p class="code">const form = document.querySelectorAll('input') <br /> <br />
+
+    console.log(form)</p>
+<p class="correct">returns NodeList(3) [input, input, input]</p>
+
+<p class="code">const specialAttr = document.querySelectorAll('.special');<br /><br />
+
+    console.log(specialAttr)</p>
+
+<p class="correct">returns NodeList(4) [p.special, li.special, li.special, li.special]</p>
+<p class="tip">querySelectorAll returns a node list, this is similar to the array like object returned by getElementsByTagName, it is just held in another type of container</p>
+
+<p class="bold">Examples</p>
+<p class="code">
+    const specialAttr = document.querySelectorAll('.special');<br /> <br /> 
+    
+    console.log(specialAttr)<span class="correct">returns all items with class of special</span><br /> <br /> 
+    
+    const arr2 = [...specialAttr]<span class="correct">returns eveything colected with class of special and spreads it into an array</span><br /> <br /> 
+    
+    console.log(arr2)<span class="correct">returns the array created by the ... spread above</span><br /> <br /> 
+    
+    console.log(arr2.length)<span class="correct">returns the number of items in the array (4)</span><br /> <br /> 
+    
+    console.log(arr2[1]) <span class="correct">returns the element in the second array position </span></p>
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
