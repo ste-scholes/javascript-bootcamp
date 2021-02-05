@@ -8,7 +8,7 @@ let callNav = {
     "removeChild()": "/callback/some.html#some",
     "remove()": "/callback/some.html",
     "innerText": "/dom/innertext.html",
-    "innerHtml": "/callback/sort.html",
+    "innerHTML": "/dom/innerhtml.html",
     "value": "/callback/sort.html",
     "parentElement": "/callback/sort.html",
     "children": "/callback/sort.html",

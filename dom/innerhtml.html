@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Javascript and the DOM</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<nav class="inner-nav"></nav>
+<h2>Properties and Methods</h2>
+<nav class="call-nav"></nav>
+<!-- add content here -->
+<h2>innerHTML</h2>
+
+
+<p>Returns a string containing all the elements between the HTML</p>
+<p class="bold">So for example h1 would return My Wepage, form returns all the elements and text held within the form tags</p>
+<p class="code">
+    const form = document.querySelector('form'); <br /> <br />
+    
+    console.log(form.innerHTML)</p>
+    <p class="note">innerHTML brings back everything within the tags</p>
+<p>It is possible to add elements into a page using innerHTML, but these must be added as a string</p>
+
+<p class="code">const title = document.querySelector('h1'); <br /> <br />
+
+
+    title.innerHTML = 'Hello'</p>
+<p class="correct">// updates h1 to 'Hello'</p>
+<p></p>
+
+<p class="imp">REMEMBER innerHTML overwrites anything within the tag</p>
+<p>So it will overwrite everything within a form tag or ul tag</p>
+<p class="bold">Example</p>
+<p>The below adds a message in bold to the empty p tag with a class of add</p>
+
+<p>You can add HTML elements this way but there are better ways</p>
+<p class="note">If you want to add text rather than overwrite it</p>
+
+<p class="code">const title = document.querySelector('h1');<br /><br />
+
+    title.innerHTML = 'Hello'</p>
+    <p>This removes the original content and sets the h1 to Hello</p>
+<p class="code">title.innerHTML +=' Im Stephen'</p>
+<p>This add the words 'Im Stephen' after 'Hello' it does not replace the original rather adds to it</p>
+
+<p class="tip">The difference between innerText and innerHTML is innerText will print HTML tags out as strings where innerHTML will pase them as HTML</p>
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/dom-nav.js"></script>
+
+
+<script src="/nav/dom-method-nav.js"></script>
+
+
+
+</html>

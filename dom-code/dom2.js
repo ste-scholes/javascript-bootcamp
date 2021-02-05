@@ -21,3 +21,35 @@ console.log(body)
 const txtCon = h1.textContent
 
 console.log(txtCon)
+
+// innerhtml
+
+const form = document.querySelector('ul');
+
+console.log(form.innerHTML)
+
+
+
+const addMe = document.querySelector('.add');
+
+addMe.innerHTML = '<b>I am dynamic</b>'
+
+const title = document.querySelector('h1');
+
+title.innerHTML = 'Hello'
+
+title.innerHTML +=' Im Stephen'
+
+// form stuff
+
+const fields = document.querySelectorAll('input')
+
+console.log(fields[2].value)
+
+console.log(fields)
+
+console.log(fields[0].value)
+
+console.log(fields[2].checked)
+
+fields[1].placeholder = 'Piss Word'
