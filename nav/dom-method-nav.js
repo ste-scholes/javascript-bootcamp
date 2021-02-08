@@ -1,7 +1,7 @@
 let callNav = {
     "classList": "/arrow-functions.html#arrow",
-    "getAttribute()": "/array-callback.html#for",
-    "setAttribute()": "/callback/map.html",
+    "getAttribute()": "/dom/get-set.html",
+    "setAttribute()": "/dom/get-set.html",
     "appendChild()": "/callback/filter.html",
     "append()": "/callback/find.html",
     "prepend()": "/callback/reduce.html",
@@ -10,11 +10,12 @@ let callNav = {
     "innerText": "/dom/innertext.html",
     "innerHTML": "/dom/innerhtml.html",
     "value": "/callback/sort.html",
-    "parentElement": "/callback/sort.html",
-    "children": "/callback/sort.html",
-    "nextSibling": "/callback/sort.html",
-    "previousSibling": "/callback/sort.html",
+    "parentElement": "/dom/siblings.html",
+    "children": "/dom/siblings.html",
+    "nextSibling": "/dom/siblings.html",
+    "previousSibling": "/dom/siblings.html",
     "style": "/callback/sort.html",
+    "forms": "/dom/forms.html"
   
   };
   

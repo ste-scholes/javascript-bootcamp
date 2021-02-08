@@ -53,3 +53,23 @@ console.log(fields[0].value)
 console.log(fields[2].checked)
 
 fields[1].placeholder = 'Piss Word'
+
+// finds a href on page
+
+const a = document.querySelector('.myLink')
+
+// change an href on page
+
+a.href = 'http://www.google.co.uk'
+
+// prints out href to console
+
+console.log(a.href)
+
+
+const img = document.querySelector('img');
+
+img.src = 'https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+img.id = 'Titten'
+img.alt = 'Shiddy Chooche'
+console.log(img)

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Javascript and the DOM</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<nav class="inner-nav"></nav>
+<h2>ParentElement, children, nextSibling, previousSibling</h2>
+<nav class="call-nav"></nav>
+<!-- add content here -->
+<h2>parentElement</h2>
+<p>The parentElement refers to the parent of the current element.</p>
+<p>Example</p>
+<p class="code">const firstLi = document.querySelector('li');</p>
+<p>In the page1.html example the li parent is the ul</p>
+<p class="code">console.log(firstLi.parentElement)</p>
+<p>If we use it again we get the parent of the ul - which is the body</p>
+<p class="code">console.log(firstLi.parentElement.parentElement)</p>
+<p>If we use it again we get the page HTML</p>
+<p class="code">console.log(firstLi.parentElement.parentElement.parentElement)</p>
+<p>If we do it one more time we get null because we have reached the top of the tree</p>
+
+<p>The whole sequence is upward, from the first elements parent to the uppermost element on the page</p>
+
+<p>Used to influence an element when another is clicked</p>
+<h2>children</h2>
+<p>Another Array like object</p>
+<p>It contains the childen elements of the ul of page1.html </p>
+<p class="code">console.log(ul.children) <span class="correct"> // 
+    HTMLCollection(3) [li.special, li, li.special]</span></p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/dom-nav.js"></script>
+
+
+<script src="/nav/dom-method-nav.js"></script>
+
+
+
+</html>
