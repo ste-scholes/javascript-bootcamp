@@ -34,13 +34,23 @@
 <p>If we do it one more time we get null because we have reached the top of the tree</p>
 
 <p>The whole sequence is upward, from the first elements parent to the uppermost element on the page</p>
-
 <p>Used to influence an element when another is clicked</p>
+
 <h2>children</h2>
+
 <p>Another Array like object</p>
 <p>It contains the childen elements of the ul of page1.html </p>
 <p class="code">console.log(ul.children) <span class="correct"> // 
     HTMLCollection(3) [li.special, li, li.special]</span></p>
+<p>Brings back First Thing - the text of the first child of ul</p>
+<p class="code">console.log(ul.children[0].innerText)</p>
+
+<h2>nextElement</h2>
+
+<p>Saves the third child of the li to a variable </p>
+<p class="code">const thirdLi = firstLi.nextElementSibling.nextElementSibling
+  <br />
+  console.log(thirdLi)</p>
 
 
 <!-- &nbsp;  <br /> -->

@@ -1,7 +1,10 @@
 let navi ={
     "DOM": "/dom/dom.html",
     'Example-1':'/dom/page1.html',
-    'Properties & Methods': '/dom/properties.html'
+    'Iterating Example': '/dom/iterating.html',
+    'Example-2': '/dom/examples.html',
+    'Properties & Methods': '/dom/properties.html',
+
 
  
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Javascript and the DOM</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<nav class="inner-nav"></nav>
+<h2>Manipulating styles using JavaScript</h2>
+<nav class="call-nav"></nav>
+<!-- add content here -->
+<h2>Styles</h2>
+<p>You can change CSS colour, background colour, font, hide elements using Javascript</p>
+<p>Every element you select has a style property</p>
+
+<p>To access the styles of an element use the following code</p>
+<p class="code">const h1 = document.querySelector('h1'); <br />
+
+    console.log(h1.style)</p>
+<p class="imp">You can only see style defined if they are inline on the page</p>
+<p>You cannot see them if they are on a style sheet!</p>
+<p class="bold">You can manipulate them using Javascript</p>
+<p class="code">h1.style.color = "green"
+</p>
+<p>Sets h1 color to green</p>
+<p class="imp">In Javascript style names are Camel Cased</p>
+<p>So if you wanted to restyle the background color of an item you would use:</p> 
+<p class="correct">backgroundColor</p>
+<p>NOT</p>
+<p class="wrong">background-color</p>
+<h2>Add mulitple styles at once</h2>
+<p class="imp">Add styles in JavaScript adds them inline</p>
+<p>So they overwrite almost any styles specified before as they are more specific</p>
+<p>In this example we select all li on page and assign e different colour from an array to each one</p>
+<p>Select all li on page</p>
+<p class="code">const allLis = document.querySelectorAll('li');</p>
+<p>Colors Array</p>
+<p class="code">const colors = ['red','orange','yellow','green','blue','purple']</p>
+<p>The code to loop through each li and assign it to a colour from the array</p>
+<p class="code">allLis.forEach((li, i) => { <br />
+    &nbsp;    const color = colors[i]; <br />
+    &nbsp;    li.style.color = color; <br />
+});</p>
+
+<p class="tip">the forEach has two arguments li which is all the li on the page stored in variable allLis and i. const color takes the 
+    colours from the colors array and assigns them to the index. Then li.style.color assignes an li to a color from the index.
+</p>
+
+<h2>getComputedStyle</h2>
+<p>This is used to access styles that have been passed from a style sheet</p>
+<p>It returns all possible styles for a css property and their current values (these are mostly the default browser values)</p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/dom-nav.js"></script>
+
+
+<script src="/nav/dom-method-nav.js"></script>
+
+
+
+</html>

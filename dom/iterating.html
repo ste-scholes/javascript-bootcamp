@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Javascript and the DOM</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<nav class="inner-nav"></nav>
+<h2>Code Examples</h2>
+<nav class="call-nav"></nav>
+<!-- add content here -->
+
+<h2>Iterate over a group of objects</h2>
+<p> Using iterations</p>
+<p>You select > loop > do something</p>
+<p>To iterate over a group of objects use a for loop</p>
+<p>Variable allLi selects all li on page</p>
+<p class="code">const allLi = document.querySelectorAll('li');</p>
+<p class="code">for (let i = 0; i < allLi.length; i++){ <br />
+    console.log(allLi[i].innerText);
+ }</p>
+<p>The for loop, loops over all of the elements and prints them out to console</p>
+<p class="bold">Change all the content of the li on page</p>
+<p class="code">for (let i = 0; i < allLi.length; i++){ <br />
+    console.log(allLi[i].innerText = 'Hello World');
+ }</p> 
+ <p>The above for loop sets all the li on the page to display the text 'Hello World'</p>
+
+ <p class="imp">Using a for of loop</p>
+ <p>You can use a for of loop to attain the same results as above</p>
+<p class="code">const allLi = document.querySelectorAll('li');</p>
+<p class="code">for (let li of allLi){ <br /> 
+    li.innerHTML = '<b> Hello </b> World!' <br /> 
+}</p>
+
+<p>Using this along with innerHTML allows you to set all the li tags within the page to say '<b>Hello</b> World' by injecting the <b> HTML</b> bold tag in the string </p>
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/dom-nav.js"></script>
+
+
+<script src="/nav/dom-method-nav.js"></script>
+
+
+
+</html>

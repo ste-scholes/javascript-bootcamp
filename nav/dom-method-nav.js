@@ -14,7 +14,7 @@ let callNav = {
     "children": "/dom/siblings.html",
     "nextSibling": "/dom/siblings.html",
     "previousSibling": "/dom/siblings.html",
-    "style": "/callback/sort.html",
+    "style": "/dom/styles.html",
     "forms": "/dom/forms.html"
   
   };
