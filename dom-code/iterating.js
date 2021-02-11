@@ -27,17 +27,52 @@ p.style.backgroundColor = "black"
 
 // add multiple styles all at once
 
-const allLis = document.querySelectorAll('li');
+// const allLis = document.querySelectorAll('li');
 
-const colors = ['red','orange','yellow','green','blue','purple']
+// const colors = ['red','orange','yellow','green','blue','purple']
 
-allLis.forEach((li, i) => {
-    const color = colors[i];
-    li.style.color = color;
-})
+// allLis.forEach((li, i) => {
+//     const color = colors[i];
+//     li.style.color = color;
+// })
 
-const styles = getComputedStyle(h1)
+// const styles = getComputedStyle(h1)
 
-console.log(styles)
+// console.log(styles)
 
 // to do list 57:54
+
+const todo = document.querySelector('#todos .todo')
+
+// change style one-by-one
+// todo.style.color = 'gray'
+// todo.style.textDecoration = 'line-through'
+// todo.style.opacity = '50%'
+
+// class sone created in example.css
+
+console.log(todo.getAttribute('class')) // todo
+
+todo.setAttribute('class', 'done') // this overwrite any applied style
+todo.setAttribute('class', 'todo done') // this adds more than one class
+
+todo.classList.remove('done') // classlist to remove class done
+
+todo.classList.add('done') // adds class done
+
+todo.classList.toggle('done'); // returns true;
+todo.classList.toggle('done'); // returns false;
+
+console.log(todo.classList) // prints DOMTokenList
+
+// create element h2
+
+const newh2 = document.createElement('h2');
+
+newh2.innerText = 'Its ten oclock heres Johnny'
+
+newh2.classList.add('special') // adds class special to newh2
+
+console.log(newh2)
+
+// appendchild 1:11

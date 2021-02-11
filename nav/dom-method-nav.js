@@ -2,7 +2,7 @@ let callNav = {
     "classList": "/arrow-functions.html#arrow",
     "getAttribute()": "/dom/get-set.html",
     "setAttribute()": "/dom/get-set.html",
-    "appendChild()": "/callback/filter.html",
+    "appendChild()": "/dome/celement.html",
     "append()": "/callback/find.html",
     "prepend()": "/callback/reduce.html",
     "removeChild()": "/callback/some.html#some",

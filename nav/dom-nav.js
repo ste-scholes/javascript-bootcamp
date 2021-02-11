@@ -4,6 +4,7 @@ let navi ={
     'Iterating Example': '/dom/iterating.html',
     'Example-2': '/dom/examples.html',
     'Properties & Methods': '/dom/properties.html',
+    'Create Element': '/dom/celement.html'
 
 
  

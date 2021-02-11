@@ -24,3 +24,14 @@ input[type="password"]{
 #Titten {
     width: 250px
 }
+
+.todo {
+    font-size: 30px;
+    color: olive;
+}
+
+.done {
+    color: gray;
+    text-decoration: line-through;
+    opacity: 50%;
+}

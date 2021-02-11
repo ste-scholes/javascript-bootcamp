@@ -62,6 +62,39 @@
 <p>This is used to access styles that have been passed from a style sheet</p>
 <p>It returns all possible styles for a css property and their current values (these are mostly the default browser values)</p>
 
+<h2>To Do list Example</h2>
+<p>Exercise</p>
+<p>We want to make a todo list and style it's functionality using Javascript</p>
+<p>When one on the buttons is clicked we want to change the style to show the task has been done</p>
+<p>We want the list item to change to 50% opacity gray, with a line through it. This could be acheieved through Javascript, but it is much more officient to create a CSS style</p>
+
+<p class="code">
+    .done { <br />
+        &nbsp;   color: gray; <br />
+        &nbsp;    text-decoration: line-through; <br />
+        &nbsp;    opacity: 50%; <br />
+    } <br />
+
+
+</p>
+<p>Next we use these different selectors to change the sytle using Javascript</p>
+<p>Select the ID and class we want to target and set it to a variable</p>
+<p class="code">const todo = document.querySelector('#todos .todo')</p>
+<p>Use getAttribute to see the class</p>
+<p class="code">console.log(todo.getAttribute('class')) // todo</p>
+<p>Use this to overwrite the current style</p>
+<p class="code">todo.setAttribute('class', 'done') // this overwrite any applied style</p>
+<p>To remove a style</p>
+<p class="code">todo.classList.remove('done') // classlist to remove class done</p>
+<p>To add a style</p>
+<p class="code">todo.classList.add('done') // adds class done</p>
+<p>To toggle between the style being on or off</p>
+<p class="code">todo.classList.toggle('done'); // returns true; <br />
+    todo.classList.toggle('done'); // returns false;</p>
+
+
+
+
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
