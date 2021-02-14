@@ -36,6 +36,51 @@
 <p>How do we get it on the page?</p>
 
 <h2>appendChild()</h2>
+<p>We want to get the following new h2 set in variable <b> newh2</b> on the page, here's how:</p>
+<p class="code">const newh2 = document.createElement('h2');</p>
+<p class="bold">Step 1 - create a variable that targets where you want it to appear </p>
+<p class="code">const section = document.querySelector('section');</p>
+<p class="bold">Step 2 - use appendChild to add the variable that targets the new h2</p>
+<p class="code">section.appendChild(newh2)</p>
+<p class="imp">Append always put it at the end of the element</p>
+<p>So if you add it to a list it will appear at the end</p>
+<p>If you add it to the body it will appear under the last element on the page within the body tag</p>
+
+<h2>Add image</h2>
+<p>1 - Create a variable (newImg) that creates the new image Element</p>
+<p class="code">const newImg = document.createElement('img');</p>
+<p>2 - Assign an image src to the newImg variable </p>
+<p class="code">newImg.src= <span class="correct"> 'https://images.unsplash.com/photo-1551582045-6ec9c11d8697?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80';
+</span></p>
+<p>3 - Assign a style with a width element to control how wide the image should be</p>
+<p class="code">newImg.style.width='400px'; // style for image size
+
+</p>
+
+<p>4 - Finally add the image into the page with the appendChild</p>
+<p class="code">document.body.appendChild(newImg); // add to page in body
+</p>
+<p class="bold">In the above the image is appended to the body of the document</p>
+<h2>Add a link to page</h2>
+<p>1 - Create a variable to create the new link</p>
+<p class="code">const newLink = document.createElement('a');</p>
+<p>2 - Create the clickable text part of the link</p>
+<p class="code">newLink.innerText = ' JavaScript Course. Click Here!'</p>
+<p>3 - Create the href destination of the link</p>
+<p class="code">newLink.href = 'https://www.youtube.com/watch?v=PeK7jqh-LOc&t=4264s';
+</p>
+<p class="bold">We now decided where to put the anchor</p>
+<p>We place it in the first p tag on the page</p>
+<p>4 - Create the variable for the first p tag</p>
+<p class="code">const firstP = document.querySelector('p');
+</p>
+<p>5 - We now apend the anchor link into the first p tag on the page</p>
+<p class="code">firstP.appendChild(newLink);
+</p>
+<p>6 - Finally we can assign a CSS class to the link - .white makes the link text white</p>
+<p class="code">newLink.classList.add('white')
+</p>
+
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->

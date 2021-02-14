@@ -69,10 +69,34 @@ console.log(todo.classList) // prints DOMTokenList
 
 const newh2 = document.createElement('h2');
 
-newh2.innerText = 'Its ten oclock heres Johnny'
+newh2.innerText = "It's ten o'clock here's Johnny"
 
 newh2.classList.add('special') // adds class special to newh2
 
 console.log(newh2)
 
 // appendchild 1:11
+
+const section = document.querySelector('section');
+
+section.appendChild(newh2)
+
+// add image
+
+const newImg = document.createElement('img');
+newImg.src='https://images.unsplash.com/photo-1551582045-6ec9c11d8697?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80';
+newImg.style.width='400px'; // style for image size
+document.body.appendChild(newImg); // add to page in body
+
+// add video or anchor tag
+
+const newLink = document.createElement('a');
+newLink.innerText = ' JavaScript Course. Click Here!'
+newLink.href = 'https://www.youtube.com/watch?v=PeK7jqh-LOc&t=4264s';
+
+
+const firstP = document.querySelector('p');
+firstP.appendChild(newLink);
+newLink.classList.add('white')
+
+// 1:17

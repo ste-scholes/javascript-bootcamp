@@ -35,3 +35,7 @@ input[type="password"]{
     text-decoration: line-through;
     opacity: 50%;
 }
+
+.white {
+    color: white;
+}
