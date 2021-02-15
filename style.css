@@ -180,6 +180,9 @@ p {
 }
 
 .code {
+    padding: 10px;
+    border-left: 4px solid green;
+    background-color: rgb(241, 241, 241);
     color: rgb(19, 83, 165);
     font-weight: light;
 }
