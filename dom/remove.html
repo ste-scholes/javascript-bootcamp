@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Javascript and the DOM</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<nav class="inner-nav"></nav>
+<h2>createElement</h2>
+<nav class="call-nav"></nav>
+<!-- add content here -->
+<h2>removeChild() </h2>
+<p>To remove a child follow these steps</p>
+<p>1 - remove child (remove peas from list)</p>
+<p>target parent - in a section and a ul => PARENT</p>
+<p class="code">const ulPeas = document.querySelector('section ul')</p>
+<p>2 - target item you want removing - note ulPeas.querySelector => CHILD</p>
+<p class="code">const removePeas = ulPeas.querySelector('.special')</p>
+<p>3 - remove element </p>
+<p>This follows the pattern -> parent -> remove child => child</p>
+<p class="code">const deleted = ulPeas.removeChild(removePeas)</p>
+<p class="wrong">the removed child is returnd in the variable</p>
+<p class="code">console.log(deleted)</p>
+<p class="correct">// returns &lt;li class="special">Peas&lt;/li></p>
+
+
+<h2>remove()</h2>
+<p>Newer - not supported in IE</p>
+
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/dom-nav.js"></script>
+
+
+<script src="/nav/dom-method-nav.js"></script>
+
+
+
+</html>

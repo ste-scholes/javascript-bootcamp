@@ -22,6 +22,7 @@
 <nav class="call-nav"></nav>
 <!-- add content here -->
 <h2>createElement </h2>
+<p class="imp">Follow these steps to create and input elements on a page</p>
 <p>This creates a new HTML object</p>
 <p>The following code creates a h2 tag and adds content to it</p>
 <p>Creates h2 element using createElement adds to variable newh2</p>
@@ -32,10 +33,10 @@
 <p class="code">newh2.classList.add('special') // adds class special to newh2</p>
 <p>View results</p>
 <p class="code">console.log(newh2)</p>
-<p class="correct">// returns <h2 class="special">Its ten oclock heres Johnny</h2> </p>
+<p class="bold">// returns <p class="correct">Its ten oclock heres Johnny</p> </p>
 <p>How do we get it on the page?</p>
 
-<h2>appendChild()</h2>
+<h2 id="child">appendChild()</h2>
 <p>We want to get the following new h2 set in variable <b> newh2</b> on the page, here's how:</p>
 <p class="code">const newh2 = document.createElement('h2');</p>
 <p class="bold">Step 1 - create a variable that targets where you want it to appear </p>
@@ -80,7 +81,75 @@
 <p>6 - Finally we can assign a CSS class to the link - .white makes the link text white</p>
 <p class="code">newLink.classList.add('white')
 </p>
+<h2>insertBefore</h2>
+<p>If you have a UL and want to add a new list item at the top you need to follwo these steps:</p>
+<p>1 - Target the ul tag </p>
+<p class="code">const parentUL = document.querySelector('ul')</p>
+<p>2 - Create the new li HTML element with createElement</p>
+<p class="code">const newLI = document.createElement('li')</p>
+<p>3 - Next add text content into the li element with innerText</p>
+<p class="code">newLI.innerText = 'Feed the Cat'</p>
+<p>4 - Next target the first element where you wish this new li to proceed it.</p>
+<p class="code">const firstLI = document.querySelector('li.todo')</p>
+<p>5 - Next insert the new li using inserBefore</p>
+<p class="code">parentUL.insertBefore(newLI, firstLI)
 
+</p>
+<p class="imp">insertBefore take two parameters - newLI, firstLI</p>
+
+<p class="bold">To add to the end - follow steps 1,2,3 then use this code</p>
+<p class="code">parentUL.appendChild(newLI)
+</p>
+
+<p class="bold">To add above other elements within the ul, use the index</p>
+<p>The code below selects the li in the second position in the index [2]</p>
+<p class="code">const lastUL = document.querySelectorAll('li.todo')[2]</p>
+<p>We then insert the li using insertBefore</p>
+<p class="code">parentUL.insertBefore(newLI, lastUL)</p>
+<h2>insertAdjacentElement</h2>
+<p>1 - create the new element and assign to variable - in this case an i [italic tag]</p>
+<p class="code">const i = document.createElement('i')</p>
+<p>2 - Next create the content that is going inbetween the italic i tags</p>
+<p class="code">i.innerText = 'I am Italics'</p>
+
+
+<p>This is an alternate way of performing the tasks outlined above</p>
+<p>3 - First target where you want the new element to go</p>
+<p class="code">const firstP = document.querySelector('p')</p>
+<p>4 - Next seect where you want it to go using the correct synatx first followed by the variable of what you wish to insert</p>
+<p class="note">There are a number of option with insertAdjacentElement</p>
+
+<p>Places element just before opening tag of parent</p>
+<p class="code">firstP.insertAdjacentElement('beforebegin', i)</p>
+
+<p>Places element after the closing tag of parent</p>
+<p class="code">firstP.insertAdjacentElement('afterend', i)</p>
+
+<p>Places element immediately after the opening tag of parent object</p>
+<p class="code">firstP.insertAdjacentElement('afterbegin', i)</p>
+
+<p>Place element just before the end of parent</p>
+<p class="code">firstP.insertAdjacentElement('beforeend', i)</p>
+
+<h2 id="append">append()</h2>
+<p class="imp">Does not work in IE</p>
+<p>1 - Create i element</p>
+<p class="code">const i = document.createElement('i')</p>
+<p>2 - insert text content into i element</p>
+<p class="code">i.innerText = 'I am Italics '</p>
+<p>3 - Create bold text element b</p>
+<p class="code">const  text = document.createElement('b')</p>
+<p>4 - Add text into b tag</p>
+<p class="code">text.innerText = 'Here is some text'</p>
+<p class="bold">Next</p>
+<p>5 - Target where you want new content to go using querySelector</p>
+<p class="code">const pNew = document.querySelector('p.new')</p>
+<p>6 - append() - This code adds the two elements i and text to the end of the parent</p>
+<p class="code">pNew.append(i, text)</p>
+
+<h2 id="prepend">prepend()</h2>
+<p>7 - prepend() - This code adds the two elemments at the start</p>
+<p class="code">pNew.append(i, text)</p>
 
 <!-- &nbsp;  <br /> -->
 <!-- content ends here -->
