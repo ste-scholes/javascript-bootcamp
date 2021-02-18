@@ -166,3 +166,7 @@ const deleted = ulPeas.removeChild(removePeas)
 console.log(deleted)
 
 // 1:31
+
+const h3 = document.querySelector('h3');
+
+h3.remove()
