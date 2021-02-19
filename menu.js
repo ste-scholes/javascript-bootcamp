@@ -9,7 +9,8 @@ let menuItem ={
     'New Objects': '/objects/new-objects.html',
     Loops: '/loops.html',
     Functions: '/functions.html',
-    DOM: '/dom/dom.html'
+    DOM: '/dom/dom.html',
+    Events: '/dom/events/index.html'
     
 };
 

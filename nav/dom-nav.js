@@ -5,7 +5,8 @@ let navi ={
     'Example-2': '/dom/examples.html',
     'Properties & Methods': '/dom/properties.html',
     'Create Element - Important': '/dom/celement.html',
-    'Game Scores app': '/dom-code/app/index.html'
+    'Game Scores app': '/dom-code/app/index.html',
+    'Game Score code breakdown': '/dom/appcode.html'
 
 
  
