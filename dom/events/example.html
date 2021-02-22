@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+
+    </script>
+    <title>2 Ways Not to add Event Listeners</title>
+</head>
+<a href="/dom/events/index.html" class="call-nav">Events Homepage</a>
+
+<body>
+    <h2>Two ways to not add Event Listeners
+    </h2>
+    <p>Like styles you shouldn't put your Javascript inline, it is hard to modify, it clutetrs the page, is hard to track and looks ugly</p>
+
+    <p>Inline JavaScript is converted auotmatically into Javascript and rund directly from inline</p>
+    <h2>Inline event added</h2>
+<button onclick="alert('You clicked me')">
+    Click Me
+</button>
+
+<form action="">
+    <input type="range" min="10" max="50" onclick="alert('you clicked me too')">
+</form>
+
+
+<h2>External File - Function</h2>
+<p>Use JavaScript event handlers from external file</p>
+<p>If you were to run the above code in a seperate file, you would trigger the alert as soon as the page loads</p>
+<p>In order to run the code as you would expect, you need to create a function and embed the code within it.</p>
+
+<button id="clicker">Clacker</button>
+
+<p>The above button has an ID of clicker</p>
+<p>In order to run the code correctly as above in an external script you need to set it to a function</p>
+<p class="code">const btn = document.querySelector('#clicker');
+
+</p>
+
+<p class="code"> btn.onclick = function(){
+    alert('You touched my clacker')
+    }</p>
+
+<p class="bold">Once again this is not the way to do it</p>
+<h2>AddEventLister</h2>
+<p>The correct way</p>
+<button id='yes'>Click Here</button>
+
+</body>
+
+
+
+
+<script src="/dom-code/events.js"></script>
+
+
+
+</html>

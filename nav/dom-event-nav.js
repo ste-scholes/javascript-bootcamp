@@ -1,21 +1,20 @@
 let callNav = {
-    "classList": "/dom/classlist.html#class",
-    "getAttribute()": "/dom/get-set.html#get",
-    "setAttribute()": "/dom/get-set.html#set",
-    "appendChild()": "/dom/celement.html#child",
-    "append()":  "/dom/celement.html#append",
-    "prepend()":  "/dom/celement.html#prepend",
-    "removeChild()": "/dom/remove.html#removecld",
-    "remove()": "/dom/remove.html#remove",
-    "innerText": "/dom/innertext.html#inner",
-    "innerHTML": "/dom/innerhtml.html#innerhtml",
-    "value": "/callback/sort.html",
-    "parentElement": "/dom/siblings.html#parent",
-    "children": "/dom/siblings.html#children",
-    "nextSibling": "/dom/siblings.html",
-    "previousSibling": "/dom/siblings.html",
-    "style": "/dom/styles.html#styles",
-    "forms": "/dom/forms.html#forms"
+    "Bad Example": "/dom/events/example.html",
+    "clicks": "/dom/classlist.html#class",
+    "drags": "/dom/get-set.html#get",
+    "drops": "/dom/get-set.html#set",
+    "hovers": "/dom/celement.html#child",
+    "scrolls":  "/dom/celement.html#append",
+    "form sumission":  "/dom/celement.html#prepend",
+    "key presses": "/dom/remove.html#removecld",
+    "focus blur": "/dom/remove.html#remove",
+    "mousewheel": "/dom/innertext.html#inner",
+    "copying": "/dom/innerhtml.html#innerhtml",
+    "pasting": "/callback/sort.html",
+    "audio start": "/dom/siblings.html#parent",
+    "screen resize": "/dom/siblings.html#children",
+    "printing": "/dom/siblings.html",
+
   
   };
   
