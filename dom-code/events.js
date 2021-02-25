@@ -13,10 +13,25 @@ btn.onclick = function() {
 
 const yes = document.querySelector('#yes');
 
+
 yes.addEventListener('click', function() {
     alert('You pressed me')
 })
 
 yes.addEventListener('click', function() {
     console.log('This also works? yes it does.. nice!')
+})
+
+const no = document.querySelector('#no');
+
+no.addEventListener('mouseover', function() {
+    no.innerText = 'Stop Touching!'
+});
+
+no.addEventListener('mouseout', function() {
+    no.innerText = 'Click Here'
+})
+
+window.addEventListener('scroll', function() {
+    console.log('Stop Scrolling')
 })

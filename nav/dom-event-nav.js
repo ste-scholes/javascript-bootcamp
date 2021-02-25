@@ -6,7 +6,7 @@ let callNav = {
     "hovers": "/dom/celement.html#child",
     "scrolls":  "/dom/celement.html#append",
     "form sumission":  "/dom/celement.html#prepend",
-    "key presses": "/dom/remove.html#removecld",
+    "key presses": "/dom/events/key.html",
     "focus blur": "/dom/remove.html#remove",
     "mousewheel": "/dom/innertext.html#inner",
     "copying": "/dom/innerhtml.html#innerhtml",
@@ -14,9 +14,14 @@ let callNav = {
     "audio start": "/dom/siblings.html#parent",
     "screen resize": "/dom/siblings.html#children",
     "printing": "/dom/siblings.html",
+    "Try to click exercise": "/dom/events/trytoclick.html",
+    "Try to click Code": "/dom/events/trytoclick-exp.html",
+    "Pick a color": "/dom/events/pickcode.html",
 
   
   };
+
+
   
   var callNa = function() {
       var output = '<ul id="call-nav">',

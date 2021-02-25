@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>DOM - EVENTS</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<!-- <nav class="inner-nav"></nav> -->
+<h2>Keypress</h2>
+<nav class="call-nav"></nav>
+<h2>Key press</h2>
+<!-- add content here -->
+<p>To log what key is being pressed you can use the following code</p>
+<p class="code">document.body.addEventListener('keypress', function(e) {<br />
+    console.dir(e); <span class="correct">// the (e) contains the info regarding what key was pressed</span>
+})</p>
+
+<h2>keydown</h2>
+
+<p>1 We create an input to test keydown on </p>
+<p class="code">const input = document.querySelector('#username');</p>
+<p>2 We create an addEventListener to listen for the keydown event</p>
+<p class="code">input.addEventListener('keydown', function<b>(e)</b> { <br />
+    console.log('keydown') <br />
+})
+</p>
+<p class="bold">The (e) is an event object that holds info about what key is pressed</p>
+<p class="imp">keydown fires no matter what key is pressed</p>
+
+<h2>keyup</h2>
+<p>1 We create an input to test keyup on </p>
+<p class="code">const input = document.querySelector('#username');</p>
+<p>2  We create an addEventListener to listen for the keyup event</p>
+<p class="code">input.addEventListener('keyup', function(e) {<br />
+    console.log('keyup')<br />
+})</p>
+<p class="bold"> keyup fires everytime you release a key after you have pressed it down</p>
+
+<h2>keypress</h2>
+<p>keypress only records an event when a character or number is generated. It will not trigger on pressing arrow keys, Shift, Ctrl or Alt as these do not generate a character when pressed. Howver return does work, even though it doesn't actually generate a character</p>
+<p>1 We create an input to test keypress on </p>
+<p class="code">const input = document.querySelector('#username');</p>
+<p>2  We create an addEventListener to listen for the keypress event</p>
+<p class="code">input.addEventListener('keypress', function(e) {<br />
+    console.log('keypress')<br />
+})
+</p>
+<p class="bold">A character or space keypress triggers the event.  Example: shift key will not trigger it, nor will ctrl etc</p>
+<p class="note">Pressing Enter will trigger the event</p>
+<p class="imp">Differences from browser to browser</p>
+
+<h2>Shoppinng List Exercise</h2>
+<p><a href="/dom/events/keyapp/index.html" class="button">View Exercise</a></p>
+<p>In the following code we create a simple shopping list that will add a new list item that is adde via an input field
+    when the return key is pressed</p>
+<p>We use keypress to trigger the even on pressing the Enter key</p>
+<p>1 We create the variable required to target adding items into the list via a new li tag in the ul tag</p>
+<p class="code">const addItemInput = document.querySelector('#addItem');</p>
+<p class="code">const itemsUL = document.querySelector('#items');
+</p>
+<p>2 Next we write the code to perform the task</p>
+<p class="code">addItemInput.addEventListener('keypress', function(e){ <br />
+    if(e.key === 'Enter'){ <br />
+        &nbsp;  if(!this.value) return; <span class="correct">// stops an empty string</span>  <br />
+        &nbsp;  const newItemText = this.value;<span class="correct"> // adds new item to list - by pressing 'Enter' </span><br />
+        &nbsp;  const newItem = document.createElement('li');<span class="correct"> // we create a new li to hold the new item</span> <br />
+        &nbsp;  newItem.innerText = newItemText;<span class="correct"> // takes value of newItemText and adds it as text in the <b>newItem li</b></span><br />
+        &nbsp;  itemsUL.appendChild(newItem);<span class="correct">// finally we add the new item </span> <br />
+        &nbsp;  this.value = '';<span class="correct">// this clears the item out of the box by setting it to an empty string </span> <br />
+    }
+})</p>
+
+
+
+
+<span class="correct"></span>
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+
+<!-- <script src="dom/events/trytoclick.js"></script> -->
+
+<script src="/nav/dom-event-nav.js"></script>
+
+
+
+</html>

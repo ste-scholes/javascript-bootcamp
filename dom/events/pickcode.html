@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>DOM - EVENTS</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<!-- <nav class="inner-nav"></nav> -->
+<h2>addEventLister</h2>
+<nav class="call-nav"></nav>
+<h2>Pick a clor - code</h2>
+<!-- add content here -->
+<p>This code has a row of coloured boes, when you click on one the h1 text assumes that color</p>
+<p><a href="/dom/events/boxes.html" class="button">Pick a color</a></p>
+<p>1 - Creat an Array of colours</p>
+<p class="code">const colors = ['red','orange','yellow','green','blue','purple','indigo','violet'];</p>
+<p>2 - </p>
+<p class="code">const changeColor = function(evt) {<br />
+    console.log(evt)<span class="correct">// shows event info</span> <br />
+    const h1 = document.querySelector('h1')<span class="correct">// selects h1</span> <br />
+    h1.style.color = this.style.backgroundColor; // <br />
+};
+</p>
+<p>3 - comments refer to what the code does</p>
+<p class="code">for(let color of colors) { <span class="correct">// loops through colors</span><br />
+    const box = document.createElement('div');<span class="correct"> // creates a di</span>v<br />
+    box.style.backgroundColor = color;<span class="correct"> // assigns background colo</span>r<br />
+    box.classList.add('box') <span class="correct">// assigns a class of 'box' to div</span><br />
+    box.innerText = `${color}` <span class="correct">// adds text color from array</span><br />
+    container.appendChild(box) <span class="correct">// adds the box(s) to the section ID boxes</span><br />
+    box.addEventListener('click', changeColor)<br />
+}</p>
+
+
+<span class="correct"></span>
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+
+<!-- <script src="dom/events/trytoclick.js"></script> -->
+
+<script src="/nav/dom-event-nav.js"></script>
+
+
+
+</html>

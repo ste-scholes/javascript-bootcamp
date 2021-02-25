@@ -34,9 +34,27 @@
 <p>2 - add the event listerner</p>
 <p class="code">btn.addEventListener('click', function() {
   alert('You clicked me')})</p>
-
-
-
+<h2>Add a click event</h2>
+  <p>Add code to change a button with ID of yes</p>
+<p>1 - Select button</p>
+<p class="code">const yes = document.querySelector('#yes');</p>
+<p>2 - Add click event to set of an alert</p>
+<p class="code">yes.addEventListener('click', function() { <br />
+  alert('You pressed me')
+})</p>
+<h2>mouseover and mouseout</h2>
+<p>This code chnages the text of a button when you mouse over and again when you mouse out</p>
+<p>1 - Select button with ID of no</p>
+<p class="code">const no = document.querySelector('#no');</p>
+<p>2 - Add code for mouseover</p>
+<p class="code">no.addEventListener('mouseover', function() { <br />
+  no.innerText = 'Stop Touching!' <br />
+});</p>
+<p>3 - Add code for mouseout</p>
+<p class="code">no.addEventListener('mouseout', function() {<br />
+  no.innerText = 'Click Here'<br />
+})</p>
+<p class="tip">Without the mouseout code the change resulting from the mouseover will be permanent</p>
 
 
 <!-- &nbsp;  <br /> -->
