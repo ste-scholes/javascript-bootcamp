@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Javascript DOM</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>DOM - EVENTS</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Manipulating the DOM</h2>
+<!-- <nav class="inner-nav"></nav> -->
+<h2>Coin Game</h2>
+<nav class="call-nav"></nav>
+<!-- add content here -->
+<p>In the following code we learn how to create a basic game where the user directs an avatar around the screen with the arrow keys with the aim of collecting a gold coin</p>
+<p>When the player collects the coin the coin moves position and the player need to get it again</p>
+<p>Super Mario it isn't!!</p>
+<p><a href="/dom/events/game/index.html" class="button">Play game</a></p>
+<h2>Game Code</h2>
+<p>The code is set into three seperate pieces</p>
+<p>1 - Collision Detection code</p>
+<p>2 - Random coin movement</p>
+<p>3 - Avatar movement code</p>
+
+<h2>Collision Detection code</h2>
+<p>This code reacts when the players bounding box collides with the coins</p>
+<p class="code">
+    function isTouching(a, b) { <br />
+        &nbsp;     const aRect = a.getBoundingClientRect(); <br />
+        &nbsp;      const bRect = b.getBoundingClientRect(); <br /> <br />
+    
+        return !( <br />
+        &nbsp;        aRect.top + aRect.height < bRect.top ||  <br />
+        &nbsp;        aRect.top > bRect.top + bRect.height || <br />
+        &nbsp;        aRect.left + aRect.width < bRect.left || <br />
+        &nbsp;        aRect.left > bRect.left + bRect.width <br />
+        &nbsp;     ); <br />
+    } <br />
+<p>This code is quite complicated and not explained in the tutorial, apart from the tutor finding and modifying it on stack overflow</p>    
+
+</p>
+
+<h2>Random Coin movement</h2>
+<p class="code"> <span class="correct">// select coin</span><br />
+    const coin = document.querySelector('#coin')</p>
+<p class="code">const moveCoin = () => {<br />
+    const  y = Math.floor(Math.random() * window.innerHeight);<br />
+    const  x = Math.floor(Math.random() * window.innerWidth);<br />
+    coin.style.top = `${y}px`;<br />
+    coin.style.left = `${x}px`;<br />
+  }
+  </p>
+<p class="code">  <span class="correct">// triggers moveCoin function on game start</span> <br />
+    moveCoin()</p>
+
+    
+
+<h2> Avatar movement code</h2>
+<p><span class="correct">
+    // select player as avatar</span></p>
+    <p class="code">const avatar = document.querySelector('#player');</p>
+    <p>This code is for the players movement</p>
+<p class="code">
+    window.addEventListener('keyup', function(e) { <br />
+        &nbsp;    if(e.key === 'ArrowDown' || e.key === 'Down') { <br />
+            &nbsp;     &nbsp;  const currTop = extractPos(avatar.style.top) <br />
+            &nbsp;     &nbsp; avatar.style.top = `${currTop + 50}px`;  <br />
+       &nbsp;    }  <br />
+        else if (e.key === 'ArrowUp' || e.key ==='Up') { <br />
+            &nbsp;      const currTop = extractPos(avatar.style.top); <br />
+            &nbsp;      avatar.style.top = `${currTop - 50}px` <br />
+        } <br />
+        else if (e.key === 'ArrowRight' || e.key ==='Right') { <br />
+            &nbsp;      const currLeft = extractPos(avatar.style.left); <br />
+            &nbsp;        avatar.style.left = `${currLeft + 50}px` <br />
+            &nbsp;        avatar.style.transform = 'scale(1,1)' <br />
+        } <br />
+        else if (e.key === 'ArrowLeft' || e.key ==='Left') { <br />
+            &nbsp;       const currLeft = extractPos(avatar.style.left); <br />
+            &nbsp;       avatar.style.left = `${currLeft - 50}px` <br />
+            &nbsp;      avatar.style.transform = 'scale(-1,1)' <br />
+        } <br />
+        if (isTouching(avatar, coin)) moveCoin(); <br />
+    }) <br />
+    const extractPos = (pos) => { <br />
+        &nbsp;       if(!pos) return 100; <br />
+      return parseInt(pos.slice(0,-2)) <br />
+    }; <br />
+    
+</p>
+<p class="correct">This allows IE users to play IE uses Up, Down, Left, Right, NOT ArrowLeft, ArrowUp etc...</p>
+<p class="code"> e.key === 'ArrowDown' || e.key === 'Down'  </p>
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+
+
+
+<script src="/nav/dom-event-nav.js"></script>
+
+
+
+</html>

@@ -1,0 +1,11 @@
+img {
+    width: 100;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+}
+
+#player {
+  height: 150px
+}
