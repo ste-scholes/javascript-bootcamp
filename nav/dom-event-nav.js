@@ -17,9 +17,10 @@ let callNav = {
     "Try to click exercise": "/dom/events/trytoclick.html",
     "Try to click Code": "/dom/events/trytoclick-exp.html",
     "Pick a color": "/dom/events/pickcode.html",
-    "Coin Game": "/dom/events/game/code.html"
+    "Coin Game": "/dom/events/game/code.html",
+    "Form Example": "/dom/events/form-example.html"
 
-  
+    
   };
 
 
