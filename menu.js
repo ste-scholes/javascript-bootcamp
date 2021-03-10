@@ -10,7 +10,8 @@ let menuItem ={
     Loops: '/loops.html',
     Functions: '/functions.html',
     DOM: '/dom/dom.html',
-    Events: '/dom/events/index.html'
+    Events: '/dom/events/index.html',
+    Async: '/async/index.html'
     
 };
 

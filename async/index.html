@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Javascript DOM</title>
+  </head>
+  <body>
+    <div class="doc">
+      <div class="section">
+        <nav class="menu"></nav>
+      </div>
+      <h1>Asynchronous Code</h1>
+      <nav class="nav"></nav>
+      <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+      <h2>Asynchronous Code, Callbacks & Promises</h2>
+      <nav class="inner-nav"></nav>
+      <h2>JS is Single Threaded</h2>
+      <p>JavaScrip is a single threaded language</p>
+      <p>This simply means that at any time JavaScript can only run one thing at a time, basically it is only running one line of code at a time</p>
+      <p>A simple example of this would be having a console.log() followed by an alert and another console.log()</p>
+      <p>When you run this the first console.log() will run, then the alart will run, but the second console.log() will not run until you click Okay</p>
+      <p>This is because JavaScript can only do one thing at a time, it cannot skip this and move on, it has to wait for an action to be performed first.</p>
+      <p class="imp">Callbacks offer a workaround!</p>
+      <p>This is possible because the Browser does the work!</p>
+      <p>JavaScript can pass off certain things to the browser and let that handle them. Once done the browser reminds JavaScript to continue with its task </p>
+      <p>So.. Javascript doesn't send a request to the API or wait for an event to happen, the browser handles this type of interaction</p>
+      <p class="bold">How?</p>
+      <p>Browsers come with Web APIs that are able to handle certain tasks in the background (like making requests or setTimeout)</p>
+      <p>The JS call stack recognises these web API functions and passes them off to the browser to care of.</p>
+      <p>Once the browser finishes those tasks, they return and are pushed onto the stack as a callback.</p>
+      <!-- <nav class="nav"></nav> -->
+    
+      <h2>The Call Stack</h2>
+      <!-- add content here -->
+      <p>
+        The mechanism the JS interpreter usesu to keep track of its place in a
+        script that calls multiple functions
+      </p>
+      <p>
+        How JS knows what function is currently being run and what functions are
+        called from within that function, etc/
+      </p>
+
+      <p>
+        The call stack works in a last in first out way. Think if you had a
+        stack of books and placed an apple on the top. You would remove the
+        apple first before moving on to the books. You don't remove things from
+        the bottom.
+      </p>
+      <h2>How it works</h2>
+
+   
+      <p>
+        1 - When a script calls a function, the interpreter adds it to the call
+        stack and then starts carrying out the function
+      </p>
+      <p>
+        2 - Any functions that are called by the function are added to the call
+        stack further up, and run where their calls are reached.
+      </p>
+      <p>
+        3 - When the current function is finished, the interpreter takes it off
+        the stack and resumes execution where it left offf in the last code
+        listing
+      </p>
+      <p class="bold">Example</p>
+      <p>The below code run through is visible in chrome dev tools. </p>
+      <p>1 - Click View Example - go to the page and Inspect</p>
+      <p>2 - Once in Inspect got to the Sources tab. In the left side bar that shows the file structure select the page e.g. callstack.js</p>
+      <p>3 - Next set a breakpoint by clicking next to the line number.  In this code set the breakpoint at makeRant() call at the bottom of the code</p>
+      <p>4 - On the right hand side in the Debugger panel at the top use the step to arrow to step through the function, you'll see changes in the Call Stack Scope panels beneath as well as on screen</p>
+      <p><a href="code/callstack.html" class="call-nav">View Example</a></p>
+
+      <p class="code">
+        const repeat = (str, times) => {<span class="correct">
+          // str = "I HATE MAYONNAISE!!!", times = 8</span
+        >
+        <br />
+        &nbsp; let result = "";<span class="correct"> // result = ""</span>
+        <br />
+        for (let i = 0; i < times; i++) {<span class="correct">
+          times = 8 ~ each iteration adds another str to the above until the 8th
+          time</span
+        >
+        <br />
+        &nbsp; result += str;<span class="correct"> // result = ""</span> <br />
+        &nbsp; }<br />
+        &nbsp; return result;<span class="correct">
+          // result = "I HATE MAYONNAISE!!!I HATE MAYONNAISE!!! 8 times</span
+        >
+        <br />
+        };<br /><br />
+
+        const scream = (str) => {<span class="correct"
+          >// str = "I hate mayonnaise"</span
+        >
+        <br />
+        &nbsp; return str.toUpperCase() + "!!!";<br />
+        &nbsp; };<br /><br />
+
+        const getRantText = (phrase) => {<br />
+        &nbsp; let text = scream(phrase);
+        <span class="correct">// phrase = "I hate mayonnaise"</span> <br />
+        &nbsp; let rant = repeat(text, 8);
+        <span class="correct">// text = "I HATE MAYONNAISE!!!"</span> <br />
+        &nbsp; return rant;
+        <span class="correct"
+          >// rant = "I HATE MAYONNAISE!!!I HATE MAYONNAISE!!! 8 times"</span
+        >
+        <br />
+        &nbsp; };<br /><br />
+
+        const makeRant = (phrase, el) => {<br />
+        &nbsp; const h1 = document.createElement("h1");<span class="correct"
+          >//phrase = "I hate mayonnaise", el = body {text: "", link: "", vLink:
+          "", aLink: "", bgColor: "", …</span
+        >
+        <br />
+        &nbsp; h1.innerText = getRantText(phrase);<span class="correct"
+          >// h1 = h1 {align: "", title: "", lang: "", translate: true, dir: "",
+          …</span
+        >
+        <br />
+        &nbsp; el.appendChild(h1);<span class="correct"
+          >// phrase = "I hate mayonnaise"</span
+        >
+        <br />
+        };<br /><br />
+
+        makeRant("I hate mayonnaise", document.body);<br />
+        // makeRant("If you have to cough, please cover your mouth",
+        document.body);<br />
+      </p>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/nav.js"></script>
+  <script src="code/code.js"></script>
+
+  <script src="/nav/async.js"></script>
+</html>

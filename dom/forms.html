@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/style.css">
-    
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+
     <title>Javascript DOM</title>
   </head>
-  <body><div class="doc">
- <div class="section"> 
-    <nav class="menu"></nav>
-</div>    
-    <h1>Javascript and the DOM</h1>
-    <nav class="nav"></nav>
-    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
-<h2>Manipulating the DOM</h2>
-<nav class="inner-nav"></nav>
-<h2>Forms - Properties and Methods</h2>
-<nav class="call-nav"></nav>
-<!-- add content here -->
-<h2 id="forms">Forms and image properties</h2>
-<p>Here are some examples of how to access and manipulate form data</p>
-<p class="code">const fields = document.querySelectorAll('input')</p>
-<p class="code">console.log(fields[2].value) <br />
+  <body>
+    <div class="doc">
+      <div class="section">
+        <nav class="menu"></nav>
+      </div>
+      <h1>Javascript and the DOM</h1>
+      <nav class="nav"></nav>
+      <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+      <h2>Manipulating the DOM</h2>
+      <nav class="inner-nav"></nav>
+      <h2>Forms - Properties and Methods</h2>
+      <nav class="call-nav"></nav>
+      <!-- add content here -->
+      <h2 id="forms">Forms and image properties</h2>
+      <p>Here are some examples of how to access and manipulate form data</p>
+      <p class="code">const fields = document.querySelectorAll('input')</p>
+      <p class="code">
+        console.log(fields[2].value) <br />
 
-    console.log(fields) <br />
-    
-    console.log(fields[0].value) <br />
-    
-    console.log(fields[2].checked)</p>
-    <p>Changes palceholder text on password field</p>
+        console.log(fields) <br />
 
-    <p class="code">fields[1].placeholder = 'Pass Word'</p>
-    <p>Finds a href with class of myLink and assigns it to variable a </p>
-    <p class="code">const a = document.querySelector('.myLink')</p>
-    <p>Changes href on page through variable a </p>
-    <p class="code">a.href = 'http://www.google.co.uk'</p>
-    <p>Prints result to console</p>
-    <p class="code">console.log(a.href)</p>
+        console.log(fields[0].value) <br />
 
-    <h2>Image</h2>
+        console.log(fields[2].checked)
+      </p>
+      <p>Changes palceholder text on password field</p>
 
-    <p>Access image on page</p>
-    <p class="code">
-        const img = document.querySelector('img');</p>
-    <p>Change image source</p>
+      <p class="code">fields[1].placeholder = 'Pass Word'</p>
+      <p>Finds a href with class of myLink and assigns it to variable a</p>
+      <p class="code">const a = document.querySelector('.myLink')</p>
+      <p>Changes href on page through variable a</p>
+      <p class="code">a.href = 'http://www.google.co.uk'</p>
+      <p>Prints result to console</p>
+      <p class="code">console.log(a.href)</p>
 
-    <p class="code">img.src = 'https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
-    </p>
+      <h2>Image</h2>
 
-    <p>Change image ID</p>
+      <p>Access image on page</p>
+      <p class="code">const img = document.querySelector('img');</p>
+      <p>Change image source</p>
 
-    <p class="code">img.id = 'Titten'</p>
-    <p>Change image alt attribute</p>
-    <p class="code">img.alt = 'Stinkin Chooche'</p>
+      <p class="code">
+        img.src =
+        'https://images.unsplash.com/photo-1561948955-570b270e7c36?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60'
+      </p>
 
+      <p>Change image ID</p>
 
+      <p class="code">img.id = 'Titten'</p>
+      <p>Change image alt attribute</p>
+      <p class="code">img.alt = 'Stinkin Chooche'</p>
 
-<!-- &nbsp;  <br /> -->
-<!-- content ends here -->
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/nav.js"></script>
+  <script src="/nav/dom-nav.js"></script>
 
-</div>
-</body>
-<script src="/menu.js"></script>
-<script src="/nav.js"></script>
-<script src="/nav/dom-nav.js"></script>
-
-
-<script src="/nav/dom-method-nav.js"></script>
-
-
-
+  <script src="/nav/dom-method-nav.js"></script>
 </html>

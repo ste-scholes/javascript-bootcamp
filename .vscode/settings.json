@@ -2619,7 +2619,8 @@
   
     // Configure settings to be overridden for [html] language.
     "[html]": {
-      "editor.suggest.insertMode": "replace"
+      "editor.suggest.insertMode": "replace",
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
   
     // Configure settings to be overridden for [json] language.
@@ -3089,7 +3090,10 @@
     "testing.enableCodeLens": true,
   
     // Whether test failures should be reported in the 'problems' view and show as errors in the editor.
-    "testing.enableProblemDiagnostics": false
+    "testing.enableProblemDiagnostics": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
   }
   
   
