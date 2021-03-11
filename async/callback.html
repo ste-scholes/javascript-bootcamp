@@ -28,6 +28,54 @@
           <a href="code/callback.html">Call Back Example</a>
         </button>
       </p>
+      <p>This code move the button across the screen at set intervals</p>
+      <p>Select the button</p>
+      <p class="code">const btn = document.querySelector("button");</p>
+      <p>The code that moves the button</p>
+<p class="code">const moveX = (element, amount, delay, onSucess, onFail) => { <br />
+  &nbsp;   setTimeout(() => { <br />
+    &nbsp; const screenWidth = document.body.clientWidth; <br />
+    &nbsp; const elRight = element.getBoundingClientRect().right; <br />
+    &nbsp; const currLeft = element.getBoundingClientRect().left; <br />
+    &nbsp; if (elRight + amount > screenWidth) { <br />
+      &nbsp; onFail(); <br />
+      &nbsp; } else {     <br />
+        &nbsp; element.style.transform = `translateX(${currLeft + amount}px) `; <br />
+        &nbsp; onSucess(); <br />
+        &nbsp;   } <br />
+        &nbsp;  }, delay); <br />
+};</p>
+
+<p>The callback that deals with success and failure to run the code using onSuccess and onFailure callbacks</p>
+<p class="code">moveX(btn, 100, 1000, () => { <br />
+  &nbsp;   console.log('step 1') // success <br />
+  &nbsp;  moveX(btn, 100, 1000, () => { <br />
+    &nbsp;     &nbsp;   console.log('step 2') <br />
+    &nbsp;     &nbsp; &nbsp;    moveX(btn, 100, 1000, () => { <br />
+      &nbsp;       &nbsp; &nbsp;    console.log('step 3') <br />
+      &nbsp; &nbsp;     &nbsp; &nbsp;   moveX(btn, 100, 1000, () => { <br />
+        &nbsp; &nbsp;   &nbsp; &nbsp;       console.log('step 4') <br />
+        &nbsp; &nbsp;      &nbsp; &nbsp;      moveX(btn, 1000, 1000, () => { <br />
+          &nbsp; &nbsp;      &nbsp; &nbsp;         console.log('final step') <br />
+          &nbsp; &nbsp;       &nbsp; &nbsp;    }, () => { <br />
+            &nbsp; &nbsp;   &nbsp; &nbsp;        console.log('offscreen on final step') <br />
+            &nbsp; &nbsp;     &nbsp; &nbsp;        alert('its gone pete tongue') <br />
+                  &nbsp;     &nbsp; &nbsp;      }) <br />
+                  &nbsp;      &nbsp; &nbsp;    }, () => { <br />
+            &nbsp; &nbsp; &nbsp;          console.log('offscreen step 4') <br /> 
+              
+            &nbsp; &nbsp;    &nbsp;     }) <br />
+            &nbsp;     &nbsp;   }, () => { <br />
+              &nbsp;   &nbsp;         console.log('offscreen step 3') <br />
+          &nbsp; &nbsp;     }) <br />
+      &nbsp; }, () => { <br />
+    &nbsp;     console.log('offscreen step 2') <br />
+      &nbsp;   }) <br />
+}, () => { <br />
+  console.log('off screen step 1') // fail <br />
+}) <br />
+</p>
+
       <!-- &nbsp;  <br /> -->
       <!-- content ends here -->
     </div>

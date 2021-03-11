@@ -23,6 +23,79 @@
       <h2>Promises</h2>
       <!-- add content here -->
 
+      <p>
+        Promises help solve the issues of Callback hell - the nesting of
+        multiple callbacks
+      </p>
+      <p>
+        A promise is an object representing the eventual completion or failure
+        of an asynchronus operation.
+      </p>
+      <p>
+        They allow asynchonus code to be written without the amount of nesting
+        required in the past
+      </p>
+      <p class="bold">Promises</p>
+      <p>A pattern for writing async code.</p>
+      <p class="tip">
+        A promise is an object representing the eventual completion or failure
+        of an asynchonus operation
+      </p>
+      <p><a href="code/prom.html" class="call-nav">Example</a></p>
+
+      <p>Basic building block of a promise</p>
+      <p>
+        Promise always has two parameters resolve, reject. (These can be named
+        differently)
+      </p>
+      <p class="bold">Building a Promise</p>
+      <p class="code">
+        const getDog = new Promise((resolve, reject) => { <br />
+        resolve(); <br />
+        })
+      </p>
+      <p class="bold">Building a Promise</p>
+      <p>
+        Here is an example that generates a random number and uses it to decide
+        if you are lucky enough to get a dog or not
+      </p>
+      <p>
+        1 - This code creates the promise and generates a random number along
+        with a conditional if statement
+      </p>
+      <p class="code">
+        const getDog = new Promise((resolve, reject) => {<br />
+        &nbsp; const rand = Math.random();<br />
+        &nbsp; if(rand < 0.5) {<br />
+        &nbsp; resolve();<br />
+
+        } else {<br />
+        &nbsp; reject();<br />
+        &nbsp; }<br />
+        })<br />
+        getDog.then(() => {<br />
+        &nbsp; console.log('Yippe we got a dog!')<br />
+        })<br />
+        getDog.catch(() => {<br />
+        &nbsp; console.log('On no, no dog for you!')<br />
+        })
+      </p>
+
+      <p class="code">
+        getDog.then(() => {
+        <span class="correct">
+          // then is used to deal with true condition</span
+        >
+        <br />
+        console.log('Yippe we got a dog!')<br />
+        })<br />
+        getDog.catch(() => {
+        <span class="correct"> // catch is used when it fails/false</span>
+        <br />
+        console.log('On no, no dog for you!')<br />
+        })<br />
+      </p>
+
       <!-- &nbsp;  <br /> -->
       <!-- content ends here -->
     </div>
