@@ -75,13 +75,97 @@
   console.log('off screen step 1') // fail <br />
 }) <br />
 </p>
+<h2>Callback Refactored</h2>
+<p>This is the above refactored to be easier to read.</p>
+<p>This is the way forward</p>
+<p>
+  <button class="call-nav">
+    <a href="code/callback-fixed.html">Call Back Example</a>
+  </button>
+</p>
+<p>Code that selects the Button</p>
+<p class="code">const btn = document.querySelector("button");</p> 
+<p>Code that moves the button</p>
+<p class="code">
+  const moveX = (element, amount, delay) => { <br />
+    &nbsp;return new Promise((resolve, reject) => { <br />
+      &nbsp;  setTimeout(() => { <br />
+        &nbsp;     const bodyBoundary = document.body.clientWidth; <br />
+        &nbsp;    const elRight = element.getBoundingClientRect().right; <br />
+              &nbsp;    const currLeft = element.getBoundingClientRect().left; <br />
+                  if (elRight + amount > bodyBoundary) { <br />
+                    &nbsp;     reject({bodyBoundary, elRight, amount }); <br />
+                    &nbsp;   } else {   <br />  
+                      &nbsp; &nbsp;      element.style.transform = `translateX(${currLeft + amount}px) `; <br />
+                      &nbsp;   &nbsp;    resolve(); <br />
+                      &nbsp;    &nbsp;&nbsp;  &nbsp;      } <br />
+                      &nbsp;    &nbsp;  &nbsp;    }, delay); <br />
+                      &nbsp; }); <br />
+  
+  };</p>
 
+  <p>The refactored callback</p>
+  <p>The call backs can be chained together, it will only take one to fial to get the fail to trigget the fail responce</p>
+  <p class="code">
+    moveX(btn, 300, 1000) <br />
+      .then(() => { <br />
+        &nbsp;    return moveX(btn, 300, 1000); <br />
+      }) <br />
+      .then(() => { <br />
+        &nbsp;      return moveX(btn, 300, 1000); <br />
+      }) <br />
+      .then(() => { <br />
+        &nbsp;        return moveX(btn, 300, 1000); <br />
+      }) <br />
+      .then(() => { <br />
+        &nbsp;       console.log("Done with both"); <br />
+      }) <br />
+      .catch(() => { <br />
+        &nbsp;      console.log("Out of space - cannot move"); <br />
+      }); <br />
+      </p>
+
+      <p class="imp">Refactored to use Implicit Return with error message </p>
+
+      <p>Code that selects the Button</p>
+<p class="code">const btn = document.querySelector("button");</p> 
+<p>Code that moves the button</p>
+<p class="code">
+  const moveX = (element, amount, delay) => { <br />
+    &nbsp;return new Promise((resolve, reject) => { <br />
+      &nbsp;  setTimeout(() => { <br />
+        &nbsp;     const bodyBoundary = document.body.clientWidth; <br />
+        &nbsp;    const elRight = element.getBoundingClientRect().right; <br />
+              &nbsp;    const currLeft = element.getBoundingClientRect().left; <br />
+                  if (elRight + amount > bodyBoundary) { <br />
+                    &nbsp;     reject({bodyBoundary, elRight, amount }); <span class="correct">// details captured for error message error message </span> <br />
+                    &nbsp;   } else {   <br />  
+                      &nbsp; &nbsp;      element.style.transform = `translateX(${currLeft + amount}px) `; <br />
+                      &nbsp;   &nbsp;    resolve(); <br />
+                      &nbsp;    &nbsp;&nbsp;  &nbsp;      } <br />
+                      &nbsp;    &nbsp;  &nbsp;    }, delay); <br />
+                      &nbsp; }); <br />
+  
+  };</p>
+    <p class="correct">// refactor the above code so that it will use implicit returns</p>
+    <p class="wrong">// this only works if there is one expression and it is returned implicitly!</p>
+    <p><a href="/arrow-functions.html#implicit" class="call-nav"> See Arrow functions for more info</a></p>
+    <p class="code">moveX(btn, 300, 1000) <br />
+      &nbsp; .then(() => moveX(btn, 300, 1000)) <br />
+      &nbsp;  .then(() => moveX(btn, 300, 1000)) <br />
+      &nbsp; .then(() => moveX(btn, 300, 1000)) <br />
+      &nbsp; .then(() => moveX(btn, 300, 1000)) <br />
+      .catch(({bodyBoundary, elRight, amount}) => { <span class="correct"> // Captured error data destructured here</span> <br />
+        &nbsp; console.log(`Body boundry is ${bodyBoundary}px wide `); <span class="correct">// bodyBoundry used here</span> <br />
+        &nbsp;  console.log(`Element is at ${elRight}px , ${amount}px is too large!`) <span class="correct">// elRight and amount used here</span> <br />
+        &nbsp;   alert('Out of space, cannot go off edge of screen!'); <br />
+      });</p>
       <!-- &nbsp;  <br /> -->
       <!-- content ends here -->
     </div>
   </body>
   <script src="/menu.js"></script>
   <script src="/nav.js"></script>
-  <script src="/code/callstack.js"></script>
+  
   <script src="/nav/async.js"></script>
 </html>

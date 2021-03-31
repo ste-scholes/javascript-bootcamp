@@ -11,7 +11,8 @@ let menuItem ={
     Functions: '/functions.html',
     DOM: '/dom/dom.html',
     Events: '/dom/events/index.html',
-    Async: '/async/index.html'
+    Async: '/async/index.html',
+    Requests: '/requests/index.html'
     
 };
 

@@ -96,12 +96,118 @@
         })<br />
       </p>
 
+      <h2>Keyword: This</h2>
+      <p>Explanation</p>
+      <p class="bold">Object Method Binding</p>
+
+      <p class="code">
+       <span class="correct">// Create an object:</span> <br />
+        const person = {<br />
+          &nbsp;  firstName: "John",<br />
+          &nbsp;  lastName : "Doe",<br />
+          &nbsp;  id     : 5566,<br />
+          &nbsp;   fullName : function() {<br />
+            &nbsp;     return this.firstName + " " + this.lastName;<br />
+            &nbsp;   }<br />
+        };<br />
+        
+        <span class="correct">// Display data from the object:</span><br />
+        document.getElementById("demo").innerHTML = person.fullName();<br />
+      <p class="tip">In other words: this.firstName means the firstName property of this (person) object.</p>
+      <p class="bold">Example</p>
+      <p>The below code is a mock up of an array of data for a blog site</p>
+      <p>It contains a group of users, their details, and example posts</p>
+      <p class="code">  const fakeRequest = (url) => {
+        &nbsp;  return new Promise((resolve, reject) => {
+          &nbsp;  setTimeout(() => {
+            &nbsp;   const pages = { <br />
+                    "/users": [ <br />
+                    &nbsp;   { id: 1, username: "Bilbo" }, <br />
+                      &nbsp;   { id: 2, username: "Don" }, <br />
+                      &nbsp;   { id: 5, username: "Esmerelda" }, <br />
+                      
+                    ], <br />
+                    <span class="correct">User 1 information</span><br />
+                    "/users/1": { <br />
+                      &nbsp;      id: 1, <br />
+                      &nbsp;     username: "Bilbo", <br />
+                      &nbsp;     upvotes: 360, <br />
+                      &nbsp;     city: "Lisbon", <br />
+                      &nbsp;    topPostID: 454321, <br />
+                      &nbsp;    }, <br />
+                      <span class="correct">User 2 information</span><br />
+                    "/users/2": { <br />
+                      &nbsp;     id: 2, <br />
+                      &nbsp;     username: "Don", <br />
+                      &nbsp;    upvotes: 250, <br />
+                      &nbsp;     city: "Ashton", <br />
+                      &nbsp;     topPostID: 456123, <br />
+                      &nbsp;   }, <br />
+                      <span class="correct">User 5 information</span><br />
+                    "/users/5": { <br />
+                      &nbsp;     id: 5, <br />
+                      &nbsp;    username: "Esmerelda", <br />
+                      &nbsp;    upvotes: 571, <br />
+                      &nbsp;   city: "London", <br />
+                      &nbsp;    topPostID: 454322, <br />
+                      &nbsp;    }, <br />
+                      <span class="correct">Posts</span><br />
+                    "/posts/456123": { <br />
+                      &nbsp;   id: 456123, <br />
+                      &nbsp;  title: <br />
+                      &nbsp;    "I love to perade down the stairs in ballet tights", <br />
+                        &nbsp;}, <br />
+                    "/posts/454321": { <br />
+                      &nbsp;    id: 454321, <br />
+                      &nbsp;   title: <br />
+                      &nbsp;      "Ladies and Gentlemen, may I intorduce my pet pig, Hamlet", <br />
+                      &nbsp;   }, <br />
+                      <span class="correct">About Us page</span><br />
+                    &nbsp;     "/about": "This is the about page!", <br />
+                     }; <br /><br />
+
+                     <span class="correct">Error check</span><br />
+                const data = pages[url]; <br />
+                &nbsp;  if(data){ <br />
+                    resolve({status: 200, data}); <br />
+                    &nbsp;&nbsp; } else { <br />
+                    reject({status: 404}) <br />
+                    &nbsp; } <br />
+              
+                    &nbsp;  &nbsp;   }, 1000); <br />
+              &nbsp; }); <br />
+         };</p>
+
+         <p class="bold">Here Is the Request code</p>
+
+         <p class="code">fakeRequest('/users') <br />
+          .then((res) => { <br />
+            &nbsp;  const id = res.data[1].id; <br />
+            &nbsp;  console.log(res) <br />
+            &nbsp;   return fakeRequest(`/users/${id}`); <br />
+          }) <br />
+          .then((res) => { <br />
+            &nbsp;   const postId = res.data.topPostID; <br />
+            &nbsp;   console.log(res) <br />
+            &nbsp;    return fakeRequest(`/posts/${postId}`); <br />
+              }) <br />
+          .then((res) => { <br />
+            &nbsp;     console.log(res); <br />
+            }) <br />
+          .catch((err) => { <br />
+            &nbsp;    console.log('error') <br />
+          });</p>
+
+          <p>The above code brings back the user from position [1] in the array User id 2 name Don</p>
+          <p>It finds their top post and displays that</p>
+          <p>The error check part of the code will run if any of the requests fail</p>
+
       <!-- &nbsp;  <br /> -->
       <!-- content ends here -->
     </div>
   </body>
   <script src="/menu.js"></script>
   <script src="/nav.js"></script>
-
+  <script src="/async/code/promise2.js"></script>
   <script src="/nav/async.js"></script>
 </html>

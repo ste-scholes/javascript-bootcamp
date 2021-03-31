@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Javascript DOM</title>
+  </head>
+  <body>
+    <div class="doc">
+      <div class="section">
+        <nav class="menu"></nav>
+      </div>
+      <h1>Requests</h1>
+      <nav class="nav"></nav>
+      <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+      <h2>Requests - XMLHTTP - FETCH - AXIOS</h2>
+      <nav class="inner-nav"></nav>
+
+      <!-- <nav class="nav"></nav> -->
+      <h2>XML</h2>
+      <!-- add content here -->
+      <p>XML is a way of structuring data that can be used across the internet</p>
+      <p>It uses tags similar to HTML that can be nested to hold data</p>
+      <p class="bold">Example</p>
+      <p class="code">
+        &lt;name><br /> 
+        &lt;first> Stephen	&lt;/first>	<br /> 
+        &lt;last> Doe 	&lt;/last><br /> 
+        &lt;/name><br /> 
+        &lt;email> stedoe@hotmail.com	&lt;/email><br /> 
+        &lt;age> 49 &lt;/age>
+      </p>
+
+      <p class="bold">A JavaScript interpretation of the same data might look like this object</p>
+      <p class="code">{<br /> 
+        name: {<br /> 
+        first: 'Stephen',<br /> 
+        last: 'Doe',<br /> 
+      },<br /> 
+        email: 'stedoe@hotmail.com',<br /> 
+        age: 49,<br /> 
+
+    }  
+      </p>
+
+      <h2>JSON</h2>
+      <p>JavaScript Object Notation</p>
+      <p>JSON looks liek Javascript but it is not the same</p>
+      <p>It is another notation for sending data</p>
+      <p>JSON can be used with other programmign languages such as Python and Ruby, it is not tied to Javascript</p>
+
+      <p class="bold">There are rules to JSON that must be followed</p>
+      <p>1 - Every key MUST be double in quotes</p>
+      <p>2 - Value strings MUST be in double quotes</p>
+      <p>3 - We use colons to assign key values</p>
+      <p>4 - We can use nested objects and arrays</p>
+      <p>5 - We can store, strings, numbers, boolean, ect</p>
+      <p>6 - We CANNOT store more complicated things like functions</p>
+      <p class="bold">So taking the above and converting to JSON we get:</p>
+    <p class="code">{<br /> 
+        "name": {<br /> 
+        "first": "Stephen",<br /> 
+        "last": "Doe"<br /> 
+      },<br /> 
+        "email": "stedoe@hotmail.com",<br /> 
+        "age": 49<br /> 
+
+    }  
+      </p>
+      <h2>XMLHttpsRequest</h2>
+
+     
+      <!-- &nbsp;  <br /> 	&lt;-->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/nav.js"></script>
+ 
+  <script src="/nav/requests-nav.js"></script>
+</html>

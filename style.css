@@ -1,5 +1,7 @@
 body {
     background-color: lightblue;
+    max-width: 90%;
+    margin: auto;
 }
 
 .doc {
@@ -171,7 +173,7 @@ p {
 
 .tip {
 
-    border-left: 8px solid crimson;
+    border-left: 8px solid rgb(22, 30, 63);
     padding: 15px;
     background: lightgrey
 }
