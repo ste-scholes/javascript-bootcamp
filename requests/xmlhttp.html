@@ -72,6 +72,54 @@
       </p>
       <h2>XMLHttpsRequest</h2>
 
+      <p>The following code uses the api from SWAPI - A API with Star Wars data</p>
+      <p><a href="https://swapi.dev/" target="new" class="call-nav">SWAPI</a>
+
+      </p>
+
+      <p>The code we use brings back details from Star Wars API and prints them to the screen</p>
+      <p><a href="/requests/examples/planets.html" target="new" class="call-nav">Star Wars Project</a> </p>
+      <p class="bold">Example</p>
+      <p class="code">const firstReq = new XMLHttpRequest(); <br />  <br /> 
+
+        firstReq.addEventListener("load", function () { <br /> 
+          &nbsp;     console.log("First works"); <br /> 
+          &nbsp;   const data = JSON.parse(this.responseText); <br /> 
+          &nbsp;   console.log(data.results[0].films[0]); <br /> 
+          &nbsp;  const filmURL = data.results[0].films[0]; <br /> 
+          &nbsp;  const filmReq = new XMLHttpRequest(); <br /> 
+          filmReq.addEventListener("load", function () { <br /> 
+            &nbsp;      console.log("second works"); <br /> 
+            &nbsp;      const filmData = JSON.parse(this.responseText); <br /> 
+            &nbsp;      console.log(filmData) <br /> 
+     
+        const allLi = document.querySelectorAll('h2'); <br /> 
+        &nbsp;   for (let newh2 of allLi){ <br />  <br /> 
+            
+          &nbsp;       newh2.innerText = `${filmData.title}... ${filmData.opening_crawl}` <br /> 
+          &nbsp;    } <br />  <br /> 
+        
+     
+        
+          }); <br /> 
+          filmReq.addEventListener("error", function (e) { <br /> 
+            &nbsp; console.log("Bugger", e); <br /> 
+          }); <br /> 
+          &nbsp;    filmReq.open("Get", filmURL); <br /> 
+          &nbsp;    filmReq.send(); <br /> 
+      <span class="correct">  // for(let planets of data.results) </span>  <br /> 
+      <span class="correct"> // console.log(planets.name, planets.population) </span>   <br /> 
+      &nbsp;  }); <br /> 
+        firstReq.addEventListener("error", (e) => { <br /> 
+          &nbsp;     console.log("It failed"); <br /> 
+        }); <br /> 
+        
+        &nbsp;    firstReq.open("GET", "https://swapi.dev/api/planets/");
+        &nbsp;   firstReq.send();
+        &nbsp;   console.log("Request Sent");
+        
+        </p>
+
      
       <!-- &nbsp;  <br /> 	&lt;-->
       <!-- content ends here -->

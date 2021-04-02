@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <title>Javascript DOM</title>
+  </head>
+  <body>
+    <div class="doc">
+      <div class="section">
+        <nav class="menu"></nav>
+      </div>
+      <h1>Requests</h1>
+      <nav class="nav"></nav>
+      <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+      <h2>Requests - XMLHTTP - FETCH - AXIOS</h2>
+      <nav class="inner-nav"></nav>
+
+      <!-- <nav class="nav"></nav> -->
+      <h2>FETCH</h2>
+      <!-- add content here -->
+      <p class="bold">Fetch API</p>
+      <p>Fetch is the newer way of making requests via JS</p>
+      <p>Supports promises</p>
+      <p>Not supported in IE</p>
+      <p class="imp">As Fetch is used we use .then and .catch</p>
+      <p>Data from the responce request comes back a readable stream</p>
+
+      <p><a href="/requests/examples/starwars.html" target="new" class="call-nav">Star Wars Example</a> </p>
+
+      <h2>Star Wars Example code</h2>
+      <p>1 - Get the data from API run error on fail</p>
+      <p class="code">const data = fetch("https://swapi.dev/api/planets/")<br />
+        &nbsp;  .then((responce) => {<br />
+            if(!responce.ok) <span class="correct"> // if responce fails it throw an error or it continues</span><br />
+            &nbsp;     throw new Error(`Status Code Error: ${responce.status}`)<br />
+            &nbsp;   return responce.json()<br />
+          })<br />
+        </p>
+
+        <p>2 - Get data for planets and secondly film URL</p>
+        <p class="code">
+          .then((data) => {<br />
+            &nbsp;   console.log('Fetched planets (10)')<br />
+            &nbsp;    const filmURL = data.results[0].films[0]<br />
+            &nbsp;   return fetch(filmURL)<br />
+          })<br />
+          .then((responce) => {<br />
+            &nbsp;   if (!responce.ok) <span class="correct"> // if responce fails it throw an error or it continues</span><br />
+            &nbsp;     throw new Error(`Status 2 Error: ${responce.status}`)<br />
+            &nbsp;     return responce.json()<br />
+          })<br />
+          .then((data) => {<br />
+            &nbsp;  console.log('Fetched first film')<br />
+            &nbsp;  console.log(data)<br />
+        })<br />
+        
+        
+        
+        </p>
+
+
+<span class="correct"></span>
+
+
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/nav.js"></script>
+
+  <script src="/nav/requests-nav.js"></script>
+</html>

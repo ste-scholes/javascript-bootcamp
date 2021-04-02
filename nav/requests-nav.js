@@ -1,8 +1,8 @@
 let navi ={
     "Home": "/requests/index.html",
     "XMLHTTP": "/requests/xmlhttp.html",
-    'FETCH':'/requests/callback.html',
-    'AXIOS': '/requests/promise.html'
+    'FETCH':'/requests/fetch.html',
+    'AXIOS': '/requests/axios.html'
 
 
    
