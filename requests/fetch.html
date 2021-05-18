@@ -61,7 +61,56 @@
         
         
         </p>
+<h2>Star Wars Planets</h2>
+<p>The above code refactored to take in a second page worth a data</p>
 
+<p><a href="/requests/examples/sw-planets.html" target="new" class="call-nav">Star Wars Planets</a> </p>
+
+<p class="code">const data = fetch("https://swapi.dev/api/planets/")<br />
+  .then((responce) => {<br />
+    &nbsp;  if(!responce.ok) <span class="correct"> // if responce fails it throw an error or it continue</span><br />
+      &nbsp;    throw new Error(`Status Code Error: ${responce.status}`)<br />
+      &nbsp;   return responce.json()<br />
+    })<br /><br />
+  
+  .then((data) => {<br />
+      console.log('Fetched planets (10)')<br />
+      for(let planet of data.results){<br />
+        &nbsp;      console.log(planet.name)<br />
+        &nbsp;    }<br />
+  
+        &nbsp;  const nextURL = data.next;<br />
+      
+        &nbsp;  return fetch(nextURL);<br />
+  })<br /><br />
+  .then((responce) => {<br />
+    &nbsp;   if (!responce.ok)<br />
+      &nbsp; &nbsp;     throw new Error(`Status 2 Error: ${responce.status}`)<br />
+      &nbsp; &nbsp;     return responce.json()<br />
+  })<br /><br />
+  .then((data) => {<br />
+    &nbsp;    console.log('Fetched next 10 planets')<br />
+      &nbsp;    for(let planet of data.results){<br />
+        &nbsp;    &nbsp;     console.log(planet.name)<br />
+        &nbsp;    &nbsp;      const world = data.results[2]<br /><span class="correct">// const world puts data in an array so you can select planet[2]</span><br /><span class="correct">// array data used here</span><br />
+         
+      
+        &nbsp;    &nbsp;   document.querySelector('#title').innerHTML = world.name<br />
+        &nbsp;    &nbsp;    document.querySelector('#crawl').innerHTML = world.climate<br />
+        &nbsp;   &nbsp;   document.querySelector('#planets').innerHTML = world.terrain<br />
+
+  }<br />
+  })<br /><br />
+  
+  <span class="correct">// fail error catch</span><br />
+  .catch((err) => {<br />
+    &nbsp;     console.log('Fail')<br />
+    &nbsp;    console.log(err)<br />
+  });</p>
+
+<h2>Code Refactored</h2>
+<p>The above code has been streamlined to remove duplicate logic</p>
+<p><a href="/requests/examples/sw-planet-refactor.html" target="new" class="call-nav">Star Wars Planet Refactored</a> </p>
 
 <span class="correct"></span>
 
@@ -73,6 +122,7 @@
   </body>
   <script src="/menu.js"></script>
   <script src="/nav.js"></script>
+  <script src="examples/fetch-extended.js"></script>
 
   <script src="/nav/requests-nav.js"></script>
 </html>
