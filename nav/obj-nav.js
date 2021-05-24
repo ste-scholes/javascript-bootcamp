@@ -1,8 +1,8 @@
 let navi ={
-    "New Objects": "/objects/new-objects.html",
-    'Rest':'/objects/rest.html',
-    'Spread Function Calls': '/objects/spread.html',
-    'Spread Array Literal': '/objects/spread-array.html',
+    "Adv Objects": "/objects/new-objects.html",
+    'Privacy':'/objects/privacy.html',
+    'Getter': '/objects/getter.html',
+    'Setter': '/objects/setter.html',
     'Spread Object Literals': '/objects/spread-object.html',
     'This': '/objects/this.html',
     'Methods - Functions as properties on objects': '/objects/methods.html',

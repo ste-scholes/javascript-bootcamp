@@ -1,7 +1,7 @@
 let navItem ={
     Truthy: '/code1.html',
     Logical: '/logical.html',
-    Boolean: '/code.html',
+    Boolean: '/booleanlogic.html',
     Switch: '/switch.html',
     Code: '/code.html',
     Tips: '/tips.html',

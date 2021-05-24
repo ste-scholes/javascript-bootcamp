@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Advanced Objects</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Advanced Object</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Setter</h2>
+<nav class="inner-nav"></nav>
+<h2>Setter</h2>
+<!-- add content here -->
+<p>Along with getter methods, we can also create setter methods which reassign values of existing properties within an object. Let’s see an example of a setter method:
+</p>
+<p class="code">
+const person = {<br />
+  _age: 37,<br />
+  set age(newAge){<br />
+    &nbsp;    if (typeof newAge === 'number'){<br />
+        &nbsp;     this._age = newAge;<br />
+    } else {<br />
+        &nbsp;     console.log('You must assign a number to age');<br />
+        &nbsp;   }<br />
+        &nbsp;   }<br />
+};
+</p>
+
+<p>Notice that in the example above:</p>
+<ul> 
+   <li>  We can perform a check for what value is being assigned to  <b>this._age.</b></li> 
+   <li> When we use the setter method, only values that are numbers will reassign this._age</li> 
+<li>  There are different outputs depending on what values are used to reassign this._age.</li> 
+</ul>
+<p> Then to use the setter method:</p>
+<p class="code">
+person.age = 40;<br />
+console.log(person._age); // Logs: 40<br />
+person.age = '40'; // Logs: You must assign a number to age</p>
+<p>
+<b>Setter methods like age do not need to be called with a set of parentheses.</b> Syntactically, it looks like we’re reassigning the value of a property.
+</p><p>
+Like getter methods, there are similar advantages to using setter methods that include checking input, performing actions on properties, and displaying a clear intention for how the object is supposed to be used.   <br /><br />Nonetheless, even with a setter method, it is still possible to directly reassign properties. For example, in the example above, we can still set ._age directly:
+</p>
+<p class="code">
+person._age = 'forty-five'<br />
+console.log(person._age); // Prints forty-five</p>
+</p>
+
+
+<!-- &nbsp;  <br />  <b></b> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/obj-nav.js"></script>
+
+
+
+
+<script src="/obj-code/new-objects.js"></script>
+</html>

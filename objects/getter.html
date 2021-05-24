@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>Advanced Objects</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>Advanced Object</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>Getter</h2>
+<nav class="inner-nav"></nav>
+<h2>Getter</h2>
+<!-- add content here -->
+<p>
+
+  Getters are methods that get and return the internal properties of an object. But they can do more than just retrieve the value of a property! <br />Let’s take a look at a getter method:
+</p>
+<p class="code">const person = { <br />
+    _firstName: 'John', <br />
+    _lastName: 'Doe', <br />
+    get fullName() { <br />
+      &nbsp;  if (this._firstName && this._lastName){ <br />
+        &nbsp;  &nbsp;      return `${this._firstName} ${this._lastName}`; <br />
+        &nbsp;   &nbsp;  &nbsp;      } else { <br />
+          &nbsp;   &nbsp;       return 'Missing a first name or a last name.'; <br />
+          &nbsp;    &nbsp;     } <br />
+          &nbsp;   } <br />
+  } <br /> <br />
+   
+  // To call the getter method:  <br />
+  person.fullName; // 'John Doe'</p>  
+  
+<p>  Notice that in the getter method above:</p>
+  <ul>
+    <li>   We use the <b>get</b> keyword followed by a <b>function</b>.
+    <li>   We use an <b> if...else </b>conditional to check if both _firstName and _lastName exist (by making sure they both return truthy values) and then return a different value depending on the result.</li> 
+    <li>   We can access the calling object’s internal properties using <b> this</b> . In fullName, we’re accessing both <b> this._firstName</b>  and <b> this._lastName</b> .</li> 
+    <li>   In the last line we call fullName on person. In general, <b> getter methods do not need to be called with a set of parentheses</b>. Syntactically, it looks like we’re accessing a property.</li> 
+  </ul>
+    <p>  Now that we’ve gone over syntax, let’s discuss some notable advantages of using getter methods:</p>
+  <ul>
+<li>    Getters can perform an action on the data when getting a property.</li>   
+<li>       Getters can return different values using conditionals.</li>   
+<li>       In a getter, we can access the properties of the calling object using this.</li>   
+<li>       The functionality of our code is easier for other developers to understand.</li>   
+  </ul>
+    <p> Another thing to keep in mind when using getter (and setter) methods is that <b>properties cannot share the same name as the getter/setter function</b>.  <br /> <br />
+      If we do so, then calling the method will result in an <b>infinite call stack error</b>. One workaround is to add an <b>underscore</b> before the property name like we did in the example above. </p>
+<h2>Code Example</h2>
+<p>The following code example uses a getter method and an if statement to do the following:</p>
+<ul>
+  <li>Check energyLevel is a number using <b>>typeof</b</li>
+  <li>returning the energtLevel</li>
+  <li>return error if energyLevel is not a number</li>
+</ul>
+
+<p class="code">const robot = {<br />
+  &nbsp; _model: '1E78V2',<br />
+  &nbsp; _energyLevel: 100,<br />
+ get energyLevel() {<br />
+  &nbsp; if(typeof this._energyLevel === 'number') {<br /><br />
+return `My current energy level is ${this._energyLevel}`
+&nbsp;  } else {<br />
+  &nbsp;  return 'System malfunction: cannot retrieve energy level'<br />
+  &nbsp; }<br />
+  &nbsp;} <br />
+};</p>
+
+<p>IMPORTANT - Remember don't use () when calling a getter</p>
+<p class="code">
+console.log(robot.energyLevel)
+</p>
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/obj-nav.js"></script>
+
+
+
+
+<script src="/obj-code/new-objects.js"></script>
+</html>
