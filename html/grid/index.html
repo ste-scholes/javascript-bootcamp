@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>HTML</title>
+  </head>
+  <body>
+    <div class="doc">
+      <div class="section">
+        <nav class="menu"></nav>
+      </div>
+      <h1>HTML</h1>
+      <nav class="nav"></nav>
+      <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+      <h2>FLEX-GRID-CSS</h2>
+      <nav class="inner-nav"></nav>
+      <h2>GRID</h2>
+      <!-- add content here -->
+
+      <p class="tip">To set up a <b>grid</b></p>
+      <p class="code">display: grid</p>
+      <p class="tip">Set up columns</p>
+      <p>Use fr or fraction to create colums</p>
+      <p>The below code creates 3 equal columns</p>
+      <p class="code">grid-template-columns: 1fr 1fr;</p>
+      <p class="tip">Set up Rows</p>
+      <p class="code">grid-template-rows: 1fr 1fr;</p>
+
+      <p class="tip">Set up grid-template-area</p>
+      <p>
+        box related to the div class name/ The way the below displays is divs
+        box1 and box2 are on the top row. While box3 stretches across both
+        spaces on the lower row.
+      </p>
+
+      <p>A row is denoted by "" so "box1 box2" are on one row.</p>
+
+      <p class="code">
+        grid-template-areas: "box1 box2" <br />
+        "box3 box3"
+      </p>
+
+      <p class="tip">Leaving a blank space on grid-template-area</p>
+      <p>
+        A full stop denotes a blank cell on a grid, so on the following a 4
+        square grid would have box1 box2 on the top Rows with box3 nd an empty
+        cell on the bottom row.
+      </p>
+      <p class="code">
+        grid-template-areas: "box1 box2" <br />
+        "box3 ."
+      </p>
+
+      <p class="tip">Justify Item</p>
+      <p class="code">
+        justify-items: center; <br />
+        <span class="correct">can also use start, end or stretch</span>
+      </p>
+
+      <p class="tip">Align-Items</p>
+      <p class="code">
+        align-items: center; <br />
+        <span class="coorect">can also use </span>
+      </p>
+
+      <h2>You can also just target a  &ltdiv></h2>
+      <p class="tip">Aligh-self</p>
+      <p class="code">.box1 {  <br />
+        grid-area: box1; <br />
+        align-self: center; <br />
+    }</p>
+
+    <p class="tip">Justify-self</p>
+    <p class="code">.box1 {<br />
+      grid-area: box1; <br />
+      justify-self: center;<br />
+      
+  }</p>
+
+      <h2>Setting up GRID on the &ltmain> tag</h2>
+      <p>This is how you would appy grid to a page</p>
+      <p class="code">
+        main {<br />
+        &nbsp; height: 100vh; <br />
+        &nbsp; display: grid;<br />
+        &nbsp; grid-template-columns: 1fr 1fr 1fr;<br />
+        &nbsp;grid-template-rows: 1fr 1fr 1fr;<br />
+        &nbsp;grid-template-areas: "box1 box2"<br />
+        &nbsp; "box3 box3";<br />
+        &nbsp; justify-items: center;<br />
+        &nbsp; align-items: center;<br />
+
+        }
+      </p>
+
+      <h2>Responsive colums</h2>
+      <p>There are two ways to create responsive columns</p>
+      <p class="tip">Auto Fill</p>
+      <p>Auto fill will generate another new empty column when the space is availabe</p>
+      <p class="cdoe">grid-template-columns:repeat(auto-fill, 300px);</p>
+      <p class="tip">Auto-fit</p>
+      <p>This doesn't generate extra columns, that is all it does.  We will use this more often</p>
+      <p class="code">grid-template-columns:repeat(auto-fit, 300px);</p>
+      <h2>MinMax()</h2>
+      <p>minmax allows you to set a minium amount of space needed for an object, with the caviat that it can grow when extra space becomes available</p>
+      <p>In the code below the minimum value is 300px and the maximum is 1fr</p>
+      <p class="code">grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));</p>
+
+      <h2>Image Gallery CSS Code</h2>
+      <p>This is the final code to creat a responsive photo gallery in Grid</p>
+      <p class="code">
+        * { <br /> 
+          &nbsp;    margin: 0; <br /> 
+          &nbsp;     padding: 0; <br /> 
+          &nbsp;     box-sizing: border-box; <br /> 
+      } <br />  <br /> 
+      
+      
+      
+      .gallery { <br /> 
+        &nbsp;   display: grid; <br /> 
+        &nbsp;  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); <br /> 
+        &nbsp;   grid-column-gap: 1rem; <br /> 
+        &nbsp;  grid-row-gap: 1rem; <br /> 
+      } <br /> 
+      
+      .gallery img { <br /> 
+        &nbsp;  width: 100%; <br /> 
+      } <br /> 
+
+      <span class="correct">
+        /* grid-template-columns:repeat(3, 300px); */<br /> 
+        /* the repeat(3, 300px) replaces the need to write 300px 300px 300px */<br /> <br /> 
+        
+        /* // this code replaced above */<br /> 
+        /* .gallery {<br /> 
+            display: grid;<br /> 
+            grid-template-columns: 300px 300px 300px;<br /> 
+        } */<br /> 
+
+
+      </span>
+
+      </p>
+
+      <p class="note">
+How gallery img helps resize images
+
+      </p>
+
+      <p>In the above code the .gallery img being set to 100% ensure the images remain within their own grid square</p>
+
+      <h2>Course One</h2>
+      <p>Add content here...</p>
+      <p><a href="/html/grid/example.html" class="call-nav">EXAMPLE 1</a></p>
+      <p><a href="/html/grid/example.html" class="call-nav">EXAMPLE 2</a></p>
+      <p><a href="/html/grid/example.html" class="call-nav">EXAMPLE 3</a></p>
+      <h2>Course Two</h2>
+      <p><a href="/html/grid/ex1/grid1.html" class="call-nav">EXAMPLE 1</a></p>
+      <p><a href="/html/grid/ex1/grid2.html" class="call-nav">EXAMPLE 2</a></p>
+      <p><a href="/html/grid/ex1/grid3.html" class="call-nav">EXAMPLE 2</a></p>
+      <h2>Image Gallery</h2>
+      <p><a href="/html/grid/ex1/image.html" class="call-nav">Gallery Example</a></p>
+
+      <!-- &nbsp;  <br />  &lt-->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/nav.js"></script>
+  <script src="/nav/html-nav.js"></script>
+
+  <script src="/obj-code/new-objects.js"></script>
+</html>

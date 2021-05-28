@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    
+    </script>
+    <title>HTML</title>
+  </head>
+  <body><div class="doc">
+ <div class="section"> 
+    <nav class="menu"></nav>
+</div>    
+    <h1>HTML</h1>
+    <nav class="nav"></nav>
+    <p class="note">! + Tab creates an HTML boiler plate in VS code</p>
+<h2>FLEX-GRID-CSS</h2>
+<nav class="inner-nav"></nav>
+<h2>CSS</h2>
+<!-- add content here -->
+
+<h2>Position Statc - Default</h2>
+<p>Static is the default position of HTML elements added to a page</p>
+<p>Use the following to change how elements react</p>
+<p>Static elements cannot have elements fixed absolutely to them</p>
+
+<h2>Position - Relative</h2>
+<p>Relative is removed from the document flow - this causes it to overlap rather than push other elements down</p>
+<p>This isn't something we would usually use with top, right, left and bottom as it is difficult to style a document that has elements removed from it in this way</p>
+<p class="code">
+  .child-one { <br />
+    &nbsp;   position: relative; <br />
+    &nbsp;  left: 10px; <br />
+    &nbsp;  top: 10px; <br />
+} <br />
+</p>
+
+<h2>Position - Absolute</h2>
+<p>Using position absolute is useful for positioning something in an exact location, where you don't want it to move.</p>
+<p>It is essenially removed from the flow of the document, but can bepositioned using top, right, left and bottom</p>
+<p>Absolute positioning positions the object absolutly relative to it's parent container</p>
+<p class="imp">REMEMBER HTML elements are by default static, that means you cannot fix another element absolutly to them. You need to useful
+  relative, absolute, sticky, or fixed in order to make an element fix absolutely inside it.
+</p>
+<p class="code">.parent { <br />
+  &nbsp;  position: relative; <br />
+
+} <br /> <br />
+
+.child-one { <br />
+  &nbsp;   position: absolute; <br />
+  &nbsp;   top: 10px; <br />
+} <br />
+
+</p>
+
+<h2>Position - Fixed</h2>
+<p>Fixed position elements ignore all parent containers</p>
+<p>They also stay in the same position, even when the page is scrolled</p>
+<p>In the example code below, the child element one, stays in the position set in the code - 10px from the top, zero px from the left. It will retain this position regardless of scoling</p>
+<p class="code">.parent { <br />
+  &nbsp;  position: relative; <br />
+  &nbsp;  height: 200vh; <br />
+
+} <br /> <br />
+
+.child-one { <br />
+  &nbsp;   position: fixed; <br />
+  &nbsp;  top: 10px; <br />
+  &nbsp;   left: 0; <br />
+}</p>
+
+
+<h2>Position Sticky</h2>
+<p>Sticky starts off rlative until it hits the top of the page where it becomes fixed if top: 0px as in example code</p>
+<p>This is used where you see menu bars scroll up and then stick at the top of the page.</p>
+
+<p class="code">.parent { <br /> 
+  &nbsp;  position: relative; <br /> 
+  &nbsp;   height: 200vh; <br /> 
+
+} <br />  <br /> 
+
+.child-one { <br /> 
+  &nbsp;   position: sticky; <br /> 
+  &nbsp;   top: 0px; <br /> 
+ 
+}</p>
+
+<p> <a href="example.html" class="call-nav">EXAMPLE</a></p>
+
+<!-- &nbsp;  <br /> -->
+<!-- content ends here -->
+
+</div>
+</body>
+<script src="/menu.js"></script>
+<script src="/nav.js"></script>
+<script src="/nav/html-nav.js"></script>
+
+
+
+
+<script src="/obj-code/new-objects.js"></script>
+</html>

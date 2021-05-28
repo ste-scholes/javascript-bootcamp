@@ -1,0 +1,63 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 1rem;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+/* #### JUSTIFY #### */
+/* justify-item start puts items at start or right - try justify-item: center and justify-item: end */
+/* justify-item: stretch is default */
+
+/* #### ALIGN #### */
+/* align-items: start; - top */
+/* align-items: center; - center vertical */
+/* align-items: end; - v-align bottom */
+/* align-items: stretch; is default */
+
+.wrapper > div {
+  background: rgb(187, 245, 182);
+  padding: 1em;
+}
+
+.wrapper > div:nth-child(odd) {
+  background: rgb(232, 253, 218);
+}
+
+
+.box1 {
+/* align-self: start; */
+grid-column: 1/3;
+grid-row: 1/3;
+
+}
+
+.box2 {
+    /* align-self: end; */
+grid-column: 3;
+grid-row: 1/3;
+
+} 
+
+.box3 {
+    /* justify-self: end; */
+grid-column: 2/4;
+grid-row: 3;
+
+}
+
+/* the above pushes box 3 to the right of box 4 - use this to rearange content */
+
+.box4 {
+grid-column: 1;
+grid-row: 2/4;
+    
+}
+
+/* The above overlaps box 4 over box 1 */
+
+/* #### GRID COLUMN - GRID ROW #### */
+/* grid-column: 1/3; - stretches the box from the start of box one up to the beginning of box 3 */
+/* grid-row: 1/3; - stretches vertically from the beginning of box one to the start of box 3 */

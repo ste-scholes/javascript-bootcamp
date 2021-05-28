@@ -1,4 +1,5 @@
 let navItem ={
+    HTML: '/html/index.html',
     Truthy: '/code1.html',
     Logical: '/logical.html',
     Boolean: '/booleanlogic.html',

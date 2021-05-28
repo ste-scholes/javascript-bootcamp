@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.box1 {
+    background: lightcoral;
+}
+
+.box2 {
+    background: lightblue;
+}
+
+.box3 {
+    background: lightgreen;
+}
+
+main {
+height: 100vh;
+display: grid;
+/* grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr; */
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+/* grid-template-areas: "box1 box2"
+"box3 box3"; */
+/* more advanced using 1fr 1fr 1fr */
+grid-template-areas: "box1 box1 box1"
+"box2 box2 ."
+". . box3";
+
+}
+/* // grid-template-areas references the box1 box2 etc defined below by setting the boxes in quotes to define rows */
+/* so "box1 box2" are on the first row and "box 3 box3" takes up both positions on the second row */
+/* if you wanted an empty space rather than stretching box 3 use a .  example: "box3 ." */
+
+
+div {
+    border: 2px solid black;
+}
+
+
+.box1 {
+    grid-area: box1;
+}
+
+
+.box2 {
+grid-area: box2;
+
+}
+
+.box3 {
+grid-area: box3;
+}
