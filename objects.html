@@ -15,6 +15,237 @@
     <nav class="nav"></nav>
     <h2>Objects - Keys, Structure, Accessing, Commas, Square Brackets</h2>
     <nav class="obj-nav"></nav>
+
+    <p>Accessing objects using Bracket notation</p>
+    <p>Why Use brancket notation</p>
+    <p>
+      The second way to access a key’s value is by using bracket notation, [ ].
+      <br />
+
+      You’ve used bracket notation when indexing an array: <br />
+      <br />
+
+      ['A', 'B', 'C'][0]; // Returns 'A' <br />
+      <br />
+
+      To use bracket notation to access an object’s property, we pass in the
+      property name (key) as a string.
+      <br />
+      <br />
+      We
+      <b> must </b>use bracket notation when accessing keys that have numbers,
+      spaces, or special characters in them. Without bracket notation in these
+      situations, our code would throw an error.
+    </p>
+    <p class="code">
+      let spaceship = {
+      <br />
+      'Fuel Type' : 'Turbo Fuel',
+      <br />
+      'Active Mission' : true,<br />
+      homePlanet : 'Earth', <br />
+      numCrew: 5<br />
+      };<br /><br />
+
+      let propName = 'Active Mission';<br /><br />
+
+      // Write your code below<br />
+      const isActive = spaceship['Active Mission']<br /><br />
+
+      console.log(isActive)
+    </p>
+    <h2>Change Item</h2>
+    <p>
+      You can use both dot and brackets to assign mutable items to an object
+    </p>
+    <p>Use brackets where there is a space in the keys as highlighted above</p>
+    <p class="code">spachship['Fuel Type'] = 'turbo fuel';</p>
+    <p>Dot notation</p>
+
+    <p class="code">spaceship.color = 'gold'</p>
+
+    <h2>Asign New Item</h2>
+
+    <p>Add a new item to an object as such</p>
+    <p class="code">spaceship.speed = 'mach 5'</p>
+
+    <h2>Delete a property from object</h2>
+    <p>Use the delete operator to delete a property</p>
+    <p class="code">delete spaceship.speed</p>
+
+    <h3>Examples</h3>
+    <p class="code">
+      let spaceship = {
+      <br />
+      'Fuel Type' : 'Turbo Fuel', <br />
+      homePlanet : 'Earth', <br />
+      color: 'silver', <br />
+      'Secret Mission' : 'Discover life outside of Earth.'
+      <br />
+      };<br />
+    </p>
+    <p class="code">
+      // Write your code below
+      <br />
+      spaceship.color = 'glorious gold';
+      <br />
+      spaceship['numEngines'] = 5; <br />
+      delete spaceship['Secret Mission']
+    </p>
+    <h2>Methods</h2>
+    <p>
+      When the data stored on an object is a function we call that a method. A
+      property is what an object has, while a method is what an object does.
+      <br />
+      <br />Do object methods seem familiar? That’s because you’ve been using
+      them all along! For example console is a global javascript object and
+      .log() is a method on that object.
+
+      <br />
+      <br />Math is also a global javascript object and .floor() is a method on
+      it. We can include methods in our object literals by creating ordinary,
+      comma-separated key-value pairs. The key serves as our method’s name,
+      while the value is an anonymous function expression.
+    </p>
+    <p class="code">
+      const alienShip = { <br />
+      invade: function () { <br />
+      console.log('Hello! We have come to dominate your planet. Instead of
+      Earth, it shall be called New Xaculon.')
+      <br />
+      } <br />
+      }
+    </p>
+    <h2>Important</h2>
+    <p>
+      With the new method syntax introduced in ES6 we can omit the colon and the
+      function keyword.
+    </p>
+    <p class="code">
+      const alienShip = {
+      <br />
+      invade () <br />{ console.log('Hello! We have come to dominate your
+      planet. Instead of Earth, it shall be called New Xaculon.')<br />
+      } };
+    </p>
+    <p>
+      Object methods are invoked by appending the object’s name with the dot
+      operator followed by the method name and parentheses:
+    </p>
+    <p class="code">
+      alienShip.invade(); <br />
+      // Prints 'Hello! We have come to dominate your planet. Instead of Earth,
+      it shall be called New Xaculon.'
+    </p>
+
+    <h2>Nested Objects</h2>
+    <p>
+      In application code, objects are often nested— an object might have
+      another object as a property which in turn could have a property that’s an
+      array of even more objects! In our spaceship object, we want a crew
+      object.
+    </p>
+    <p>
+      This will contain all the crew members who do important work on the craft.
+      Each of those crew members are objects themselves. They have properties
+      like name, and degree, and they each have unique methods based on their
+      roles.
+    </p>
+    <p>
+      We can also nest other objects in the spaceship such as a telescope or
+      nest details about the spaceship’s computers inside a parent
+      nanoelectronics object.
+    </p>
+    <p class="code">
+      const spaceship = {
+      <br />telescope: {<br />
+      yearBuilt: 2018,<br />
+      model: '91031-XLT',<br />
+      focalLength: 2032 <br />
+      },<br />
+      crew: {<br />
+      captain: { <br />
+      name: 'Sandra', <br />
+      degree: 'Computer Engineering', <br />
+      encourageTeam() { console.log('We got this!') } <br />
+      }<br />
+      },<br />
+      engine: {<br />
+      model: 'Nimbus2000'<br />
+      },<br />
+      nanoelectronics: {<br />
+      computer: {<br />
+      terabytes: 100,<br />
+      monitors: 'HD'<br />
+      },<br />
+      'back-up': {<br />
+      battery: 'Lithium',<br />
+      terabytes: 50<br />
+      }<br />
+      }<br />
+      };
+    </p>
+
+    <p>We can chain operators to access nested properties. We’ll have to pay attention to which operator makes sense to
+      use in each layer. It can be helpful to pretend you are the computer and evaluate each expression from left to
+      right so that each operation starts to feel a little more manageable.
+    </p>
+    <p class="code">spaceship.nanoelectronics['back-up'].battery; // Returns 'Lithium'
+    </p>
+    <p> In the preceding code:
+      <ol>
+        <li>
+          First the computer evaluates spaceship.nanoelectronics, which results in an object containing the back-up and
+          computer objects.
+        </li>
+        <li> We accessed the back-up object by appending ['back-up'].
+        </li>
+        <li> The back-up object has a battery property, accessed with .battery which returned the value stored there:
+          'Lithium'
+        </li>
+      </ol>
+    </p>
+
+    <h2>Example</h2>
+    <p class="code">let spaceship = { <br>
+      passengers: null,<br>
+      telescope: {<br>
+      yearBuilt: 2018,<br>
+      model: "91031-XLT",<br>
+      focalLength: 2032 <br>
+      },<br>
+      crew: {<br>
+      captain: { <br>
+      name: 'Sandra', <br>
+      degree: 'Computer Engineering', <br>
+      encourageTeam() { console.log('We got this!') },<br>
+      'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }<br>
+      },<br>
+      engine: {<br>
+      model: "Nimbus2000"<br>
+      },<br>
+      nanoelectronics: {<br>
+      computer: {<br>
+      terabytes: 100,<br>
+      monitors: "HD"<br>
+      },<br>
+      'back-up': {<br>
+      battery: "Lithium",<br>
+      terabytes: 50<br>
+      }
+      }
+      }; </p>
+    <p>This code sets the captains favourite food to variable of the first object in array // cookies</p>
+    <p class="code">let capFave = spaceship.crew.captain['favorite foods'][0];
+    </p>
+    <p>This code adds two passenger objects to an array</p>
+    <p class="code"> spaceship.passengers = [{passenger: 'Derek Acorah'},{passenger: 'Sam'}]
+    </p>
+    <p>This code sets the first passenger in the passenger array to variable firstPassenger // Derek Acorah</p>
+    <p class="code"> let firstPassenger = spaceship.passengers[0]</p>
+
+  
+
 <p class="bold">Objects are collections of properties</p>
 <p class="bold">Properties are key value pair</p>
 <p class="bold">Rather than accessing data using an index, we use custom keys</p>

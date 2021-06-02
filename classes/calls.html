@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Classes</h1>
+    <nav class="nav"></nav>
+    <h2>Method Calls</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+
+   <h2>Method Calls</h2>
+
+    <p>  Finally, let’s use our new methods to access and manipulate data from Dog instances.</p>
+    
+    <p class="code">class Dog {<br>
+      constructor(name) { <br>
+        this._name = name;<br>
+        this._behavior = 0;<br>
+      }<br><br>
+     
+      get name() {<br>
+        return this._name;<br>
+      }<br><br>
+     
+      get behavior() {<br>
+        return this._behavior;<br>
+      }   <br><br>
+     
+      incrementBehavior() {<br>
+        this._behavior++;<br>
+      }<br>
+    }<br><br>
+     
+    const halley = new Dog('Halley');</p>
+    <p>
+    In the example above, we create the Dog class, then create an instance, and save it to a variable named halley.
+</p><p>
+    The syntax for calling methods and getters on an instance is the same as calling them on an object — append the instance with a period, then the property or method name. For methods, you must also include opening and closing parentheses.
+</p><p>
+    Let’s take a moment to create two Dog instances and call our .incrementBehavior() method on one of them.
+</p><p>  
+    let nikko = new Dog('Nikko'); // Create dog named Nikko
+    nikko.incrementBehavior(); // Add 1 to nikko instance's behavior
+    let bradford = new Dog('Bradford'); // Create dog name Bradford
+    console.log(nikko.behavior); // Logs 1 to the console
+    console.log(bradford.behavior); // Logs 0 to the console
+</p><p>    
+    In the example above, we create two new Dog instances, nikko and bradford. Because we increment the behavior of our nikko instance, but not bradford, accessing nikko.behavior returns 1 and accessing bradford.behavior returns 0.
+    
+
+
+</p>
+
+<h2>Code Example</h2>
+<p class="code">class Surgeon { <br />
+    constructor(name, department) { <br />
+        &nbsp;  this._name = name; <br />
+        &nbsp;  this._department = department; <br />
+        &nbsp;  this._remainingVacationDays = 20; <br />
+    } <br /> <br />
+    
+    get name() { <br />
+        &nbsp;    return this._name; <br />
+    } <br /> <br />
+    
+    get department() { <br />
+        &nbsp;   return this._department; <br />
+    } <br /> <br />
+    
+    get remainingVacationDays() { <br />
+        &nbsp;     return this._remainingVacationDays; <br />
+    } <br /> <br />
+    
+    takeVacationDays(daysOff) { <br />
+        &nbsp;   this._remainingVacationDays -= daysOff; <br />
+    } <br />
+  } <br /> <br />
+  
+  const surgeonRomero = new Surgeon('Francisco Romero', 'Cardiovascular'); <br />
+  const surgeonJackson = new Surgeon('Ruth Jackson', 'Orthopedics'); <br /> <br />
+  
+  console.log(surgeonRomero.name) <br />
+  surgeonRomero.takeVacationDays(3) <br /> <br />
+  
+  console.log(surgeonRomero.remainingVacationDays)</p>
+  <p class="tip"> Instance first!Then method. surgeonRomero.takeVacationDays(3)</p>
+
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/class-nav.js"></script>
+<script src="/nav.js"></script>
+
+</html>

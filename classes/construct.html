@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Classes</h1>
+    <nav class="nav"></nav>
+    <h2>Introduction to classes</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>
+    In the last exercise, you created a class called Dog, and used it to
+    produce a Dog object.
+  </p>
+  <p>
+    Although you may see similarities between class and object syntax, there
+    is one important method that sets them apart. It’s called the
+    constructor method. JavaScript calls the constructor() method every time
+    it creates a new instance of a class.
+  </p>
+  <p class="code">
+    class Dog {<br />
+    constructor(name) <br />
+    { this.name = name; <br />
+    this.behavior = 0; <br />
+    } <br />
+    }<br />
+  </p><p>
+  <ul>
+    <li>
+      Dog is the name of our class. By convention, we capitalize and
+      CamelCase class names.
+    </li>
+
+    <li>
+      JavaScript will invoke the constructor() method every time we create a
+      new instance of our Dog class.
+    </li>
+
+    <li>
+      This constructor() method accepts one argument, name.
+    </li>
+
+    <li>
+      Inside of the constructor() method, we use the this keyword. In the
+      context of a class, this refers to an instance of that class. In the
+      Dog class, we use this to set the value of the Dog instance’s name
+      property to the name argument.
+    </li>
+
+    <li>
+      Under this.name, we create a property called behavior, which will keep
+      track of the number of times a dog misbehaves. The behavior property
+      is always initialized to zero.
+    </li>
+  </ul></p>
+  <h2>Example</h2>
+  <p class="code">class Surgeon {<br>
+      constructor(name, department){<br>
+        this.name = name;<br>
+        this.department = department;<br>
+      }<br>
+    }</p>
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/class-nav.js"></script>
+<script src="/nav.js"></script>
+
+</html>

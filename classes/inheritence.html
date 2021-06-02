@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>Inheritance</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+
+      <h2>Inheritance</h2>
+
+      <p>
+        Imagine our doggy daycare is so successful that we decide to expand the
+        business and open a kitty daycare. Before the daycare opens, we need to
+        create a Cat class so we can quickly generate Cat instances. We know
+        that the properties in our Cat class (name, behavior) are similar to the
+        properties in our Dog class, though, there will be some differences,
+        because of course, cats are not dogs.
+      </p>
+      <p>Let’s say that our Cat class looks like this:</p>
+      <p class="code">
+        class Cat { <br />
+        constructor(name, usesLitter) { <br />
+        &nbsp;this._name = name; <br />
+        &nbsp; this._usesLitter = usesLitter; <br />
+        &nbsp;this._behavior = 0; <br />
+        } <br />
+        <br />
+
+        get name() { <br />
+        &nbsp;return this._name; <br />
+        } <br />
+        <br />
+
+        get usesLitter() { <br />
+        &nbsp;return this._usesLitter; <br />
+        } <br />
+
+        get behavior() { <br />
+        &nbsp;return this._behavior; <br />
+        } <br />
+        <br />
+
+        incrementBehavior() { <br />
+        &nbsp; this._behavior++; <br />
+        &nbsp; } <br />
+        }
+      </p>
+
+      <p>
+        In the example above, we create a Cat class. It shares a couple of
+        properties (_name and _behavior) and a method (.incrementBehavior())
+        with the Dog class from earlier exercises. The Cat class also contains
+        one additional property (_usesLitter), that holds a boolean value to
+        indicate whether a cat can use their litter box.
+      </p>
+      <p>
+        When multiple classes share properties or methods, they become
+        candidates for inheritance — a tool developers use to decrease the
+        amount of code they need to write.
+      </p>
+      <p>
+        With inheritance, you can create a parent class (also known as a
+        superclass) with properties and methods that multiple child classes
+        (also known as subclasses) share. The child classes inherit the
+        properties and methods from their parent class.
+      </p>
+      <p>
+        Let’s abstract the shared properties and methods from our Cat and Dog
+        classes into a parent class called Animal.
+      </p>
+      <p class="code">
+        class Animal { <br />
+        constructor(name) { <br />
+        &nbsp; this._name = name; <br />
+        &nbsp; this._behavior = 0; <br />
+        } <br />
+        <br />
+
+        get name() { <br />
+        &nbsp; return this._name; <br />
+        } <br />
+        <br />
+
+        get behavior() { <br />
+        &nbsp; return this._behavior; <br />
+        } <br />
+
+        incrementBehavior() { <br />
+        &nbsp; this._behavior++; <br />
+        } }
+      </p>
+      <p>
+        In the example above, the Animal class contains the properties and
+        methods that the Cat and Dog classes share (name, behavior,
+        .incrementBehavior()).
+      </p>
+      <p>
+        The diagram to the right shows the relationships we want to create
+        between the Animal, Cat, and Dog classes.
+      </p>
+
+      <h2>Example</h2>
+      <p>
+        In the last exercise, we created a parent class named Animal for two
+        child classes named Cat and Dog.
+      </p>
+      <p>
+        The Animal class below contains the shared properties and methods of Cat
+        and Dog.
+      </p>
+      <p class="code">
+        class Animal { constructor(name) { this._name = name; this._behavior =
+        0; } get name() { return this._name; } get behavior() { return
+        this._behavior; } incrementBehavior() { this._behavior++; } }
+      </p>
+      <p>
+        The code below shows the Cat class that will inherit information from
+        the Animal class.
+      </p>
+      <p class="code">
+        class Cat { <br />
+        constructor(name, usesLitter) { <br />
+        &nbsp; this._name = name; <br />
+        &nbsp; this._usesLitter = usesLitter; <br />
+        &nbsp; this._behavior = 0; <br />
+        } get name() { <br />
+        &nbsp; return this._name; <br />
+        } <br />
+        <br />
+
+        get behavior() { <br />
+        &nbsp; return this._behavior; <br />
+        } <br />
+        <br />
+
+        get usesLitter() { <br />
+        &nbsp; return this._usesLitter; <br />
+        } <br />
+        <br />
+
+        incrementBehavior() { <br />
+        &nbsp; this._behavior++; <br />
+        &nbsp; } <br />
+        }
+      </p>
+
+      <p>
+        To the right, in main.js, you will put what you learned to practice by
+        creating a parent class named HospitalEmployee.
+      </p>
+
+      <h2>Inheritance 2</h2>
+
+      <p>
+        In the last exercise, we created a parent class named Animal for two
+        child classes named Cat and Dog. <br />
+      </p>
+
+      The Animal class below contains the shared properties and methods of Cat
+      and Dog.
+      <p class="code">
+        class Animal {<br />
+        constructor(name) {<br />
+        &nbsp; this._name = name;<br />
+        &nbsp; this._behavior = 0;<br />
+        }<br /><br />
+
+        get name() {<br />
+        &nbsp; return this._name;<br />
+        }<br /><br />
+
+        get behavior() {<br />
+        &nbsp; return this._behavior;<br />
+        } <br /><br />
+
+        incrementBehavior() {<br />
+        &nbsp; this._behavior++;<br />
+        &nbsp; }<br />
+        }
+      </p>
+      <p>
+        The code below shows the Cat class that will inherit information from
+        the Animal class.
+      </p>
+      <p class="code">
+        class Cat { constructor(name, usesLitter) {<br />
+        &nbsp; this._name = name;<br />
+        &nbsp; this._usesLitter = usesLitter;<br />
+        &nbsp; this._behavior = 0;<br />
+        }<br /><br />
+
+        get name() {<br />
+        &nbsp; return this._name;<br />
+        }<br />
+
+        get behavior() {<br />
+        &nbsp; return this._behavior;<br />
+        }<br /><br />
+
+        get usesLitter() {<br />
+        &nbsp; return this._usesLitter;<br />
+        }<br /><br />
+
+        incrementBehavior() {<br />
+        &nbsp; this._behavior++;<br />
+        &nbsp; }<br />
+        }
+      </p>
+
+      <h2>Code Example</h2>
+
+      <p class="code">
+        class HospitalEmployee {<br />
+        constructor(name) {<br />
+        &nbsp; this._name = name;<br />
+        &nbsp; this._remainingVacationDays = 20;<br />
+        }<br />
+        get name() {<br />
+        &nbsp; return this._name <br />
+        }<br /><br />
+
+        get remainingVacationDays() {<br />
+        &nbsp; return this._remainingVacationDays<br />
+        }<br /><br />
+        takeVacationDays(daysOff) {<br />
+        &nbsp; return this._remainingVacationDays -= daysOff<br />
+        &nbsp; }<br />
+        }
+      </p>
+
+      <p class="imp">Remember: return this._remainingVacationDays -= daysOff</p>
+
+      <h2>Inheretence Three</h2>
+      <p>
+        We’ve abstracted the shared properties and methods of our Cat and Dog
+        classes into a parent class called Animal (See below).
+      </p>
+      <p class="code">
+        class Animal {<br />
+        constructor(name) {<br />
+        &nbsp; this._name = name;<br />
+        &nbsp; this._behavior = 0;<br />
+        }<br /><br />
+
+        get name() {<br />
+        &nbsp; return this._name;<br />
+        }<br /><br />
+
+        get behavior() {<br />
+        &nbsp; return this._behavior;<br />
+        }<br /><br />
+
+        incrementBehavior() {<br />
+        &nbsp; this._behavior++;<br />
+        }<br />
+        }
+      </p>
+
+      <p>
+        Now that we have these shared properties and methods in the parent
+        Animal class, we can extend them to the subclass, Cat.
+      </p>
+      <p class="code">
+        class Cat extends Animal {<br />
+        constructor(name, usesLitter) {<br />
+        &nbsp; super(name);<br />
+        &nbsp; this._usesLitter = usesLitter;<br />
+        }<br />
+        }
+      </p>
+      <p>
+        In the example above, we create a new class named Cat that extends the
+        Animal class. Let’s pay special attention to our new keywords: extends
+        and super.
+      </p>
+      <ul>
+        <li>
+          The extends keyword makes the methods of the animal class available
+          inside the cat class.
+        </li>
+        <li>
+          The constructor, called when you create a new Cat object, accepts two
+          arguments, name and usesLitter.
+        </li>
+        <li>
+          The super keyword calls the constructor of the parent class. In this
+          case, super(name) passes the name argument of the Cat class to the
+          constructor of the Animal class. When the Animal constructor runs, it
+          sets this._name = name; for new Cat instances.
+        </li>
+        <li>
+          _usesLitter is a new property that is unique to the Cat class, so we
+          set it in the Cat constructor.
+        </li>
+      </ul>
+      <p>
+        Notice, we call super on the first line of our constructor(), then set
+        the usesLitter property on the second line. In a constructor(), you must
+        always call the super method before you can use the this keyword — if
+        you do not, JavaScript will throw a reference error. To avoid reference
+        errors, it is best practice to call super on the first line of subclass
+        constructors.
+      </p>
+      <p>
+        Below, we create a new Cat instance and call its name with the same
+        syntax as we did with the Dog class:
+      </p>
+      <p class="code">
+        const bryceCat = new Cat('Bryce', false); console.log(bryceCat._name);
+        // output: Bryce
+      </p>
+      <p>
+        In the example above, we create a new instance the Cat class, named
+        bryceCat. We pass it 'Bryce' and false for our name and usesLitter
+        arguments. When we call console.log(bryceCat._name) our program prints,
+        Bryce.
+      </p>
+      <p>
+        In the example above, we abandoned best practices by calling our _name
+        property directly. In the next exercise, we’ll address this by calling
+        an inherited getter method for our name property.
+      </p>
+
+      <h2>Code Example</h2>
+      <p class="code">
+        class HospitalEmployee { <br />
+        constructor(name) { <br />
+        &nbsp; this._name = name; <br />
+        &nbsp; this._remainingVacationDays = 20; <br />
+        } <br />
+        <br />
+
+        get name() { <br />
+        &nbsp; return this._name; <br />
+        } <br />
+        <br />
+
+        get remainingVacationDays() { <br />
+        &nbsp; return this._remainingVacationDays; <br />
+        } <br />
+        <br />
+
+        takeVacationDays(daysOff) { <br />
+        &nbsp; this._remainingVacationDays -= daysOff; <br />
+        &nbsp; } <br />
+        } <br />
+        <br />
+
+        class Nurse extends HospitalEmployee { <br />
+        constructor(name, certifications) { <br />
+        &nbsp; super(name) <br />
+        &nbsp; this._certifications = certifications <br />
+        } <br />
+        } <br />
+        <br />
+
+        const nurseOlynyk = new Nurse('Olynyk',['Trauma', 'Pediatrics'])
+      </p>
+
+      <h2>Inheritence Four</h2>
+
+      <p>
+        Now that we know how to create an object that inherits properties from a
+        parent class let’s turn our attention to methods.
+      </p>
+
+      <p>
+        When we call extends in a class declaration, all of the parent methods
+        are available to the child class.
+      </p>
+
+      <p>Below, we extend our Animal class to a Cat subclass.</p>
+      <p class="code">
+        class Animal { constructor(name) { this._name = name; this._behavior =
+        0; } get name() { return this._name; } get behavior() { return
+        this._behavior; } incrementBehavior() { this._behavior++; } }
+      </p>
+
+      <p class="code">
+        class Cat extends Animal { constructor(name, usesLitter) { super(name);
+        this._usesLitter = usesLitter; } } const bryceCat = new Cat('Bryce',
+        false);
+      </p>
+      <p>
+        In the example above, our Cat class extends Animal. As a result, the Cat
+        class has access to the Animal getters and the .incrementBehavior()
+        method.
+      </p>
+
+      <p>
+        Also in the code above, we create a Cat instance named bryceCat. Because
+        bryceCat has access to the name getter, the code below logs 'Bryce' to
+        the console.
+      </p>
+
+      <p>console.log(bryceCat.name);</p>
+
+      <p>
+        Since the extends keyword brings all of the parent’s getters and methods
+        into the child class, bryceCat.name accesses the name getter and returns
+        the value saved to the name property.
+      </p>
+
+      <p>
+        Now consider a more involved example and try to answer the following
+        question: What will the code below log to the console?
+      </p>
+
+      <p class="code">
+        bryceCat.incrementBehavior(); // Call .incrementBehavior() on Cat
+        instance console.log(bryceCat.behavior); // Log value saved to behavior
+      </p>
+      <p>The correct answer is 1. But why?</p>
+      <ul>
+        <li>
+          The Cat class inherits the _behavior property, behavior getter, and
+          the .incrementBehavior() method from the Animal class.
+        </li>
+        <li>
+          When we created the bryceCat instance, the Animal constructor set the
+          _behavior property to zero.
+        </li>
+        <li>
+          The first line of code calls the inherited .incrementBehavior()
+          method, which increases the bryceCat _behavior value from zero to one.
+        </li>
+        <li>
+          The second line of code calls the behavior getter and logs the value
+          saved to _behavior (1).
+        </li>
+      </ul>
+
+      <h2>Code Example</h2>
+      <p class="code">class HospitalEmployee {<br />
+        constructor(name) {<br />
+          &nbsp;     this._name = name;<br />
+          &nbsp;    this._remainingVacationDays = 20;<br />
+        }<br /><br />
+        
+        get name() {<br />
+          &nbsp;   return this._name;<br />
+        }<br /><br />
+        
+        get remainingVacationDays() {<br />
+          &nbsp;    return this._remainingVacationDays;<br />
+        }<br /><br />
+        
+        takeVacationDays(daysOff) {<br />
+          &nbsp;     this._remainingVacationDays -= daysOff;<br />
+          &nbsp;    }<br />
+      }<br />
+      
+      class Nurse extends HospitalEmployee {<br />
+       constructor(name, certifications) {<br />
+        &nbsp;    super(name);<br />
+        &nbsp;    this._certifications = certifications;<br />
+        &nbsp;   } <br />
+      }<br /><br />
+      
+      const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);<br /><br />
+      
+      nurseOlynyk.takeVacationDays(5)<br /><br />
+      
+      console.log(nurseOlynyk.remainingVacationDays)<br />
+      // returns 15 20 holidays minus 5</p>
+
+      
+      <h2>Inheritence Five</h2>
+
+<p>In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
+</p><p>
+  Below, we will add a usesLitter getter. The syntax for creating getters, setters, and methods is the same as it is in any other class.
+</p><p class="code">
+  class Cat extends Animal {<br>
+    constructor(name, usesLitter) {<br>
+      super(name);<br>
+      this._usesLitter = usesLitter;<br>
+    }<br><br>
+   
+    get usesLitter() {<br>
+      return this._usesLitter;<br>
+    }<br>
+  }</p>
+  
+<p> In the example above, we create a usesLitter getter in the Cat class that returns the value saved to _usesLitter.
+</p>
+<p> Compare the Cat class above to the one we created without inheritance:
+</p><p class="code">
+  class Cat {<br>
+    constructor(name, usesLitter) {<br>
+      this._name = name;<br>
+      this._usesLitter = usesLitter;<br>
+      this._behavior = 0;<br>
+    }<br>
+    <br>
+    get name() {<br>
+      return this._name;<br>
+    }<br>
+    <br>
+    get usesLitter() {<br>
+      return this._usesLitter;<br>
+    }<br><br>
+   
+    get behavior() {<br>
+      return this._behavior;<br>
+    }   <br>
+   
+    incrementBehavior() {<br>
+      this._behavior++;<br>
+    }<br>
+  }<br></p>
+  
+<p> We decreased the number of lines required to create the Cat class by about half. Yes, it did require an extra class (Animal), making the reduction in the size of our Cat class seem moot. However, the benefits (time saved, readability, efficiency) of inheritance grow as the number and size of your subclasses increase.
+</p>  <p>
+  One benefit is that when you need to change a method or property that multiple classes share, you can change the parent class, instead of each subclass.
+</p>  <p>
+  Before we move past inheritance, take a moment to see how we would create an additional subclass, called Dog.
+  <p class="code">
+  class Dog extends Animal {<br>
+    constructor(name) {<br>
+      super(name);<br>
+    }<br>
+  }<br>  </p>
+<p>
+  This Dog class has access to the same properties, getters, setters, and methods as the Dog class we made without inheritance, and is a quarter the size.
+</p>  <p>
+  Now that we’ve abstracted animal daycare features, it’s easy to see how you can extend Animal to support other classes, like Rabbit, Bird or even Snake.
+  </p>
+
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/class-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

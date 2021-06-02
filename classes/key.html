@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Classes</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>Key Points</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Classes</h2>
+      <p>
+        Classes are a tool that developers use to quickly produce similar
+        objects.
+      </p>
+      <p>Start with <b>class</b> then name <b>Animal</b></p>
+      <p>By convention, we capitalize and CamelCase class names.</p>
+      <p>Next is <b>constructor()</b></p>
+      <p>This constructor() method accepts one argument, name.</p>
+      <p>
+        JavaScript calls the constructor() method every time it creates a new
+        instance of a class.
+      </p>
+      <p>
+        Inside of the constructor() method, we use the <b> this</b> keyword. In
+        the context of a class, this refers to an instance of that class.
+      </p>
+      <p>The underscore _name means that this should not be called directly</p>
+
+      <p class="code">
+        class Animal {<br />
+        constructor(name) {<br />
+        this._name = name;<br />
+        this._behavior = 0;<br />
+        }
+      </p>
+
+      <h2>Get</h2>
+      <p>We add getter methods for name and behavior.</p>
+      <p>
+        Notice, we also prepended our property names with underscores (_name and
+        _behavior), which indicate these properties should not be accessed
+        directly.
+      </p>
+      <p class="code">
+        get name() {<br />
+        return this._name;<br />
+        }<br /><br />
+      </p>
+
+      <h2>Method</h2>
+      <p>
+        we add a method named .incrementBehavior(). When you call
+        .incrementBehavior() on a Dog instance, it adds 1 to the _behavior
+        property.
+      </p>
+      <p>Between each of our methods, <b> we did not include commas</b>.</p>
+
+      <p class="code">
+        incrementBehavior() {<br />
+        this._behavior++;<br />
+        }<br />
+      </p>
+
+      <h2>Instance</h2>
+      <p>
+        We create a new variable named halley that will store an instance of our
+        Dog class
+      </p>
+      <p>
+        We use the new keyword to generate a new instance of the Dog class. The
+        new keyword calls the constructor(), runs the code inside of it, and
+        then returns the new instance.
+      </p>
+      <p>
+        We pass the 'Halley' string to the Dog constructor, which sets the name
+        property to 'Halley'.
+      </p>
+      <p>
+        Finally, we log the value saved to the name key in our halley object,
+        which logs 'Halley' to the console.
+      </p>
+
+      <p class="code">
+        const halley = new Dog('Halley'); // Create new Dog instance <br />
+        console.log(halley.name); // Log the name value saved to halley <br />
+        // Output: 'Halley' <br />
+      </p>
+
+      <p>To add more than one value use this</p>
+      <p class="code">const Darcy = new Dog('Darcy','Female</p>
+      <p class="tip">Value must be set up to be accepted</p>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/class-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

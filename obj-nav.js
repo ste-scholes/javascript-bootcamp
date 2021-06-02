@@ -3,7 +3,14 @@ let navObj ={
     'Adding Updating Objects': '/updateobj.html',
    'Arrays and Objects':'/objects-nested-arrays.html',
    'Arrays Equality': '/equality.html',
-   
+   'Pass by reference': '/obj/passby.html',
+   'Objects - Looping through': '/obj/looping-obj.html',
+   'This Keyword': '/obj/this.html',
+   'Setters': '/obj/setter.html',
+   'Factory': '/obj/factory.html',
+   'Destructured': '/obj/destruct.html',
+   'Built-in objects': '/obj/builtin.html',
+   'Review': '/obj/review.html',
 };
 
 var navOb = function() {

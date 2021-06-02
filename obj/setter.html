@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2>Setter</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>
+  Along with getter methods, we can also create setter methods which
+  reassign values of existing properties within an object. Let’s see an
+  example of a setter method:
+</p>
+<p class="code">
+  const person = {<br />
+  _age: 37,<br />
+  set age(newAge){<br />
+  if (typeof newAge === 'number'){<br />
+  this._age = newAge;<br />
+  } else {<br />
+  console.log('You must assign a number to age');<br />
+  }<br />
+  }<br />
+  };
+</p>
+
+<p>
+  Notice that in the example above: We can perform a check for what value
+  is being assigned to this._age. When we use the setter method, only
+  values that are numbers will reassign this._age
+</p>
+There are different outputs depending on what values are used to reassign
+this._age.
+
+<p>Then to use the setter method:</p>
+<p class="code">
+  person.age = 40;<br />
+  console.log(person._age); // Logs: 40<br />
+  person.age = '40'; // Logs: You must assign a number to age<br />
+</p>
+<p>
+  Setter methods like age do not need to be called with a set of
+  parentheses. Syntactically, it looks like we’re reassigning the value of
+  a property.
+</p>
+<p>
+  Like getter methods, there are similar advantages to using setter
+  methods that include checking input, performing actions on properties,
+  and displaying a clear intention for how the object is supposed to be
+  used. Nonetheless, even with a setter method, it is still possible to
+  directly reassign properties. For example, in the example above, we can
+  still set ._age directly:
+</p>
+<p class="code">
+  person._age = 'forty-five' <br />
+  console.log(person._age); // Prints forty-five
+</p>
+
+<h2>Code Example</h2>
+<p>This code adds a setter to add the number of sensors to a robot</p>
+
+<p class="code">
+  const robot = {<br />
+  _model: '1E78V2',<br />
+  _energyLevel: 100,<br />
+  _numOfSensors: 15,<br />
+  get numOfSensors(){<br />
+  if(typeof this._numOfSensors === 'number'){<br />
+  return this._numOfSensors;<br />
+  } else {<br />
+  return 'Sensors are currently down.'<br />
+  }<br />
+  },<br />
+  set numOfSensors(num) {<br />
+  if(typeof num === 'number' && num >=0) {<br />
+  this._numOfSensors = num<br />
+  } else {<br />
+  console.log('Pass in a number that is greater than or equal to 0')<br />
+  }<br />
+  }<br />
+  };<br /><br />
+
+  robot.numOfSensors = 100; <br /><br />
+
+  console.log(robot.numOfSensors)
+</p>
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/obj-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>

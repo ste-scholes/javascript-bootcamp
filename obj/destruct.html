@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2> Destructured Assignment</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>
+  Destructured Assignment
+</p>
+<p>
+  We often want to extract key-value pairs from objects and save them as
+  variables. Take for example the following object:
+</p>
+<p class="code">
+  const vampire = { <br />
+  name: 'Dracula',<br />
+  residence: 'Transylvania',<br />
+  preferences: {<br />
+  day: 'stay inside',<br />
+  night: 'satisfy appetite'<br />
+  }<br />
+  };<br />
+</p>
+<p>
+  If we wanted to extract the residence property as a variable, we could
+  using the following code:
+</p>
+<p class="code">
+  const residence = vampire.residence; <br />
+  console.log(residence); // Prints 'Transylvania'
+</p>
+<p>
+  However, we can also take advantage of a destructuring technique called
+  destructured assignment to save ourselves some keystrokes. In
+  destructured assignment we create a variable with the name of an
+  object’s key that is wrapped in curly braces { } and assign to it the
+  object. Take a look at the example below:
+</p>
+<p class="code">
+  const { residence } = vampire; <br />
+  console.log(residence); // Prints 'Transylvania'
+</p>
+<p>
+  Look back at the vampire object’s properties in the first code example.
+  Then, in the example above, we declare a new variable residence that
+  extracts the value of the residence property of vampire. When we log the
+  value of residence to the console, 'Transylvania' is printed.
+</p>
+<p>
+  We can even use destructured assignment to grab nested properties of an
+  object:
+</p>
+<p class="code">
+  const { day } = vampire.preferences; <br />
+  console.log(day); // Prints 'stay inside'
+</p>
+
+<h2>Example Code</h2>
+<p class="code">
+  const robot = { <br />
+  model: '1E78V2',<br />
+  energyLevel: 100,<br />
+  functionality: {<br />
+  beep() {<br />
+  console.log('Beep Boop');<br />
+  },<br />
+  fireLaser() {<br />
+  console.log('Pew Pew');<br />
+  },<br />
+  }<br />
+  };<br />
+</p>
+
+<p class="code">
+  const {functionality} = robot<br />
+  // refs functionality on robot
+</p>
+<p class="code">
+  functionality.beep()<br />
+  // accesses beep through functionality
+</p>
+
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/obj-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>

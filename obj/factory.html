@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2> Factory Functions</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>
+  Factory Functions
+</p>
+
+<p>
+  So far we’ve been creating objects individually, but there are times
+  where we want to create many instances of an object quickly. Here’s
+  where factory functions come in. A real world factory manufactures
+  multiple copies of an item quickly and on a massive scale. A factory
+  function is a function that returns an object and can be reused to make
+  multiple object instances. Factory functions can also have parameters
+  allowing us to customize the object that gets returned.
+</p>
+<p>
+  Let’s say we wanted to create an object to represent monsters in
+  JavaScript. There are many different types of monsters and we could go
+  about making each monster individually but we can also use a factory
+  function to make our lives easier. To achieve this diabolical plan of
+  creating multiple monsters objects, we can use a factory function that
+  has parameters:
+</p>
+<p class="code">
+  const monsterFactory = (name, age, energySource, catchPhrase) => {
+  return { <br />
+  name: name,<br />
+  age: age, <br />
+  energySource: energySource,<br />
+  scare() {<br />
+  console.log(catchPhrase);<br />
+  } <br />
+  }<br />
+  };
+</p>
+<p>
+  In the monsterFactory function above, it has four parameters and returns
+  an object that has the properties: name, age, energySource, and scare().
+  To make an object that represents a specific monster like a ghost, we
+  can call monsterFactory with the necessary arguments and assign the
+  return value to a variable:
+</p>
+<p class="code">
+  const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!'); <br />
+  ghost.scare(); // 'BOO!'
+</p>
+<p>
+  Now we have a ghost object as a result of calling monsterFactory() with
+  the needed arguments. With monsterFactory in place, we don’t have to
+  create an object literal every time we need a new monster. Instead, we
+  can invoke the monsterFactory function with the necessary arguments to
+  take over the world make a monster for us!
+</p>
+
+<h2>Factory Code Example</h2>
+<p class="code">
+  const robotFactory = (model, mobile) => { <br />
+  return{<br />
+  model: model,<br />
+  mobile: mobile,<br />
+  beep() {<br />
+  console.log('Beep Boop')<br />
+  }<br />
+  }<br />
+  }<br /><br />
+
+  const tinCan = robotFactory('P-500', true)<br /><br />
+
+  tinCan.beep() // returns 'Beep Boop'<br /><br />
+
+  console.log(tinCan.model + tinCan.mobile) // returns P-500 true<br /><br />
+</p>
+
+  
+<h2>Property Shorthand</h2>
+<p>Property Value Shorthand</p>
+
+<p> ES6 introduced some new shortcuts for assigning properties to variables known as destructuring.
+</p>
+<p>   In the previous exercise, we created a factory function that helped us create objects. We had to assign each property a key and value even though the key name was the same as the parameter name we assigned to it. To remind ourselves, here’s a truncated version of the factory function:
+</p>
+<p class="code">  const monsterFactory = (name, age) => {<br>
+  return { <br>
+    name: name,<br>
+    age: age<br>
+  }<br>
+};<br>
+</p> <p> 
+Imagine if we had to include more properties, that process would quickly become tedious! But we can use a destructuring technique, called property value shorthand, to save ourselves some keystrokes. The example below works exactly like the example above:
+</p>  
+<p class="code">  const monsterFactory = (name, age) => { <br>
+  return { <br>
+    name,<br>
+    age <br>
+  }<br>
+};<br>
+</p>  
+Notice that we don’t have to repeat ourselves for property assignments!
+</p>
+
+<h2>Robot Example Refactored</h2>  
+<p>Using Property Shorthand</p>
+
+<p class="code">
+function robotFactory(model, mobile){<br>
+  return {<br>
+    model,<br>
+    mobile,<br>
+    beep() {<br>
+      console.log('Beep Boop');<br>
+    }<br>
+  }<br>
+}<br>
+</p>
+<p>  // To check that the property value shorthand technique worked:</p>
+<p class="code"> const newRobot = robotFactory('P-501', false)<br>
+console.log(newRobot.model)<br>
+console.log(newRobot.mobile)<br>
+
+
+</p>
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/obj-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>

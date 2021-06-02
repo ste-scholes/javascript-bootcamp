@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2>Objects Built in</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>
+  In the previous exercises we’ve been creating instances of objects that
+  have their own methods. But, we can also take advantage of built-in
+  methods for Objects!
+</p>
+<p>
+  For example, we have access to object instance methods like:
+  .hasOwnProperty(), .valueOf(), and many more! Practice your
+  documentation reading skills and check out: MDN’s object instance
+  documentation.
+</p>
+<p>
+  There are also useful Object class methods such as Object.assign(),
+  Object.entries(), and Object.keys() just to name a few. For a
+  comprehensive list, browse: MDN’s object instance documentation.
+</p>
+<p>
+  Let’s get acquainted with some of these methods and their documentation.
+</p>
+<p>
+  Note: You will see errors as you work through this exercise, but by the
+  end the errors will be fixed!
+</p>
+<h2>Code Example</h2>
+<p class="code">
+  const robot = {<br />
+  model: 'SAL-1000',<br />
+  mobile: true,<br />
+  sentient: false,<br />
+  armor: 'Steel-plated',<br />
+  energyLevel: 75<br />
+  };<br /><br />
+
+  // What is missing in the following method call?<br />
+  const robotKeys = Object.keys(robot);<br /><br />
+
+  console.log(robotKeys);<br /><br />
+
+  // Declare robotEntries below this line:<br />
+  const robotEntries = Object.entries(robot)<br /><br />
+
+  console.log(robotEntries);<br /><br />
+
+  // Declare newRobot below this line:<br />
+  const newRobot = Object.assign({laserBlaster: true, voiceRecognition:
+  true}, robot)
+  <br /><br />
+  console.log(newRobot);
+</p>
+
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/obj-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>

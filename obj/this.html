@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2>Objects Pass by Reference</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>The this Keyword</p>
+<p class="imp">DO NOT USE ARROW FUNCTIONS - when using this in a method</p>
+<p>Objects are collections of related data and functionality. We store that functionality in methods on our objects:
+</p>
+<p class="code">
+const goat = { <br>
+dietType: 'herbivore',<br>
+makeSound() {<br>
+console.log('baaa');<br>
+}<br>
+};
+</p>
+<p> In our goat object we have a .makeSound() method. We can invoke the .makeSound() method on goat.
+</p>
+<p class="code">
+goat.makeSound(); // Prints baaa</p>
+
+<p> Nice, we have a goat object that can print baaa to the console. Everything seems to be working fine. What if we
+wanted to add a new method to our goat object called .diet() that prints the goat‘s dietType?
+</p>
+<p class="code">
+const goat = {<br>
+dietType: 'herbivore',<br>
+makeSound() {<br>
+console.log('baaa');<br>
+},<br>
+diet() {<br>
+console.log(dietType);<br>
+}<br>
+};<br>
+goat.diet(); <br><br>
+// Output will be "ReferenceError: dietType is not defined"
+</p>
+<p> That’s strange, why is dietType not defined even though it’s a property of goat? That’s because inside the scope of
+the .diet() method, we don’t automatically have access to other properties of the goat object.
+</p>
+</p> Here’s where the this keyword comes to the rescue. If we change the .diet() method to use the this, the .diet()
+works! :
+<p>
+<p class="code">
+const goat = {<br>
+dietType: 'herbivore',<br>
+makeSound() {<br>
+console.log('baaa');<br>
+},<br>
+diet() {<br>
+console.log(this.dietType);<br>
+}<br>
+};<br><br>
+
+goat.diet(); <br>
+// Output: herbivore</p>
+
+<p> The this keyword references the calling object which provides access to the calling object’s properties. In the
+example above, the calling object is goat and by using this we’re accessing the goat object itself, and then the
+dietType property of goat by using property dot notation. </p>
+<h2>Example</h2> 
+<p class="code">
+const robot = { <br>
+  model: '1E78V2',<br>
+  energyLevel: 100,<br>
+  provideInfo() {<br>
+return `I am ${this.model} and my current energy level is ${this.energyLevel}.`<br>
+  }<br>
+};  </p>
+<p class="code">
+console.log(robot.provideInfo())
+</p>
+
+<h3>Things to remember!</h3>
+<p>
+This is a method</p>
+<p class="code">
+provideInfo() {<br>
+return `I am ${this.model} and my current energy level is ${this.energyLevel}.`<br>
+  }<br>
+</p>
+<p>This is how you call the method</p>
+<p class="code">console.log(robot.provideInfo())</p>
+
+<p>You access keys within the object using the this keyword</p>
+<p class="code">return `I am ${this.model} and my current energy level is ${this.energyLevel}.`
+}</p>
+<p>The above returns <br> // I am 1E78V2 and my current energy level is 100.</p>
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/obj-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+    <nav class="menu"></nav>
+   
+    <h1>Objects</h1>
+    <nav class="nav"></nav>
+    <h2>Objects Pass by Reference</h2>
+    <nav class="obj-nav"></nav>
+<!-- start -->
+<p>Loops are programming tools that repeat a block of code until a condition is met. We learned how to iterate through arrays using their numerical indexing, but the key-value pairs in objects aren’t ordered! JavaScript has given us alternative solution for iterating through objects with the for...in syntax .
+</p> 
+<p>  for...in will execute a given block of code for each property in an object.</p> 
+<p class="code"> 
+  let spaceship = {<br>
+    crew: {<br>
+      captain: { <br>
+        name: 'Lily', <br>
+        degree: 'Computer Engineering', <br>
+        cheerTeam() { console.log('You got this!') } <br>
+      },<br>
+      'chief officer': { <br>
+        name: 'Dan', <br>
+        degree: 'Aerospace Engineering', <br>
+        agree() { console.log('I agree, captain!') } <br>
+      },<br>
+      medic: { <br>
+        name: 'Clementine', <br>
+        degree: 'Physics', <br>
+        announce() { console.log(`Jets on!`) } },<br>
+      translator: {<br>
+        name: 'Shauna', <br>
+        degree: 'Conservation Science', <br>
+        powerFuel() { console.log('The tank is full!') } <br>
+      }<br>
+    }<br>
+  }; </p> 
+  <p class="code"> 
+  // for...in
+  for (let crewMember in spaceship.crew) { <br>
+    console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`);
+  }</p> 
+  
+<p>  Our for...in will iterate through each element of the spaceship.crew object. In each iteration, the variable crewMember is set to one of spaceship.crew‘s keys, enabling us to log a list of crew members’ role and name.
+  </p>
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/obj-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>
