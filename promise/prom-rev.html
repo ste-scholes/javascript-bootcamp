@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Promise Review</h2>
+      <p>
+        Awesome job! Promises are a difficult concept even for experienced
+        developers, so pat yourself on the back. You’ve learned a ton about
+        asynchronous JavaScript and promises.
+      </p>
+      <p>Let’s review:</p>
+      <ul>
+        <li>
+          Promises are JavaScript objects that represent the eventual result of
+          an asynchronous operation.
+        </li>
+
+        <li>
+          Promises can be in one of three states: pending, resolved, or
+          rejected.
+        </li>
+
+        <li>A promise is settled if it is either resolved or rejected.</li>
+
+        <li>
+          We construct a promise by using the new keyword and passing an
+          executor function to the Promise constructor method.
+        </li>
+
+        <li>
+          setTimeout() is a Node function which delays the execution of a
+          callback function using the event-loop.
+        </li>
+
+        <li>
+          We use .then() with a success handler callback containing the logic
+          for what should happen if a promise resolves.
+        </li>
+
+        <li>
+          We use .catch() with a failure handler callback containing the logic
+          for what should happen if a promise rejects.
+        </li>
+
+        <li>
+          Promise composition enables us to write complex, asynchronous code
+          that’s still readable. We do this by chaining multiple .then()‘s and
+          .catch()‘s.
+        </li>
+        <li>
+          To use promise composition correctly, we have to remember to return
+          promises constructed within a .then().
+        </li>
+
+        <li>We should chain multiple promises rather than nesting them.</li>
+
+        To take advantage of concurrency, we can use Promise.all().
+      </ul>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

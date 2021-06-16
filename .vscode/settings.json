@@ -829,7 +829,7 @@
     "workbench.editor.wrapTabs": false,
   
     // Configure which editor to use for specific file types.
-    "workbench.editorAssociations": [],
+    "workbench.editorAssociations": {},
   
     // Configure the opener to use for external uris (i.e. http, https).
     "workbench.externalUriOpeners": {},

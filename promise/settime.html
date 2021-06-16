@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+
+      <h2>The Node setTimeout() Function</h2>
+
+      <p>
+        Knowing how to construct a promise is useful, but most of the time,
+        knowing how to consume, or use, promises will be key. Rather than
+        constructing promises, you’ll be handling Promise objects returned to
+        you as the result of an asynchronous operation. These promises will
+        start off pending but settle eventually.
+      </p>
+
+      <p>
+        Moving forward, we’ll be simulating this by providing you with functions
+        that return promises which settle after some time. To accomplish this,
+        we’ll be using setTimeout(). setTimeout() is a Node API (a comparable
+        API is provided by web browsers) that uses callback functions to
+        schedule tasks to be performed after a delay. setTimeout() has two
+        parameters: a callback function and a delay in milliseconds.
+      </p>
+      <p class="code">
+        const delayedHello = () => {<br />
+        console.log('Hi! This is an asynchronous greeting!');<br />
+        };<br /><br />
+
+        setTimeout(delayedHello, 2000);
+      </p>
+      <p>
+        Here, we invoke setTimeout() with the callback function delayedHello()
+        and 2000. In at least two seconds delayedHello() will be invoked. But
+        why is it “at least” two seconds and not exactly two seconds?
+      </p>
+      <p>
+        This delay is performed asynchronously—the rest of our program won’t
+        stop executing during the delay. Asynchronous JavaScript uses something
+        called the event-loop. After two seconds, delayedHello() is added to a
+        line of code waiting to be run. Before it can run, any synchronous code
+        from the program will run. Next, any code in front of it in the line
+        will run. This means it might be more than two seconds before
+        delayedHello() is actually executed.
+      </p>
+      <p>
+        Let’s look at how we’ll be using setTimeout() to construct asynchronous
+        promises:
+      </p>
+
+      <p class="code">
+        const returnPromiseFunction = () => { <br />
+        return new Promise((resolve, reject) => {<br />
+        setTimeout(( ) => {resolve('I resolved!')}, 1000);<br />
+        });<br />
+        };<br /><br />
+
+        const prom = returnPromiseFunction();
+      </p>
+
+      <p>
+        In the example code, we invoked returnPromiseFunction() which returned a
+        promise. We assigned that promise to the variable prom. Similar to the
+        asynchronous promises you may encounter in production, prom will
+        initially have a status of pending.
+      </p>
+
+      <h2>Code Example</h2>
+      <p class="code">console.log("This is the first line of code in app.js.");<br />
+        // Keep the line above as the first line of code<br />
+        // Write your code here:<br />
+        const usingSTO = () => {<br />
+          console.log('Hello World')<br />
+        }<br />
+        setTimeout(usingSTO, 3000)<br /><br /><br /><br />
+        
+        
+        
+        
+        
+        
+        
+        
+        // Keep the line below as the last line of code:<br />
+        console.log("This is the last line of code in app.js.");</p>
+        <p>The result of the above code is: </p>
+        <p>"This is the first line of code in app.js."</p>
+        <p>"This is the last line of code in app.js."</p>
+        <p><i>
+            Then after a break of 3 seconds</i></p>
+        <p>"Hello World"</p>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

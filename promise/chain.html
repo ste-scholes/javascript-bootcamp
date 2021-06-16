@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Chaining Multiple Promises</h2>
+
+      <p>
+        One common pattern we’ll see with asynchronous programming is multiple
+        operations which depend on each other to execute or that must be
+        executed in a certain order. We might make one request to a database and
+        use the data returned to us to make another request and so on! Let’s
+        illustrate this with another cleaning example, washing clothes:
+      </p>
+      <p>
+        We take our dirty clothes and put them in the washing machine. If the
+        clothes are cleaned, then we’ll want to put them in the dryer. After the
+        dryer runs, if the clothes are dry, then we can fold them and put them
+        away.
+      </p>
+      <p>
+        This process of chaining promises together is called composition.
+        Promises are designed with composition in mind! Here’s a simple promise
+        chain in code:
+      </p>
+      <p class="code">
+        firstPromiseFunction() <br />
+        .then((firstResolveVal) => {<br />
+        return secondPromiseFunction(firstResolveVal);<br />
+        })<br />
+        .then((secondResolveVal) => {<br />
+        console.log(secondResolveVal);<br />
+        });
+      </p>
+
+      <p>Let’s break down what’s happening in the example:</p>
+
+      <ul>
+        <li>
+          We invoke a function firstPromiseFunction() which returns a promise.
+        </li>
+        <li>
+          We invoke .then() with an anonymous function as the success handler.
+        </li>
+        <li>
+          Inside the success handler we return a new promise— the result of
+          invoking a second function, secondPromiseFunction() with the first
+          promise’s resolved value.
+        </li>
+        <li>
+          We invoke a second .then() to handle the logic for the second promise
+          settling.
+        </li>
+        <li>
+          Inside that .then(), we have a success handler which will log the
+          second promise’s resolved value to the console.
+        </li>
+      </ul>
+      <p>
+        In order for our chain to work properly, we had to return the promise
+        secondPromiseFunction(firstResolveVal). This ensured that the return
+        value of the first .then() was our second promise rather than the
+        default return of a new promise with the same settled value as the
+        initial.
+      </p>
+      <h2>Instructions</h2>
+      <p>
+        1. Take a look at the provided code. We require in three functions:
+        checkInventory(), processPayment(), shipOrder(). These functions each
+        return a promise.
+      </p>
+      <p>
+        checkInventory() expects an order argument and returns a promise. If
+        there are enough items in stock to fill the order, the promise will
+        resolve to an array. The first element in the resolved value array will
+        be the same order and the second element will be the total cost of the
+        order as a number.
+      </p>
+      <p>
+        processPayment() expects an array argument with the order as the first
+        element and the purchase total as the second. This function returns a
+        promise. If there is a large enough balance on the giftcard associated
+        with the order, it will resolve to an array. The first element in the
+        resolved value array will be the same order and the second element will
+        be a tracking number.
+      </p>
+      <p>
+        shipOrder() expects an array argument with the order as the first
+        element and a tracking number as the second. It returns a promise which
+        resolves to a string confirming the order has shipped.
+      </p>
+      <p>
+        If you’d like, look at the library.js file to see how these functions
+        work. Press “Check Work” when you’re ready to move on to the next
+        checkpoint.
+      </p>
+      <p>
+        2. We set up a promise chain but it’s missing a couple important lines
+        of code to make it function properly.
+      </p>
+
+      <p>
+        We invoked checkInventory() with order and chained a .then() function to
+        it. This .then() has an anonymous function as its success handler, but
+        it’s missing a return statement. <br />
+
+        The success handler should return a processPayment() promise.
+      </p>
+      <p>
+        3. We have a second .then() function on the chain. This .then() also has
+        an anonymous function as its success handler and is missing a return
+        statement. <br />
+
+        The success handler should return a shipOrder() promise.
+      </p>
+      <p>4. Type node app.js in the terminal and hit enter. NOT RELEVANT</p>
+<h2>Code Example</h2>
+
+<p class="code">const {checkInventory, processPayment, shipOrder} = require('./library.js'); <br> <br>
+
+    const order = { <br>
+        &nbsp;   items: [['sunglasses', 1], ['bags', 2]], <br>
+        &nbsp;   giftcardBalance: 79.82 <br>
+    }; <br>
+    
+    checkInventory(order) <br>
+    .then((resolvedValueArray) => { <br>
+      // Write the correct return statement here: <br>
+      &nbsp;    return processPayment(resolvedValueArray) <br>
+    }) <br>
+    .then((resolvedValueArray) => { <br>
+      // Write the correct return statement here: <br>
+      &nbsp;   return shipOrder(resolvedValueArray) <br>
+    }) <br>
+    .then((successMessage) => { <br>
+        &nbsp;  console.log(successMessage); <br>
+    }) <br>
+    .catch((errorMessage) => { <br>
+        &nbsp;   console.log(errorMessage); <br>
+    });</p>
+
+    <p>library.js</p>
+  <p class="code">const store = { <br>
+    sunglasses: {<br>
+        &nbsp;   inventory: 817, <br>
+        &nbsp;  cost: 9.99<br>
+    },<br>
+    pants: {<br>
+        &nbsp;   inventory: 236, <br>
+        &nbsp;   cost: 7.99<br>
+    },<br>
+    bags: {<br>
+        &nbsp;  inventory: 17, <br>
+        &nbsp;  cost: 12.99<br>
+    }<br>
+  };<br><br>
+  
+  const checkInventory = (order) => {<br>
+    &nbsp;  return new Promise ((resolve, reject) => {<br>
+         setTimeout(()=> {  <br>
+            &nbsp; const itemsArr = order.items;  <br>
+     &nbsp;  let inStock = itemsArr.every(item => store[item[0]].inventory >= item[1]);<br><br>
+     
+     if (inStock){<br>
+        &nbsp;  let total = 0;   <br>
+       itemsArr.forEach(item => {<br>
+        &nbsp;      total += item[1] * store[item[0]].cost<br>
+       });<br><br>
+       console.log(`All of the items are in stock. The total cost of the order is ${total}.`);<br>
+       &nbsp;   resolve([order, total]);<br>
+     } else {<br>
+        &nbsp;   reject(`The order could not be completed because some items are sold out.`);<br>
+     }     <br>
+  }, generateRandomDelay());<br>
+   });<br>
+  };<br><br>
+  
+  const processPayment = (responseArray) => {<br>
+    &nbsp; const order = responseArray[0];<br>
+    &nbsp;  const total = responseArray[1];<br>
+    return new Promise ((resolve, reject) => {<br>
+        &nbsp; setTimeout(()=> {  <br>
+     let hasEnoughMoney = order.giftcardBalance >= total;<br>
+     // For simplicity we've omited a lot of functionality<br>
+     // If we were making more realistic code, we would want to update the giftcardBalance and the inventory<br>
+     if (hasEnoughMoney) {<br>
+        &nbsp;   console.log(`Payment processed with giftcard. Generating shipping label.`);<br>
+       let trackingNum = generateTrackingNumber();<br>
+       &nbsp;   resolve([order, trackingNum]);<br>
+     } else {<br>
+        &nbsp;   reject(`Cannot process order: giftcard balance was insufficient.`);<br>
+     }<br><br>
+     
+  }, generateRandomDelay());<br>
+   });<br>
+  };<br><br><br>
+  
+  
+  const shipOrder = (responseArray) => {<br>
+    &nbsp;   const order = responseArray[0];<br>
+    &nbsp;  const trackingNum = responseArray[1];<br>
+    &nbsp;  return new Promise ((resolve, reject) => {<br>
+        &nbsp;  &nbsp; setTimeout(()=> {  <br>
+            &nbsp;   &nbsp; &nbsp;    resolve(`The order has been shipped. The tracking number is: ${trackingNum}.`);<br>
+  }, generateRandomDelay());<br>
+   });<br>
+  };<br><br><br>
+  
+  <span class="correct">
+  // This function generates a random number to serve as a "tracking number" on the shipping label. In real life this wouldn't be a random number</span><br><br>
+  function generateTrackingNumber() {<br>
+    &nbsp; return Math.floor(Math.random() * 1000000);<br>
+  }<br><br><br>
+  <span class="correct">
+  // This function generates a random number to serve as delay in a setTimeout() since real asynchrnous operations take variable amounts of time<br></span>
+  function generateRandomDelay() {<br>
+    &nbsp;  return Math.floor(Math.random() * 2000);<br>
+  }<br><br>
+  
+  module.exports = {checkInventory, processPayment, shipOrder};</p>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

@@ -1,0 +1,11 @@
+.win {
+  background: blue;
+  color: white;
+  font-size: xX-large;
+}
+
+.lose {
+  background: red;
+  color: white;
+  font-size: xX-large;
+}

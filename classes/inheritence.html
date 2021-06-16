@@ -537,7 +537,47 @@
 </p>  <p>
   Now that we’ve abstracted animal daycare features, it’s easy to see how you can extend Animal to support other classes, like Rabbit, Bird or even Snake.
   </p>
-
+  <h2>Code Example</h2>
+  <p class="code">class HospitalEmployee { <br>
+    constructor(name) {<br>
+      this._name = name;<br>
+      this._remainingVacationDays = 20;<br>
+    }<br><br>
+    
+    get name() {<br>
+      return this._name;<br>
+    }<br><br>
+    
+    get remainingVacationDays() {<br>
+      return this._remainingVacationDays;<br>
+    }<br><br>
+    
+    takeVacationDays(daysOff) {<br>
+      this._remainingVacationDays -= daysOff;<br>
+    }<br>
+  }<br><br>
+  
+  class Nurse extends HospitalEmployee {<br>
+    constructor(name, certifications) {<br>
+      super(name);<br>
+      this._certifications = certifications;<br>
+    } <br>
+  get certifications() {<br>
+   return this._certifications;<br>
+  }<br><br>
+  
+  addCertification(newCertification) {<br>
+    this._certifications.push(newCertification);<br>
+  }<br><br>
+  
+  }
+  
+  const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);<br>
+  nurseOlynyk.takeVacationDays(5);<br>
+  console.log(nurseOlynyk.remainingVacationDays);<br>
+  nurseOlynyk.addCertification('Genetics')<br>
+  console.log(nurseOlynyk.certifications)</p>
+  <p class="imp">REMEMBER:  this._certifications.push(newCertification);</p>
 
       <!-- &nbsp;  <br /> -->
       <!-- content ends here -->

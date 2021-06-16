@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Writing async Functions</h2>
+<p>We’ve seen that the await keyword halts the execution of an async function until a promise is no longer pending. Don’t forget the await keyword! It may seem obvious, but this can be a tricky mistake to catch because our function will still run— it just won’t have the desired results.
+</p>
+  <p>  We’re going to explore this using the following function, which returns a promise that resolves to 'Yay, I resolved!' after a 1 second delay:
+</p>
+<p class="code">
+    let myPromise = () => {<br />
+      return new Promise((resolve, reject) => {<br />
+        setTimeout(() => {<br />
+          resolve('Yay, I resolved!')<br />
+        }, 1000);<br />
+      });<br />
+    }</p>
+    
+ <p>  Now we’ll write two async functions which invoke myPromise():</p> 
+   <p class="code">
+    async function noAwait() {<br />
+     let value = myPromise();<br />
+     console.log(value);<br />
+    }<br /><br />
+     
+    async function yesAwait() {<br />
+     let value = await myPromise();<br />
+     console.log(value);<br />
+    }<br /><br />
+     
+    noAwait(); <span class="correct"> // Prints: Promise { &#60;pending> }</span><br />
+    yesAwait();<span class="correct"> // Prints: Yay, I resolved!</span></p> 
+   <p>
+    In the first async function, noAwait(), we left off the await keyword before myPromise(). In the second, yesAwait(), we included it. The noAwait() function logs Promise { <pending> } to the console. Without the await keyword, the function execution wasn’t paused. The console.log() on the following line was executed before the promise had resolved.
+    </p> <p>
+    Remember that the await operator returns the resolved value of a promise. When used properly in yesAwait(), the variable value was assigned the resolved value of the myPromise() promise, whereas in noAwait(), value was assigned the promise object itself.
+    </p>
+
+    <h2>Example</h2>
+    <p class="bold">The below code will bring back an error as there is no async and await </p>
+
+    <p class="code">const shopForBeans = require('./library.js');<br /><br />
+
+        function getBeans() {<br />
+          console.log(`1. Heading to the store to buy beans...`);<br />
+          let value = shopForBeans();<br />
+          console.log(`3. Great! I'm making ${value} beans for dinner tonight!`);<br />
+        }<br /><br />
+        
+        getBeans();</p>
+
+        <h2>Fixed code</h2>
+        <p class="bold">Here you can see the async and await have been added in the correct place</p>
+        <p class="code">
+          const shopForBeans = require('./library.js');<br /><br />
+
+          <span class="correct">async</span> function getBeans() {<br />
+            console.log(`1. Heading to the store to buy beans...`);<br />
+            let value = <span class="correct">await</span> shopForBeans();<br />
+            console.log(`3. Great! I'm making ${value} beans for dinner tonight!`);<br />
+          }<br /><br />
+          
+          getBeans();
+
+
+
+        </p>
+
+        <h2>library.js</h2>
+
+        <p class="code"><span class="correct"> /*
+            This is the shopForBeans function. It uses a setTimeout() function to simulate a time-consuming asynchronous action. The function returns a promise with a resolved value of a string representing a type of bean. It settles on a random beanType from the beanTypes array using Math.random().
+            */</span> <br />
+            
+            
+            const shopForBeans = () => {<br />
+              return new Promise((resolve, reject) => {<br />
+                const beanTypes = ['kidney', 'fava', 'pinto', 'black', 'garbanzo'];<br />
+              setTimeout(()=>{<br />
+                let randomIndex = Math.floor(Math.random() * 4);<br />
+                let beanType = beanTypes[randomIndex];<br />
+                console.log(`2. I bought ${beanType} beans because they were on sale.`);<br />
+               resolve(beanType);<br />
+              }, 1000);<br />
+            });<br />
+            }<br /><br />
+              
+            module.exports = shopForBeans;</p>
+
+      <!-- &nbsp;  <br /> &#60;-->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>React</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>ReactDOM.render() I</h2>
+<p>You can see something called ReactDOM. What’s that?</p>
+
+ <p>   ReactDOM is the name of a JavaScript library. This library contains several React-specific methods, all of which deal with the DOM in some way or another.
+    </p>
+<p> We’ll talk more later about how ReactDOM got into your file. For now, just understand that it’s yours to use.
+</p>
+<p>  Move slightly to the right, and you can see one of ReactDOM‘s methods: ReactDOM.render().
+</p>
+<p>  ReactDOM.render() is the most common way to render JSX. It takes a JSX expression, creates a corresponding tree of DOM nodes, and adds that tree to the DOM. That is the way to make a JSX expression appear onscreen.
+</p>
+<p>  Move to the right a little more, and you come to this expression:
+</p>
+  <p class="code">&lt;h1>Hello world&lt;/h1></p>  
+    
+<p>  This is the first argument being passed to ReactDOM.render(). ReactDOM.render()‘s first argument should be a JSX expression, and it will be rendered to the screen.</p>
+</p> 
+
+<h2>previous.js</h2>
+<p class="code">import React from 'react';<br>
+
+    import ReactDOM from 'react-dom';<br>
+   <span class="correct">
+    // This is just an example, switch to app.js for the exercise.<br></span>
+    ReactDOM.render(&lt;h1>Hello world&lt;/h1>, document.getElementById('app'));</p>
+
+    <h2>ReactDOM.render() II</h2>
+<p>Move to the right a little more, and you will see this expression:</p>
+
+ <p class="code">   document.getElementById('app')</p>
+    
+<p>   You just learned that ReactDOM.render() makes its first argument appear onscreen. But where on the screen should that first argument appear?
+</p> 
+<p>   The first argument is appended to whatever element is selected by the second argument.
+</p>   
+<p>  In the code editor, select index.html. See if you can find an element that would be selected by document.getElementById('app').
+</p>  
+<p>   That element acted as a container for ReactDOM.render()‘s first argument! At the end of the previous exercise, this appeared on the screen:
+    <p class="code">
+    	&lt;main id="app"> <br>
+        &lt;h1>Render me!&lt;/h1><br>
+    	&lt;/main><br></p>
+
+<p>The above code is rendered within the HTML page in the following TAG:</p>
+<p class="code">  &lt;main id="app">&lt;/main></p>
+
+
+
+<h2>Passing a Variable to ReactDOM.render()</h2>
+<p>
+ReactDOM.render()‘s first argument should evaluate to a JSX expression, it doesn’t have to literally be a JSX expression.
+</p><p>
+The first argument could also be a variable, so long as that variable evaluates to a JSX expression.
+</p><p>
+In this example, we save a JSX expression as a variable named toDoList. We then pass toDoList as the first argument to ReactDOM.render():
+</p><p class="code">
+const toDoList = (<br />
+&lt;ol><br />
+&lt;li>Learn React&lt;/li><br />
+&lt;li>Become a Developer&lt;/li><br />
+&lt;/ol><br />
+);
+ 
+ReactDOM.render(<br />
+  toDoList, <br />
+  document.getElementById('app')<br />
+);</p>
+
+
+    
+<h2>Example</h2>
+<p class="code">
+    import React from 'react';<br /> 
+    import ReactDOM from 'react-dom';<br /> 
+    
+    // Write code here:<br /> 
+    const myList = (<br /> 
+    &lt;ul><br /> 
+        &lt;li>Learn&lt;/li><br /> 
+      &lt;li>React&lt;/li><br /> 
+      &lt;li>Now&lt;/li><br /> 
+      &lt;/ul><br /> 
+    );<br /> <br /> 
+    
+    ReactDOM.render(myList,document.getElementById('app'));
+
+
+</p>
+
+</div>
+      <!-- &nbsp;  <br /> 	&lt; -->
+      <!-- content ends here -->
+
+
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/react/react-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

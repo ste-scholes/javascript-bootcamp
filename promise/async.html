@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Async Await</h2>
+      <p class="bold">Introduction</p>
+      <p>
+        Often in web development, we need to handle asynchronous actions—
+        actions we can wait on while moving on to other tasks. We make requests
+        to networks, databases, or any number of similar operations. JavaScript
+        is non-blocking: instead of stopping the execution of code while it
+        waits, JavaScript uses an event-loop which allows it to efficiently
+        execute other tasks while it awaits the completion of these asynchronous
+        actions.
+      </p>
+      <p>
+        Originally, JavaScript used callback functions to handle asynchronous
+        actions. The problem with callbacks is that they encourage complexly
+        nested code which quickly becomes difficult to read, debug, and scale.
+        With ES6, JavaScript integrated native promises which allow us to write
+        significantly more readable code. JavaScript is continually improving,
+        and ES8 provides a new syntax for handling our asynchronous action,
+        async...await. The async...await syntax allows us to write asynchronous
+        code that reads similarly to traditional synchronous, imperative
+        programs.
+      </p>
+      <p>
+        The async...await syntax is syntactic sugar— it doesn’t introduce new
+        functionality into the language, but rather introduces a new syntax for
+        using promises and generators. Both of these were already built in to
+        the language. Despite this, async...await powerfully improves the
+        readability and scalability of our code. Let’s learn how to use it!
+      </p>
+      <h2>Instructions</h2>
+      <p>
+        1. In this lesson, you’ll be given a code-editor to write your code and
+        a bash terminal to execute your code. To execute your program, you’ll
+        type node app.js in the terminal and hit enter (or return). You’ll press
+        the “Check Work” button to submit your code for evaluation.
+      </p>
+      <p>
+        Check out the code we provided. It shows three ways of accomplishing the
+        same task: reading and printing from two files in a specified order:
+      </p>
+      <ol>
+        <li>The first version uses callback functions.</li>
+        <li>The second version uses native promise syntax</li>
+        <li>The third version uses async...await.</li>
+      </ol>
+      <p>
+        Don’t worry about understanding the async...await syntax— that’s what
+        you’ll learn in this lesson! If you haven’t already, type node app.js
+        into the terminal and press enter. Then, press “Check Work”.
+      </p>
+
+      <h2>Program Code</h2>
+      <p class="code">
+        const fs = require('fs');<br />
+        const promisifiedReadfile = require('./promisifiedReadfile');<br /><br />
+        <span class="correct">
+          // Here we use fs.readfile() and callback functions:</span
+        >
+        <br /><br />
+        fs.readFile('./file.txt', 'utf-8', (err, data) => {<br />
+        if (err) throw err;<br />
+        let firstSentence = data;<br />
+        fs.readFile('./file2.txt', 'utf-8', (err, data) => {<br />
+        if (err) throw err;<br />
+        &nbsp; let secondSentence = data;<br />
+        &nbsp; console.log(firstSentence, secondSentence);<br />
+        });<br />
+        });<br /><br />
+
+        <span class="correct">
+          // Here we use native promises with our "promisified" version of
+          readfile:</span
+        ><br /><br />
+        let firstSentence;<br />
+        promisifiedReadfile('./file.txt', 'utf-8')<br />
+        .then((data) => {<br />
+        &nbsp; firstSentence = data;<br />
+        &nbsp; return promisifiedReadfile('./file2.txt', 'utf-8');<br />
+        })<br />
+        .then((data) => {<br />
+        &nbsp; let secondSentence = data;<br />
+        &nbsp; console.log(firstSentence, secondSentence)<br />
+        })<br />
+        .catch((err) => {console.log(err)});<br /><br />
+
+        <span class="correct">
+          // Here we use promisifiedReadfile() again but instead of using the
+          native promise .then() syntax, we declare and invoke an async/await
+          function:</span
+        >
+        <br /><br />
+        async function readFiles() {<br />
+        &nbsp; let firstSentence = await promisifiedReadfile('./file.txt',
+        'utf-8');<br />
+        &nbsp; let secondSentence = await promisifiedReadfile('./file2.txt',
+        'utf-8');<br />
+        &nbsp; console.log(firstSentence, secondSentence);<br />
+        }<br /><br />
+
+        readFiles();<br />
+      </p>
+
+      <p class="imp">The above code references two text files</p>
+      <p class="code">file.txt</p>
+      <p>Conatins the text: This is the first sentence.</p>
+      <p class="code">file2.txt</p>
+      <p>Contains the text: This is the second sentence.</p>
+      <h2>Async Keyword</h2>
+
+      <p>
+        The async keyword is used to write functions that handle asynchronous
+        actions. We wrap our asynchronous logic inside a function prepended with
+        the async keyword. Then, we invoke that function.
+      </p>
+      <p class="code">
+        async function myFunc() {<br />
+        // Function body here<br />
+        };<br /><br />
+
+        myFunc();
+      </p>
+
+      <p>
+        We’ll be using async function declarations throughout this lesson, but
+        we can also create async function expressions:
+      </p>
+      <p class="code">
+        const myFunc = async () => {<br />
+        // Function body here<br />
+        };<br /><br />
+
+        myFunc();
+      </p>
+      <p>
+        async functions always return a promise. This means we can use
+        traditional promise syntax, like .then() and .catch with our async
+        functions. An async function will return in one of three ways:
+      </p>
+      <ul>
+        <li>
+          If there’s nothing returned from the function, it will return a
+          promise with a resolved value of undefined.
+        </li>
+        <li>
+          If there’s a non-promise value returned from the function, it will
+          return a promise resolved to that value.
+        </li>
+        <li>
+          If a promise is returned from the function, it will simply return that
+          promise
+        </li>
+      </ul>
+
+      <p class="code">
+        async function fivePromise() { <br />
+        return 5;<br />
+        }<br /><br />
+
+        fivePromise()<br />
+        .then(resolvedValue => {<br />
+        console.log(resolvedValue);<br />
+        }) // Prints 5
+      </p>
+
+      <p>
+        In the example above, even though we return 5 inside the function body,
+        what’s actually returned when we invoke fivePromise() is a promise with
+        a resolved value of 5.
+      </p>
+
+      <h2>Async Await</h2>
+      <p class="bold">The await Operator</p>
+      <p>
+        In the last exercise, we covered the async keyword. By itself, it
+        doesn’t do much; async functions are almost always used with the
+        additional keyword await inside the function body.
+      </p>
+      <p>
+        The await keyword can only be used inside an async function. await is an
+        operator: it returns the resolved value of a promise. Since promises
+        resolve in an indeterminate amount of time, await halts, or pauses, the
+        execution of our async function until a given promise is resolved.
+      </p>
+      <p>
+        In most situations, we’re dealing with promises that were returned from
+        functions. Generally, these functions are through a library, and, in
+        this lesson, we’ll be providing them. We can await the resolution of the
+        promise it returns inside an async function. In the example below,
+        myPromise() is a function that returns a promise which will resolve to
+        the string "I am resolved now!".
+      </p>
+      <p class="code">
+        async function asyncFuncExample(){<br />
+        let resolvedValue = await myPromise();<br />
+        console.log(resolvedValue);<br />
+        }<br /><br />
+
+        asyncFuncExample(); // Prints: I am resolved now!
+      </p>
+      <p>
+        Within our async function, asyncFuncExample(), we use await to halt our
+        execution until myPromise() is resolved and assign its resolved value to
+        the variable resolvedValue. Then we log resolvedValue to the console.
+        We’re able to handle the logic for a promise in a way that reads like
+        synchronous code.
+      </p>
+
+      <h2>library.js code</h2>
+
+      <p class="code">
+        <span class="correct">
+          /* this is the brainstormDinner function. It's a little silly. It
+          returns a promise that uses a series of setTimeout() functions to
+          simulate a time-consuming asynchronous action. It's a good example of
+          "callback hell" or "the pyramid of doom," two ways people describe how
+          confusing a bunch of nested callback functions can become. */</span
+        ><br />
+        <br />
+
+        const brainstormDinner = () => {<br />
+        return new Promise((resolve, reject) => {<br />
+        console.log(`I have to decide what's for dinner...`)<br />
+        setTimeout(() => {<br />
+        &nbsp; console.log('Should I make salad...?');<br />
+        &nbsp; &nbsp; setTimeout(() => {<br />
+        &nbsp; &nbsp; &nbsp; console.log('Should I make ramen...?');<br />
+        &nbsp; &nbsp; &nbsp; &nbsp; setTimeout(() => {<br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log('Should I make
+        eggs...?');<br />
+        &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;setTimeout(() => {<br />
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log('Should I make
+        chicken...?');<br />
+        &nbsp; &nbsp; &nbsp; &nbsp; resolve('beans');<br />
+        &nbsp; &nbsp; &nbsp; }, 1000);<br />
+        &nbsp; &nbsp; }, 1000);<br />
+        &nbsp; }, 1000);<br />
+        }, 1000);<br />
+        });<br />
+        };<br />
+        <br />
+
+        module.exports = brainstormDinner;
+      </p>
+
+      <h2>My Code</h2>
+      <p class="code">
+        const brainstormDinner = require('./library.js');<br /><br />
+
+
+        // Native promise version:<br />
+        function nativePromiseDinner() {<br />
+          brainstormDinner().then((meal) => {<br />
+            console.log(`I'm going to make ${meal} for dinner.`);<br />
+          });<br />
+        }<br /><br />
+        
+        
+        // async/await version:<br />
+        async function announceDinner() {<br />
+          // Write your code below:<br />
+          let meal = await brainstormDinner() <br />
+            console.log(`I'm going to make ${meal} for dinner.`);<br />
+        
+          
+        }<br /><br />
+        
+        announceDinner()<br />
+        
+        
+
+
+
+
+      </p>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

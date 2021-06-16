@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Using catch() with Promises</h2>
+      <p>
+        One way to write cleaner code is to follow a principle called separation
+        of concerns. Separation of concerns means organizing code into distinct
+        sections each handling a specific task. It enables us to quickly
+        navigate our code and know where to look if something isn’t working.
+      </p>
+      <p>
+        Remember, .then() will return a promise with the same settled value as
+        the promise it was called on if no appropriate handler was provided.
+        This implementation allows us to separate our resolved logic from our
+        rejected logic. Instead of passing both handlers into one .then(), we
+        can chain a second .then() with a failure handler to a first .then()
+        with a success handler and both cases will be handled.
+      </p>
+      <p class="code">
+        prom<br>
+         .then((resolvedValue) => { <br>
+            &nbsp;  console.log(resolvedValue);<br>
+         })<br>
+        .then(null, (rejectionReason) => { <br>
+            &nbsp;  console.log(rejectionReason);<br>
+         });<br>
+      </p>
+      <p>
+        Since JavaScript doesn’t mind whitespace, we follow a common convention
+        of putting each part of this chain on a new line to make it easier to
+        read. To create even more readable code, we can use a different promise
+        function: .catch().
+      </p>
+      <p>
+        The .catch() function takes only one argument, onRejected. In the case
+        of a rejected promise, this failure handler will be invoked with the
+        reason for rejection. Using .catch() accomplishes the same thing as
+        using a .then() with only a failure handler.
+      </p>
+      <p>Let’s look at an example using .catch():</p>
+      <p class="code">
+        prom <br>
+        .then((resolvedValue) => { <br>
+            &nbsp;   console.log(resolvedValue); <br>
+        })<br>
+        .catch((rejectionReason) => { <br>
+            &nbsp;  console.log(rejectionReason); <br>
+        });<br>
+      </p>
+      <p>Let’s break down what’s happening in the example code:</p>
+      <ul>
+        <li>
+          prom is a promise which randomly either resolves with 'Yay!' or
+          rejects with 'Ohhh noooo!'.
+        </li>
+        <li>
+          We pass a success handler to .then() and a failure handler to
+          .catch().
+        </li>
+        <li>
+          If the promise resolves, .then()‘s success handler will be invoked
+          with 'Yay!'.
+        </li>
+        <li>
+          If the promise rejects, .then() will return a promise with the same
+          rejection reason as the original promise and .catch()‘s failure
+          handler will be invoked with that rejection reason.
+        </li>
+      </ul>
+
+      <h2>Code Example</h2>
+      <p class="code">const {checkInventory} = require('./library.js');<br /><br />
+
+        const order = [['sunglasses', 1], ['bags', 2]];<br /><br />
+        
+        const handleSuccess = (resolvedValue) => <br />{
+            &nbsp;     console.log(resolvedValue);<br />
+        };<br /><br />
+        
+        const handleFailure = (rejectReason) => {<br />
+            &nbsp;    console.log(rejectReason);<br />
+        };<br /><br />
+        
+        // Write your code below:<br /><br />
+        
+        checkInventory(order).then(handleSuccess)<br />
+        .catch(handleFailure)</p><br />
+
+        <p class="imp">The above code will fail as there aren't any sunglasses</p>
+
+        <p>library.js</p>
+        <p class="code">const inventory = {  <br />
+            &nbsp;    sunglasses: 0, <br />
+            &nbsp;    pants: 1088, <br />
+            &nbsp;   bags: 1344 <br />
+          }; <br /> <br />
+          
+          const checkInventory = (order) => { <br />
+            &nbsp;  return new Promise((resolve, reject) => { <br />
+                  setTimeout(() => { <br />
+                    &nbsp;  let inStock = order.every(item => inventory[item[0]] >= item[1]); <br />
+                      if (inStock) { <br />
+                        &nbsp;   resolve(`Thank you. Your order was successful.`); <br />
+                      } else { <br />
+                        &nbsp;    reject(`We're sorry. Your order could not be &nbsp; completed <br /> because some items are sold out.`); <br />
+                        &nbsp;  } <br />
+                        &nbsp; &nbsp;  }, 1000); <br />
+                  &nbsp;   }); <br />
+          }; <br /> <br />
+          
+          module.exports = {checkInventory};</p>
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

@@ -13,7 +13,9 @@ let menuItem ={
     Events: '/dom/events/index.html',
     Async: '/async/index.html',
     Requests: '/requests/index.html',
-    Classes: '/classes/class.html'
+    Classes: '/classes/class.html',
+    Promises: '/promise/promise.html',
+    React: '/react/index.html'
     
 };
 

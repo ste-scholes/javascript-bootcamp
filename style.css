@@ -58,6 +58,7 @@ td {
     list-style: none;
     border-width: 1px;
     background-color: rgb(7, 38, 78);
+    line-height: .7rem;
 }
 
 .nav {
@@ -65,8 +66,11 @@ td {
     color: white;
     background-color: rgb(7, 38, 78);
     list-style: none;
+    
 
 }
+
+
 
 .button {
     padding: 10px;
@@ -77,9 +81,16 @@ td {
 
 }
 
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
 .obj-nav,
 .loop-nav,
 .inner-nav {
+
+
     padding: 10px 75px 10px 10px;
     color: white;
     background-color: rgb(179, 80, 0);
@@ -96,7 +107,22 @@ td {
     background-color: rgb(5, 40, 73);
 }
 
+.prom-nav {
 
+    padding: 5px 0 5px 15px;
+    color: white;
+    background-color: rgb(179, 80, 0);
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgb(179, 80, 0) rgb(179, 80, 0) rgb(179, 80, 0) #ffffff;
+    list-style: none;
+    margin: 8px
+
+}
+
+.prom-li {
+    flex-direction: row;
+}
 
 
 
@@ -235,5 +261,8 @@ p {
 }
 
 
+li {
+    line-height: 2rem;
+}
 
 

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>React</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Intro to JSX</h2>
+      <p>Nested JSX</p>
+      <p class="imp">JSX must be contained within 2 identical Tags</p>
+      <p>
+        If it has more that two it will throw an error, to get round this
+        contain the elements within a div
+      </p>
+      <p class="correct">
+        // This is correct<br />
+        &lt;div> <br />
+        &lt;p>Hello World &lt;/p><br />
+        &lt;p>How are you doing? &lt;/p><br />
+        &lt;/div>
+      </p>
+      <p class="wrong">
+        // This is wrong<br />
+        &lt;p>Hello World &lt;/p><br />
+        &lt;p>How are you doing? &lt;/p><br />
+      </p>
+
+      <p>
+        You can nest JSX elements inside of other JSX elements, just like in
+        HTML.
+      </p>
+      <p>
+        Here’s an example of a JSX &lt;h1> element, nested inside of a JSX
+        &lt;a> element:
+      </p>
+      <p class="code">
+        &lt;a href="https://www.example.com"> &lt;h1>Click me! &lt;/h1> &lt;/a>
+      </p>
+      <p>
+        To make this more readable, you can use HTML-style line breaks and
+        indentation:
+      </p>
+      <p class="code">
+        &lt;a href="https://www.example.com"> <br />
+        &lt;h1><br />
+        Click me!<br />
+        &lt;/h1><br />
+        &lt;/a>
+      </p>
+
+      <p>
+        If a JSX expression takes up more than one line, then you must wrap the
+        multi-line JSX expression in parentheses. This looks strange at first,
+        but you get used to it:
+      </p>
+      <p class="code">
+        (<br />
+        &lt;a href="https://www.example.com"><br />
+        &lt;h1><br />
+        Click me!<br />
+        &lt;/h1><br />
+        &lt;/a><br />
+        )
+      </p>
+
+      <p>
+        Nested JSX expressions can be saved as variables, passed to functions,
+        etc., just like non-nested JSX expressions can! Here’s an example of a
+        nested JSX expression being saved as a variable:
+      </p>
+      <p class="code">
+        const theExample = (<br />
+        &lt;a href="https://www.example.com"><br />
+        &lt;h1><br />
+        Click me!<br />
+        &lt;/h1><br />
+        &lt;/a><br />
+        );
+      </p>
+
+      <p class="bold">class vs className</p>
+
+      <p>
+        This lesson will cover more advanced JSX. You’ll learn some powerful
+        tricks, and some common errors to avoid.
+      </p>
+      <p>
+        Grammar in JSX is mostly the same as in HTML, but there are subtle
+        differences to watch out for. Probably the most frequent of these
+        involves the word class.
+      </p>
+      <p>In HTML, it’s common to use class as an attribute name:</p>
+      <p class="code">&#60;h1 class="big">Hey&#60;/h1></p>
+      <p>
+        In JSX, you can’t use the word class! You have to use className instead:
+      </p>
+      <p class="code">&#60;h1 className="big">Hey&#60;/h1></p>
+
+      <p>
+        This is because JSX gets translated into JavaScript, and class is a
+        reserved word in JavaScript.
+      </p>
+      <p>
+        When JSX is rendered, JSX className attributes are automatically
+        rendered as class attributes.
+      </p>
+
+      <h2>Example</h2>
+
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom';<br /><br />
+
+        // Write code here:<br />
+        const myDiv = &lt;iv className="big">I AM A BIG DIV&lt;div>;<br /><br />
+
+        ReactDOM.render(myDiv, document.getElementById('app'));<br />
+      </p>
+
+      <h2>Self-Closing Tags</h2>
+
+      <p>Another JSX ‘gotcha’ involves self-closing tags.</p>
+
+      <p>What’s a self-closing tag?</p>
+
+      <p>
+        Most HTML elements use two tags: an opening tag (&lt;iv>), and a closing
+        tag (&lt;/div>). However, some HTML elements such as &lt;img> and
+        &lt;input> use only one tag. The tag that belongs to a single-tag
+        element isn’t an opening tag nor a closing tag; it’s a self-closing tag.
+      </p>
+      <p>
+        When you write a self-closing tag in HTML, it is optional to include a
+        forward-slash immediately before the final angle-bracket:
+      </p>
+
+      <p>Fine in HTML with a slash:</p>
+      <p class="code">&lt;br /></p>
+      <p>Also fine, without the slash:</p>
+      <p class="code">&lt;br></p>
+      <p>But!</p>
+
+      <p>
+        In JSX, you have to include the slash. If you write a self-closing tag
+        in JSX and forget the slash, you will raise an error:
+      </p>
+      <p>Fine in JSX:</p>
+      <p class="code">&lt;br /></p>
+
+      <p>NOT FINE AT ALL in JSX:</p>
+      <p class="code">&lt;br></p>
+      <h2>JavaScript In Your JSX In Your JavaScript</h2>
+      <p>
+        So far, we’ve focused on writing JSX expressions. It’s similar to
+        writing bits of HTML, but inside of a JavaScript <br /><br />
+
+        In this lesson, we’re going to add something new: regular JavaScript,
+        written inside of a JSX expression, written inside of a JavaScript file.
+      </p>
+      <h2>Example</h2>
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom';<br /><br />
+
+        // Write code here:<br />
+        ReactDOM.render(<br />
+        &lt;h1>2 + 3 &lt;/h1>,<br />
+        document.getElementById('app')<br />
+        );
+      </p>
+      <h2>Curly Braces in JSX</h2>
+      <p>
+        The code in the last exercise didn’t behave as one might expect. Instead
+        of adding 2 and 3, it printed out “2 + 3” as a string of text. Why?
+      </p>
+      <p>
+        This happened because 2 + 3 is located in between &lt;h1> and &lt;/h1>
+        tags.
+      </p>
+      <p>
+        Any code in between the tags of a JSX element will be read as JSX, not
+        as regular JavaScript! JSX doesn’t add numbers - it reads them as text,
+        just like HTML.
+      </p>
+      <p>
+        You need a way to write code that says, “Even though I am located in
+        between JSX tags, treat me like ordinary JavaScript and not like JSX.”
+      </p>
+      <p>You can do this by wrapping your code in curly braces.</p>
+
+      <p class="imp">Wrap JavaScript in curly braces for it to work { 2+3 }</p>
+      <h2>Example</h2>
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom';<br /><br />
+
+        // Write code here:<br />
+        const math = &lt;h1>2 + 3 = {2 + 3}&lt;/h1>;<br />
+
+        ReactDOM.render(math, document.getElementById('app'));
+      </p>
+
+      <h2>Variables in JSX</h2>
+      <p>Variables in JSX</p>
+
+      <p>
+        When you inject JavaScript into JSX, that JavaScript is part of the same
+        environment as the rest of the JavaScript in your file.
+      </p>
+      <p></p>
+      That means that you can access variables while inside of a JSX expression,
+      even if those variables were declared on the outside.
+      <p></p>
+      <p class="code">
+        <span class="correct">// Declare a variable: <br /> </span>const name =
+        'Gerdo';<br />
+
+        <span class="correct"> // Access your variable </span> <br />
+        <span class="correct">// from inside of a JSX expression:</span><br />
+        const greeting = &lt;p>Hello, {name}!&lt;/p>;
+      </p>
+
+      <h2>Example</h2>
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom';<br /><br />
+
+        const theBestString = 'tralalalala i am da best';<br /><br />
+
+        ReactDOM.render(&lt;h1>{theBestString}&lt;/h1>,
+        document.getElementById('app'));
+      </p>
+      <h2>Variable Attributes in JSX</h2>
+      <p>When writing JSX, it’s common to use variables to set attributes.</p>
+      <p>Here’s an example of how that might work:</p>
+      <p class="code">
+        <span class="correct"
+          >// Use a variable to set the `height` and `width` attributes:
+        </span>
+        const sideLength = "200px"; <br /><br />
+
+        const panda = (<br />
+        &lt;img src="images/panda.jpg" <br />
+        alt="panda" <br />
+        height={sideLength} <br />
+        width={sideLength} /><br />
+        );
+      </p>
+
+      <p>
+        Notice how in this example, the &lt;img />‘s attributes each get their
+        own line. This can make your code more readable if you have a lot of
+        attributes on one element.
+      </p>
+      <p></p>
+      <p>Object properties are also often used to set attributes:</p>
+      <p class="code">
+        const pics = {<br />
+        panda: "http://bit.ly/1Tqltv5",<br />
+        owl: "http://bit.ly/1XGtkM3",<br />
+        owlCat: "http://bit.ly/1Upbczi"<br />
+        }; <br /><br />
+
+        const panda = (<br />
+        &lt;img <br />
+        src={pics.panda} <br />
+        alt="Lazy Panda" /><br />
+        );<br /><br />
+
+        const owl = (<br />
+        &lt;mg <br />
+        src={pics.owl} <br />
+        alt="Unimpressed Owl" /><br />
+        );<br /><br />
+
+        const owlCat = (<br />
+        &lt;mg <br />
+        src={pics.owlCat} <br />
+        alt="Ghastly Abomination" /><br />
+        );
+      </p>
+
+      <h2>Example</h2>
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom';<br /><br />
+
+        const goose =
+        'https://content.codecademy.com/courses/React/react_photo-goose.jpg';<br /><br />
+
+        <span class="correct"> // Declare new variable here:</span><br />
+        const gooseImg = (<br />
+        &lt;img src={goose} /><br />
+
+        )<br /><br />
+
+        ReactDOM.render(gooseImg, document.getElementById('app'));
+      </p>
+
+      <h2>Event Listeners in JSX</h2>
+      <p>
+        JSX elements can have event listeners, just like HTML elements can.
+        Programming in React means constantly working with event listeners.
+      </p>
+
+      <p>
+        You create an event listener by giving a JSX element a special
+        attribute. Here’s an example:
+      </p>
+      <p class="code">< &lt;img onClick={myFunc} /></p>
+      <p>
+        An event listener attribute’s name should be something like onClick or
+        onMouseOver: the word on, plus the type of event that you’re listening
+        for. You can see a list of valid event names here.
+      </p>
+      <p>
+        An event listener attribute’s value should be a function. The above
+        example would only work if myFunc were a valid function that had been
+        defined elsewhere:
+      </p>
+      <p class="code">
+        function myFunc() { <br />
+        alert('Make myFunc the pFunc... omg that was horrible i am so sorry');
+        }<br /><br />
+
+        &lt;img onClick={myFunc} />
+      </p>
+
+      <p>
+        Note that in HTML, event listener names are written in all lowercase,
+        such as onclick or onmouseover. In JSX, event listener names are written
+        in camelCase, such as onClick or onMouseOver.
+      </p>
+
+      <!-- &nbsp;  <br /> 	&lt; -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/react/react-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

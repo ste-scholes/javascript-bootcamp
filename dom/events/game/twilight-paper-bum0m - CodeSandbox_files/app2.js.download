@@ -1,0 +1,13 @@
+function winLose() {
+  return Math.random() < 0.5 ? "win" : "lose";
+}
+
+if (winLose() === "win") {
+  document.querySelector(
+    ".result"
+  ).innerHTML = `<span class="win">${winLose()}</span>`;
+} else {
+  document.querySelector(
+    ".result"
+  ).innerHTML = `<span class="lose">${winLose()}</span>`;
+}

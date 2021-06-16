@@ -4,8 +4,10 @@ let navObj ={
     'Constructor': '/classes/construct.html',
     'Instance': '/classes/instance.html',
     Methods: '/classes/methods.html',
-    'Method Calls': 'calls.html',
-    'Inheritence': 'inheritence.html',
+    'Method Calls': '/classes/calls.html',
+    'Inheritence': '/classes/inheritence.html',
+    'Static': '/classes/static.html',
+    Review: '/classes/review.html'
    
 };
 

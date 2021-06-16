@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>React</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>JSX if Statements that work!</h2>
+      <p>
+        If statements do not work when injected into JSX, however there are
+        alternatives
+      </p>
+      <p>JSX Conditionals: If Statements That Do Work</p>
+      <p>
+        How can you write a conditional, if you can’t inject an if statement
+        into JSX?
+      </p>
+      <p>
+        Well, one option is to write an if statement, and not inject it into
+        JSX.
+      </p>
+      <p>
+        Look at if.js. Follow the if statement, all the way from line 6 down to
+        line 18.
+      </p>
+      <p>
+        if.js works, because the words if and else are not injected in between
+        JSX tags. The if statement is on the outside, and no JavaScript
+        injection is necessary.
+      </p>
+      <p>This is a common way to express conditionals in JSX.</p>
+      <h2>if.JSX</h2>
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom'; <br />
+        <br />
+
+        let message; <br />
+        <br />
+
+        if (user.age >= drinkingAge) { <br />
+        message = ( <br />
+        &lt;h1> <br />
+        &nbsp;     Hey, check out this alcoholic beverage! <br />
+        &lt;/h1> <br />
+        &nbsp;   ); <br />
+        &nbsp;   } else { <br />
+        message = ( <br />
+        &lt;h1> <br />
+        &nbsp;  Hey, check out these earrings I got at Claire's! <br />
+        &lt;/h1> <br />
+        &nbsp;    ); <br />
+        } <br />
+        <br />
+
+        ReactDOM.render( <br />
+        message, <br />
+        document.getElementById('app') <br />
+        );
+      </p>
+      <h2>Example</h2>
+      <p>
+        This example tosses a coin and determines the outcome of what image is
+        shown, heads -> cat or tails -> dog
+      </p>
+
+      <p class="code">
+        import React from 'react'; <br />
+        import ReactDOM from 'react-dom'; <br />
+
+        function coinToss() { <br />
+        <span class="correct">
+          // This function will randomly return either 'heads' or 'tails'.</span
+        >
+        <br />
+        return Math.random() < 0.5 ? 'heads' : 'tails'; <br />
+        } <br />
+        <br />
+
+        const pics = { <br />
+            &nbsp;   kitty:
+        'https://content.codecademy.com/courses/React/react_photo-kitty.jpg',
+        <br />
+        &nbsp;   doggy:
+        'https://content.codecademy.com/courses/React/react_photo-puppy.jpeg'
+        <br />
+        }; <br />
+        let img; <br />
+        <br />
+
+        <span class="correct"> // if/else statement begins here: <br /> </span>
+        if (coinToss() === 'heads') { <br />
+        img = ( <br />
+        &nbsp; &nbsp;     &lt;img src="{pics.kitty}" /> <br />
+        &nbsp;     ); <br />
+        <br />
+
+        } else { <br />
+        img = ( <br />
+        &nbsp; &nbsp;     &lt;img src="{pics.doggy}" /> <br />
+        &nbsp;  ); <br />
+        } <br />
+        <br />
+
+        ReactDOM.render(img, document.getElementById('app'));
+      </p>
+
+      <h2>JSX Conditionals: The Ternary Operator</h2>
+      <p>
+        There’s a more compact way to write conditionals in JSX: the ternary
+        operator.
+      </p>
+      <p>
+        The ternary operator works the same way in React as it does in regular
+        JavaScript. However, it shows up in React surprisingly often.
+      </p>
+      <p>
+        Recall how it works: you write x ? y : z, where x, y, and z are all
+        JavaScript expressions. When your code is executed, x is evaluated as
+        either “truthy” or “falsy.” If x is truthy, then the entire ternary
+        operator returns y. If x is falsy, then the entire ternary operator
+        returns z. Here’s a nice explanation if you need a refresher.
+      </p>
+      <p>Here’s how you might use the ternary operator in a JSX expression:</p>
+      <p class="code">
+        const headline = ( <br />
+         &lt;h1> <br />
+         &nbsp; &nbsp;  { age >= drinkingAge ? 'Buy Drink' : 'Do Teen Stuff' } <br />
+        &lt;/h1> <br />
+        ); <br />
+        <br />
+      </p>
+      <p>
+        In the above example, if age is greater than or equal to drinkingAge,
+        then headline will equal &lt;h1>Buy Drink&lt;h1>. Otherwise, headline
+        will equal &lt;h1>Do Teen Stuff&lt;/h1>.
+      </p>
+
+      <h2>JSX Conditionals: The Ternary Operator</h2>
+      <p>
+        There’s a more compact way to write conditionals in JSX: the ternary
+        operator.
+      </p>
+      <p>
+        The ternary operator works the same way in React as it does in regular
+        JavaScript. However, it shows up in React surprisingly often.
+      </p>
+      <p>
+        Recall how it works: you write x ? y : z, where x, y, and z are all
+        JavaScript expressions. When your code is executed, x is evaluated as
+        either “truthy” or “falsy.” If x is truthy, then the entire ternary
+        operator returns y. If x is falsy, then the entire ternary operator
+        returns z. Here’s a nice explanation if you need a refresher.
+      </p>
+      <p>Here’s how you might use the ternary operator in a JSX expression:</p>
+      <p class="code">
+        const headline = ( &lt;h1> { age >= drinkingAge ? 'Buy Drink' : 'Do Teen
+        Stuff' } &lt;/h1> );
+      </p>
+      <p>
+        In the above example, if age is greater than or equal to drinkingAge,
+        then headline will equal
+      </p>
+
+      <p>
+      &lt;h1>Buy Drink&lt;/h1>
+      . Otherwise, headline will equal
+      &lt;h1>Do Teen Stuff&lt;/h1>
+      .</p>
+
+      <!-- &nbsp;  <br /> 	&lt; -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/react/react-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

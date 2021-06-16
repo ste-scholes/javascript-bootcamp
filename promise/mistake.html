@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+      <h2>Avoiding Common Mistakes</h2>
+<p>Promise composition allows for much more readable code than the nested callback syntax that preceded it. However, it can still be easy to make mistakes. In this exercise, we’ll go over two common mistakes with promise composition.
+</p>
+  <p>  Mistake 1: Nesting promises instead of chaining them.</p>
+   <p class="code">
+    returnsFirstPromise() <br>
+    .then((firstResolveVal) => { <br>
+      return returnsSecondValue(firstResolveVal) <br>
+        .then((secondResolveVal) => { <br>
+          console.log(secondResolveVal); <br>
+        }) <br>
+    })</p> 
+    
+<p>
+    Let’s break down what’s happening in the above code:</p>
+    <ul></ul>
+ <ul>      We invoke returnsFirstPromise() which returns a promise.
+  We invoke .then() with a success handler.</ul> 
+ <ul>  Inside the success handler, we invoke returnsSecondValue() with firstResolveVal which will return a new promise.</ul> 
+ <ul>    We invoke a second .then() to handle the logic for the second promise settling all inside the first then()!</ul> 
+ <ul>    Inside that second .then(), we have a success handler which will log the second promise’s resolved value to the console.</ul> 
+    
+  <p> Instead of having a clean chain of promises, we’ve nested the logic for one inside the logic of the other. Imagine if we were handling five or ten promises!</p> 
+    
+  <p> Mistake 2: Forgetting to return a promise.</p> 
+    <p class="code">
+    returnsFirstPromise()
+    .then((firstResolveVal) => {
+      returnsSecondValue(firstResolveVal)
+    })
+    .then((someVal) => {
+      console.log(someVal);
+    })</p>
+    
+  <p>  Let’s break down what’s happening in the example:
+    
+        We invoke returnsFirstPromise() which returns a promise.
+        We invoke .then() with a success handler.
+        Inside the success handler, we create our second promise, but we forget to return it!
+        We invoke a second .then(). It’s supposed to handle the logic for the second promise, but since we didn’t return, this .then() is invoked on a promise with the same settled value as the original promise!
+    
+    Since forgetting to return our promise won’t throw an error, this can be a really tricky thing to debug!
+    </p>
+<h2>Code Example</h2>
+<p class="code">const {checkInventory, processPayment, shipOrder} = require('./library.js');<br /><br />
+
+  const order = {<br />
+    &nbsp;   items: [['sunglasses', 1], ['bags', 2]],<br />
+    &nbsp;   giftcardBalance: 79.82<br />
+  };<br /><br />
+  
+  // Refactor the code below:<br /><br />
+  
+  checkInventory(order)<br />
+  &nbsp;   .then((resolvedValueArray) => {<br />
+    return  processPayment(resolvedValueArray)<br />
+   })<br />
+   &nbsp;     .then((resolvedValueArray) => {<br />
+    return  shipOrder(resolvedValueArray)<br />
+   })<br />
+   &nbsp;     .then((successMessage) => {<br />
+    &nbsp;    console.log(successMessage);<br />
+  })      <br />           
+             
+    </p>
+<p class="tip">code refererences </p>
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>

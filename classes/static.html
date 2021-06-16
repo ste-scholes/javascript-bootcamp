@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>Static Method</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+
+      <h2>Static Method</h2>
+<p>
+      Sometimes you will want a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
+    </p>  <p> 
+    Take the Date class, for example — you can both create Date instances to represent whatever date you want, and call static methods, like Date.now() which returns the current date, directly from the class. The .now() method is static, so you can call it directly from the class, but not from an instance of the class.
+   </p>  <p>  
+      
+      Let’s see how to use the static keyword to create a static method called generateName method in our Animal class:
+    </p>  
+      <p class="code">
+      class Animal {<br>
+        constructor(name) {<br>
+          this._name = name;<br>
+          this._behavior = 0;<br>
+        }<br><br>
+       
+        static generateName() {<br>
+          const names = ['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];<br>
+          const randomNumber = Math.floor(Math.random()*5);<br>
+          return names[randomNumber];<br>
+        }<br>
+      }</p> 
+    <p>
+      In the example above, we create a static method called .generateName() that returns a random name when it’s called. Because of the static keyword, we can only access .generateName() by appending it to the Animal class.
+    </p>
+  <p> We call the .generateName() method with the following syntax: </p>
+      <p class="code">
+      console.log(Animal.generateName()); // returns a name
+      </p>
+    </p>You cannot access the .generateName() method from instances of the Animal class or instances of its subclasses (See below).
+  </p><p class="code">
+      const tyson = new Animal('Tyson'); <br>
+      tyson.generateName(); // TypeError
+      </p><p>
+      The example above will result in an error, because you cannot call static methods (.generateName()) on an instance (tyson).
+    </p>
+
+<h2>Code Example</h2>
+
+<p class="code">class HospitalEmployee {<br>
+  constructor(name) {<br>
+    this._name = name;<br>
+    this._remainingVacationDays = 20;<br>
+  }<br><br>
+  
+  get name() {<br>
+    return this._name;<br>
+  }<br><br>
+  
+  get remainingVacationDays() {<br>
+    return this._remainingVacationDays;<br>
+  }<br><br>
+  
+  takeVacationDays(daysOff) {<br>
+    this._remainingVacationDays -= daysOff;<br>
+  }<br><br>
+
+  static generatePassword() {<br>
+    return Math.floor(Math.random() * 10000)<br>
+  }<br>
+}<br><br>
+
+class Nurse extends HospitalEmployee {<br>
+  constructor(name, certifications) {<br>
+    super(name);<br>
+    this._certifications = certifications;<br>
+  } <br><br>
+  
+  get certifications() {<br>
+    return this._certifications;<br>
+  }<br><br>
+  
+  addCertification(newCertification) {<br>
+    this.certifications.push(newCertification);<br>
+  }<br>
+}<br><br>
+
+const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);<br>
+nurseOlynyk.takeVacationDays(5);<br>
+console.log(nurseOlynyk.remainingVacationDays);<br>
+nurseOlynyk.addCertification('Genetics');<br>
+console.log(nurseOlynyk.certifications);</p>
+
+<p class="imp">REMEMBER:  static() keyword</p>
+
+    
+        <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+</div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/class-nav.js"></script>
+<script src="/nav.js"></script>
+<script src="/objects.js"></script>
+</html>

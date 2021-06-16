@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>The Modern Javascript Bootcamp</title>
+  </head>
+  <body>
+    <div class="doc">
+      <nav class="menu"></nav>
+
+      <h1>Classes</h1>
+      <nav class="nav"></nav>
+      <h2>JS promise</h2>
+      <nav class="obj-nav"></nav>
+      <!-- start -->
+
+      <h2>Constructing a Promise Object</h2>
+
+      <p>
+        Let’s construct a promise! To create a new Promise object, we use the
+        new keyword and the Promise constructor method:
+      </p>
+      <p class="code">
+        const executorFunction = (resolve, reject) => { }; <br />
+        const myFirstPromise = new Promise(executorFunction);
+      </p>
+      <p>
+        The Promise constructor method takes a function parameter called the
+        executor function which runs automatically when the constructor is
+        called. The executor function generally starts an asynchronous operation
+        and dictates how the promise should be settled.
+      </p>
+      <p>
+        The executor function has two function parameters, usually referred to
+        as the resolve() and reject() functions. The resolve() and reject()
+        functions aren’t defined by the programmer. When the Promise constructor
+        runs, JavaScript will pass its own resolve() and reject() functions into
+        the executor function.
+      </p>
+      <ul>
+        <li>
+          resolve is a function with one argument. Under the hood, if invoked,
+          resolve() will change the promise’s status from pending to fulfilled,
+          and the promise’s resolved value will be set to the argument passed
+          into resolve().
+        </li>
+        <li>
+          reject is a function that takes a reason or error as an argument.
+          Under the hood, if invoked, reject() will change the promise’s status
+          from pending to rejected, and the promise’s rejection reason will be
+          set to the argument passed into reject().
+        </li>
+      </ul>
+      <p>
+        Let’s look at an example executor function in a Promise constructor:
+      </p>
+      <p class="code">
+        const executorFunction = (resolve, reject) => { <br />
+        if (someCondition) {<br />
+            &nbsp; resolve('I resolved!');<br />
+        } else {<br />
+            &nbsp; reject('I rejected!'); <br />
+            &nbsp;}<br />
+        }<br /><br />
+        const myFirstPromise = new Promise(executorFunction);
+      </p>
+      <p>Let’s break down what’s happening above:</p>
+      <ul>
+        <li>We declare a variable myFirstPromise</li>
+        <li>
+          myFirstPromise is constructed using new Promise() which is the Promise
+          constructor method. executorFunction() is passed to the constructor
+          and has two functions as parameters: resolve and reject.
+        </li>
+        <li>
+          If someCondition evaluates to true, we invoke resolve() with the
+          string 'I resolved!'
+        </li>
+        <li>If not, we invoke reject() with the string 'I rejected!'</li>
+      </ul>
+      <p>
+        In our example, myFirstPromise resolves or rejects based on a simple
+        condition, but, in practice, promises settle based on the results of
+        asynchronous operations. For example, a database request may fulfill
+        with the data from a query or reject with an error thrown. In this
+        exercise, we’ll construct promises which resolve synchronously to more
+        easily understand how they work.
+      </p>
+    <h2>Code Example</h2>  
+    
+    <p class="code">
+        const inventory = { <br />
+            sunglasses: 1900, <br />
+            pants: 1088, <br />
+            bags: 1344 <br />
+          }; <br /> <br />
+          
+          // Write your code below: <br />
+          const myExecutor = (resolve, reject) => { <br />
+          if (inventory.sunglasses > 0) { <br />
+            resolve('Sunglasses order processed.') <br />
+          } else { <br />
+            reject('That item is sold out.') <br />
+          } <br />
+          } <br /> <br />
+          
+          const orderSunglasses = () => { <br />
+           return new Promise(myExecutor) <br />
+          } <br /> <br />
+          
+          
+          const orderPromise = orderSunglasses() <br />
+          
+          console.log(orderPromise) <br />
+
+    </p>
+<p>Code Academy bash terminal</p>
+    <p class="tip">node app.js</p>
+
+
+      <!-- &nbsp;  <br /> -->
+      <!-- content ends here -->
+    </div>
+  </body>
+  <script src="/menu.js"></script>
+  <script src="/prom-nav.js"></script>
+  <script src="/nav.js"></script>
+</html>
